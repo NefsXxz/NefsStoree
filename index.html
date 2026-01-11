@@ -1,0 +1,1949 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nefs Store | Digital Solutions</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@400;500;600;700&display=swap">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Quicksand', 'Poppins', sans-serif;
+        }
+        
+        :root {
+            --primary: #FFB6C1; /* Light pink */
+            --primary-dark: #FF8BA7; /* Medium pink */
+            --secondary: #FFD1DC; /* Soft pink */
+            --accent: #FFDAC1; /* Peach */
+            --light: #FFF8F3; /* Cream */
+            --dark: #5A4A42; /* Soft brown */
+            --text: #4A3C35; /* Dark brown for text */
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --glow: 0 0 30px rgba(255, 182, 193, 0.4);
+            --instagram: #E4405F;
+            --tiktok: #000000;
+            --telegram: #26A5E4;
+            --whatsapp: #25D366;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #FFF8F3 0%, #FFE8E8 50%, #FFDAE0 100%);
+            color: var(--text);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 182, 193, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 214, 193, 0.15) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 30%);
+            z-index: -1;
+        }
+        
+        /* Floating Hearts Background */
+        .floating-hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        
+        .heart {
+            position: absolute;
+            background-color: var(--primary);
+            opacity: 0.1;
+            border-radius: 50%;
+        }
+        
+        .heart:nth-child(1) {
+            width: 30px;
+            height: 30px;
+            top: 10%;
+            left: 10%;
+            animation: float 15s infinite ease-in-out;
+        }
+        
+        .heart:nth-child(2) {
+            width: 20px;
+            height: 20px;
+            top: 20%;
+            right: 15%;
+            animation: float 18s infinite ease-in-out 2s;
+        }
+        
+        .heart:nth-child(3) {
+            width: 25px;
+            height: 25px;
+            bottom: 30%;
+            left: 15%;
+            animation: float 20s infinite ease-in-out 4s;
+        }
+        
+        .heart:nth-child(4) {
+            width: 15px;
+            height: 15px;
+            bottom: 20%;
+            right: 20%;
+            animation: float 16s infinite ease-in-out 1s;
+        }
+        
+        .heart:nth-child(5) {
+            width: 18px;
+            height: 18px;
+            top: 50%;
+            left: 80%;
+            animation: float 22s infinite ease-in-out 3s;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 0.1;
+            }
+            50% {
+                transform: translateY(-30px) rotate(180deg);
+                opacity: 0.2;
+            }
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 480px;
+            margin: 0 auto;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+        }
+        
+        /* Music Player */
+        .music-player {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 10px 15px;
+            border-radius: 50px;
+            box-shadow: var(--shadow);
+            border: 2px solid var(--primary);
+            animation: slideInRight 0.5s ease-out;
+        }
+        
+        @keyframes slideInRight {
+            from {
+                transform: translateX(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        .music-info {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .music-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 18px;
+            box-shadow: 0 4px 10px rgba(255, 182, 193, 0.3);
+        }
+        
+        .music-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .music-title {
+            font-size: 12px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .music-artist {
+            font-size: 10px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        .music-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .music-btn {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: none;
+            color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 8px rgba(255, 182, 193, 0.3);
+        }
+        
+        .music-btn:hover {
+            background: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .volume-control {
+            width: 80px;
+            height: 5px;
+            background: rgba(255, 182, 193, 0.2);
+            border-radius: 10px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .volume-slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 70%;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+        }
+        
+        .volume-handle {
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(50%, -50%);
+            width: 12px;
+            height: 12px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Header dengan efek glassmorphism */
+        .header {
+            text-align: center;
+            padding: 30px 25px;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(15px);
+            border-radius: 24px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            margin-bottom: 25px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent, rgba(255, 182, 193, 0.1), transparent);
+            animation: shimmer 3s infinite linear;
+        }
+        
+        @keyframes shimmer {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        .profile-container {
+            position: relative;
+            width: 140px;
+            height: 140px;
+            margin: 0 auto 20px;
+        }
+        
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            border: 4px solid white;
+            background: linear-gradient(135deg, var(--primary), var(--accent)) border-box;
+            overflow: hidden;
+            box-shadow: var(--glow);
+            animation: gentleFloat 8s ease-in-out infinite;
+        }
+        
+        @keyframes gentleFloat {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-10px) rotate(2deg); }
+            50% { transform: translateY(-5px) rotate(-1deg); }
+            75% { transform: translateY(-8px) rotate(1deg); }
+        }
+        
+        .profile-pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        
+        .online-badge {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            width: 20px;
+            height: 20px;
+            background: #7ED321;
+            border-radius: 50%;
+            border: 3px solid white;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(126, 211, 33, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(126, 211, 33, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(126, 211, 33, 0); }
+        }
+        
+        .title {
+            font-size: 32px;
+            font-weight: 800;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 5px;
+            letter-spacing: 0.5px;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+        
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            background: rgba(255, 182, 193, 0.2);
+            border: 1px solid rgba(255, 182, 193, 0.3);
+            padding: 6px 15px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            color: var(--dark);
+        }
+        
+        .badge i {
+            color: var(--primary-dark);
+        }
+        
+        .bio {
+            font-size: 14px;
+            line-height: 1.6;
+            color: var(--text);
+            opacity: 0.8;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+        
+        /* Stats dengan efek glassmorphism */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: var(--shadow);
+        }
+        
+        .stat {
+            text-align: center;
+            position: relative;
+            padding: 0 10px;
+        }
+        
+        .stat::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 1px;
+            height: 30px;
+            background: rgba(255, 182, 193, 0.3);
+        }
+        
+        .stat:last-child::after {
+            display: none;
+        }
+        
+        .stat-number {
+            font-size: 26px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: var(--text);
+            opacity: 0.7;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Social Media Card */
+        .social-media-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: var(--shadow);
+        }
+        
+        .social-media-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .social-media-title i {
+            color: var(--primary);
+        }
+        
+        .social-media-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .social-media-item {
+            background: white;
+            border-radius: 15px;
+            padding: 15px;
+            text-align: center;
+            transition: all 0.3s;
+            border: 2px solid white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .social-media-item:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 182, 193, 0.2);
+        }
+        
+        .social-media-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            transition: all 0.3s;
+        }
+        
+        .social-media-item:hover .social-media-icon {
+            transform: scale(1.2);
+        }
+        
+        .social-media-item.instagram .social-media-icon {
+            color: var(--instagram);
+        }
+        
+        .social-media-item.tiktok .social-media-icon {
+            color: var(--tiktok);
+        }
+        
+        .social-media-item.telegram .social-media-icon {
+            color: var(--telegram);
+        }
+        
+        .social-media-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 5px;
+        }
+        
+        .social-media-handle {
+            font-size: 12px;
+            color: var(--text);
+            opacity: 0.7;
+        }
+        
+        /* Rating Section */
+        .rating-section {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            box-shadow: var(--shadow);
+        }
+        
+        .rating-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark);
+        }
+        
+        .current-rating {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        .rating-left {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .rating-value {
+            font-size: 42px;
+            font-weight: 700;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .rating-stars {
+            display: flex;
+            gap: 2px;
+        }
+        
+        .rating-star {
+            color: #FFD700;
+            font-size: 18px;
+            text-shadow: 0 2px 5px rgba(255, 215, 0, 0.3);
+        }
+        
+        .rating-count {
+            font-size: 14px;
+            color: var(--text);
+            opacity: 0.7;
+        }
+        
+        .rating-input-container {
+            text-align: center;
+        }
+        
+        .rate-us-title {
+            font-size: 16px;
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-weight: 600;
+        }
+        
+        .rating-input {
+            display: flex;
+            justify-content: center;
+            gap: 5px;
+            margin-bottom: 20px;
+            direction: rtl;
+        }
+        
+        .rating-input input {
+            display: none;
+        }
+        
+        .rating-input label {
+            font-size: 30px;
+            color: rgba(255, 182, 193, 0.3);
+            cursor: pointer;
+            transition: all 0.2s;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        .rating-input label:hover,
+        .rating-input label:hover ~ label,
+        .rating-input input:checked ~ label {
+            color: #FFD700;
+            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
+        }
+        
+        .submit-rating {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(255, 182, 193, 0.3);
+        }
+        
+        .submit-rating:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 182, 193, 0.4);
+        }
+        
+        /* Links Section */
+        .links {
+            margin-bottom: 25px;
+        }
+        
+        .link-item {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 18px;
+            padding: 18px;
+            margin-bottom: 18px;
+            text-decoration: none;
+            color: var(--text);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            transform: translateY(0);
+            box-shadow: var(--shadow);
+        }
+        
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+            transition: left 0.7s;
+        }
+        
+        .link-item:hover::before {
+            left: 100%;
+        }
+        
+        .link-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 182, 193, 0.2);
+        }
+        
+        .icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-right: 18px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+            color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .link-item:hover .icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .donate .icon {
+            background: linear-gradient(135deg, #FF6B6B, #FF4757);
+        }
+        
+        .whatsapp .icon {
+            background: linear-gradient(135deg, #25D366, #128C7E);
+        }
+        
+        .service .icon {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+        
+        .contact .icon {
+            background: linear-gradient(135deg, #2ED573, #1E90FF);
+        }
+        
+        .link-text h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .link-text p {
+            font-size: 13px;
+            color: var(--text);
+            opacity: 0.7;
+        }
+        
+        .arrow {
+            margin-left: auto;
+            color: var(--primary);
+            font-size: 18px;
+            transition: all 0.3s;
+            opacity: 0.7;
+        }
+        
+        .link-item:hover .arrow {
+            opacity: 1;
+            transform: translateX(5px);
+        }
+        
+        /* Social Links Footer */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 25px 0;
+        }
+        
+        .social-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text);
+            font-size: 20px;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) rotate(10deg);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon.instagram:hover {
+            background: var(--instagram);
+            color: white;
+        }
+        
+        .social-icon.tiktok:hover {
+            background: var(--tiktok);
+            color: white;
+        }
+        
+        .social-icon.telegram:hover {
+            background: var(--telegram);
+            color: white;
+        }
+        
+        .social-icon.whatsapp:hover {
+            background: var(--whatsapp);
+            color: white;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 20px;
+            color: var(--text);
+            opacity: 0.7;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            animation: modalSlideIn 0.4s ease-out;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        @keyframes modalSlideIn {
+            from {
+                opacity: 0;
+                transform: translateY(50px) scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        .modal-header {
+            padding: 25px;
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.2), rgba(255, 209, 220, 0.1));
+            color: var(--dark);
+            text-align: center;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        .modal-header h2 {
+            font-size: 26px;
+            margin-bottom: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .modal-header p {
+            font-size: 14px;
+            color: var(--text);
+            opacity: 0.8;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            font-size: 24px;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+        
+        .close-modal:hover {
+            background: var(--primary);
+            color: white;
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            padding: 25px;
+            overflow-y: auto;
+            flex-grow: 1;
+        }
+        
+        .service-question {
+            font-size: 20px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .price-info {
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 25px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .price-info h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 14px;
+        }
+        
+        .price-table th, .price-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+            color: var(--text);
+        }
+        
+        .price-table th {
+            background: rgba(255, 182, 193, 0.2);
+            font-weight: 700;
+            color: var(--primary-dark);
+        }
+        
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .max-warning {
+            color: var(--primary-dark);
+            font-size: 14px;
+            text-align: center;
+            margin-top: 15px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        .transaction-input {
+            margin-bottom: 25px;
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: 700;
+            color: var(--dark);
+            font-size: 16px;
+        }
+        
+        .input-group input {
+            width: 100%;
+            padding: 16px 20px;
+            background: white;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            border-radius: 12px;
+            font-size: 16px;
+            transition: all 0.3s;
+            color: var(--text);
+        }
+        
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(255, 182, 193, 0.2);
+        }
+        
+        .fee-display {
+            background: linear-gradient(135deg, rgba(255, 182, 193, 0.3), rgba(255, 209, 220, 0.2));
+            color: var(--text);
+            padding: 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 25px;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fee-display h3 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .fee-amount {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .payment-selection {
+            margin-bottom: 25px;
+        }
+        
+        .payment-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .payment-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        
+        .payment-option {
+            background: white;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+            border-radius: 12px;
+            padding: 18px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .payment-option:hover {
+            border-color: var(--primary);
+            background: rgba(255, 182, 193, 0.1);
+            transform: translateY(-5px);
+        }
+        
+        .payment-option.selected {
+            border-color: var(--primary);
+            background: rgba(255, 182, 193, 0.15);
+            box-shadow: 0 10px 20px rgba(255, 182, 193, 0.2);
+        }
+        
+        .payment-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+            color: var(--primary);
+        }
+        
+        .payment-name {
+            font-size: 16px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .whatsapp-btn {
+            display: block;
+            width: 100%;
+            padding: 18px;
+            background: linear-gradient(135deg, #25D366, #128C7E);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.2);
+        }
+        
+        .whatsapp-btn:hover:not(:disabled) {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(37, 211, 102, 0.3);
+        }
+        
+        .whatsapp-btn:disabled {
+            background: #C5C5C5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+        
+        .whatsapp-btn i {
+            margin-right: 10px;
+        }
+        
+        .modal-footer {
+            padding: 0 25px 25px;
+        }
+        
+        .modal-note {
+            font-size: 13px;
+            color: var(--text);
+            opacity: 0.7;
+            text-align: center;
+            margin-top: 15px;
+        }
+        
+        /* Notification */
+        .notification {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-100px);
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: white;
+            padding: 15px 25px;
+            border-radius: 12px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            z-index: 10000;
+            font-weight: 700;
+            transition: transform 0.4s ease;
+            text-align: center;
+            max-width: 90%;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 25px 15px;
+            }
+            
+            .profile-container {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .title {
+                font-size: 28px;
+            }
+            
+            .stats {
+                padding: 15px;
+            }
+            
+            .stat-number {
+                font-size: 22px;
+            }
+            
+            .modal-content {
+                max-width: 100%;
+            }
+            
+            .payment-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .social-media-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+            
+            .music-player {
+                top: 10px;
+                right: 10px;
+                padding: 8px 12px;
+            }
+            
+            .music-info {
+                display: none;
+            }
+        }
+        
+        /* Animations untuk elemen yang muncul */
+        .animate-item {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeUp 0.6s forwards;
+        }
+        
+        @keyframes fadeUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .delay-1 { animation-delay: 0.1s; }
+        .delay-2 { animation-delay: 0.2s; }
+        .delay-3 { animation-delay: 0.3s; }
+        .delay-4 { animation-delay: 0.4s; }
+        .delay-5 { animation-delay: 0.5s; }
+        
+        /* Scrollbar Styling */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        
+        ::-webkit-scrollbar-track {
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 10px;
+        }
+        
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, var(--primary), var(--primary-dark));
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Music Player -->
+    <div class="music-player" id="musicPlayer">
+        <div class="music-info">
+            <div class="music-icon">
+                <i class="fas fa-music"></i>
+            </div>
+            <div class="music-text">
+                <div class="music-title">Glue Song</div>
+                <div class="music-artist">beabadoobee</div>
+            </div>
+        </div>
+        <div class="music-controls">
+            <button class="music-btn" id="playPauseBtn">
+                <i class="fas fa-play"></i>
+            </button>
+            <div class="volume-control" id="volumeControl">
+                <div class="volume-slider" id="volumeSlider"></div>
+                <div class="volume-handle" id="volumeHandle"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Audio Element -->
+    <audio id="backgroundMusic" loop>
+        <source src="https://cdn.discordapp.com/attachments/1455029046638415998/1459684406842097793/fc2183da227dc1b688884ae065f96478.mp3?ex=69642c8a&is=6962db0a&hm=0612ad48a15075794a5745fc8399075f314907b34c91eff6eac2cc3633eec1e5&" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts">
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+        <div class="heart"></div>
+    </div>
+    
+    <!-- Notification -->
+    <div class="notification" id="notification"></div>
+    
+    <div class="container">
+        <div class="header">
+            <div class="profile-container">
+                <div class="profile-pic">
+                    <img src="https://i.ibb.co/Q0HPXHr/images.jpg" alt="Nefs Store">
+                </div>
+                <div class="online-badge"></div>
+            </div>
+            
+            <h1 class="title">Nefs Store</h1>
+            <p class="subtitle">Digital Solutions & Services</p>
+            
+            <div class="badge-container">
+                <div class="badge"><i class="fas fa-shield-alt"></i> Terpercaya</div>
+                <div class="badge"><i class="fas fa-bolt"></i> Cepat</div>
+                <div class="badge"><i class="fas fa-star"></i> Profesional</div>
+            </div>
+            
+            <p class="bio">Menyediakan berbagai jasa digital dengan kualitas premium dan pelayanan terbaik untuk kebutuhan online Anda.</p>
+        </div>
+        
+        <div class="stats animate-item">
+            <div class="stat">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Klien</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">80+</div>
+                <div class="stat-label">Transaksi</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="averageRating">4.9</div>
+                <div class="stat-label">Rating</div>
+            </div>
+        </div>
+        
+        <!-- PRIORITAS PERTAMA: Support & Donasi, Grup WhatsApp, Layanan Jasa, Kontak Admin -->
+        <div class="links">
+            <a href="https://sociabuzz.com/kece8358/tribe" class="link-item donate animate-item delay-1" target="_blank">
+                <div class="icon">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Support & Donasi</h3>
+                    <p>Dukung perkembangan toko kami</p>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+            
+            <a href="https://chat.whatsapp.com/HFxpjY3ghyPKcw0kaSWE9v" class="link-item whatsapp animate-item delay-2" target="_blank">
+                <div class="icon">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Grup WhatsApp</h3>
+                    <p>Bergabung dengan komunitas kami</p>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+            
+            <div class="link-item service animate-item delay-3" onclick="openServiceModal()">
+                <div class="icon">
+                    <i class="fas fa-tools"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Layanan Jasa</h3>
+                    <p>Midman, Digital Marketing, Design</p>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </div>
+            
+            <a href="https://wa.me/6285167217853" class="link-item contact animate-item delay-4" target="_blank">
+                <div class="icon">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="link-text">
+                    <h3>Kontak Admin</h3>
+                    <p>Hubungi admin via WhatsApp</p>
+                </div>
+                <div class="arrow">
+                    <i class="fas fa-chevron-right"></i>
+                </div>
+            </a>
+        </div>
+        
+        <!-- PRIORITAS KEDUA: Social Media -->
+        <div class="social-media-card animate-item delay-5">
+            <div class="social-media-title">
+                <i class="fas fa-heart"></i> Ikuti Kami di Media Sosial
+            </div>
+            <div class="social-media-grid">
+                <div class="social-media-item instagram" onclick="openSocialLink('instagram')">
+                    <div class="social-media-icon">
+                        <i class="fab fa-instagram"></i>
+                    </div>
+                    <div class="social-media-name">Instagram</div>
+                    <div class="social-media-handle">@nefs_store</div>
+                </div>
+                
+                <div class="social-media-item tiktok" onclick="openSocialLink('tiktok')">
+                    <div class="social-media-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <div class="social-media-name">TikTok</div>
+                    <div class="social-media-handle">@nefsx8358</div>
+                </div>
+                
+                <div class="social-media-item telegram" onclick="openSocialLink('telegram')">
+                    <div class="social-media-icon">
+                        <i class="fab fa-telegram"></i>
+                    </div>
+                    <div class="social-media-name">Telegram</div>
+                    <div class="social-media-handle">@naufaltzye</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- PRIORITAS KETIGA: Rating -->
+        <div class="rating-section animate-item delay-6">
+            <div class="rating-title">Penilaian Toko</div>
+            <div class="current-rating">
+                <div class="rating-left">
+                    <div class="rating-value" id="ratingValue">4.9</div>
+                    <div>
+                        <div class="rating-stars" id="ratingStars">
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                            <span class="rating-star">★</span>
+                        </div>
+                        <div class="rating-count" id="ratingCount">Berdasarkan 128 ulasan</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="rating-input-container">
+                <div class="rate-us-title">Beri Penilaian untuk Toko Kami</div>
+                <div class="rating-input">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5">★</label>
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4">★</label>
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3">★</label>
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2">★</label>
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1">★</label>
+                </div>
+                <button class="submit-rating" onclick="submitRating()">Kirim Penilaian</button>
+            </div>
+        </div>
+        
+        <!-- Social Media Links di Footer -->
+        <div class="social-links animate-item delay-7">
+            <a href="https://www.instagram.com/nefs_store?igsh=MTlubTBmcDFraXFqdw==" class="social-icon instagram" target="_blank">
+                <i class="fab fa-instagram"></i>
+            </a>
+            <a href="https://www.tiktok.com/@nefsx8358?_r=1&_t=ZS-92xxxLuk0QM" class="social-icon tiktok" target="_blank">
+                <i class="fab fa-tiktok"></i>
+            </a>
+            <a href="https://t.me/naufaltzye" class="social-icon telegram" target="_blank">
+                <i class="fab fa-telegram"></i>
+            </a>
+            <a href="https://wa.me/6285167217853" class="social-icon whatsapp" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        
+        <div class="footer animate-item delay-8">
+            <p>© 2023 Nefs Store. Semua hak dilindungi.</p>
+            <p style="margin-top: 8px; font-size: 12px;">Terpercaya • Profesional • Berkualitas</p>
+        </div>
+    </div>
+    
+    <!-- Modal Layanan Jasa -->
+    <div class="modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Jasa Midman</h2>
+                <p>Layanan jasa perantara yang aman & terpercaya</p>
+                <button class="close-modal" onclick="closeServiceModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="service-question">Hitung Fee Midman Berdasarkan Nilai Transaksi</div>
+                
+                <div class="price-info">
+                    <h4>Aturan Fee Midman:</h4>
+                    <table class="price-table">
+                        <thead>
+                            <tr>
+                                <th>Rentang Transaksi</th>
+                                <th>Fee Midman</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Rp 1.000 - Rp 50.000</td>
+                                <td><strong>Rp 1.000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rp 51.000 - Rp 100.000</td>
+                                <td><strong>Rp 2.000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rp 101.000 - Rp 200.000</td>
+                                <td><strong>Rp 3.000</strong></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <p class="max-warning"><i class="fas fa-exclamation-circle"></i> MAX TRANSAKSI: Rp 200.000</p>
+                </div>
+                
+                <div class="transaction-input">
+                    <div class="input-group">
+                        <label for="transactionAmount">Masukkan Nilai Transaksi (Rp)</label>
+                        <input type="number" id="transactionAmount" placeholder="Contoh: 75000" min="1000" max="200000" oninput="calculateFee()">
+                    </div>
+                    
+                    <div class="fee-display" id="feeDisplay" style="display: none;">
+                        <h3>Fee Midman Anda:</h3>
+                        <div class="fee-amount" id="feeAmount">Rp 0</div>
+                        <p id="feeRange">Untuk transaksi Rp 0</p>
+                    </div>
+                </div>
+                
+                <div class="payment-selection">
+                    <div class="payment-title">Pilih Metode Pembayaran:</div>
+                    <div class="payment-options">
+                        <div class="payment-option" data-method="QRIS" onclick="selectPaymentMethod(this)">
+                            <div class="payment-icon">
+                                <i class="fas fa-qrcode"></i>
+                            </div>
+                            <div class="payment-name">QRIS</div>
+                        </div>
+                        <div class="payment-option" data-method="DANA" onclick="selectPaymentMethod(this)">
+                            <div class="payment-icon">
+                                <i class="fas fa-wallet"></i>
+                            </div>
+                            <div class="payment-name">DANA</div>
+                        </div>
+                        <div class="payment-option" data-method="GOPAY" onclick="selectPaymentMethod(this)">
+                            <div class="payment-icon">
+                                <i class="fab fa-google-pay"></i>
+                            </div>
+                            <div class="payment-name">GOPAY</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="whatsapp-btn" id="whatsappBtn" disabled onclick="openWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp
+                </button>
+                <p class="modal-note">Isi nilai transaksi dan pilih metode pembayaran terlebih dahulu</p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        // Music Player Functionality
+        const audio = document.getElementById('backgroundMusic');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const volumeControl = document.getElementById('volumeControl');
+        const volumeSlider = document.getElementById('volumeSlider');
+        const volumeHandle = document.getElementById('volumeHandle');
+        
+        // Set initial volume
+        audio.volume = 0.5;
+        
+        // Play/Pause functionality
+        playPauseBtn.addEventListener('click', function() {
+            if (audio.paused) {
+                audio.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                showNotification('Musik diputar: Glue Song - beabadoobee', 'success');
+            } else {
+                audio.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                showNotification('Musik dijeda', 'info');
+            }
+        });
+        
+        // Volume control
+        let isDragging = false;
+        
+        volumeControl.addEventListener('mousedown', function(e) {
+            isDragging = true;
+            updateVolume(e);
+        });
+        
+        document.addEventListener('mousemove', function(e) {
+            if (isDragging) {
+                updateVolume(e);
+            }
+        });
+        
+        document.addEventListener('mouseup', function() {
+            isDragging = false;
+        });
+        
+        // Touch events for mobile
+        volumeControl.addEventListener('touchstart', function(e) {
+            isDragging = true;
+            updateVolume(e);
+            e.preventDefault();
+        });
+        
+        document.addEventListener('touchmove', function(e) {
+            if (isDragging) {
+                updateVolume(e);
+                e.preventDefault();
+            }
+        });
+        
+        document.addEventListener('touchend', function() {
+            isDragging = false;
+        });
+        
+        function updateVolume(e) {
+            const rect = volumeControl.getBoundingClientRect();
+            let x;
+            
+            if (e.type.includes('touch')) {
+                x = e.touches[0].clientX - rect.left;
+            } else {
+                x = e.clientX - rect.left;
+            }
+            
+            // Ensure x is within the volume control bounds
+            x = Math.max(0, Math.min(x, rect.width));
+            
+            // Update slider width
+            const percentage = x / rect.width;
+            volumeSlider.style.width = (percentage * 100) + '%';
+            volumeHandle.style.left = (percentage * 100) + '%';
+            
+            // Update audio volume (0 to 1)
+            audio.volume = percentage;
+        }
+        
+        // Initialize volume slider position
+        volumeSlider.style.width = '70%';
+        volumeHandle.style.left = '70%';
+        
+        // Auto-play music after user interaction (to comply with browser policies)
+        document.addEventListener('click', function initAudio() {
+            if (audio.paused) {
+                audio.play().then(() => {
+                    playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                }).catch(error => {
+                    console.log("Autoplay prevented:", error);
+                });
+            }
+            // Remove event listener after first interaction
+            document.removeEventListener('click', initAudio);
+        });
+        
+        // Data rating (simpan di localStorage)
+        let storeRatings = {
+            average: 4.9,
+            count: 128,
+            ratings: []
+        };
+        
+        // Social media links
+        const socialLinks = {
+            instagram: "https://www.instagram.com/nefs_store?igsh=MTlubTBmcDFraXFqdw==",
+            tiktok: "https://www.tiktok.com/@nefsx8358?_r=1&_t=ZS-92xxxLuk0QM",
+            telegram: "https://t.me/naufaltzye"
+        };
+        
+        // Fungsi untuk membuka link sosial media
+        function openSocialLink(platform) {
+            if (socialLinks[platform]) {
+                window.open(socialLinks[platform], '_blank');
+                showNotification(`Membuka ${platform.charAt(0).toUpperCase() + platform.slice(1)}...`, 'success');
+            }
+        }
+        
+        // Load ratings dari localStorage
+        function loadRatings() {
+            const savedRatings = localStorage.getItem('nefsStoreRatings');
+            if (savedRatings) {
+                storeRatings = JSON.parse(savedRatings);
+                updateRatingDisplay();
+            }
+        }
+        
+        // Save ratings ke localStorage
+        function saveRatings() {
+            localStorage.setItem('nefsStoreRatings', JSON.stringify(storeRatings));
+        }
+        
+        // Update tampilan rating
+        function updateRatingDisplay() {
+            document.getElementById('averageRating').textContent = storeRatings.average.toFixed(1);
+            document.getElementById('ratingValue').textContent = storeRatings.average.toFixed(1);
+            document.getElementById('ratingCount').textContent = `Berdasarkan ${storeRatings.count} ulasan`;
+            
+            // Update bintang
+            const stars = document.querySelectorAll('#ratingStars .rating-star');
+            const fullStars = Math.floor(storeRatings.average);
+            const hasHalfStar = storeRatings.average % 1 >= 0.5;
+            
+            stars.forEach((star, index) => {
+                star.style.color = '#FFD700';
+                star.style.opacity = '0.3';
+                star.style.textShadow = 'none';
+            });
+            
+            // Set warna bintang
+            for (let i = 0; i < fullStars; i++) {
+                if (i < stars.length) {
+                    stars[i].style.color = '#FFD700';
+                    stars[i].style.opacity = '1';
+                    stars[i].style.textShadow = '0 2px 5px rgba(255, 215, 0, 0.5)';
+                }
+            }
+            
+            if (hasHalfStar && fullStars < stars.length) {
+                stars[fullStars].style.color = '#FFD700';
+                stars[fullStars].style.opacity = '0.7';
+                stars[fullStars].style.textShadow = '0 2px 5px rgba(255, 215, 0, 0.3)';
+            }
+        }
+        
+        // Submit rating
+        function submitRating() {
+            const selectedRating = document.querySelector('input[name="rating"]:checked');
+            if (!selectedRating) {
+                showNotification('Silakan pilih rating terlebih dahulu!', 'warning');
+                return;
+            }
+            
+            const ratingValue = parseInt(selectedRating.value);
+            
+            // Tambah rating baru
+            storeRatings.ratings.push(ratingValue);
+            
+            // Hitung rata-rata baru
+            const total = storeRatings.ratings.reduce((sum, rating) => sum + rating, 0);
+            storeRatings.average = total / storeRatings.ratings.length;
+            storeRatings.count = storeRatings.ratings.length;
+            
+            // Simpan dan update
+            saveRatings();
+            updateRatingDisplay();
+            
+            // Reset selection
+            document.querySelectorAll('input[name="rating"]').forEach(input => {
+                input.checked = false;
+            });
+            
+            // Tampilkan notifikasi
+            showNotification(`Terima kasih! Anda memberi rating ${ratingValue} bintang.`, 'success');
+        }
+        
+        // Fungsi untuk menampilkan notifikasi
+        function showNotification(message, type = 'info') {
+            const notification = document.getElementById('notification');
+            
+            // Set warna berdasarkan tipe
+            if (type === 'success') {
+                notification.style.background = 'linear-gradient(90deg, #7ED321, #50B22C)';
+            } else if (type === 'warning') {
+                notification.style.background = 'linear-gradient(90deg, #FFD166, #FFB347)';
+            } else if (type === 'error') {
+                notification.style.background = 'linear-gradient(90deg, #FF6B6B, #FF4757)';
+            } else {
+                notification.style.background = 'linear-gradient(90deg, var(--primary), var(--primary-dark))';
+            }
+            
+            notification.textContent = message;
+            notification.style.transform = 'translateX(-50%) translateY(0)';
+            
+            setTimeout(() => {
+                notification.style.transform = 'translateX(-50%) translateY(-100px)';
+            }, 3000);
+        }
+        
+        // Variabel global untuk layanan midman
+        let transactionAmount = 0;
+        let calculatedFee = 0;
+        let selectedPaymentMethod = null;
+        
+        // Fungsi untuk membuka modal layanan
+        function openServiceModal() {
+            document.getElementById('serviceModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            resetTransaction();
+        }
+        
+        // Fungsi untuk menutup modal layanan
+        function closeServiceModal() {
+            document.getElementById('serviceModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+            resetTransaction();
+        }
+        
+        // Reset transaksi
+        function resetTransaction() {
+            transactionAmount = 0;
+            calculatedFee = 0;
+            selectedPaymentMethod = null;
+            
+            document.getElementById('transactionAmount').value = '';
+            document.getElementById('feeDisplay').style.display = 'none';
+            
+            // Reset pilihan pembayaran
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Nonaktifkan tombol WhatsApp
+            document.getElementById('whatsappBtn').disabled = true;
+            document.getElementById('whatsappBtn').innerHTML = '<i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp';
+        }
+        
+        // Pilih metode pembayaran
+        function selectPaymentMethod(element) {
+            // Hapus selected dari semua opsi
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Tambah selected ke opsi yang dipilih
+            element.classList.add('selected');
+            selectedPaymentMethod = element.getAttribute('data-method');
+            
+            // Aktifkan tombol WhatsApp jika semua data sudah lengkap
+            updateWhatsAppButton();
+        }
+        
+        // Hitung fee berdasarkan nilai transaksi
+        function calculateFee() {
+            const amountInput = document.getElementById('transactionAmount');
+            const amount = parseInt(amountInput.value) || 0;
+            
+            // Validasi maksimal transaksi
+            if (amount > 200000) {
+                amountInput.value = 200000;
+                showNotification("Maksimal transaksi Rp 200.000", 'warning');
+                return calculateFee();
+            }
+            
+            // Validasi minimal transaksi
+            if (amount < 1000 && amount > 0) {
+                amountInput.value = 1000;
+                showNotification("Minimal transaksi Rp 1.000", 'warning');
+                return calculateFee();
+            }
+            
+            transactionAmount = amount;
+            
+            // Hitung fee berdasarkan rentang
+            if (amount >= 1000 && amount <= 50000) {
+                calculatedFee = 1000;
+            } else if (amount >= 51000 && amount <= 100000) {
+                calculatedFee = 2000;
+            } else if (amount >= 101000 && amount <= 200000) {
+                calculatedFee = 3000;
+            } else {
+                calculatedFee = 0;
+            }
+            
+            // Tampilkan hasil perhitungan
+            const feeDisplay = document.getElementById('feeDisplay');
+            const feeAmount = document.getElementById('feeAmount');
+            const feeRange = document.getElementById('feeRange');
+            
+            if (amount > 0 && calculatedFee > 0) {
+                // Format angka dengan pemisah ribuan
+                const formatRupiah = (num) => {
+                    return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                };
+                
+                feeAmount.textContent = formatRupiah(calculatedFee);
+                feeRange.textContent = `Untuk transaksi ${formatRupiah(amount)}`;
+                feeDisplay.style.display = 'block';
+            } else {
+                feeDisplay.style.display = 'none';
+            }
+            
+            // Aktifkan tombol WhatsApp jika semua data sudah lengkap
+            updateWhatsAppButton();
+        }
+        
+        // Update status tombol WhatsApp
+        function updateWhatsAppButton() {
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            
+            if (transactionAmount > 0 && calculatedFee > 0 && selectedPaymentMethod) {
+                const formatRupiah = (num) => {
+                    return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                };
+                
+                whatsappBtn.disabled = false;
+                whatsappBtn.innerHTML = `<i class="fab fa-whatsapp"></i> Bayar dengan ${selectedPaymentMethod}`;
+            } else {
+                whatsappBtn.disabled = true;
+                whatsappBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp';
+            }
+        }
+        
+        // Event listener untuk modal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load ratings
+            loadRatings();
+            
+            // Animate elements on load
+            setTimeout(() => {
+                document.querySelectorAll('.animate-item').forEach((item, index) => {
+                    item.style.animationDelay = (index * 0.1) + 's';
+                });
+            }, 300);
+            
+            // Event listener untuk menutup modal saat klik di luar konten
+            document.getElementById('serviceModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeServiceModal();
+                }
+            });
+            
+            // Event listener untuk menutup modal dengan tombol ESC
+            document.addEventListener('keydown', function(e) {
+                const modal = document.getElementById('serviceModal');
+                if (e.key === 'Escape' && modal.style.display === 'flex') {
+                    closeServiceModal();
+                }
+            });
+            
+            // Format input saat user mengetik
+            const amountInput = document.getElementById('transactionAmount');
+            amountInput.addEventListener('input', function() {
+                // Hapus karakter selain angka
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+        });
+        
+        // Fungsi untuk membuka WhatsApp dengan pesan otomatis
+        function openWhatsApp() {
+            if (transactionAmount <= 0 || calculatedFee <= 0 || !selectedPaymentMethod) {
+                showNotification("Silakan lengkapi semua data terlebih dahulu", 'warning');
+                return;
+            }
+            
+            // Nomor WhatsApp
+            const phoneNumber = "6285167217853";
+            
+            // Format angka untuk tampilan
+            const formatRupiah = (num) => {
+                return 'Rp ' + num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+            };
+            
+            // Pesan yang akan dikirim
+            const message = `Halo bang, saya ingin menggunakan jasa midman untuk transaksi sebesar ${formatRupiah(transactionAmount)} dengan fee ${formatRupiah(calculatedFee)}. Saya ingin membayar menggunakan ${selectedPaymentMethod}. Apakah bisa dilayani?`;
+            
+            // Encode pesan untuk URL
+            const encodedMessage = encodeURIComponent(message);
+            
+            // Buat URL WhatsApp
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            // Buka WhatsApp di tab baru
+            window.open(whatsappUrl, '_blank');
+            
+            // Tampilkan notifikasi
+            showNotification(`Membuka WhatsApp dengan metode ${selectedPaymentMethod}...`, 'success');
+            
+            // Tutup modal setelah beberapa detik
+            setTimeout(() => {
+                closeServiceModal();
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
