@@ -1263,19 +1263,17 @@
     <div class="container">
         <div class="header">
             <div class="profile-container">
-                <div class="profile-pic">
-                    <img src="https://ibb.co.com/Q0HPXHr" alt="Nefs Store">
+                <div class="profile-pic" id="profilePic">
+                    <!-- OPSI 1: Gambar placeholder online -->
+                    <img src="https://ibb.co.com/Q0HPXHr" alt="Nefs Store" onerror="showFallbackProfile()">
+                    
+                    <!-- OPSI 2: Gambar lokal (jika ada) -->
+                    <!-- <img src="logo-nefs.jpg" alt="Nefs Store" onerror="showFallbackProfile()"> -->
+                    
+                    <!-- Fallback jika gambar tidak muncul -->
+                    <div class="initials">NS</div>
                 </div>
                 <div class="online-badge"></div>
-            </div>
-            
-            <h1 class="title">Nefs Store</h1>
-            <p class="subtitle">Digital Solutions & Services</p>
-            
-            <div class="badge-container">
-                <div class="badge"><i class="fas fa-shield-alt"></i> Terpercaya</div>
-                <div class="badge"><i class="fas fa-bolt"></i> Cepat</div>
-                <div class="badge"><i class="fas fa-star"></i> Profesional</div>
             </div>
             
             <p class="bio">Menyediakan berbagai jasa digital dengan kualitas premium dan pelayanan terbaik untuk kebutuhan online Anda.</p>
