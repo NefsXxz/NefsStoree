@@ -1458,16 +1458,24 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Rp 1.000 - Rp 50.000</td>
+                                <td>Rp 1.000 - Rp 20.000</td>
                                 <td><strong>Rp 1.000</strong></td>
                             </tr>
                             <tr>
-                                <td>Rp 51.000 - Rp 100.000</td>
+                                <td>Rp 21.000 - Rp 50.000</td>
                                 <td><strong>Rp 2.000</strong></td>
                             </tr>
                             <tr>
-                                <td>Rp 101.000 - Rp 200.000</td>
+                                <td>Rp 51.000 - Rp 100.000</td>
                                 <td><strong>Rp 3.000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rp 101.000 - Rp 150.000</td>
+                                <td><strong>Rp 4.000</strong></td>
+                            </tr>
+                            <tr>
+                                <td>Rp 151.000 - Rp 200.000</td>
+                                <td><strong>Rp 5.000</strong></td>
                             </tr>
                         </tbody>
                     </table>
@@ -1817,13 +1825,17 @@
             
             transactionAmount = amount;
             
-            // Hitung fee berdasarkan rentang
-            if (amount >= 1000 && amount <= 50000) {
+            // Hitung fee berdasarkan rentang baru
+            if (amount >= 1000 && amount <= 20000) {
                 calculatedFee = 1000;
-            } else if (amount >= 51000 && amount <= 100000) {
+            } else if (amount >= 21000 && amount <= 50000) {
                 calculatedFee = 2000;
-            } else if (amount >= 101000 && amount <= 200000) {
+            } else if (amount >= 51000 && amount <= 100000) {
                 calculatedFee = 3000;
+            } else if (amount >= 101000 && amount <= 150000) {
+                calculatedFee = 4000;
+            } else if (amount >= 151000 && amount <= 200000) {
+                calculatedFee = 5000;
             } else {
                 calculatedFee = 0;
             }
