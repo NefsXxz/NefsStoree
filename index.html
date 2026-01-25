@@ -1217,6 +1217,249 @@
             background: linear-gradient(180deg, var(--primary), var(--primary-dark));
             border-radius: 10px;
         }
+        
+        /* Tambahan CSS untuk layanan baru */
+        .service-options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .service-option {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: left;
+        }
+        
+        .service-option:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 30px rgba(255, 182, 193, 0.2);
+        }
+        
+        .service-option.selected {
+            border-color: var(--primary);
+            background: rgba(255, 182, 193, 0.1);
+        }
+        
+        .service-option-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .service-option-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .service-option-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--dark);
+        }
+        
+        .service-option-desc {
+            font-size: 14px;
+            color: var(--text);
+            opacity: 0.7;
+            line-height: 1.5;
+        }
+        
+        .app-options {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .app-option {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        
+        .app-option:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+        
+        .app-option.selected {
+            border-color: var(--primary);
+            background: rgba(255, 182, 193, 0.1);
+        }
+        
+        .app-icon {
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .app-name {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        
+        /* CSS untuk konten aplikasi premium */
+        .app-content {
+            max-height: 400px;
+            overflow-y: auto;
+            padding-right: 10px;
+        }
+        
+        .app-content::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .app-content::-webkit-scrollbar-track {
+            background: rgba(255, 182, 193, 0.1);
+        }
+        
+        .app-content::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 10px;
+        }
+        
+        .price-category {
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .price-category h4 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .price-category h4 i {
+            color: var(--primary);
+        }
+        
+        .price-list {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .price-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid rgba(255, 182, 193, 0.2);
+        }
+        
+        .price-item:last-child {
+            border-bottom: none;
+        }
+        
+        .price-name {
+            font-size: 14px;
+            color: var(--text);
+            flex: 1;
+        }
+        
+        .price-value {
+            font-size: 14px;
+            font-weight: 700;
+            color: var(--primary-dark);
+            min-width: 100px;
+            text-align: right;
+        }
+        
+        .price-note {
+            font-size: 12px;
+            color: var(--text);
+            opacity: 0.7;
+            margin-top: 10px;
+            line-height: 1.5;
+        }
+        
+        .info-box {
+            background: rgba(255, 182, 193, 0.1);
+            border-radius: 12px;
+            padding: 15px;
+            margin-top: 20px;
+            border: 2px solid rgba(255, 182, 193, 0.3);
+        }
+        
+        .info-box h4 {
+            font-size: 16px;
+            margin-bottom: 10px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .info-box p {
+            font-size: 13px;
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        
+        .info-box ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        
+        .info-box li {
+            font-size: 13px;
+            color: var(--text);
+            opacity: 0.8;
+            line-height: 1.5;
+            margin-bottom: 5px;
+        }
+        
+        .warning-note {
+            color: #FF4757;
+            font-weight: 600;
+        }
+        
+        .success-note {
+            color: #2ED573;
+            font-weight: 600;
+        }
+        
+        /* Responsif untuk layanan */
+        @media (max-width: 480px) {
+            .app-options {
+                grid-template-columns: 1fr;
+            }
+            
+            .service-option-header {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -1317,13 +1560,13 @@
                 </div>
             </a>
             
-            <div class="link-item service animate-item delay-3" onclick="openServiceModal()">
+            <div class="link-item service animate-item delay-3" onclick="openServiceSelectionModal()">
                 <div class="icon">
                     <i class="fas fa-tools"></i>
                 </div>
                 <div class="link-text">
                     <h3>Layanan Jasa</h3>
-                    <p>Midman, Digital Marketing, Design</p>
+                    <p>Aplikasi Premium, Top Up, Midman</p>
                 </div>
                 <div class="arrow">
                     <i class="fas fa-chevron-right"></i>
@@ -1435,7 +1678,204 @@
         </div>
     </div>
     
-    <!-- Modal Layanan Jasa -->
+    <!-- Modal Pilihan Layanan -->
+    <div class="modal" id="serviceSelectionModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Pilih Jenis Layanan</h2>
+                <p>Silakan pilih layanan yang Anda butuhkan</p>
+                <button class="close-modal" onclick="closeServiceSelectionModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="service-options">
+                    <div class="service-option" onclick="selectServiceType('premium')">
+                        <div class="service-option-header">
+                            <div class="service-option-icon">
+                                <i class="fas fa-crown"></i>
+                            </div>
+                            <div>
+                                <div class="service-option-title">Aplikasi Premium</div>
+                                <div class="service-option-desc">Netflix, YouTube, Spotify, Alight Motion dengan harga terjangkau</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-option" onclick="selectServiceType('topup')">
+                        <div class="service-option-header">
+                            <div class="service-option-icon">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <div>
+                                <div class="service-option-title">Top Up Game</div>
+                                <div class="service-option-desc">Free Fire Diamond, Membership, Cards & Passes</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-option" onclick="selectServiceType('midman')">
+                        <div class="service-option-header">
+                            <div class="service-option-icon">
+                                <i class="fas fa-handshake"></i>
+                            </div>
+                            <div>
+                                <div class="service-option-title">Jasa Midman</div>
+                                <div class="service-option-desc">Layanan perantara transaksi aman & terpercaya</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Aplikasi Premium -->
+    <div class="modal" id="premiumAppModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Aplikasi Premium</h2>
+                <p>Pilih aplikasi yang ingin Anda beli</p>
+                <button class="close-modal" onclick="closePremiumAppModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="app-options">
+                    <div class="app-option" onclick="selectApp('netflix')">
+                        <div class="app-icon">
+                            <i class="fas fa-tv"></i>
+                        </div>
+                        <div class="app-name">NETFLIX</div>
+                    </div>
+                    
+                    <div class="app-option" onclick="selectApp('youtube')">
+                        <div class="app-icon">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <div class="app-name">YOUTUBE</div>
+                    </div>
+                    
+                    <div class="app-option" onclick="selectApp('spotify')">
+                        <div class="app-icon">
+                            <i class="fab fa-spotify"></i>
+                        </div>
+                        <div class="app-name">SPOTIFY</div>
+                    </div>
+                    
+                    <div class="app-option" onclick="selectApp('alight')">
+                        <div class="app-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <div class="app-name">ALIGHT MOTION</div>
+                    </div>
+                </div>
+                
+                <div id="appContent" class="app-content">
+                    <!-- Konten aplikasi akan dimuat di sini -->
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="whatsapp-btn" id="whatsappAppBtn" onclick="orderAppViaWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+                <p class="modal-note">Pilih aplikasi terlebih dahulu untuk melihat harga dan info</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Top Up Game -->
+    <div class="modal" id="topUpModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Top Up Free Fire</h2>
+                <p>Diamond, Membership, Cards & Passes</p>
+                <button class="close-modal" onclick="closeTopUpModal()">×</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="app-content">
+                    <div class="price-category">
+                        <h4><i class="fas fa-crown"></i> MEMBERSHIP</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">Mingguan</span>
+                                <span class="price-value">Rp 32.699</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Bulanan</span>
+                                <span class="price-value">Rp 88.734</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Mingguan (×2)</span>
+                                <span class="price-value">Rp 59.386</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Bulanan (×2)</span>
+                                <span class="price-value">Rp 169.105</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-id-card"></i> CARDS & PASSES</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">BP Card</span>
+                                <span class="price-value">Rp 48.531</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Level Up Pass – Level 6</span>
+                                <span class="price-value">Rp 10.456</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Level Up Pass – Level 10</span>
+                                <span class="price-value">Rp 12.956</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Level Up Pass – Level 15</span>
+                                <span class="price-value">Rp 15.760</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Level Up Pass – Level 30</span>
+                                <span class="price-value">Rp 19.717</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-gem"></i> DIAMOND</h4>
+                        <div class="price-list" id="diamondList">
+                            <!-- Diamond list akan diisi dengan JavaScript -->
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-exclamation-circle"></i> INFO PENTING</h4>
+                        <ul>
+                            <li>Proses sesuai antrian</li>
+                            <li>Estimasi 1–5 menit</li>
+                            <li>Max proses 1×24 jam</li>
+                            <li>Proses bisa lebih lama jika server padat</li>
+                            <li>Top up via ID (tanpa login akun)</li>
+                            <li>Setelah order, kirim ID ke seller</li>
+                            <li>Pastikan ID sudah benar sebelum order</li>
+                            <li>Salah input ID bukan tanggung jawab seller</li>
+                            <li class="warning-note">Order TIDAK BISA DICANCEL atau REFUND ketika sudah/sedang diproses</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="modal-footer">
+                <button class="whatsapp-btn" onclick="orderTopUpViaWhatsApp()">
+                    <i class="fab fa-whatsapp"></i> Pesan via WhatsApp
+                </button>
+                <p class="modal-note">Kirim ID Free Fire Anda saat memesan</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Jasa Midman (modal lama yang sudah ada) -->
     <div class="modal" id="serviceModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1756,21 +2196,446 @@
         let calculatedFee = 0;
         let selectedPaymentMethod = null;
         
-        // Fungsi untuk membuka modal layanan
+        // Variabel untuk layanan baru
+        let selectedServiceType = null;
+        let selectedApp = null;
+        let selectedAppName = '';
+        
+        // Data aplikasi premium
+        const premiumAppsData = {
+            netflix: {
+                name: "NETFLIX",
+                content: `
+                    <div class="price-category">
+                        <h4><i class="fas fa-share-alt"></i> SHARING</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Hari [1P1U]</span>
+                                <span class="price-value">Rp 9.500</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">2 Hari [1P1U]</span>
+                                <span class="price-value">Rp 10.500</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">3 Hari [1P1U]</span>
+                                <span class="price-value">Rp 12.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">7 Hari [1P1U]</span>
+                                <span class="price-value">Rp 17.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan [1P1U]</span>
+                                <span class="price-value">Rp 30.500</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan [1P2U]</span>
+                                <span class="price-value">Rp 21.000</span>
+                            </div>
+                        </div>
+                        <div class="price-note">Maks login 1 device • Full garansi</div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-user-friends"></i> SEMI PRIVATE</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan</span>
+                                <span class="price-value">Rp 34.500</span>
+                            </div>
+                        </div>
+                        <div class="price-note">Maks login 2 device • Full garansi</div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-user-shield"></i> PRIVATE</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan Paket Ponsel</span>
+                                <span class="price-value">Rp 17.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan Paket Dasar</span>
+                                <span class="price-value">Rp 38.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan Paket Standar</span>
+                                <span class="price-value">Rp 84.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan Paket Premium</span>
+                                <span class="price-value">Rp 159.000</span>
+                            </div>
+                        </div>
+                        <div class="price-note">
+                            <strong>PRIVATE INFO:</strong><br>
+                            • Via link bundle Telkomsel<br>
+                            • Daftar pakai akun sendiri<br>
+                            • Dapat 5 profil<br>
+                            • Maks login bebas atur sendiri<br>
+                            • No garansi<br>
+                            • Akun tanggung jawab masing-masing<br>
+                            • Order = paham, no komplain
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> NOTE / INFO</h4>
+                        <ul>
+                            <li>Akun dari seller</li>
+                            <li>All device (kecuali 1U2U dilarang login di TV)</li>
+                            <li>Penggunaan sharing no komplain limit screen</li>
+                            <li>Order sharing = paham sharing</li>
+                            <li>Proses 5 menit (max 24 jam)</li>
+                            <li>Non rush</li>
+                            <li>No spam</li>
+                            <li class="success-note">Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            youtube: {
+                name: "YOUTUBE PREMIUM",
+                content: `
+                    <div class="price-category">
+                        <h4><i class="fas fa-users"></i> FAMILY PLAN</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">Famplan 1 Bulan (ACC Buyer)</span>
+                                <span class="price-value">Rp 7.500</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Famplan 2 Bulan (ACC Buyer)</span>
+                                <span class="price-value">Rp 9.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Mixplan 3 Bulan (ACC Buyer)</span>
+                                <span class="price-value">Rp 13.500</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Famhead 1 Bulan (ACC Seller)</span>
+                                <span class="price-value">Rp 11.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Indiplan 1 Bulan (ACC Seller)</span>
+                                <span class="price-value">Rp 12.500</span>
+                            </div>
+                        </div>
+                        <div class="price-note">
+                            ACC Buyer: Kirim email saja • Full garansi<br>
+                            ACC Seller: Bergaransi selama tidak ganti sandi
+                        </div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-mobile-alt"></i> JASPAY YOUTUBE</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">Famhead 1 Bulan (ACC Buyer)</span>
+                                <span class="price-value">Rp 10.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Indiplan 1 Bulan (ACC Buyer)</span>
+                                <span class="price-value">Rp 11.500</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">Mixplan 3 Bulan (ACC Buyer)</span>
+                                <span class="price-value">Rp 12.500</span>
+                            </div>
+                        </div>
+                        <div class="price-note">
+                            ACC Buyer: Kirim email & password ke seller (no verifikasi)<br>
+                            Wajib email fresh / masih baru
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> NOTE / INFO</h4>
+                        <ul>
+                            <li>Garansi sesuai ketentuan</li>
+                            <li>Mixplan: 1B Indiplan + 2B Famplan</li>
+                            <li>Mixplan akun buyer wajib fresh</li>
+                            <li>Tidak menerima refund bila pesanan sudah diproses</li>
+                            <li>Proses max 1×24 jam (sesuai antrian)</li>
+                            <li>No rush • No spam</li>
+                            <li class="success-note">Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            spotify: {
+                name: "SPOTIFY PREMIUM",
+                content: `
+                    <div class="price-category">
+                        <h4><i class="fas fa-graduation-cap"></i> STUDENT PLAN</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan (Garansi 24 jam)</span>
+                                <span class="price-value">Rp 13.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan (Full Garansi)</span>
+                                <span class="price-value">Rp 17.000</span>
+                            </div>
+                        </div>
+                        <div class="price-note">
+                            Bisa All Region • iOS disarankan via Web<br>
+                            Support all device
+                        </div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-users"></i> FAMILY PLAN</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Bulan</span>
+                                <span class="price-value">Rp 19.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-user"></i> INDIVIDUAL PLAN</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">3 Bulan (Full Garansi)</span>
+                                <span class="price-value">Rp 21.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">4 Bulan (Full Garansi)</span>
+                                <span class="price-value">Rp 24.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">3 Bulan (No Garansi)</span>
+                                <span class="price-value">Rp 15.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> NOTE / INFO</h4>
+                        <ul>
+                            <li>Akun Seller</li>
+                            <li>Garansi sesuai ketentuan</li>
+                            <li>Garansi hanya berlaku 1x setiap 1 kali order</li>
+                            <li>Proses bisa slow / rush</li>
+                            <li>No rush • No spam</li>
+                            <li class="success-note">Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            alight: {
+                name: "ALIGHT MOTION",
+                content: `
+                    <div class="price-category">
+                        <h4><i class="fas fa-share-alt"></i> SHARING</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Tahun (ACC Seller)</span>
+                                <span class="price-value">Rp 4.000</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="price-category">
+                        <h4><i class="fas fa-user-shield"></i> PRIVATE</h4>
+                        <div class="price-list">
+                            <div class="price-item">
+                                <span class="price-name">1 Tahun (ACC Buyer)</span>
+                                <span class="price-value">Rp 5.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Tahun (ACC Seller)</span>
+                                <span class="price-value">Rp 6.000</span>
+                            </div>
+                            <div class="price-item">
+                                <span class="price-name">1 Tahun Bulk 100 Akun</span>
+                                <span class="price-value">Rp 7.000</span>
+                            </div>
+                        </div>
+                        <div class="price-note">Private maks login 10 device • Garansi 6 bulan</div>
+                    </div>
+                    
+                    <div class="info-box">
+                        <h4><i class="fas fa-info-circle"></i> NOTE / INFO</h4>
+                        <ul>
+                            <li>Support Android / iOS</li>
+                            <li>IPhone/IOS acc buyer only</li>
+                            <li>Acc seller = akun dari seller</li>
+                            <li>Acc buyer = pake email sendiri</li>
+                            <li>Acc buyer cukup send email saja</li>
+                            <li>Proses fast</li>
+                            <li>Proses 3 menit (max 1×24 jam sesuai antrian)</li>
+                            <li>No rush / no spam</li>
+                            <li>Bulk maksudnya mengorder akun AM sebanyak 100</li>
+                        </ul>
+                    </div>
+                `
+            }
+        };
+        
+        // Data diamond Free Fire
+        const diamondPrices = [
+            { name: "5 DM", price: "6.300" },
+            { name: "10 DM", price: "7.100" },
+            { name: "12 DM", price: "7.200" },
+            { name: "15 DM", price: "8.900" },
+            { name: "20 DM", price: "9.700" },
+            { name: "25 DM", price: "10.500" },
+            { name: "30 DM", price: "11.300" },
+            { name: "40 DM", price: "12.200" },
+            { name: "50 DM", price: "13.800" },
+            { name: "55 DM", price: "13.700" },
+            { name: "60 DM", price: "14.300" },
+            { name: "75 DM", price: "16.000" },
+            { name: "80 DM", price: "16.200" },
+            { name: "90 DM", price: "18.300" },
+            { name: "95 DM", price: "18.600" },
+            { name: "100 DM", price: "19.000" },
+            { name: "120 DM", price: "21.000" },
+            { name: "125 DM", price: "22.300" },
+            { name: "130 DM", price: "22.400" },
+            { name: "140 DM", price: "23.700" },
+            { name: "145 DM", price: "24.500" },
+            { name: "150 DM", price: "26.500" },
+            { name: "160 DM", price: "28.200" },
+            { name: "170 DM", price: "28.800" },
+            { name: "190 DM", price: "31.100" },
+            { name: "200 DM", price: "33.000" },
+            { name: "230 DM", price: "36.800" },
+            { name: "250 DM", price: "39.200" },
+            { name: "260 DM", price: "39.900" },
+            { name: "280 DM", price: "42.200" },
+            { name: "355 DM", price: "48.200" },
+            { name: "360 DM", price: "51.800" },
+            { name: "375 DM", price: "50.100" },
+            { name: "405 DM", price: "54.100" },
+            { name: "420 DM", price: "60.300" },
+            { name: "425 DM", price: "55.100" },
+            { name: "455 DM", price: "62.900" },
+            { name: "475 DM", price: "68.000" },
+            { name: "495 DM", price: "65.300" },
+            { name: "510 DM", price: "67.400" }
+        ];
+        
+        // Fungsi untuk membuka modal layanan (untuk backward compatibility)
         function openServiceModal() {
+            openServiceSelectionModal();
+        }
+        
+        // Fungsi untuk membuka modal pilihan layanan
+        function openServiceSelectionModal() {
+            closeAllModals();
+            document.getElementById('serviceSelectionModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closeServiceSelectionModal() {
+            document.getElementById('serviceSelectionModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Fungsi untuk memilih jenis layanan
+        function selectServiceType(type) {
+            selectedServiceType = type;
+            closeServiceSelectionModal();
+            
+            if (type === 'premium') {
+                openPremiumAppModal();
+            } else if (type === 'topup') {
+                openTopUpModal();
+            } else if (type === 'midman') {
+                openMidmanModal();
+            }
+        }
+        
+        // Fungsi untuk membuka modal aplikasi premium
+        function openPremiumAppModal() {
+            closeAllModals();
+            selectedApp = null;
+            selectedAppName = '';
+            
+            // Reset pilihan aplikasi
+            document.querySelectorAll('.app-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            
+            // Reset konten dan tombol
+            document.getElementById('appContent').innerHTML = '<p class="price-note" style="text-align: center; padding: 40px 0;">Pilih salah satu aplikasi di atas untuk melihat detail harga</p>';
+            document.getElementById('whatsappAppBtn').disabled = true;
+            document.getElementById('whatsappAppBtn').innerHTML = '<i class="fab fa-whatsapp"></i> Pesan via WhatsApp';
+            
+            document.getElementById('premiumAppModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+        
+        function closePremiumAppModal() {
+            document.getElementById('premiumAppModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Fungsi untuk memilih aplikasi
+        function selectApp(app) {
+            selectedApp = app;
+            selectedAppName = premiumAppsData[app].name;
+            
+            // Update UI pilihan
+            document.querySelectorAll('.app-option').forEach(option => {
+                option.classList.remove('selected');
+            });
+            event.currentTarget.classList.add('selected');
+            
+            // Tampilkan konten aplikasi
+            document.getElementById('appContent').innerHTML = premiumAppsData[app].content;
+            
+            // Aktifkan tombol WhatsApp
+            document.getElementById('whatsappAppBtn').disabled = false;
+            document.getElementById('whatsappAppBtn').innerHTML = `<i class="fab fa-whatsapp"></i> Pesan ${selectedAppName}`;
+        }
+        
+        // Fungsi untuk membuka modal top up
+        function openTopUpModal() {
+            closeAllModals();
+            document.getElementById('topUpModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Isi daftar diamond
+            const diamondList = document.getElementById('diamondList');
+            diamondList.innerHTML = '';
+            
+            diamondPrices.forEach(diamond => {
+                const diamondItem = document.createElement('div');
+                diamondItem.className = 'price-item';
+                diamondItem.innerHTML = `
+                    <span class="price-name">${diamond.name}</span>
+                    <span class="price-value">Rp ${diamond.price}</span>
+                `;
+                diamondList.appendChild(diamondItem);
+            });
+        }
+        
+        function closeTopUpModal() {
+            document.getElementById('topUpModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Fungsi untuk membuka modal midman
+        function openMidmanModal() {
             document.getElementById('serviceModal').style.display = 'flex';
             document.body.style.overflow = 'hidden';
             resetTransaction();
         }
         
-        // Fungsi untuk menutup modal layanan
+        // Fungsi untuk menutup modal layanan midman
         function closeServiceModal() {
             document.getElementById('serviceModal').style.display = 'none';
             document.body.style.overflow = 'auto';
             resetTransaction();
         }
         
-        // Reset transaksi
+        // Reset transaksi midman
         function resetTransaction() {
             transactionAmount = 0;
             calculatedFee = 0;
@@ -1789,7 +2654,7 @@
             document.getElementById('whatsappBtn').innerHTML = '<i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp';
         }
         
-        // Pilih metode pembayaran
+        // Pilih metode pembayaran midman
         function selectPaymentMethod(element) {
             // Hapus selected dari semua opsi
             document.querySelectorAll('.payment-option').forEach(option => {
@@ -1804,7 +2669,7 @@
             updateWhatsAppButton();
         }
         
-        // Hitung fee berdasarkan nilai transaksi
+        // Hitung fee midman berdasarkan nilai transaksi
         function calculateFee() {
             const amountInput = document.getElementById('transactionAmount');
             const amount = parseInt(amountInput.value) || 0;
@@ -1862,7 +2727,7 @@
             updateWhatsAppButton();
         }
         
-        // Update status tombol WhatsApp
+        // Update status tombol WhatsApp midman
         function updateWhatsAppButton() {
             const whatsappBtn = document.getElementById('whatsappBtn');
             
@@ -1879,42 +2744,36 @@
             }
         }
         
-        // Event listener untuk modal
-        document.addEventListener('DOMContentLoaded', function() {
-            // Load ratings
-            loadRatings();
+        // Fungsi untuk memesan aplikasi via WhatsApp
+        function orderAppViaWhatsApp() {
+            if (!selectedApp) {
+                showNotification('Silakan pilih aplikasi terlebih dahulu', 'warning');
+                return;
+            }
             
-            // Animate elements on load
-            setTimeout(() => {
-                document.querySelectorAll('.animate-item').forEach((item, index) => {
-                    item.style.animationDelay = (index * 0.1) + 's';
-                });
-            }, 300);
+            const phoneNumber = "6285167217853";
+            const message = `Halo bang, saya ingin memesan ${selectedAppName} dari Nefs Store. Bisa tolong info stok dan cara pemesanannya?`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
             
-            // Event listener untuk menutup modal saat klik di luar konten
-            document.getElementById('serviceModal').addEventListener('click', function(e) {
-                if (e.target === this) {
-                    closeServiceModal();
-                }
-            });
-            
-            // Event listener untuk menutup modal dengan tombol ESC
-            document.addEventListener('keydown', function(e) {
-                const modal = document.getElementById('serviceModal');
-                if (e.key === 'Escape' && modal.style.display === 'flex') {
-                    closeServiceModal();
-                }
-            });
-            
-            // Format input saat user mengetik
-            const amountInput = document.getElementById('transactionAmount');
-            amountInput.addEventListener('input', function() {
-                // Hapus karakter selain angka
-                this.value = this.value.replace(/[^0-9]/g, '');
-            });
-        });
+            window.open(whatsappUrl, '_blank');
+            showNotification(`Membuka WhatsApp untuk pesan ${selectedAppName}...`, 'success');
+            closePremiumAppModal();
+        }
         
-        // Fungsi untuk membuka WhatsApp dengan pesan otomatis
+        // Fungsi untuk memesan top up via WhatsApp
+        function orderTopUpViaWhatsApp() {
+            const phoneNumber = "6285167217853";
+            const message = `Halo bang, saya ingin top up Free Fire dari Nefs Store. Bisa info stok dan cara pemesanannya?`;
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+            showNotification('Membuka WhatsApp untuk top up Free Fire...', 'success');
+            closeTopUpModal();
+        }
+        
+        // Fungsi untuk membuka WhatsApp dengan pesan otomatis untuk midman
         function openWhatsApp() {
             if (transactionAmount <= 0 || calculatedFee <= 0 || !selectedPaymentMethod) {
                 showNotification("Silakan lengkapi semua data terlebih dahulu", 'warning');
@@ -1949,6 +2808,70 @@
                 closeServiceModal();
             }, 1000);
         }
+        
+        // Fungsi untuk menutup semua modal
+        function closeAllModals() {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                modal.style.display = 'none';
+            });
+            document.body.style.overflow = 'auto';
+        }
+        
+        // Event listener untuk modal
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load ratings
+            loadRatings();
+            
+            // Animate elements on load
+            setTimeout(() => {
+                document.querySelectorAll('.animate-item').forEach((item, index) => {
+                    item.style.animationDelay = (index * 0.1) + 's';
+                });
+            }, 300);
+            
+            // Event listener untuk menutup modal saat klik di luar konten
+            document.getElementById('serviceModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeServiceModal();
+                }
+            });
+            
+            // Event listener untuk menutup modal dengan tombol ESC
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeAllModals();
+                }
+            });
+            
+            // Format input saat user mengetik
+            const amountInput = document.getElementById('transactionAmount');
+            amountInput.addEventListener('input', function() {
+                // Hapus karakter selain angka
+                this.value = this.value.replace(/[^0-9]/g, '');
+            });
+            
+            // Event listener untuk modal layanan pilihan
+            document.getElementById('serviceSelectionModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeServiceSelectionModal();
+                }
+            });
+            
+            // Event listener untuk modal aplikasi premium
+            document.getElementById('premiumAppModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closePremiumAppModal();
+                }
+            });
+            
+            // Event listener untuk modal top up
+            document.getElementById('topUpModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeTopUpModal();
+                }
+            });
+        });
     </script>
 </body>
 </html>
