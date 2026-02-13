@@ -696,7 +696,7 @@
             color: var(--gray);
         }
 
-        /* ===== SECTION JASA MIDMAN (DI BAWAH METODE PEMBAYARAN) ===== */
+        /* ===== SECTION JASA REKBER (DI BAWAH METODE PEMBAYARAN) ===== */
         .midman-section {
             padding: 40px 0 60px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.02), rgba(114, 9, 183, 0.02));
@@ -968,7 +968,7 @@
             padding: 20px 0;
         }
 
-        /* ===== MODAL JASA MIDMAN ===== */
+        /* ===== MODAL JASA REKBER ===== */
         .service-modal .modal-content {
             max-width: 450px;
         }
@@ -1495,21 +1495,20 @@
         </div>
     </section>
 
-    <!-- ===== JASA MIDMAN (DI BAWAH METODE PEMBAYARAN) ===== -->
+    <!-- ===== JASA REKBER (DI BAWAH METODE PEMBAYARAN) ===== -->
     <section class="midman-section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Jasa Midman</h2>
-                <p class="section-subtitle">Perantara transaksi aman antara buyer dan seller</p>
+                <h2 class="section-title">Jasa Rekber (Rekening Bersama)</h2>
+                <p class="section-subtitle">Layanan perantara terpercaya untuk transaksi jual beli online</p>
             </div>
             <div class="midman-card">
                 <div class="midman-header">
-                    <h3><i class="fas fa-handshake"></i> Jasa Midman</h3>
+                    <h3><i class="fas fa-handshake"></i> Jasa Rekber</h3>
                 </div>
                 <div class="midman-body">
                     <div class="midman-description">
-                        Anda ingin membeli akun/barang dari seller lain tapi takut ditipu? 
-                        Gunakan jasa midman kami sebagai perantara transaksi yang aman dan terpercaya!
+                        Ingin bertransaksi dengan aman? Gunakan jasa rekber kami! Dana akan ditahan sementara hingga barang diterima, lalu diteruskan ke penjual. Transaksi jadi lebih terpercaya.
                     </div>
                     <button class="midman-action-btn" onclick="openServiceModal()">
                         <i class="fas fa-calculator"></i> Hitung Fee & Order
@@ -1573,18 +1572,22 @@
         </div>
     </div>
 
-    <!-- ===== MODAL JASA MIDMAN ===== -->
+    <!-- ===== MODAL JASA REKBER ===== -->
     <div class="modal service-modal" id="serviceModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>Jasa Midman</h2>
-                <p>Layanan perantara transaksi aman</p>
+                <h2>Jasa Rekber (Rekening Bersama)</h2>
+                <p>Perantara aman untuk transaksi online</p>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
-                <div class="service-question">Hitung Fee Midman</div>
+                <div class="service-question">Apa itu Jasa Rekber?</div>
+                <div class="price-info" style="background: #e3f2fd; border-left: 4px solid #2196F3; padding: 15px; margin-bottom: 25px; text-align: left;">
+                    <p style="margin: 0;"><strong>Rekening Bersama (Rekber)</strong> adalah layanan perantara yang menahan dana pembeli hingga barang atau jasa diterima dengan baik. Setelah pembeli konfirmasi, dana baru diteruskan ke penjual. Ini melindungi kedua belah pihak dari penipuan.</p>
+                </div>
+                <div class="service-question">Hitung Fee Rekber</div>
                 <div class="price-info">
-                    <h4>Aturan Fee Midman:</h4>
+                    <h4>Aturan Fee Rekber:</h4>
                     <table class="price-table">
                         <thead><tr><th>Rentang Transaksi</th><th>Fee</th></tr></thead>
                         <tbody>
@@ -1603,7 +1606,7 @@
                         <input type="number" id="transactionAmount" placeholder="Contoh: 75000 (Maks: 200.000)" min="1000" max="200000">
                     </div>
                     <div class="fee-display" id="feeDisplay" style="display:none;">
-                        <h3>Fee Midman Anda:</h3>
+                        <h3>Fee Rekber Anda:</h3>
                         <div class="fee-amount" id="feeAmount">Rp 0</div>
                         <p id="feeRange">Untuk transaksi Rp 0</p>
                     </div>
@@ -1806,7 +1809,7 @@
             setTimeout(() => { notif.style.animation = 'slideOut 0.3s ease'; setTimeout(() => notif.remove(), 300); }, 3000);
         }
 
-        // ========== FUNGSI MIDMAN ==========
+        // ========== FUNGSI REKBER ==========
         function calculateFee() {
             const amount = validateTransactionAmount(); transactionAmount = amount;
             let fee = 0;
@@ -1836,7 +1839,7 @@
         function openWhatsApp() {
             if (transactionAmount > 200000) { showNotification('Nilai transaksi tidak boleh melebihi Rp 200.000', 'warning'); return; }
             if (!transactionAmount || !calculatedFee || !selectedPaymentMethod) { showNotification('Silakan lengkapi semua data!', 'warning'); return; }
-            const msg = `Halo, saya ingin menggunakan *Jasa Midman* dengan detail berikut:\n💰 Nilai Transaksi: Rp ${transactionAmount.toLocaleString('id-ID')}\n💸 Fee Midman: Rp ${calculatedFee.toLocaleString('id-ID')}\n💳 Metode Pembayaran: ${selectedPaymentMethod}\n\nSilakan berikan instruksi lebih lanjut.`;
+            const msg = `Halo, saya ingin menggunakan *Jasa Rekber* dengan detail berikut:\n💰 Nilai Transaksi: Rp ${transactionAmount.toLocaleString('id-ID')}\n💸 Fee Rekber: Rp ${calculatedFee.toLocaleString('id-ID')}\n💳 Metode Pembayaran: ${selectedPaymentMethod}\n\nSilakan berikan instruksi lebih lanjut.`;
             window.open(`https://wa.me/6285374128738?text=${encodeURIComponent(msg)}`, '_blank');
             closeAllModals();
         }
@@ -1877,7 +1880,7 @@
                 let expBtn = '';
                 if (['netflix','youtube','canva','freefire'].includes(key)) expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
 
-                // ========== KHUSUS FREE FIRE (TANPA MIDMAN, LAYOUT GRID BIASA) ==========
+                // ========== KHUSUS FREE FIRE (TANPA REKBER, LAYOUT GRID BIASA) ==========
                 if (key === 'freefire') {
                     // Diamond grid
                     let diamondHTML = '<div class="diamond-grid">';
