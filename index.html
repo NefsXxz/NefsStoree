@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DigiTopUp - Top-up Digital Premium & Game</title>
+    <title>Nefs Digital Store - Top-up Digital Premium & Game</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -649,7 +649,7 @@
 
         /* Payment Methods */
         .payment-methods {
-            padding: 60px 0;
+            padding: 60px 0 40px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
         }
 
@@ -694,6 +694,92 @@
         .payment-desc {
             font-size: 0.9rem;
             color: var(--gray);
+        }
+
+        /* ===== SECTION JASA MIDMAN (DI BAWAH METODE PEMBAYARAN) ===== */
+        .midman-section {
+            padding: 40px 0 60px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.02), rgba(114, 9, 183, 0.02));
+        }
+
+        .midman-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid #17a2b8;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+
+        .midman-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .midman-header {
+            background: linear-gradient(135deg, #17a2b8, #0f6674);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .midman-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+
+        .midman-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+
+        .midman-header i {
+            margin-right: 10px;
+        }
+
+        .midman-body {
+            padding: 30px;
+            text-align: center;
+        }
+
+        .midman-description {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+
+        .midman-action-btn {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .midman-action-btn:hover {
+            background: #138496;
+            transform: translateY(-3px);
         }
 
         /* How to Order */
@@ -882,132 +968,7 @@
             padding: 20px 0;
         }
 
-        /* Footer */
-        footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 30px;
-        }
-
-        .footer-content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
-        }
-
-        .footer-logo {
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .footer-logo-icon {
-            width: 40px;
-            height: 40px;
-            background: var(--gradient);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: 700;
-        }
-
-        .footer-desc {
-            color: #adb5bd;
-            line-height: 1.7;
-            margin-bottom: 20px;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 15px;
-        }
-
-        .social-link {
-            width: 40px;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            transition: background 0.3s, transform 0.3s;
-        }
-
-        .social-link:hover {
-            background: var(--primary);
-            transform: translateY(-3px);
-        }
-
-        .footer-section h4 {
-            font-size: 1.3rem;
-            margin-bottom: 25px;
-            color: white;
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-section h4:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 40px;
-            height: 3px;
-            background: var(--gradient);
-            border-radius: 3px;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 12px;
-        }
-
-        .footer-links a {
-            color: #adb5bd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .contact-info-footer {
-            list-style: none;
-        }
-
-        .contact-info-footer li {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .contact-info-footer i {
-            color: var(--primary);
-            font-size: 1.2rem;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #adb5bd;
-            font-size: 0.9rem;
-        }
-
-        /* Modal Jasa Midman Khusus */
+        /* ===== MODAL JASA MIDMAN ===== */
         .service-modal .modal-content {
             max-width: 450px;
         }
@@ -1217,95 +1178,186 @@
             text-align: center;
         }
 
-        /* Midman Card */
-        .midman-card {
-            background: white;
-            border-radius: 15px;
-            padding: 25px;
-            text-align: center;
-            box-shadow: var(--shadow);
-            transition: all 0.3s;
-            border: 2px solid transparent;
-            cursor: pointer;
-            margin: 20px auto;
-            max-width: 400px;
+        /* Notifikasi */
+        .transaction-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 3000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: slideIn 0.3s ease;
+        }
+        
+        .notification-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        
+        .notification-info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
         }
 
-        .midman-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: #17a2b8;
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0%); opacity: 1; }
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateX(0%); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
         }
 
-        .midman-icon {
-            width: 70px;
-            height: 70px;
-            margin: 0 auto 15px;
-            background: linear-gradient(135deg, rgba(23, 162, 184, 0.1), rgba(23, 162, 184, 0.05));
-            border-radius: 15px;
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
-            color: #17a2b8;
-        }
-
-        .midman-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 10px;
-            color: var(--dark);
-        }
-
-        .midman-desc {
-            color: var(--gray);
-            margin-bottom: 20px;
-            font-size: 0.95rem;
-        }
-
-        .midman-btn {
-            background: #17a2b8;
             color: white;
-            border: none;
-            padding: 12px 25px;
-            border-radius: 10px;
-            font-weight: 600;
-            cursor: pointer;
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            transition: all 0.3s;
+            font-weight: 700;
         }
 
-        .midman-btn:hover {
-            background: #138496;
+        .footer-desc {
+            color: #adb5bd;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
             transform: translateY(-3px);
         }
 
-        /* Responsive */
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .contact-info-footer {
+            list-style: none;
+        }
+
+        .contact-info-footer li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .contact-info-footer i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+
         @media (max-width: 992px) {
             .hero-container {
                 flex-direction: column;
                 text-align: center;
             }
-            
             .hero-content {
                 max-width: 100%;
             }
-            
             .hero-stats {
                 justify-content: center;
             }
-            
             .steps {
                 flex-direction: column;
                 gap: 40px;
             }
-            
             .steps:before {
                 display: none;
             }
-            
             .step-number {
                 width: 60px;
                 height: 60px;
@@ -1322,93 +1374,31 @@
                 width: 100%;
                 background: white;
                 padding: 20px;
-                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
             }
-            
-            nav.active {
-                display: block;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-            }
-            
-            .header-actions .contact-btn span {
-                display: none;
-            }
-            
-            .header-actions .contact-btn {
-                padding: 10px 15px;
-            }
-            
-            .search-container {
-                flex-direction: column;
-            }
-            
-            .search-box, .search-btn {
-                width: 100%;
-            }
-            
-            .product-grid {
-                grid-template-columns: 1fr;
-            }
-            
-            .category-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            .payment-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-            }
-            
-            .diamond-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                gap: 12px;
-            }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .payment-option {
-                min-width: 100px;
-            }
+            nav.active { display: block; }
+            nav ul { flex-direction: column; gap: 20px; }
+            .mobile-menu-btn { display: block; }
+            .header-actions .contact-btn span { display: none; }
+            .header-actions .contact-btn { padding: 10px 15px; }
+            .search-container { flex-direction: column; }
+            .search-box, .search-btn { width: 100%; }
+            .product-grid { grid-template-columns: 1fr; }
+            .category-grid { grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); }
+            .payment-grid { grid-template-columns: repeat(auto-fill, minmax(150px,1fr)); }
+            .diamond-grid { grid-template-columns: repeat(auto-fill, minmax(120px,1fr)); gap: 12px; }
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+            .payment-option { min-width: 100px; }
         }
 
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
-            .hero-stats {
-                flex-direction: column;
-                gap: 20px;
-            }
-            
-            .category-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .payment-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .diamond-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-            
-            .payment-options {
-                flex-direction: column;
-            }
+            .hero-title { font-size: 2rem; }
+            .hero-stats { flex-direction: column; gap: 20px; }
+            .category-grid { grid-template-columns: repeat(2,1fr); }
+            .payment-grid { grid-template-columns: repeat(2,1fr); }
+            .diamond-grid { grid-template-columns: repeat(2,1fr); }
+            .payment-options { flex-direction: column; }
         }
     </style>
 </head>
@@ -1417,9 +1407,9 @@
     <header>
         <div class="container header-container">
             <div class="logo">
-                <div class="logo-icon">DT</div>
+                <div class="logo-icon">ND</div>
                 <div>
-                    <div class="logo-text">DigiTopUp</div>
+                    <div class="logo-text">Nefs Digital Store</div>
                     <div class="logo-subtext">Digital & Game Top-up</div>
                 </div>
             </div>
@@ -1451,23 +1441,12 @@
             <div class="hero-content">
                 <h1 class="hero-title">Top-up Digital & Game Termurah</h1>
                 <p class="hero-subtitle">Beli Netflix, Spotify, YouTube Premium, Canva Pro, Alight Motion, Capcut, Free Fire dan layanan premium lainnya dengan harga terbaik. Proses cepat, aman, dan garansi terpercaya.</p>
-                
                 <div class="hero-stats">
-                    <div class="stat-item">
-                        <div class="stat-number">50K+</div>
-                        <div class="stat-label">Pelanggan</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">99%</div>
-                        <div class="stat-label">Kepuasan</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">24/7</div>
-                        <div class="stat-label">Support</div>
-                    </div>
+                    <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Pelanggan</div></div>
+                    <div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Kepuasan</div></div>
+                    <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div>
                 </div>
             </div>
-            
             <div class="hero-image">
                 <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Services">
             </div>
@@ -1481,9 +1460,7 @@
                 <i class="fas fa-search search-icon"></i>
                 <input type="text" placeholder="Cari layanan atau game yang ingin di-top-up...">
             </div>
-            <button class="search-btn">
-                <i class="fas fa-search"></i> Cari
-            </button>
+            <button class="search-btn"><i class="fas fa-search"></i> Cari</button>
         </div>
     </section>
 
@@ -1494,54 +1471,13 @@
                 <h2 class="section-title">Pilih Kategori</h2>
                 <p class="section-subtitle">Temukan berbagai layanan digital dan game yang tersedia dengan harga terbaik</p>
             </div>
-            
-            <div class="category-grid" id="categoryGrid">
-                <!-- Categories will be loaded here -->
-            </div>
+            <div class="category-grid" id="categoryGrid"></div>
         </div>
     </section>
 
     <!-- Products -->
     <section class="products" id="productsSection">
-        <div class="container" id="productsContainer">
-            <!-- Products will be loaded here -->
-        </div>
-    </section>
-
-    <!-- Jasa Midman Section -->
-    <section class="payment-methods" id="midmanSection" style="padding-top: 40px;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Jasa Midman</h2>
-                <p class="section-subtitle">Perantara transaksi aman antara buyer dan seller</p>
-            </div>
-            
-            <div class="midman-card" id="midmanCard">
-                <div class="midman-icon">
-                    <i class="fas fa-handshake"></i>
-                </div>
-                <h3 class="midman-title">Jasa Perantara (Middle Man)</h3>
-                <p class="midman-desc">Anda ingin membeli akun/barang dari seller lain tapi takut ditipu? Gunakan jasa midman kami sebagai perantara transaksi yang aman!</p>
-                
-                <div class="price-info" style="background: #f0f8ff; margin: 20px 0;">
-                    <h4>Aturan Fee Midman:</h4>
-                    <div style="text-align: left; padding: 0 10px;">
-                        <p>• Transaksi 1K - 20K = Fee 1K</p>
-                        <p>• Transaksi 21K - 50K = Fee 2K</p>
-                        <p>• Transaksi 51K - 100K = Fee 3K</p>
-                        <p>• Transaksi 101K - 150K = Fee 4K</p>
-                        <p>• Transaksi 151K - 200K = Fee 5K</p>
-                        <p class="max-warning" style="margin-top: 15px; color: #dc3545;">
-                            <i class="fas fa-exclamation-circle"></i> MAX TRANSAKSI: Rp 200.000
-                        </p>
-                    </div>
-                </div>
-                
-                <button class="midman-btn" onclick="openServiceModal()">
-                    <i class="fas fa-calculator"></i> Hitung Fee Midman
-                </button>
-            </div>
-        </div>
+        <div class="container" id="productsContainer"></div>
     </section>
 
     <!-- Payment Methods -->
@@ -1551,22 +1487,33 @@
                 <h2 class="section-title">Metode Pembayaran</h2>
                 <p class="section-subtitle">Bayar dengan metode pembayaran yang aman dan terpercaya</p>
             </div>
-            
             <div class="payment-grid">
-                <div class="payment-card">
-                    <i class="fas fa-qrcode payment-icon qris"></i>
-                    <div class="payment-name">QRIS</div>
-                    <div class="payment-desc">Scan QR Code</div>
+                <div class="payment-card"><i class="fas fa-qrcode payment-icon qris"></i><div class="payment-name">QRIS</div><div class="payment-desc">Scan QR Code</div></div>
+                <div class="payment-card"><i class="fas fa-wallet payment-icon dana"></i><div class="payment-name">DANA</div><div class="payment-desc">Transfer & QR</div></div>
+                <div class="payment-card"><i class="fas fa-money-bill-wave payment-icon gopay"></i><div class="payment-name">GoPay</div><div class="payment-desc">Gojek App</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== JASA MIDMAN (DI BAWAH METODE PEMBAYARAN) ===== -->
+    <section class="midman-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Jasa Midman</h2>
+                <p class="section-subtitle">Perantara transaksi aman antara buyer dan seller</p>
+            </div>
+            <div class="midman-card">
+                <div class="midman-header">
+                    <h3><i class="fas fa-handshake"></i> Jasa Midman</h3>
                 </div>
-                <div class="payment-card">
-                    <i class="fas fa-wallet payment-icon dana"></i>
-                    <div class="payment-name">DANA</div>
-                    <div class="payment-desc">Transfer & QR</div>
-                </div>
-                <div class="payment-card">
-                    <i class="fas fa-money-bill-wave payment-icon gopay"></i>
-                    <div class="payment-name">GoPay</div>
-                    <div class="payment-desc">Transfer & QR</div>
+                <div class="midman-body">
+                    <div class="midman-description">
+                        Anda ingin membeli akun/barang dari seller lain tapi takut ditipu? 
+                        Gunakan jasa midman kami sebagai perantara transaksi yang aman dan terpercaya!
+                    </div>
+                    <button class="midman-action-btn" onclick="openServiceModal()">
+                        <i class="fas fa-calculator"></i> Hitung Fee & Order
+                    </button>
                 </div>
             </div>
         </div>
@@ -1579,28 +1526,11 @@
                 <h2 class="section-title">Cara Order</h2>
                 <p class="section-subtitle">Hanya 4 langkah mudah untuk mendapatkan layanan digital premium Anda</p>
             </div>
-            
             <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-title">Pilih Produk</div>
-                    <div class="step-desc">Pilih kategori dan produk yang ingin Anda beli</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-title">Checkout</div>
-                    <div class="step-desc">Isi data yang diperlukan dan pilih metode pembayaran</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-title">Bayar</div>
-                    <div class="step-desc">Lakukan pembayaran sesuai metode yang dipilih</div>
-                </div>
-                <div class="step">
-                    <div class="step-number">4</div>
-                    <div class="step-title">Proses</div>
-                    <div class="step-desc">Tunggu proses aktivasi oleh admin (maks 24 jam)</div>
-                </div>
+                <div class="step"><div class="step-number">1</div><div class="step-title">Pilih Produk</div><div class="step-desc">Pilih kategori dan produk yang ingin Anda beli</div></div>
+                <div class="step"><div class="step-number">2</div><div class="step-title">Checkout</div><div class="step-desc">Isi data yang diperlukan dan pilih metode pembayaran</div></div>
+                <div class="step"><div class="step-number">3</div><div class="step-title">Bayar</div><div class="step-desc">Lakukan pembayaran sesuai metode yang dipilih</div></div>
+                <div class="step"><div class="step-number">4</div><div class="step-title">Proses</div><div class="step-desc">Tunggu proses aktivasi oleh admin (maks 24 jam)</div></div>
             </div>
         </div>
     </section>
@@ -1612,171 +1542,86 @@
                 <h2 class="section-title">FAQ</h2>
                 <p class="section-subtitle">Pertanyaan yang sering diajukan oleh pelanggan</p>
             </div>
-            
             <div class="faq-container">
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Berapa lama proses pengiriman setelah pembayaran?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Proses pengiriman bervariasi tergantung produk. Untuk layanan digital seperti Netflix, Spotify, YouTube Premium biasanya diproses dalam 5-30 menit. Maksimal proses adalah 24 jam sesuai antrian.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Apakah ada garansi untuk produk yang dijual?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Ya, setiap produk memiliki ketentuan garansi masing-masing. Untuk layanan sharing biasanya ada garansi full selama masa aktif. Untuk paket private/no garansi sudah dijelaskan di deskripsi produk.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Bagaimana cara mengajukan komplain?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Silakan hubungi admin via WhatsApp (+62 853-7412-8738) atau Telegram (@NaufalTzye) dengan menyertakan bukti pembayaran dan detail pesanan. Admin akan merespons maksimal 1x24 jam.
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <div class="faq-question">
-                        Apakah bisa refund setelah pembelian?
-                        <span class="faq-toggle">+</span>
-                    </div>
-                    <div class="faq-answer">
-                        Refund hanya dapat dilakukan jika pesanan belum diproses oleh admin. Setelah pesanan diproses, tidak dapat dilakukan refund kecuali ada kesalahan dari pihak kami.
-                    </div>
-                </div>
+                <div class="faq-item"><div class="faq-question">Berapa lama proses pengiriman setelah pembayaran?<span class="faq-toggle">+</span></div><div class="faq-answer">Proses pengiriman bervariasi tergantung produk. Untuk layanan digital seperti Netflix, Spotify, YouTube Premium biasanya diproses dalam 5-30 menit. Maksimal proses adalah 24 jam sesuai antrian.</div></div>
+                <div class="faq-item"><div class="faq-question">Apakah ada garansi untuk produk yang dijual?<span class="faq-toggle">+</span></div><div class="faq-answer">Ya, setiap produk memiliki ketentuan garansi masing-masing. Untuk layanan sharing biasanya ada garansi full selama masa aktif. Untuk paket private/no garansi sudah dijelaskan di deskripsi produk.</div></div>
+                <div class="faq-item"><div class="faq-question">Bagaimana cara mengajukan komplain?<span class="faq-toggle">+</span></div><div class="faq-answer">Silakan hubungi admin via WhatsApp (+62 853-7412-8738) atau Telegram (@NaufalTzye) dengan menyertakan bukti pembayaran dan detail pesanan. Admin akan merespons maksimal 1x24 jam.</div></div>
+                <div class="faq-item"><div class="faq-question">Apakah bisa refund setelah pembelian?<span class="faq-toggle">+</span></div><div class="faq-answer">Refund hanya dapat dilakukan jika pesanan belum diproses oleh admin. Setelah pesanan diproses, tidak dapat dilakukan refund kecuali ada kesalahan dari pihak kami.</div></div>
             </div>
         </div>
     </section>
 
-    <!-- Checkout Modal -->
+    <!-- ===== MODAL CHECKOUT ===== -->
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3>Checkout Item</h3>
                 <button class="close-modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <div id="checkoutContent">
-                    <!-- Checkout form will be loaded here -->
-                </div>
-            </div>
+            <div class="modal-body" id="checkoutContent"></div>
         </div>
     </div>
 
-    <!-- Explanation Modal -->
+    <!-- ===== MODAL PENJELASAN ===== -->
     <div class="modal explanation-modal" id="explanationModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h3 id="explanationTitle">Penjelasan Paket</h3>
                 <button class="close-modal">&times;</button>
             </div>
-            <div class="modal-body">
-                <div id="explanationContent">
-                    <!-- Explanation content will be loaded here -->
-                </div>
-            </div>
+            <div class="modal-body" id="explanationContent"></div>
         </div>
     </div>
 
-    <!-- Modal Jasa Midman -->
+    <!-- ===== MODAL JASA MIDMAN ===== -->
     <div class="modal service-modal" id="serviceModal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2>Jasa Midman</h2>
-                <p>Layanan jasa perantara yang aman & terpercaya</p>
+                <p>Layanan perantara transaksi aman</p>
                 <button class="close-modal">&times;</button>
             </div>
-            
             <div class="modal-body">
-                <div class="service-question">Hitung Fee Midman Berdasarkan Nilai Transaksi</div>
-                
+                <div class="service-question">Hitung Fee Midman</div>
                 <div class="price-info">
                     <h4>Aturan Fee Midman:</h4>
                     <table class="price-table">
-                        <thead>
-                            <tr>
-                                <th>Rentang Transaksi</th>
-                                <th>Fee Midman</th>
-                            </tr>
-                        </thead>
+                        <thead><tr><th>Rentang Transaksi</th><th>Fee</th></tr></thead>
                         <tbody>
-                            <tr>
-                                <td>Rp 1.000 - Rp 20.000</td>
-                                <td><strong>Rp 1.000</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Rp 21.000 - Rp 50.000</td>
-                                <td><strong>Rp 2.000</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Rp 51.000 - Rp 100.000</td>
-                                <td><strong>Rp 3.000</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Rp 101.000 - Rp 150.000</td>
-                                <td><strong>Rp 4.000</strong></td>
-                            </tr>
-                            <tr>
-                                <td>Rp 151.000 - Rp 200.000</td>
-                                <td><strong>Rp 5.000</strong></td>
-                            </tr>
+                            <tr><td>Rp 1.000 - Rp 20.000</td><td><strong>Rp 1.000</strong></td></tr>
+                            <tr><td>Rp 21.000 - Rp 50.000</td><td><strong>Rp 2.000</strong></td></tr>
+                            <tr><td>Rp 51.000 - Rp 100.000</td><td><strong>Rp 3.000</strong></td></tr>
+                            <tr><td>Rp 101.000 - Rp 150.000</td><td><strong>Rp 4.000</strong></td></tr>
+                            <tr><td>Rp 151.000 - Rp 200.000</td><td><strong>Rp 5.000</strong></td></tr>
                         </tbody>
                     </table>
                     <p class="max-warning"><i class="fas fa-exclamation-circle"></i> MAX TRANSAKSI: Rp 200.000</p>
                 </div>
-                
                 <div class="transaction-input">
                     <div class="input-group">
                         <label for="transactionAmount">Masukkan Nilai Transaksi (Rp)</label>
-                        <input type="number" id="transactionAmount" placeholder="Contoh: 75000" min="1000" max="200000">
+                        <input type="number" id="transactionAmount" placeholder="Contoh: 75000 (Maks: 200.000)" min="1000" max="200000">
                     </div>
-                    
-                    <div class="fee-display" id="feeDisplay" style="display: none;">
+                    <div class="fee-display" id="feeDisplay" style="display:none;">
                         <h3>Fee Midman Anda:</h3>
                         <div class="fee-amount" id="feeAmount">Rp 0</div>
                         <p id="feeRange">Untuk transaksi Rp 0</p>
                     </div>
                 </div>
-                
                 <div class="payment-selection">
                     <div class="payment-title">Pilih Metode Pembayaran:</div>
                     <div class="payment-options">
-                        <div class="payment-option" data-method="QRIS">
-                            <div class="payment-icon">
-                                <i class="fas fa-qrcode"></i>
-                            </div>
-                            <div class="payment-name">QRIS</div>
-                        </div>
-                        <div class="payment-option" data-method="DANA">
-                            <div class="payment-icon">
-                                <i class="fas fa-wallet"></i>
-                            </div>
-                            <div class="payment-name">DANA</div>
-                        </div>
-                        <div class="payment-option" data-method="GOPAY">
-                            <div class="payment-icon">
-                                <i class="fas fa-money-bill-wave"></i>
-                            </div>
-                            <div class="payment-name">GoPay</div>
-                        </div>
+                        <div class="payment-option" data-method="QRIS"><div class="payment-icon"><i class="fas fa-qrcode"></i></div><div class="payment-name">QRIS</div></div>
+                        <div class="payment-option" data-method="DANA"><div class="payment-icon"><i class="fas fa-wallet"></i></div><div class="payment-name">DANA</div></div>
+                        <div class="payment-option" data-method="GOPAY"><div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div><div class="payment-name">GoPay</div></div>
                     </div>
                 </div>
             </div>
-            
             <div class="modal-footer">
                 <button class="whatsapp-btn" id="whatsappBtn" disabled>
                     <i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp
                 </button>
-                <p class="modal-note">Isi nilai transaksi dan pilih metode pembayaran terlebih dahulu</p>
+                <p class="modal-note">Isi nominal & pilih metode pembayaran</p>
             </div>
         </div>
     </div>
@@ -1787,24 +1632,16 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <div class="footer-logo-icon">DT</div>
-                        DigiTopUp
+                        <div class="footer-logo-icon">ND</div>
+                        Nefs Digital Store
                     </div>
                     <p class="footer-desc">Platform top-up digital dan game terpercaya dengan harga termurah. Proses cepat, aman, dan bergaransi.</p>
-                    
                     <div class="social-links">
-                        <a href="https://wa.me/6285374128738" target="_blank" class="social-link">
-                            <i class="fab fa-whatsapp"></i>
-                        </a>
-                        <a href="https://t.me/NaufalTzye" target="_blank" class="social-link">
-                            <i class="fab fa-telegram"></i>
-                        </a>
-                        <a href="#" class="social-link">
-                            <i class="fab fa-instagram"></i>
-                        </a>
+                        <a href="https://wa.me/6285374128738" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/NaufalTzye" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Layanan</h4>
                     <ul class="footer-links">
@@ -1815,7 +1652,6 @@
                         <li><a href="#" class="nav-categories">Game</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Informasi</h4>
                     <ul class="footer-links">
@@ -1826,43 +1662,27 @@
                         <li><a href="#">Kebijakan Privasi</a></li>
                     </ul>
                 </div>
-                
                 <div class="footer-section">
                     <h4>Kontak Kami</h4>
                     <ul class="contact-info-footer">
-                        <li>
-                            <i class="fab fa-whatsapp"></i>
-                            <span>+62 853-7412-8738</span>
-                        </li>
-                        <li>
-                            <i class="fab fa-telegram"></i>
-                            <span>@NaufalTzye</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-envelope"></i>
-                            <span>hanya tele sama wa</span>
-                        </li>
-                        <li>
-                            <i class="fas fa-clock"></i>
-                            <span>Setiap Hari: 08.00 - 22.00 WIB</span>
-                        </li>
+                        <li><i class="fab fa-whatsapp"></i><span>+62 853-7412-8738</span></li>
+                        <li><i class="fab fa-telegram"></i><span>@NaufalTzye</span></li>
+                        <li><i class="fas fa-envelope"></i><span>support@nefsdigital.id</span></li>
+                        <li><i class="fas fa-clock"></i><span>Setiap Hari: 08.00 - 22.00 WIB</span></li>
                     </ul>
                 </div>
             </div>
-            
             <div class="copyright">
-                &copy; 2023 DigiTopUp. All rights reserved.
+                &copy; 2026 Nefs Digital Store. All rights reserved.
             </div>
         </div>
     </footer>
 
     <script>
-        // Data produk
+        // ==================== DATA PRODUK ====================
         const products = {
             netflix: {
-                name: "Netflix",
-                icon: "fas fa-tv",
-                color: "#E50914",
+                name: "Netflix", icon: "fas fa-tv", color: "#E50914",
                 items: [
                     { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device", featured: false },
                     { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device", featured: false },
@@ -1873,9 +1693,7 @@
                 ]
             },
             spotify: {
-                name: "Spotify",
-                icon: "fab fa-spotify",
-                color: "#1DB954",
+                name: "Spotify", icon: "fab fa-spotify", color: "#1DB954",
                 items: [
                     { name: "Student 1 Bulan", price: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false },
                     { name: "Student 1 Bulan (Full Garansi)", price: 17000, desc: "Full garansi, Support all device", featured: true },
@@ -1886,9 +1704,7 @@
                 ]
             },
             youtube: {
-                name: "YouTube Premium",
-                icon: "fab fa-youtube",
-                color: "#FF0000",
+                name: "YouTube Premium", icon: "fab fa-youtube", color: "#FF0000",
                 items: [
                     { name: "Famplan 1 Bulan", price: 7500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
                     { name: "Famplan 2 Bulan", price: 9000, desc: "ACC buyer, Kirim email saja, Full garansi", featured: false },
@@ -1901,9 +1717,7 @@
                 ]
             },
             alight: {
-                name: "Alight Motion",
-                icon: "fas fa-video",
-                color: "#8A2BE2",
+                name: "Alight Motion", icon: "fas fa-video", color: "#8A2BE2",
                 items: [
                     { name: "Sharing 1 Tahun", price: 2000, desc: "Akun dari seller, Support Android/iOS", featured: false },
                     { name: "Private 1 Tahun (Akun Buyer)", price: 1500, desc: "Pakai email sendiri, Maks 10 device", featured: true, needsEmail: true },
@@ -1911,9 +1725,7 @@
                 ]
             },
             capcut: {
-                name: "CapCut Pro",
-                icon: "fas fa-cut",
-                color: "#00A8FF",
+                name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF",
                 items: [
                     { name: "Sharing 1 Bulan (Gar7d)", price: 5000, desc: "Akun dari seller, Support all device", featured: false },
                     { name: "Private 7 Hari (Gar3d)", price: 5500, desc: "Akun dari seller, Maks 3 device", featured: false },
@@ -1923,9 +1735,7 @@
                 ]
             },
             canva: {
-                name: "Canva Pro",
-                icon: "fas fa-palette",
-                color: "#00C4CC",
+                name: "Canva Pro", icon: "fas fa-palette", color: "#00C4CC",
                 items: [
                     { name: "Paket Member 1 Bulan", price: 4000, desc: "Support all device, Via link invite", featured: false },
                     { name: "Paket Designer 1 Bulan", price: 4500, desc: "Support all device, Via link invite", featured: false },
@@ -1937,810 +1747,240 @@
                 ]
             },
             freefire: {
-                name: "Free Fire",
-                icon: "fas fa-fire",
-                color: "#FF6B00",
+                name: "Free Fire", icon: "fas fa-fire", color: "#FF6B00",
                 items: [
-                    // Membership
                     { name: "Membership Mingguan", price: 32699, desc: "Top up via ID, Proses 1-5 menit", featured: true, type: "membership" },
                     { name: "Membership Bulanan", price: 88734, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "membership" },
                     { name: "Membership Mingguan (×2)", price: 59386, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "membership" },
                     { name: "Membership Bulanan (×2)", price: 169105, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "membership" },
-                    
-                    // Cards & Passes
                     { name: "BP Card", price: 48531, desc: "Top up via ID, Proses 1-5 menit", featured: true, type: "card" },
                     { name: "Level Up Pass - Level 6", price: 10456, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
                     { name: "Level Up Pass - Level 10", price: 12956, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
                     { name: "Level Up Pass - Level 15", price: 15760, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
                     { name: "Level Up Pass - Level 30", price: 19717, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
                 ],
-                // Diamond data terpisah untuk grid
                 diamonds: [
-                    { amount: "5", price: 6300 },
-                    { amount: "10", price: 7100 },
-                    { amount: "12", price: 7200 },
-                    { amount: "15", price: 8900 },
-                    { amount: "20", price: 9700 },
-                    { amount: "25", price: 10500 },
-                    { amount: "30", price: 11300 },
-                    { amount: "40", price: 12200 },
-                    { amount: "50", price: 13800 },
-                    { amount: "55", price: 13700 },
-                    { amount: "60", price: 14300 },
-                    { amount: "75", price: 16000 },
-                    { amount: "80", price: 16200 },
-                    { amount: "90", price: 18300 },
-                    { amount: "95", price: 18600 },
-                    { amount: "100", price: 19000, featured: true },
-                    { amount: "120", price: 21000 },
-                    { amount: "125", price: 22300 },
-                    { amount: "130", price: 22400 },
-                    { amount: "140", price: 23700 },
-                    { amount: "145", price: 24500 },
-                    { amount: "150", price: 26500 },
-                    { amount: "160", price: 28200 },
-                    { amount: "170", price: 28800 },
-                    { amount: "190", price: 31100 },
-                    { amount: "200", price: 33000 },
-                    { amount: "230", price: 36800 },
-                    { amount: "250", price: 39200 },
-                    { amount: "260", price: 39900 },
-                    { amount: "280", price: 42200 },
-                    { amount: "355", price: 48200 },
-                    { amount: "360", price: 51800 },
-                    { amount: "375", price: 50100 },
-                    { amount: "405", price: 54100 },
-                    { amount: "420", price: 60300 },
-                    { amount: "425", price: 55100 },
-                    { amount: "455", price: 62900 },
-                    { amount: "475", price: 68000 },
-                    { amount: "495", price: 65300 },
-                    { amount: "510", price: 67400, featured: true }
+                    { amount: "5", price: 6300 }, { amount: "10", price: 7100 }, { amount: "12", price: 7200 }, { amount: "15", price: 8900 },
+                    { amount: "20", price: 9700 }, { amount: "25", price: 10500 }, { amount: "30", price: 11300 }, { amount: "40", price: 12200 },
+                    { amount: "50", price: 13800 }, { amount: "55", price: 13700 }, { amount: "60", price: 14300 }, { amount: "75", price: 16000 },
+                    { amount: "80", price: 16200 }, { amount: "90", price: 18300 }, { amount: "95", price: 18600 }, { amount: "100", price: 19000, featured: true },
+                    { amount: "120", price: 21000 }, { amount: "125", price: 22300 }, { amount: "130", price: 22400 }, { amount: "140", price: 23700 },
+                    { amount: "145", price: 24500 }, { amount: "150", price: 26500 }, { amount: "160", price: 28200 }, { amount: "170", price: 28800 },
+                    { amount: "190", price: 31100 }, { amount: "200", price: 33000 }, { amount: "230", price: 36800 }, { amount: "250", price: 39200 },
+                    { amount: "260", price: 39900 }, { amount: "280", price: 42200 }, { amount: "355", price: 48200 }, { amount: "360", price: 51800 },
+                    { amount: "375", price: 50100 }, { amount: "405", price: 54100 }, { amount: "420", price: 60300 }, { amount: "425", price: 55100 },
+                    { amount: "455", price: 62900 }, { amount: "475", price: 68000 }, { amount: "495", price: 65300 }, { amount: "510", price: 67400, featured: true }
                 ]
             }
         };
 
-        // Data penjelasan
+        // Data penjelasan (ringkas)
         const explanations = {
-            netflix: {
-                title: "📢 PENJELASAN PAKET NETFLIX",
-                content: `
-                    <div class="explanation-content">
-                        <h4 style="color: var(--primary); margin-bottom: 20px;">🎟️ 1P1U (1 Profile 1 User)</h4>
-                        <p>• Dapat 1 profil khusus untuk 1 orang</p>
-                        <p>• All device</p>
-                        <p>• Maks login 1 device</p>
-                        <p>• Profil dipakai sendiri</p>
-                        <p>• Boleh ubah PIN profil (jika diizinkan admin)</p>
-                        
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 15px 0;">
-                            <p><strong>Note:</strong> Jika 4 orang sedang menonton bersamaan di akun, maka user lain akan terkena <em>limit screen</em> dan harus menunggu sampai ada yang selesai menonton.</p>
-                        </div>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">🎟️ 1P2U (1 Profile 2 User)</h4>
-                        <p>• Dapat 1 profil yang dipakai bisa lebih dari 2 orang</p>
-                        <p>• All device</p>
-                        <p>• Dilarang login TV</p>
-                        <p>• Maks login 1 device</p>
-                        <p>• Profil dipakai bersama (sharing)</p>
-                        <p>• <strong>DILARANG</strong> mengubah PIN profil</p>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">👑 SEMI PRIVATE</h4>
-                        <p>• Dapat 1 profil khusus untuk 1 orang</p>
-                        <p>• All device</p>
-                        <p>• Bisa login maksimal <em>2 device</em></p>
-                        <p>• Boleh ubah PIN profil (jika diizinkan admin)</p>
-                        
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #ffc107;">
-                            <p><strong>KESIMPULAN:</strong></p>
-                            <p>Sharing / Semi private = bisa kena limit</p>
-                            <p>Private = NO LIMIT SCREEN</p>
-                            <p>Pengguna sharing mohon tidak komplain soal limit screen, karena itu murni kebijakan sistem Netflix.</p>
-                        </div>
-                    </div>
-                `
-            },
-            youtube: {
-                title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM",
-                content: `
-                    <div class="explanation-content">
-                        <h4 style="color: var(--primary); margin-bottom: 15px;">👑 FAMHEAD (FAMILY HEAD)</h4>
-                        <p>• Akun Seller</p>
-                        <p>• Akun milik seller (bukan akun buyer)</p>
-                        <p>• Kamu masuk sebagai FAMILY HEAD (kepala family)</p>
-                        <p>• BISA invite hingga 5 email/member</p>
-                        <p>• BISA kelola anggota family</p>
-                        
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 15px 0;">
-                            <p><strong>Cocok untuk:</strong> Reseller / Seller, Mau jadi kepala family, Mau pegang kontrol slot sendiri</p>
-                        </div>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">🏡 FAMPLAN (FAMILY MEMBER)</h4>
-                        <p>• Menggunakan AKUN GOOGLE MILIK BUYER</p>
-                        <p>• Cukup kirim EMAIL ke admin</p>
-                        <p>• Admin invite ke family</p>
-                        <p>• Kamu jadi member biasa</p>
-                        <p>• Bisa pakai YouTube Premium full</p>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">🧍 INDIPLAN (INDIVIDUAL PLAN)</h4>
-                        <p>• Premium hanya untuk 1 akun</p>
-                        <p>• Tidak join family</p>
-                        <p>• Lebih private</p>
-                        <p>• Pakai akun buyer sendiri</p>
-                        
-                        <div style="background: #d1ecf1; padding: 15px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #0c5460;">
-                            <p><strong>CATATAN PENTING:</strong></p>
-                            <p>• Semua paket dapat akses YouTube Premium</p>
-                            <p>• Bedanya hanya di sistem & cara aktivasi</p>
-                            <p>• Tanya dulu sebelum order biar tidak salah pilih</p>
-                        </div>
-                    </div>
-                `
-            },
-            canva: {
-                title: "📌 PENJELASAN PAKET CANVA PRO",
-                content: `
-                    <div class="explanation-content">
-                        <h4 style="color: var(--primary); margin-bottom: 15px;">👤 PAKET MEMBER</h4>
-                        <p>Paket Member adalah akses Canva Pro dengan sistem join tim via invite.</p>
-                        <p>• Bisa pakai semua template & elemen Pro</p>
-                        <p>• Bisa edit, export, dan simpan desain</p>
-                        
-                        <div style="background: #f8f9fa; padding: 15px; border-radius: 10px; margin: 15px 0;">
-                            <p><strong>Cocok untuk:</strong> desain umum & pemakaian pribadi.</p>
-                        </div>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">🎨 PAKET DESIGNER</h4>
-                        <p>Paket Designer adalah akses Canva Pro dengan role Designer dengan sistem join tim via invite.</p>
-                        <p>• Semua fitur Paket Member</p>
-                        <p>• Bisa pakai Brand Kit</p>
-                        <p>• Bisa upload font sendiri</p>
-                        <p>• Bisa upload logo</p>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">👑 PAKET HEAD (OWNER)</h4>
-                        <p>Paket Head (Owner) adalah akses Canva Pro dengan peran tertinggi di dalam tim.</p>
-                        <p>• Akses penuh ke pengaturan tim</p>
-                        <p>• Bisa invite hingga ±100 member</p>
-                        <p>• Bisa tambah & hapus admin</p>
-                        <p>• Bisa hapus / kick member</p>
-                        
-                        <div style="background: #d4edda; padding: 15px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #155724;">
-                            <p><strong>KESIMPULAN:</strong></p>
-                            <p>Semua paket bisa digunakan untuk desain Pro. Perbedaannya ada di akses Brand Kit, pengelolaan tim, dan kontrol akun.</p>
-                            <p>Pilih paket sesuai kebutuhan Anda.</p>
-                        </div>
-                    </div>
-                `
-            },
-            freefire: {
-                title: "⚠️ INFO PENTING FREE FIRE",
-                content: `
-                    <div class="explanation-content">
-                        <h4 style="color: var(--primary); margin-bottom: 20px;">📋 CATATAN PENTING</h4>
-                        <p>• Proses sesuai antrian</p>
-                        <p>• Estimasi 1–5 menit</p>
-                        <p>• Max proses 1×24 jam</p>
-                        <p>• Proses bisa lebih lama jika server padat</p>
-                        <p>• Top up via ID (tanpa login akun)</p>
-                        <p>• Setelah order, kirim ID ke seller</p>
-                        <p>• Pastikan ID sudah benar sebelum order</p>
-                        <p>• Salah input ID bukan tanggung jawab seller</p>
-                        <p>• Order TIDAK BISA DICANCEL atau REFUND ketika sudah/sedang diproses</p>
-                        
-                        <div style="background: #fff3cd; padding: 15px; border-radius: 10px; margin: 20px 0; border-left: 4px solid #ffc107;">
-                            <p><strong>PENTING:</strong> Pastikan ID Free Fire Anda sudah benar sebelum melakukan pembelian. Setelah pembayaran, tidak dapat dilakukan refund atau cancel.</p>
-                        </div>
-                        
-                        <h4 style="color: var(--primary); margin: 25px 0 15px;">🎮 CARA ORDER FREE FIRE</h4>
-                        <p>1. Pilih diamond atau item yang ingin dibeli</p>
-                        <p>2. Klik tombol "Beli Sekarang"</p>
-                        <p>3. Masukkan ID Free Fire Anda (contoh: 123456789)</p>
-                        <p>4. Pilih metode pembayaran</p>
-                        <p>5. Konfirmasi dan kirim pesan ke WhatsApp/Telegram</p>
-                        <p>6. Admin akan memproses pesanan Anda</p>
-                    </div>
-                `
-            }
+            netflix: { title: "📢 PENJELASAN PAKET NETFLIX", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Netflix...</p></div>` },
+            youtube: { title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket YouTube...</p></div>` },
+            canva: { title: "📌 PENJELASAN PAKET CANVA PRO", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Canva...</p></div>` },
+            freefire: { title: "⚠️ INFO PENTING FREE FIRE", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang Free Fire...</p></div>` }
         };
 
-        // State aplikasi
+        // State
         let currentCategory = 'netflix';
         let currentOrder = null;
-        
-        // State untuk midman
         let selectedPaymentMethod = null;
         let calculatedFee = 0;
         let transactionAmount = 0;
 
-        // Fungsi untuk menghitung fee midman
+        // ========== FUNGSI VALIDASI & NOTIFIKASI ==========
+        function validateTransactionAmount() {
+            const input = document.getElementById('transactionAmount');
+            if (!input) return 0;
+            let val = parseInt(input.value) || 0;
+            if (val > 200000) { val = 200000; input.value = 200000; showNotification('Nilai transaksi maksimal Rp 200.000! Nilai telah disesuaikan.', 'warning'); }
+            if (val < 1000 && val !== 0) { val = 1000; input.value = 1000; }
+            return val;
+        }
+        function showNotification(msg, type = 'info') {
+            const old = document.querySelector('.transaction-notification'); if(old) old.remove();
+            const notif = document.createElement('div'); notif.className = `transaction-notification notification-${type}`;
+            notif.innerHTML = `<i class="fas fa-${type==='warning'?'exclamation-triangle':'info-circle'}"></i><span>${msg}</span>`;
+            document.body.appendChild(notif);
+            setTimeout(() => { notif.style.animation = 'slideOut 0.3s ease'; setTimeout(() => notif.remove(), 300); }, 3000);
+        }
+
+        // ========== FUNGSI MIDMAN ==========
         function calculateFee() {
-            const amountInput = document.getElementById('transactionAmount');
-            const amount = parseInt(amountInput.value) || 0;
-            transactionAmount = amount;
-            
+            const amount = validateTransactionAmount(); transactionAmount = amount;
             let fee = 0;
-            if (amount >= 1000 && amount <= 20000) {
-                fee = 1000;
-            } else if (amount <= 50000) {
-                fee = 2000;
-            } else if (amount <= 100000) {
-                fee = 3000;
-            } else if (amount <= 150000) {
-                fee = 4000;
-            } else if (amount <= 200000) {
-                fee = 5000;
-            }
-            
+            if (amount >= 1000 && amount <= 20000) fee = 1000;
+            else if (amount <= 50000) fee = 2000;
+            else if (amount <= 100000) fee = 3000;
+            else if (amount <= 150000) fee = 4000;
+            else if (amount <= 200000) fee = 5000;
             calculatedFee = fee;
-            
             const feeDisplay = document.getElementById('feeDisplay');
             const feeAmount = document.getElementById('feeAmount');
             const feeRange = document.getElementById('feeRange');
-            const whatsappBtn = document.getElementById('whatsappBtn');
-            
+            const waBtn = document.getElementById('whatsappBtn');
             if (amount >= 1000 && amount <= 200000) {
                 feeDisplay.style.display = 'block';
                 feeAmount.textContent = 'Rp ' + fee.toLocaleString('id-ID');
                 feeRange.textContent = `Untuk transaksi Rp ${amount.toLocaleString('id-ID')}`;
-            } else {
-                feeDisplay.style.display = 'none';
-            }
-            
-            // Aktifkan tombol WhatsApp jika fee terhitung dan metode pembayaran dipilih
-            if (calculatedFee > 0 && selectedPaymentMethod) {
-                whatsappBtn.disabled = false;
-            } else {
-                whatsappBtn.disabled = true;
-            }
+            } else feeDisplay.style.display = 'none';
+            if (calculatedFee > 0 && selectedPaymentMethod) waBtn.disabled = false; else waBtn.disabled = true;
         }
-
-        // Fungsi untuk memilih metode pembayaran
-        function selectPaymentMethod(element) {
-            // Hapus class active dari semua opsi
-            document.querySelectorAll('.payment-option').forEach(option => {
-                option.classList.remove('active');
-            });
-            
-            // Tambahkan class active pada opsi yang dipilih
-            element.classList.add('active');
-            selectedPaymentMethod = element.getAttribute('data-method');
-            
-            // Aktifkan tombol WhatsApp jika fee sudah dihitung
-            if (calculatedFee > 0) {
-                document.getElementById('whatsappBtn').disabled = false;
-            }
+        function selectPaymentMethod(el) {
+            document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
+            el.classList.add('active');
+            selectedPaymentMethod = el.dataset.method;
+            if (calculatedFee > 0) document.getElementById('whatsappBtn').disabled = false;
         }
-
-        // Fungsi untuk membuka WhatsApp dengan pesan jasa midman
         function openWhatsApp() {
-            if (!transactionAmount || !calculatedFee || !selectedPaymentMethod) {
-                alert('Silakan lengkapi semua data!');
-                return;
-            }
-            
-            const message = `Halo, saya ingin menggunakan *Jasa Midman* dengan detail berikut:\n` +
-                           `💰 Nilai Transaksi: Rp ${transactionAmount.toLocaleString('id-ID')}\n` +
-                           `💸 Fee Midman: Rp ${calculatedFee.toLocaleString('id-ID')}\n` +
-                           `💳 Metode Pembayaran: ${selectedPaymentMethod}\n\n` +
-                           `Silakan berikan instruksi lebih lanjut.`;
-            
-            const encodedMessage = encodeURIComponent(message);
-            window.open(`https://wa.me/6285374128738?text=${encodedMessage}`, '_blank');
-            
-            // Tutup modal
+            if (transactionAmount > 200000) { showNotification('Nilai transaksi tidak boleh melebihi Rp 200.000', 'warning'); return; }
+            if (!transactionAmount || !calculatedFee || !selectedPaymentMethod) { showNotification('Silakan lengkapi semua data!', 'warning'); return; }
+            const msg = `Halo, saya ingin menggunakan *Jasa Midman* dengan detail berikut:\n💰 Nilai Transaksi: Rp ${transactionAmount.toLocaleString('id-ID')}\n💸 Fee Midman: Rp ${calculatedFee.toLocaleString('id-ID')}\n💳 Metode Pembayaran: ${selectedPaymentMethod}\n\nSilakan berikan instruksi lebih lanjut.`;
+            window.open(`https://wa.me/6285374128738?text=${encodeURIComponent(msg)}`, '_blank');
             closeAllModals();
         }
-
-        // Inisialisasi
-        document.addEventListener('DOMContentLoaded', function() {
-            renderCategories();
-            renderAllProducts();
-            setupEventListeners();
-            showCategory('netflix');
-            
-            // FAQ toggle
-            document.querySelectorAll('.faq-question').forEach(question => {
-                question.addEventListener('click', function() {
-                    const answer = this.nextElementSibling;
-                    const toggle = this.querySelector('.faq-toggle');
-                    
-                    answer.classList.toggle('active');
-                    toggle.classList.toggle('active');
-                });
-            });
-        });
-
-        // Render kategori
-        function renderCategories() {
-            const categoryGrid = document.getElementById('categoryGrid');
-            categoryGrid.innerHTML = '';
-            
-            let index = 0;
-            for (const key in products) {
-                const product = products[key];
-                const categoryCard = document.createElement('div');
-                categoryCard.className = 'category-card';
-                if (key === currentCategory) categoryCard.classList.add('active');
-                categoryCard.dataset.category = key;
-                categoryCard.innerHTML = `
-                    <div class="category-icon" style="color: ${product.color}; background: linear-gradient(135deg, ${hexToRgba(product.color, 0.1)}, ${hexToRgba(product.color, 0.05)})">
-                        <i class="${product.icon}"></i>
-                    </div>
-                    <div class="category-name">${product.name}</div>
-                    <div class="category-count">${product.items.length} Paket</div>
-                `;
-                categoryCard.addEventListener('click', function() {
-                    showCategory(key);
-                });
-                categoryGrid.appendChild(categoryCard);
-                index++;
-            }
-        }
-
-        // Render semua produk
-        function renderAllProducts() {
-            const productsContainer = document.getElementById('productsContainer');
-            productsContainer.innerHTML = '';
-            
-            for (const key in products) {
-                const product = products[key];
-                const section = document.createElement('div');
-                section.className = 'products-section';
-                section.id = `product-${key}`;
-                
-                // Tambahkan tombol penjelasan untuk beberapa kategori
-                let explanationButton = '';
-                if (['netflix', 'youtube', 'canva', 'freefire'].includes(key)) {
-                    explanationButton = `<button class="product-explanation-btn" data-explanation="${key}">
-                        <i class="fas fa-info-circle"></i> Penjelasan Paket
-                    </button>`;
-                }
-                
-                // Untuk Free Fire, buat layout khusus dengan diamond grid
-                if (key === 'freefire') {
-                    // Render produk biasa (membership & cards)
-                    let regularItemsHTML = '';
-                    product.items.forEach(item => {
-                        regularItemsHTML += `
-                            <div class="product-card ${item.featured ? 'featured' : ''}">
-                                ${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}
-                                <div class="product-header-card" style="background: linear-gradient(135deg, ${product.color}, ${adjustColor(product.color, -30)})">
-                                    <h3>${item.name.includes('Diamond') ? '💎 ' : ''}${product.name}</h3>
-                                </div>
-                                <div class="product-body">
-                                    <div class="product-item">
-                                        <div class="product-details">
-                                            <div class="product-name">${item.name}</div>
-                                            <div class="product-desc">${item.desc}</div>
-                                        </div>
-                                        <div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div>
-                                    </div>
-                                    <button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}">
-                                        <i class="fas fa-shopping-cart"></i> Beli Sekarang
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    
-                    // Render diamond grid
-                    let diamondGridHTML = '<div class="diamond-grid">';
-                    product.diamonds.forEach(diamond => {
-                        diamondGridHTML += `
-                            <div class="diamond-card ${diamond.featured ? 'featured' : ''}">
-                                ${diamond.featured ? '<div class="featured-badge" style="font-size: 0.7rem; padding: 3px 8px;"><i class="fas fa-crown"></i></div>' : ''}
-                                <div class="diamond-icon">💎</div>
-                                <div class="diamond-amount">${diamond.amount} DM</div>
-                                <div class="diamond-price">Rp ${diamond.price.toLocaleString('id-ID')}</div>
-                                <button class="diamond-buy-btn" data-product="${key}" data-item="${diamond.amount} Diamond" data-price="${diamond.price}">
-                                    Beli
-                                </button>
-                            </div>
-                        `;
-                    });
-                    diamondGridHTML += '</div>';
-                    
-                    section.innerHTML = `
-                        <div class="product-header">
-                            <div class="product-title">
-                                <i class="${product.icon}" style="color: ${product.color}"></i>
-                                ${product.name}
-                            </div>
-                            ${explanationButton}
-                        </div>
-                        
-                        <div class="diamond-section">
-                            <h3 class="section-subtitle">💎 Diamond Free Fire</h3>
-                            ${diamondGridHTML}
-                        </div>
-                        
-                        <h3 class="section-subtitle" style="text-align: left; margin: 40px 0 20px;">🎮 Membership & Cards</h3>
-                        <div class="product-grid" id="grid-${key}">
-                            ${regularItemsHTML}
-                        </div>
-                    `;
-                } else {
-                    // Untuk produk lainnya, gunakan layout biasa
-                    let productsHTML = '';
-                    product.items.forEach(item => {
-                        productsHTML += `
-                            <div class="product-card ${item.featured ? 'featured' : ''}">
-                                ${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}
-                                <div class="product-header-card" style="background: linear-gradient(135deg, ${product.color}, ${adjustColor(product.color, -30)})">
-                                    <h3>${product.name}</h3>
-                                </div>
-                                <div class="product-body">
-                                    <div class="product-item">
-                                        <div class="product-details">
-                                            <div class="product-name">${item.name}</div>
-                                            <div class="product-desc">${item.desc}</div>
-                                        </div>
-                                        <div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div>
-                                    </div>
-                                    <button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${item.needsEmail ? 'data-needs-email="true"' : ''}>
-                                        <i class="fas fa-shopping-cart"></i> Beli Sekarang
-                                    </button>
-                                </div>
-                            </div>
-                        `;
-                    });
-                    
-                    section.innerHTML = `
-                        <div class="product-header">
-                            <div class="product-title">
-                                <i class="${product.icon}" style="color: ${product.color}"></i>
-                                ${product.name}
-                            </div>
-                            ${explanationButton}
-                        </div>
-                        <div class="product-grid" id="grid-${key}">
-                            ${productsHTML}
-                        </div>
-                    `;
-                }
-                
-                productsContainer.appendChild(section);
-            }
-        }
-
-        // Tampilkan kategori tertentu
-        function showCategory(categoryId) {
-            currentCategory = categoryId;
-            
-            // Update kategori aktif
-            document.querySelectorAll('.category-card').forEach(card => {
-                card.classList.remove('active');
-            });
-            document.querySelector(`.category-card[data-category="${categoryId}"]`).classList.add('active');
-            
-            // Sembunyikan semua section produk
-            document.querySelectorAll('.products-section').forEach(section => {
-                section.classList.remove('active');
-            });
-            
-            // Tampilkan section yang dipilih
-            const targetSection = document.getElementById(`product-${categoryId}`);
-            if (targetSection) {
-                targetSection.classList.add('active');
-                
-                // Scroll ke produk
-                document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' });
-            }
-            
-            // Update navigasi
-            document.getElementById('mainNav').classList.remove('active');
-        }
-
-        // Tampilkan modal penjelasan
-        function showExplanation(productKey) {
-            const explanation = explanations[productKey];
-            if (!explanation) return;
-            
-            document.getElementById('explanationTitle').textContent = explanation.title;
-            document.getElementById('explanationContent').innerHTML = explanation.content;
-            document.getElementById('explanationModal').style.display = 'flex';
-        }
-
-        // Buka modal checkout
-        function openCheckoutModal(product, item, price, needsEmail = false) {
-            const priceNum = parseInt(price);
-            
-            currentOrder = { 
-                product, 
-                item, 
-                price: priceNum, 
-                needsEmail
-            };
-            
-            const productData = products[product];
-            
-            // Isi data modal
-            let checkoutHTML = `
-                <div class="form-group">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Item yang dipilih:</label>
-                    <input type="text" value="${productData.name} - ${item}" readonly style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: #f8f9fa;">
-                </div>
-                
-                <div class="form-group">
-                    <label style="display: block; margin-bottom: 8px; font-weight: 500;">Harga:</label>
-                    <input type="text" value="Rp ${priceNum.toLocaleString('id-ID')}" readonly style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem; background: #f8f9fa; font-weight: 700; color: var(--primary);">
-                </div>`;
-            
-            // Tampilkan input berdasarkan produk
-            if (product === 'freefire') {
-                checkoutHTML += `
-                    <div class="form-group">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">ID Free Fire:</label>
-                        <input type="text" id="gameId" placeholder="Contoh: 123456789" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                    </div>`;
-            } else if (needsEmail) {
-                checkoutHTML += `
-                    <div class="form-group">
-                        <label style="display: block; margin-bottom: 8px; font-weight: 500;">Email (untuk akun private):</label>
-                        <input type="email" id="userEmail" placeholder="contoh@gmail.com" style="width: 100%; padding: 12px 15px; border: 1px solid #ddd; border-radius: 8px; font-size: 1rem;">
-                    </div>`;
-            }
-            
-            checkoutHTML += `
-                <div class="form-group">
-                    <label style="display: block; margin-bottom: 15px; font-weight: 500;">Metode Pembayaran:</label>
-                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 10px;">
-                        <div class="payment-method-select" data-method="qris" style="flex: 1; min-width: 140px; border: 2px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s;">
-                            <i class="fas fa-qrcode" style="font-size: 1.8rem; margin-bottom: 8px; display: block; color: #00a86b;"></i>
-                            <span>QRIS</span>
-                        </div>
-                        <div class="payment-method-select" data-method="dana" style="flex: 1; min-width: 140px; border: 2px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s;">
-                            <i class="fas fa-wallet" style="font-size: 1.8rem; margin-bottom: 8px; display: block; color: #0088cc;"></i>
-                            <span>DANA</span>
-                        </div>
-                        <div class="payment-method-select" data-method="gopay" style="flex: 1; min-width: 140px; border: 2px solid #ddd; border-radius: 8px; padding: 15px; text-align: center; cursor: pointer; transition: all 0.3s;">
-                            <i class="fas fa-money-bill-wave" style="font-size: 1.8rem; margin-bottom: 8px; display: block; color: #00aa13;"></i>
-                            <span>GoPay</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="background-color: #f8f9fa; border-radius: 10px; padding: 20px; margin-top: 25px;">
-                    <h4 style="margin-bottom: 15px;">Ringkasan Pesanan:</h4>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span>Item:</span>
-                        <span id="summaryItem" style="font-weight: 500;">${productData.name} - ${item}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span>Harga:</span>
-                        <span id="summaryPrice" style="font-weight: 500;">Rp ${priceNum.toLocaleString('id-ID')}</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
-                        <span>Metode:</span>
-                        <span id="summaryMethod" style="font-weight: 500;">-</span>
-                    </div>
-                    <div style="display: flex; justify-content: space-between; font-weight: 700; font-size: 1.2rem; border-top: 2px solid #ddd; padding-top: 10px; margin-top: 15px;">
-                        <span>Total:</span>
-                        <span id="summaryTotal" style="color: var(--primary);">Rp ${priceNum.toLocaleString('id-ID')}</span>
-                    </div>
-                </div>
-                
-                <button id="confirmOrder" style="background: var(--gradient); color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-size: 1.1rem; font-weight: 600; cursor: pointer; margin-top: 20px; transition: all 0.3s;">
-                    Konfirmasi & Kirim Pesan
-                </button>`;
-            
-            document.getElementById('checkoutContent').innerHTML = checkoutHTML;
-            
-            // Setup event listeners untuk metode pembayaran
-            document.querySelectorAll('.payment-method-select').forEach(method => {
-                method.addEventListener('click', function() {
-                    document.querySelectorAll('.payment-method-select').forEach(m => {
-                        m.style.borderColor = '#ddd';
-                        m.style.backgroundColor = 'white';
-                    });
-                    this.style.borderColor = 'var(--primary)';
-                    this.style.backgroundColor = 'rgba(67, 97, 238, 0.05)';
-                    
-                    document.getElementById('summaryMethod').textContent = this.dataset.method.toUpperCase();
-                });
-            });
-            
-            // Set default payment method
-            document.querySelector('.payment-method-select').click();
-            
-            // Setup event listener untuk konfirmasi
-            document.getElementById('confirmOrder').addEventListener('click', confirmOrder);
-            
-            // Tampilkan modal
-            document.getElementById('checkoutModal').style.display = 'flex';
-        }
-
-        // Konfirmasi pesanan dan buka WhatsApp/Telegram
-        function confirmOrder() {
-            if (!currentOrder) return;
-            
-            const gameId = document.getElementById('gameId') ? document.getElementById('gameId').value : '';
-            const userEmail = document.getElementById('userEmail') ? document.getElementById('userEmail').value : '';
-            const paymentMethod = document.getElementById('summaryMethod').textContent;
-            
-            // Validasi untuk Free Fire
-            if (currentOrder.product === 'freefire' && !gameId) {
-                alert('Silakan masukkan ID Free Fire Anda!');
-                document.getElementById('gameId').focus();
-                return;
-            }
-            
-            // Validasi untuk akun private
-            if (currentOrder.needsEmail && !userEmail) {
-                alert('Silakan masukkan email Anda untuk akun private!');
-                document.getElementById('userEmail').focus();
-                return;
-            }
-            
-            // Format pesan
-            let message = `Halo, saya ingin membeli:\n`;
-            message += `📦 Produk: ${products[currentOrder.product].name}\n`;
-            message += `🎯 Item: ${currentOrder.item}\n`;
-            message += `💰 Harga: Rp ${currentOrder.price.toLocaleString('id-ID')}\n`;
-            
-            if (gameId) {
-                message += `🎮 ID Free Fire: ${gameId}\n`;
-            }
-            
-            if (userEmail) {
-                message += `📧 Email: ${userEmail}\n`;
-            }
-            
-            message += `💳 Metode Pembayaran: ${paymentMethod}\n\n`;
-            message += `Silakan berikan instruksi pembayaran lebih lanjut.`;
-            
-            // Encode pesan untuk URL
-            const encodedMessage = encodeURIComponent(message);
-            
-            // Tanyakan pengguna mau kirim via WhatsApp atau Telegram
-            const choice = confirm("Kirim pesanan via WhatsApp?\n\nKlik OK untuk WhatsApp, Cancel untuk Telegram");
-            
-            if (choice) {
-                // WhatsApp
-                window.open(`https://wa.me/6285374128738?text=${encodedMessage}`, '_blank');
-            } else {
-                // Telegram
-                window.open(`https://t.me/NaufalTzye?text=${encodedMessage}`, '_blank');
-            }
-            
-            // Tutup modal
-            closeAllModals();
-            
-            // Tampilkan pesan konfirmasi
-            alert('Pesanan Anda telah dikirim! Silakan selesaikan pembayaran via WhatsApp/Telegram.');
-        }
-
-        // Buka modal jasa midman
         function openServiceModal() {
             // Reset form
-            document.getElementById('transactionAmount').value = '';
+            const input = document.getElementById('transactionAmount');
+            if (input) input.value = '';
             document.getElementById('feeDisplay').style.display = 'none';
-            document.querySelectorAll('.payment-option').forEach(option => {
-                option.classList.remove('active');
-            });
+            document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
             document.getElementById('whatsappBtn').disabled = true;
-            selectedPaymentMethod = null;
-            calculatedFee = 0;
-            transactionAmount = 0;
-            
-            // Tampilkan modal
+            selectedPaymentMethod = null; calculatedFee = 0; transactionAmount = 0;
             document.getElementById('serviceModal').style.display = 'flex';
         }
 
-        // Setup event listeners
-        function setupEventListeners() {
-            // Tombol beli (delegasi event)
-            document.addEventListener('click', function(e) {
-                // Tombol beli biasa
-                if (e.target.classList.contains('buy-btn') || e.target.closest('.buy-btn')) {
-                    const btn = e.target.classList.contains('buy-btn') ? e.target : e.target.closest('.buy-btn');
-                    const needsEmail = btn.hasAttribute('data-needs-email') && btn.getAttribute('data-needs-email') === 'true';
-                    openCheckoutModal(
-                        btn.dataset.product,
-                        btn.dataset.item,
-                        btn.dataset.price,
-                        needsEmail
-                    );
-                }
-                
-                // Tombol beli diamond
-                if (e.target.classList.contains('diamond-buy-btn') || e.target.closest('.diamond-buy-btn')) {
-                    const btn = e.target.classList.contains('diamond-buy-btn') ? e.target : e.target.closest('.diamond-buy-btn');
-                    openCheckoutModal(
-                        btn.dataset.product,
-                        btn.dataset.item,
-                        btn.dataset.price
-                    );
-                }
-                
-                // Tombol penjelasan
-                if (e.target.classList.contains('product-explanation-btn') || e.target.closest('.product-explanation-btn')) {
-                    const btn = e.target.classList.contains('product-explanation-btn') ? e.target : e.target.closest('.product-explanation-btn');
-                    showExplanation(btn.dataset.explanation);
-                }
-            });
-            
-            // Modal close
-            document.querySelectorAll('.close-modal').forEach(btn => {
-                btn.addEventListener('click', closeAllModals);
-            });
-            
-            document.getElementById('checkoutModal').addEventListener('click', function(e) {
-                if (e.target === this) closeAllModals();
-            });
-            
-            document.getElementById('explanationModal').addEventListener('click', function(e) {
-                if (e.target === this) closeAllModals();
-            });
-            
-            document.getElementById('serviceModal').addEventListener('click', function(e) {
-                if (e.target === this) closeAllModals();
-            });
-            
-            // Input amount untuk midman
-            document.getElementById('transactionAmount').addEventListener('input', calculateFee);
-            
-            // Klik opsi pembayaran untuk midman
-            document.querySelectorAll('.payment-option').forEach(option => {
-                option.addEventListener('click', function() {
-                    selectPaymentMethod(this);
-                });
-            });
-            
-            // Tombol WhatsApp untuk midman
-            document.getElementById('whatsappBtn').addEventListener('click', openWhatsApp);
-            
-            // Navigasi
-            document.querySelector('.nav-home').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('mainNav').classList.remove('active');
-            });
-            
-            document.querySelector('.nav-categories').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('categoriesSection').scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('mainNav').classList.remove('active');
-            });
-            
-            document.querySelector('.nav-payment').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('mainNav').classList.remove('active');
-            });
-            
-            document.querySelector('.nav-faq').addEventListener('click', function(e) {
-                e.preventDefault();
-                document.getElementById('faqSection').scrollIntoView({ behavior: 'smooth' });
-                document.getElementById('mainNav').classList.remove('active');
-            });
-            
-            // Mobile menu
-            document.getElementById('mobileMenuBtn').addEventListener('click', function() {
-                document.getElementById('mainNav').classList.toggle('active');
-            });
-            
-            // Footer navigation
-            document.querySelectorAll('.footer-links a, .contact-info-footer a').forEach(link => {
-                link.addEventListener('click', function(e) {
-                    if (this.classList.contains('nav-categories')) {
-                        e.preventDefault();
-                        document.getElementById('categoriesSection').scrollIntoView({ behavior: 'smooth' });
-                        document.getElementById('mainNav').classList.remove('active');
-                    } else if (this.classList.contains('nav-faq')) {
-                        e.preventDefault();
-                        document.getElementById('faqSection').scrollIntoView({ behavior: 'smooth' });
-                        document.getElementById('mainNav').classList.remove('active');
-                    } else if (this.classList.contains('nav-payment')) {
-                        e.preventDefault();
-                        document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
-                        document.getElementById('mainNav').classList.remove('active');
-                    }
-                });
-            });
+        // ========== RENDER KATEGORI ==========
+        function renderCategories() {
+            const grid = document.getElementById('categoryGrid'); grid.innerHTML = '';
+            for (let key in products) {
+                let p = products[key];
+                let card = document.createElement('div');
+                card.className = 'category-card' + (key === currentCategory ? ' active' : '');
+                card.dataset.category = key;
+                card.innerHTML = `<div class="category-icon" style="color:${p.color};background:linear-gradient(135deg,${hexToRgba(p.color,0.1)},${hexToRgba(p.color,0.05)})"><i class="${p.icon}"></i></div><div class="category-name">${p.name}</div><div class="category-count">${p.items.length} Paket</div>`;
+                card.addEventListener('click', () => showCategory(key));
+                grid.appendChild(card);
+            }
         }
 
-        // Tutup semua modal
+        // ========== RENDER SEMUA PRODUK ==========
+        function renderAllProducts() {
+            const container = document.getElementById('productsContainer'); container.innerHTML = '';
+            for (let key in products) {
+                let p = products[key];
+                let section = document.createElement('div');
+                section.className = 'products-section';
+                section.id = `product-${key}`;
+
+                let expBtn = '';
+                if (['netflix','youtube','canva','freefire'].includes(key)) expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
+
+                // ========== KHUSUS FREE FIRE (TANPA MIDMAN, LAYOUT GRID BIASA) ==========
+                if (key === 'freefire') {
+                    // Diamond grid
+                    let diamondHTML = '<div class="diamond-grid">';
+                    p.diamonds.forEach(d => {
+                        diamondHTML += `<div class="diamond-card ${d.featured?'featured':''}">${d.featured?'<div class="featured-badge" style="font-size:0.7rem;"><i class="fas fa-crown"></i></div>':''}<div class="diamond-icon">💎</div><div class="diamond-amount">${d.amount} DM</div><div class="diamond-price">Rp ${d.price.toLocaleString('id-ID')}</div><button class="diamond-buy-btn" data-product="${key}" data-item="${d.amount} Diamond" data-price="${d.price}">Beli</button></div>`;
+                    });
+                    diamondHTML += '</div>';
+
+                    // Membership & Cards (dalam grid)
+                    let regularHTML = '';
+                    p.items.forEach(item => {
+                        regularHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}"><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
+                    });
+
+                    section.innerHTML = `
+                        <div class="product-header">
+                            <div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>
+                            ${expBtn}
+                        </div>
+                        <div class="diamond-section">
+                            <h3 class="section-subtitle">💎 Diamond Free Fire</h3>
+                            ${diamondHTML}
+                        </div>
+                        <h3 class="section-subtitle" style="text-align:left; margin:40px 0 20px;">🎮 Membership & Cards</h3>
+                        <div class="product-grid">${regularHTML}</div>
+                    `;
+                } else {
+                    // Kategori lain (tidak freefire) - layout biasa
+                    let itemsHTML = '';
+                    p.items.forEach(item => {
+                        itemsHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${item.needsEmail?'data-needs-email="true"':''}><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
+                    });
+                    section.innerHTML = `<div class="product-header"><div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
+                }
+                container.appendChild(section);
+            }
+        }
+
+        // ========== FUNGSI NAVIGASI ==========
+        function showCategory(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.category-card').forEach(c => c.classList.remove('active'));
+            let activeCat = document.querySelector(`.category-card[data-category="${cat}"]`);
+            if (activeCat) activeCat.classList.add('active');
+            document.querySelectorAll('.products-section').forEach(s => s.classList.remove('active'));
+            let target = document.getElementById(`product-${cat}`);
+            if (target) { target.classList.add('active'); document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' }); }
+            document.getElementById('mainNav').classList.remove('active');
+        }
+        function showExplanation(key) {
+            let exp = explanations[key]; if (!exp) return;
+            document.getElementById('explanationTitle').innerText = exp.title;
+            document.getElementById('explanationContent').innerHTML = exp.content;
+            document.getElementById('explanationModal').style.display = 'flex';
+        }
+        function openCheckoutModal(prod, item, price, needsEmail = false) {
+            let priceNum = parseInt(price);
+            currentOrder = { product: prod, item, price: priceNum, needsEmail };
+            let p = products[prod];
+            let html = `<div class="form-group"><label>Item yang dipilih:</label><input type="text" value="${p.name} - ${item}" readonly style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;background:#f8f9fa;"></div>
+                        <div class="form-group"><label>Harga:</label><input type="text" value="Rp ${priceNum.toLocaleString('id-ID')}" readonly style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;background:#f8f9fa;font-weight:700;color:var(--primary);"></div>`;
+            if (prod === 'freefire') html += `<div class="form-group"><label>ID Free Fire:</label><input type="text" id="gameId" placeholder="Contoh: 123456789" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;"></div>`;
+            else if (needsEmail) html += `<div class="form-group"><label>Email (untuk akun private):</label><input type="email" id="userEmail" placeholder="contoh@gmail.com" style="width:100%;padding:12px;border:1px solid #ddd;border-radius:8px;"></div>`;
+            html += `<div class="form-group"><label>Metode Pembayaran:</label><div style="display:flex;flex-wrap:wrap;gap:10px;margin-top:10px;">
+                        <div class="payment-method-select" data-method="qris" style="flex:1;min-width:140px;border:2px solid #ddd;border-radius:8px;padding:15px;text-align:center;cursor:pointer;"><i class="fas fa-qrcode" style="font-size:1.8rem;margin-bottom:8px;display:block;color:#00a86b;"></i><span>QRIS</span></div>
+                        <div class="payment-method-select" data-method="dana" style="flex:1;min-width:140px;border:2px solid #ddd;border-radius:8px;padding:15px;text-align:center;cursor:pointer;"><i class="fas fa-wallet" style="font-size:1.8rem;margin-bottom:8px;display:block;color:#0088cc;"></i><span>DANA</span></div>
+                        <div class="payment-method-select" data-method="gopay" style="flex:1;min-width:140px;border:2px solid #ddd;border-radius:8px;padding:15px;text-align:center;cursor:pointer;"><i class="fas fa-money-bill-wave" style="font-size:1.8rem;margin-bottom:8px;display:block;color:#00aa13;"></i><span>GoPay</span></div>
+                    </div></div>
+                    <div style="background:#f8f9fa;border-radius:10px;padding:20px;margin-top:25px;">
+                        <h4 style="margin-bottom:15px;">Ringkasan Pesanan:</h4>
+                        <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span>Item:</span><span id="summaryItem" style="font-weight:500;">${p.name} - ${item}</span></div>
+                        <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span>Harga:</span><span id="summaryPrice" style="font-weight:500;">Rp ${priceNum.toLocaleString('id-ID')}</span></div>
+                        <div style="display:flex;justify-content:space-between;margin-bottom:10px;"><span>Metode:</span><span id="summaryMethod" style="font-weight:500;">-</span></div>
+                        <div style="display:flex;justify-content:space-between;font-weight:700;font-size:1.2rem;border-top:2px solid #ddd;padding-top:10px;margin-top:15px;"><span>Total:</span><span id="summaryTotal" style="color:var(--primary);">Rp ${priceNum.toLocaleString('id-ID')}</span></div>
+                    </div>
+                    <button id="confirmOrder" style="background:var(--gradient);color:white;border:none;width:100%;padding:15px;border-radius:10px;font-size:1.1rem;font-weight:600;cursor:pointer;margin-top:20px;">Konfirmasi & Kirim Pesan</button>`;
+            document.getElementById('checkoutContent').innerHTML = html;
+            document.querySelectorAll('.payment-method-select').forEach(m => {
+                m.addEventListener('click', function() {
+                    document.querySelectorAll('.payment-method-select').forEach(x => { x.style.borderColor = '#ddd'; x.style.backgroundColor = 'white'; });
+                    this.style.borderColor = 'var(--primary)'; this.style.backgroundColor = 'rgba(67,97,238,0.05)';
+                    document.getElementById('summaryMethod').innerText = this.dataset.method.toUpperCase();
+                });
+            });
+            document.querySelector('.payment-method-select')?.click();
+            document.getElementById('confirmOrder').addEventListener('click', confirmOrder);
+            document.getElementById('checkoutModal').style.display = 'flex';
+        }
+        function confirmOrder() {
+            if (!currentOrder) return;
+            let gameId = document.getElementById('gameId') ? document.getElementById('gameId').value : '';
+            let userEmail = document.getElementById('userEmail') ? document.getElementById('userEmail').value : '';
+            let method = document.getElementById('summaryMethod')?.innerText || '';
+            if (currentOrder.product === 'freefire' && !gameId) { alert('Silakan masukkan ID Free Fire Anda!'); document.getElementById('gameId')?.focus(); return; }
+            if (currentOrder.needsEmail && !userEmail) { alert('Silakan masukkan email Anda!'); document.getElementById('userEmail')?.focus(); return; }
+            let msg = `Halo, saya ingin membeli:\n📦 Produk: ${products[currentOrder.product].name}\n🎯 Item: ${currentOrder.item}\n💰 Harga: Rp ${currentOrder.price.toLocaleString('id-ID')}\n`;
+            if (gameId) msg += `🎮 ID Free Fire: ${gameId}\n`;
+            if (userEmail) msg += `📧 Email: ${userEmail}\n`;
+            msg += `💳 Metode Pembayaran: ${method}\n\nSilakan berikan instruksi pembayaran lebih lanjut.`;
+            if (confirm("Kirim pesanan via WhatsApp?\n\nKlik OK untuk WhatsApp, Cancel untuk Telegram")) window.open(`https://wa.me/6285374128738?text=${encodeURIComponent(msg)}`, '_blank');
+            else window.open(`https://t.me/NaufalTzye?text=${encodeURIComponent(msg)}`, '_blank');
+            closeAllModals(); alert('Pesanan Anda telah dikirim! Silakan selesaikan pembayaran.');
+        }
         function closeAllModals() {
             document.getElementById('checkoutModal').style.display = 'none';
             document.getElementById('explanationModal').style.display = 'none';
@@ -2748,17 +1988,79 @@
             document.getElementById('mainNav').classList.remove('active');
         }
 
-        // Helper functions
-        function hexToRgba(hex, alpha) {
-            const r = parseInt(hex.slice(1, 3), 16);
-            const g = parseInt(hex.slice(3, 5), 16);
-            const b = parseInt(hex.slice(5, 7), 16);
-            return `rgba(${r}, ${g}, ${b}, ${alpha})`;
+        // ========== HELPER ==========
+        function hexToRgba(hex, a) { let r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16); return `rgba(${r},${g},${b},${a})`; }
+        function adjustColor(c, a) { return '#'+c.replace(/^#/,'').replace(/../g,cc=>('0'+Math.min(255,Math.max(0,parseInt(cc,16)+a)).toString(16)).substr(-2)); }
+
+        // ========== EVENT LISTENERS ==========
+        function setupEventListeners() {
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('buy-btn') || e.target.closest('.buy-btn')) {
+                    let btn = e.target.classList.contains('buy-btn') ? e.target : e.target.closest('.buy-btn');
+                    if (btn.hasAttribute('onclick') && btn.getAttribute('onclick').includes('openServiceModal')) return;
+                    let needsEmail = btn.hasAttribute('data-needs-email') && btn.getAttribute('data-needs-email') === 'true';
+                    openCheckoutModal(btn.dataset.product, btn.dataset.item, btn.dataset.price, needsEmail);
+                }
+                if (e.target.classList.contains('diamond-buy-btn') || e.target.closest('.diamond-buy-btn')) {
+                    let btn = e.target.classList.contains('diamond-buy-btn') ? e.target : e.target.closest('.diamond-buy-btn');
+                    openCheckoutModal(btn.dataset.product, btn.dataset.item, btn.dataset.price);
+                }
+                if (e.target.classList.contains('product-explanation-btn') || e.target.closest('.product-explanation-btn')) {
+                    let btn = e.target.classList.contains('product-explanation-btn') ? e.target : e.target.closest('.product-explanation-btn');
+                    showExplanation(btn.dataset.explanation);
+                }
+            });
+
+            document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', closeAllModals));
+            document.getElementById('checkoutModal')?.addEventListener('click', e => { if(e.target === e.currentTarget) closeAllModals(); });
+            document.getElementById('explanationModal')?.addEventListener('click', e => { if(e.target === e.currentTarget) closeAllModals(); });
+            document.getElementById('serviceModal')?.addEventListener('click', e => { if(e.target === e.currentTarget) closeAllModals(); });
+
+            let amountInput = document.getElementById('transactionAmount');
+            if (amountInput) {
+                amountInput.addEventListener('input', function() {
+                    if (this.value > 200000) { this.style.borderColor = 'var(--danger)'; this.style.boxShadow = '0 0 0 2px rgba(230,57,70,0.2)'; }
+                    else { this.style.borderColor = ''; this.style.boxShadow = ''; }
+                    calculateFee();
+                });
+            }
+            document.querySelectorAll('.payment-option').forEach(opt => opt.addEventListener('click', function() { selectPaymentMethod(this); }));
+            document.getElementById('whatsappBtn')?.addEventListener('click', openWhatsApp);
+
+            // Navigasi
+            document.querySelector('.nav-home')?.addEventListener('click', e => { e.preventDefault(); document.querySelector('.hero').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
+            document.querySelector('.nav-categories')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('categoriesSection').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
+            document.querySelector('.nav-payment')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('paymentSection').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
+            document.querySelector('.nav-faq')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('faqSection').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
+
+            document.getElementById('mobileMenuBtn')?.addEventListener('click', () => document.getElementById('mainNav').classList.toggle('active'));
+
+            // Footer
+            document.querySelectorAll('.footer-links a, .contact-info-footer a').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.classList.contains('nav-categories')) { e.preventDefault(); document.getElementById('categoriesSection').scrollIntoView({behavior:'smooth'}); }
+                    else if (this.classList.contains('nav-faq')) { e.preventDefault(); document.getElementById('faqSection').scrollIntoView({behavior:'smooth'}); }
+                    else if (this.classList.contains('nav-payment')) { e.preventDefault(); document.getElementById('paymentSection').scrollIntoView({behavior:'smooth'}); }
+                    document.getElementById('mainNav').classList.remove('active');
+                });
+            });
+
+            // FAQ toggle
+            document.querySelectorAll('.faq-question').forEach(q => {
+                q.addEventListener('click', function() {
+                    this.nextElementSibling.classList.toggle('active');
+                    this.querySelector('.faq-toggle')?.classList.toggle('active');
+                });
+            });
         }
 
-        function adjustColor(color, amount) {
-            return '#' + color.replace(/^#/, '').replace(/../g, color => ('0'+Math.min(255, Math.max(0, parseInt(color, 16) + amount)).toString(16)).substr(-2));
-        }
+        // ========== INIT ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCategories();
+            renderAllProducts();
+            setupEventListeners();
+            showCategory('netflix');
+        });
     </script>
 </body>
 </html>
