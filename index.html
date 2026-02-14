@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* (style sama seperti sebelumnya, tidak ada perubahan) */
+        /* (style sama seperti sebelumnya, ditambah untuk stock warning dan button disabled) */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -566,9 +566,20 @@
             gap: 10px;
         }
 
-        .buy-btn:hover {
+        .buy-btn:hover:not(:disabled) {
             opacity: 0.95;
             transform: translateY(-3px);
+        }
+
+        .buy-btn.disabled,
+        .buy-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--gray);
+        }
+        .buy-btn.disabled:hover,
+        .buy-btn:disabled:hover {
+            transform: none;
         }
 
         /* Diamond Grid untuk Free Fire */
@@ -1401,6 +1412,21 @@
             .diamond-grid { grid-template-columns: repeat(2,1fr); }
             .payment-options { flex-direction: column; }
         }
+
+        /* Stock warning */
+        .stock-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 500;
+        }
+        .stock-warning i {
+            margin-right: 8px;
+        }
     </style>
 </head>
 <body>
@@ -1683,28 +1709,30 @@
     </footer>
 
     <script>
-        // ==================== DATA PRODUK (DIPERBARUI) ====================
+        // ==================== DATA PRODUK ====================
         const products = {
             netflix: {
                 name: "Netflix", icon: "fas fa-tv", color: "#E50914",
                 items: [
-                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device", featured: false },
-                    { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device", featured: false },
-                    { name: "Sharing 1 Bulan [1P1U]", price: 25500, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device", featured: true },
-                    { name: "Sharing 1 Bulan [1P2U]", price: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device", featured: false },
-                    { name: "Semi Private 1 Bulan", price: 30500, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device", featured: false },
-                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Plan Premium 4K, 5 profil, Kontrol penuh", featured: true, needsEmail: true }
+                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
+                    { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
+                    { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
+                    { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
+                    { name: "Sharing 1 Bulan [1P1U]", price: 25500, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true },
+                    { name: "Sharing 1 Bulan [1P2U]", price: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: false },
+                    { name: "Semi Private 1 Bulan", price: 30500, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false },
+                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Plan Premium 4K, 5 profil, Kontrol penuh, No garansi", featured: true, needsEmail: true }
                 ]
             },
             spotify: {
                 name: "Spotify", icon: "fab fa-spotify", color: "#1DB954",
                 items: [
-                    { name: "Student 1 Bulan", price: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false },
+                    { name: "Student 1 Bulan (Garansi 1x24 jam)", price: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false },
                     { name: "Student 1 Bulan (Full Garansi)", price: 17000, desc: "Full garansi, Support all device", featured: true },
-                    { name: "Famplan 1 Bulan", price: 19000, desc: "Akun dari seller, Full garansi", featured: false },
-                    { name: "Indplan 3 Bulan", price: 21000, desc: "Akun dari seller, Full garansi", featured: false },
-                    { name: "Indplan 4 Bulan", price: 24000, desc: "Akun dari seller, Full garansi", featured: true },
-                    { name: "Indplan 3 Bulan (No Garansi)", price: 15000, desc: "Akun dari seller, No garansi", featured: false }
+                    { name: "Famplan 1 Bulan", price: 19000, desc: "Akun seller, Full garansi", featured: false },
+                    { name: "Indplan 3 Bulan (Full Garansi)", price: 21000, desc: "Akun seller, Full garansi", featured: false },
+                    { name: "Indplan 4 Bulan (Full Garansi)", price: 24000, desc: "Akun seller, Full garansi", featured: true },
+                    { name: "Indplan 3 Bulan (No Garansi)", price: 15000, desc: "Akun seller, No garansi", featured: false }
                 ]
             },
             youtube: {
@@ -1715,28 +1743,28 @@
                     { name: "Mixplan 3 Bulan", price: 13500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
                     { name: "Famhead 1 Bulan", price: 11000, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
                     { name: "Indiplan 1 Bulan", price: 12500, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
-                    { name: "Jaspay Famhead 1 Bulan", price: 10000, desc: "ACC buyer, Kirim email & password", featured: false },
-                    { name: "Jaspay Indiplan 1 Bulan", price: 11500, desc: "ACC buyer, Kirim email & password", featured: false },
-                    { name: "Jaspay Mixplan 3 Bulan", price: 12500, desc: "ACC buyer, Kirim email & password", featured: false }
+                    { name: "Jaspay Famhead 1 Bulan", price: 10000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
+                    { name: "Jaspay Indiplan 1 Bulan", price: 11500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
+                    { name: "Jaspay Mixplan 3 Bulan", price: 12500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false }
                 ]
             },
             alight: {
                 name: "Alight Motion", icon: "fas fa-video", color: "#8A2BE2",
                 items: [
-                    { name: "Sharing 1 Tahun", price: 2000, desc: "Akun dari seller, Support Android/iOS", featured: false },
-                    { name: "Private 1 Tahun (Akun Buyer)", price: 1500, desc: "Pakai email sendiri, Maks 10 device", featured: true, needsEmail: true },
-                    { name: "Private 1 Tahun (Akun Seller)", price: 2500, desc: "Akun dari seller, Maks 10 device", featured: false }
+                    { name: "Sharing 1 Tahun (Acc Seller)", price: 2000, desc: "Akun dari seller, Support Android/iOS, Garansi 6 bulan", featured: false },
+                    { name: "Private 1 Tahun (Acc Buyer)", price: 1500, desc: "Pakai email sendiri, Maks 10 device, Garansi 6 bulan", featured: true, needsEmail: true },
+                    { name: "Private 1 Tahun (Acc Seller)", price: 2500, desc: "Akun dari seller, Maks 10 device, Garansi 6 bulan", featured: false }
                 ]
             },
             capcut: {
                 name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF",
                 items: [
-                    { name: "Sharing 1 Bulan (Gar7d)", price: 5500, desc: "Akun dari seller, Support all device, Garansi 7 hari", featured: false },
-                    { name: "Private 7 Hari (Gar3d)", price: 6500, desc: "Akun dari seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
-                    { name: "Private 22 Hari Team (FullGar)", price: 7000, desc: "Akun berbasis Tim Private, Full garansi, Maks 2 device", featured: true },
+                    { name: "Sharing 1 Bulan (Gar7d)", price: 5500, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false },
+                    { name: "Private 7 Hari (Gar3d)", price: 6500, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
+                    { name: "Private 22 Hari Team (FullGar)", price: 7000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true },
                     { name: "Private 42 Hari Team (Gar1b)", price: 10000, desc: "Akun berbasis Tim Private, Maks 3 device, Garansi 1 bulan", featured: false },
-                    { name: "Private 1 Bulan Team (Gar7d)", price: 7000, desc: "Akun berbasis Tim Private, Garansi 7 hari, Maks 2 device", featured: false },
-                    { name: "Private 1 Bulan Team (FullGar)", price: 9000, desc: "Akun berbasis Tim Private, Full garansi, Maks 2 device", featured: true }
+                    { name: "Private 1 Bulan Team (Gar7d)", price: 7000, desc: "Akun berbasis Tim Private, Maks 2 device, Garansi 7 hari", featured: false },
+                    { name: "Private 1 Bulan Team (FullGar)", price: 9000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true }
                 ]
             },
             canva: {
@@ -1746,22 +1774,22 @@
                     { name: "Paket Designer 1 Bulan", price: 3000, desc: "Support all device, Via link invite, Full garansi BF", featured: false },
                     { name: "Paket Edu 1 Tahun", price: 2500, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
                     { name: "Paket Edu Lifetime", price: 6000, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
-                    { name: "Paket Head Admin 1 Bulan", price: 4500, desc: "Akun dari seller, Support all device, No garansi", featured: false },
-                    { name: "Paket Head Owner 1 Bulan", price: 6500, desc: "Akun dari seller, Support all device, No garansi", featured: true }
+                    { name: "Paket Head Admin 1 Bulan", price: 4500, desc: "Akun seller, Support all device, No garansi", featured: false },
+                    { name: "Paket Head Owner 1 Bulan", price: 6500, desc: "Akun seller, Support all device, No garansi", featured: true }
                 ]
             },
             freefire: {
                 name: "Free Fire", icon: "fas fa-fire", color: "#FF6B00",
                 items: [
-                    { name: "Membership Mingguan", price: 32699, desc: "Top up via ID, Proses 1-5 menit", featured: true, type: "membership" },
-                    { name: "Membership Bulanan", price: 88734, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "membership" },
-                    { name: "Membership Mingguan (×2)", price: 59386, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "membership" },
-                    { name: "Membership Bulanan (×2)", price: 169105, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "membership" },
-                    { name: "BP Card", price: 48531, desc: "Top up via ID, Proses 1-5 menit", featured: true, type: "card" },
-                    { name: "Level Up Pass - Level 6", price: 10456, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
-                    { name: "Level Up Pass - Level 10", price: 12956, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
-                    { name: "Level Up Pass - Level 15", price: 15760, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
-                    { name: "Level Up Pass - Level 30", price: 19717, desc: "Top up via ID, Proses 1-5 menit", featured: false, type: "card" },
+                    { name: "Membership Mingguan", price: 32699, desc: "Top up via ID, Proses 1-5 menit", featured: true },
+                    { name: "Membership Bulanan", price: 88734, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Membership Mingguan (×2)", price: 59386, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Membership Bulanan (×2)", price: 169105, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "BP Card", price: 48531, desc: "Top up via ID, Proses 1-5 menit", featured: true },
+                    { name: "Level Up Pass – Level 6", price: 10456, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Level Up Pass – Level 10", price: 12956, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Level Up Pass – Level 15", price: 15760, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Level Up Pass – Level 30", price: 19717, desc: "Top up via ID, Proses 1-5 menit", featured: false }
                 ],
                 diamonds: [
                     { amount: "5", price: 6300 }, { amount: "10", price: 7100 }, { amount: "12", price: 7200 }, { amount: "15", price: 8900 },
@@ -1778,13 +1806,225 @@
             }
         };
 
-        // Data penjelasan (ringkas)
+        // ==================== PENJELASAN LENGKAP ====================
         const explanations = {
-            netflix: { title: "📢 PENJELASAN PAKET NETFLIX", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Netflix...</p></div>` },
-            youtube: { title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket YouTube...</p></div>` },
-            canva: { title: "📌 PENJELASAN PAKET CANVA PRO", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Canva...</p></div>` },
-            freefire: { title: "⚠️ INFO PENTING FREE FIRE", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang Free Fire...</p></div>` },
-            capcut: { title: "✂️ PENJELASAN PAKET CAPCUT PRO", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket CapCut...</p></div>` }
+            netflix: {
+                title: "📢 PENJELASAN PAKET NETFLIX",
+                content: `
+                    <div class="explanation-content">
+                        <h4>Sharing [1P2U / 1P1U]</h4>
+                        <ul>
+                            <li>Akun dari seller</li>
+                            <li>Login via kode OTP</li>
+                            <li>Maks login 1 device</li>
+                            <li>All device</li>
+                            <li>Full garansi</li>
+                        </ul>
+                        <h4>Semi Private</h4>
+                        <ul>
+                            <li>Akun dari seller</li>
+                            <li>Login via kode OTP</li>
+                            <li>Maks login 2 device</li>
+                            <li>All device</li>
+                            <li>Full garansi</li>
+                        </ul>
+                        <h4>Private</h4>
+                        <ul>
+                            <li>Akun buyer sendiri (akun sendiri)</li>
+                            <li>Plan Premium 4K</li>
+                            <li>Dapat 5 profil</li>
+                            <li>All device</li>
+                            <li>Maks login atur sendiri</li>
+                            <li>Limit screen 4</li>
+                            <li>No garansi</li>
+                            <li>Kontrol penuh (tanggung jawab masing-masing)</li>
+                            <li>Order = paham</li>
+                        </ul>
+                        <p><strong>⚠️ NOTE / INFO:</strong></p>
+                        <ul>
+                            <li>Plan Premium</li>
+                            <li>Resolusi max 4K (tergantung jaringan)</li>
+                            <li>No komplain limit screen</li>
+                            <li>Order sharing = paham sharing</li>
+                            <li>Proses ±5 menit (max 24 jam)</li>
+                            <li>Non rush, no spam</li>
+                            <li>Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            spotify: {
+                title: "🎵 PENJELASAN PAKET SPOTIFY",
+                content: `
+                    <div class="explanation-content">
+                        <h4>Student</h4>
+                        <ul>
+                            <li>1 Bulan = 13.000 (Garansi 1x24 jam, Bisa All Region, iOS via Web)</li>
+                            <li>1 Bulan = 17.000 (Full garansi, Support all device)</li>
+                        </ul>
+                        <h4>Famplan</h4>
+                        <ul><li>1 Bulan = 19.000 (Full garansi)</li></ul>
+                        <h4>Indplan</h4>
+                        <ul>
+                            <li>3 Bulan = 21.000 (Full garansi)</li>
+                            <li>4 Bulan = 24.000 (Full garansi)</li>
+                            <li>3 Bulan = 15.000 (No garansi)</li>
+                        </ul>
+                        <p><strong>⚠️ NOTE / INFO:</strong></p>
+                        <ul>
+                            <li>Akun Seller</li>
+                            <li>Garansi sesuai ketentuan</li>
+                            <li>Garansi hanya berlaku 1x setiap 1 kali order</li>
+                            <li>Proses bisa slow / rush</li>
+                            <li>No rush, no spam</li>
+                            <li>Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            youtube: {
+                title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM",
+                content: `
+                    <div class="explanation-content">
+                        <h4>Family</h4>
+                        <ul>
+                            <li>Famplan 1 Bulan = 7.500</li>
+                            <li>Famplan 2 Bulan = 9.000</li>
+                            <li>Mixplan 3 Bulan = 13.500</li>
+                            <li>ACC buyer, Famplan cukup kirim email saja, Full garansi</li>
+                            <li>Famhead 1 Bulan = 11.000</li>
+                            <li>Indiplan 1 Bulan = 12.500</li>
+                            <li>ACC seller, Bergaransi selama tidak ganti sandi</li>
+                        </ul>
+                        <h4>Jaspay YT</h4>
+                        <ul>
+                            <li>Famhead 1 Bulan = 10.000</li>
+                            <li>Indiplan 1 Bulan = 11.500</li>
+                            <li>Mixplan 3 Bulan = 12.500</li>
+                            <li>ACC buyer, Kirim email & password ke seller (no verifikasi)</li>
+                            <li>Wajib email fresh / masih baru</li>
+                        </ul>
+                        <p><strong>⚠️ NOTE / INFO:</strong></p>
+                        <ul>
+                            <li>Garansi sesuai ketentuan</li>
+                            <li>Mixplan: 1B Indiplan + 2B Famplan</li>
+                            <li>Mixplan akun buyer wajib fresh</li>
+                            <li>Tidak menerima refund bila pesanan sudah diproses</li>
+                            <li>Proses max 1×24 jam (sesuai antrian)</li>
+                            <li>No rush, no spam</li>
+                            <li>Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            alight: {
+                title: "🎬 PENJELASAN PAKET ALIGHT MOTION",
+                content: `
+                    <div class="explanation-content">
+                        <h4>Sharing</h4>
+                        <ul><li>1 Tahun (Acc seller) = Rp 2.000</li></ul>
+                        <h4>Private</h4>
+                        <ul>
+                            <li>1 Tahun (Acc buyer) = Rp 1.500</li>
+                            <li>1 Tahun (Acc seller) = Rp 2.500</li>
+                        </ul>
+                        <p><strong>⚠️ NOTE / INFO:</strong></p>
+                        <ul>
+                            <li>Support Android / iOS</li>
+                            <li>IPhone/IOS acc buyer only</li>
+                            <li>Private maks login 10 device</li>
+                            <li>Garansi 6 bulan</li>
+                            <li>Acc seller = akun dari seller via email generator</li>
+                            <li>Acc buyer = pake email sendiri, cukup send email saja</li>
+                            <li>Proses fast (3 menit, max 1x24 jam sesuai antrian)</li>
+                            <li>No rush / no spam</li>
+                        </ul>
+                    </div>
+                `
+            },
+            capcut: {
+                title: "✂️ PENJELASAN PAKET CAPCUT PRO",
+                content: `
+                    <div class="explanation-content">
+                        <h4>Keterangan</h4>
+                        <ul>
+                            <li>Team : akun berbasis Tim Private</li>
+                            <li>22 Hari : aktif 22–17 hari</li>
+                            <li>42 Hari : aktif 42–30 hari</li>
+                            <li>1 Bulan : aktif 35–22 hari</li>
+                            <li>Gar3d : garansi 3 hari</li>
+                            <li>Gar7d : garansi 7 hari</li>
+                            <li>Gar1b : garansi 1 bulan</li>
+                            <li>FullGar : garansi full sesuai masa aktif</li>
+                        </ul>
+                        <p><strong>NOTE / INFO:</strong></p>
+                        <ul>
+                            <li>Akun dari seller</li>
+                            <li>Support semua device</li>
+                            <li>Private maks 2 device login</li>
+                            <li>42 Hari maks 3 device login</li>
+                            <li>Unlock semua fitur Pro (AI Perluas Video tidak termasuk, dibatasi sistem)</li>
+                            <li>Garansi jika BF / premium hilang</li>
+                            <li>Tidak bisa renew (habis beli ulang)</li>
+                            <li>Proses ±5 menit, maksimal 1x24 jam (tergantung antrian)</li>
+                            <li>No rush, no spam</li>
+                            <li>Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            canva: {
+                title: "📌 PENJELASAN PAKET CANVA PRO",
+                content: `
+                    <div class="explanation-content">
+                        <h4>Paket Member & Designer</h4>
+                        <ul>
+                            <li>Member 1 Bulan = 2.000</li>
+                            <li>Designer 1 Bulan = 3.000</li>
+                            <li>Full garansi BF</li>
+                        </ul>
+                        <h4>Paket Edu</h4>
+                        <ul>
+                            <li>1 Tahun = 2.500</li>
+                            <li>Lifetime = 6.000</li>
+                            <li>Garansi 6 bulan</li>
+                        </ul>
+                        <h4>Paket Head</h4>
+                        <ul>
+                            <li>Admin 1 Bulan = 4.500</li>
+                            <li>Owner 1 Bulan = 6.500</li>
+                            <li>Akun dari seller, No garansi</li>
+                        </ul>
+                        <p><strong>⚠️ NOTE / INFO:</strong></p>
+                        <ul>
+                            <li>Support all device</li>
+                            <li>Semua paket via link invite, kecuali head owner</li>
+                            <li>Garansi BF / fitur Pro hilang, diluar itu bukan tanggung jawab admin</li>
+                            <li>Proses max 1x24 jam (sesuai antrian)</li>
+                            <li>Non rush & no spam</li>
+                            <li>Tanya stok sebelum order!</li>
+                        </ul>
+                    </div>
+                `
+            },
+            freefire: {
+                title: "⚠️ INFO PENTING FREE FIRE",
+                content: `
+                    <div class="explanation-content">
+                        <p><strong>Membership, Card, Diamond</strong></p>
+                        <ul>
+                            <li>Proses sesuai antrian, estimasi 1–5 menit</li>
+                            <li>Max proses 1×24 jam</li>
+                            <li>Proses bisa lebih lama jika server padat</li>
+                            <li>Top up via ID (tanpa login akun)</li>
+                            <li>Setelah order, kirim ID ke seller</li>
+                            <li>Pastikan ID sudah benar sebelum order</li>
+                            <li>Salah input ID bukan tanggung jawab seller</li>
+                            <li>Order TIDAK BISA DICANCEL atau REFUND ketika sudah/sedang diproses</li>
+                        </ul>
+                    </div>
+                `
+            }
         };
 
         // State
@@ -1879,11 +2119,22 @@
                 section.className = 'products-section';
                 section.id = `product-${key}`;
 
+                // Tombol penjelasan
                 let expBtn = '';
-                if (['netflix','youtube','canva','freefire','capcut'].includes(key)) expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
+                if (['netflix','spotify','youtube','alight','capcut','canva','freefire'].includes(key)) {
+                    expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
+                }
 
-                // ========== KHUSUS FREE FIRE (TANPA REKBER, LAYOUT GRID BIASA) ==========
-                if (key === 'freefire') {
+                // ========== KHUSUS SPOTIFY (STOK KOSONG) ==========
+                if (key === 'spotify') {
+                    let itemsHTML = '<div class="stock-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Pemberitahuan:</strong> Stok produk Spotify sedang kosong. Silakan hubungi admin via WhatsApp untuk informasi lebih lanjut.</div>';
+                    p.items.forEach(item => {
+                        itemsHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn disabled" data-product="${key}" data-item="${item.name}" data-price="${item.price}" disabled ${item.needsEmail?'data-needs-email="true"':''}><i class="fas fa-shopping-cart"></i> Stok Kosong</button></div></div>`;
+                    });
+                    section.innerHTML = `<div class="product-header"><div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
+                }
+                // ========== KHUSUS FREE FIRE ==========
+                else if (key === 'freefire') {
                     // Diamond grid
                     let diamondHTML = '<div class="diamond-grid">';
                     p.diamonds.forEach(d => {
@@ -1891,7 +2142,7 @@
                     });
                     diamondHTML += '</div>';
 
-                    // Membership & Cards (dalam grid)
+                    // Membership & Cards
                     let regularHTML = '';
                     p.items.forEach(item => {
                         regularHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}"><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
@@ -1910,7 +2161,7 @@
                         <div class="product-grid">${regularHTML}</div>
                     `;
                 } else {
-                    // Kategori lain (tidak freefire) - layout biasa
+                    // Kategori lain (normal)
                     let itemsHTML = '';
                     p.items.forEach(item => {
                         itemsHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${item.needsEmail?'data-needs-email="true"':''}><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
@@ -2003,6 +2254,7 @@
                 if (e.target.classList.contains('buy-btn') || e.target.closest('.buy-btn')) {
                     let btn = e.target.classList.contains('buy-btn') ? e.target : e.target.closest('.buy-btn');
                     if (btn.hasAttribute('onclick') && btn.getAttribute('onclick').includes('openServiceModal')) return;
+                    if (btn.disabled) return; // Jika disabled, jangan buka modal
                     let needsEmail = btn.hasAttribute('data-needs-email') && btn.getAttribute('data-needs-email') === 'true';
                     openCheckoutModal(btn.dataset.product, btn.dataset.item, btn.dataset.price, needsEmail);
                 }
