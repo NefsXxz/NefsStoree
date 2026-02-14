@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* (style sama seperti sebelumnya, ditambah untuk stock warning dan button disabled) */
+        /* ========== GAYA CSS (lengkap) ========== */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -26,27 +26,23 @@
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--warning));
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
         }
-
         body {
             background-color: #f5f7ff;
             color: var(--dark);
             line-height: 1.6;
             overflow-x: hidden;
         }
-
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-
         /* Header */
         header {
             background-color: white;
@@ -56,19 +52,16 @@
             z-index: 1000;
             padding: 15px 0;
         }
-
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
         .logo-icon {
             width: 40px;
             height: 40px;
@@ -81,7 +74,6 @@
             font-size: 1.2rem;
             font-weight: 700;
         }
-
         .logo-text {
             font-size: 1.8rem;
             font-weight: 800;
@@ -90,19 +82,16 @@
             background-clip: text;
             color: transparent;
         }
-
         .logo-subtext {
             font-size: 0.7rem;
             color: var(--gray);
             margin-top: -5px;
         }
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 30px;
         }
-
         nav ul li a {
             text-decoration: none;
             color: var(--dark);
@@ -111,16 +100,13 @@
             position: relative;
             padding: 5px 0;
         }
-
         nav ul li a:hover {
             color: var(--primary);
         }
-
         nav ul li a.active {
             color: var(--primary);
             font-weight: 600;
         }
-
         nav ul li a.active:after {
             content: '';
             position: absolute;
@@ -131,13 +117,11 @@
             background: var(--gradient);
             border-radius: 3px;
         }
-
         .header-actions {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .contact-btn {
             background: var(--gradient);
             color: white;
@@ -150,12 +134,10 @@
             gap: 8px;
             transition: transform 0.3s, box-shadow 0.3s;
         }
-
         .contact-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
         }
-
         .mobile-menu-btn {
             display: none;
             background: none;
@@ -164,7 +146,6 @@
             color: var(--dark);
             cursor: pointer;
         }
-
         /* Hero Section */
         .hero {
             padding: 80px 0;
@@ -172,7 +153,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero:before {
             content: '';
             position: absolute;
@@ -184,7 +164,6 @@
             border-radius: 50%;
             z-index: 0;
         }
-
         .hero-container {
             display: flex;
             align-items: center;
@@ -192,12 +171,10 @@
             position: relative;
             z-index: 1;
         }
-
         .hero-content {
             flex: 1;
             max-width: 600px;
         }
-
         .hero-title {
             font-size: 3.2rem;
             font-weight: 800;
@@ -208,48 +185,40 @@
             background-clip: text;
             color: transparent;
         }
-
         .hero-subtitle {
             font-size: 1.1rem;
             color: var(--gray);
             margin-bottom: 30px;
             max-width: 500px;
         }
-
         .hero-stats {
             display: flex;
             gap: 40px;
             margin-top: 40px;
         }
-
         .stat-item {
             text-align: center;
         }
-
         .stat-number {
             font-size: 2.2rem;
             font-weight: 700;
             color: var(--primary);
             line-height: 1;
         }
-
         .stat-label {
             font-size: 0.9rem;
             color: var(--gray);
         }
-
         .hero-image {
             flex: 1;
             display: flex;
             justify-content: flex-end;
         }
-
         .hero-image img {
             max-width: 100%;
             border-radius: 20px;
             box-shadow: var(--shadow);
         }
-
         /* Search Section */
         .search-section {
             background: white;
@@ -260,18 +229,15 @@
             position: relative;
             z-index: 10;
         }
-
         .search-container {
             display: flex;
             align-items: center;
             gap: 15px;
         }
-
         .search-box {
             flex: 1;
             position: relative;
         }
-
         .search-box input {
             width: 100%;
             padding: 18px 20px 18px 50px;
@@ -280,12 +246,10 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-
         .search-box input:focus {
             outline: none;
             border-color: var(--primary);
         }
-
         .search-icon {
             position: absolute;
             left: 20px;
@@ -293,7 +257,6 @@
             transform: translateY(-50%);
             color: var(--gray-light);
         }
-
         .search-btn {
             background: var(--gradient);
             color: white;
@@ -304,41 +267,34 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-
         .search-btn:hover {
             transform: translateY(-3px);
         }
-
         /* Categories */
         .categories {
             padding: 80px 0 40px;
         }
-
         .section-header {
             text-align: center;
             margin-bottom: 50px;
         }
-
         .section-title {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 15px;
             color: var(--dark);
         }
-
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--gray);
             max-width: 600px;
             margin: 0 auto;
         }
-
         .category-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
             gap: 25px;
         }
-
         .category-card {
             background: white;
             border-radius: 15px;
@@ -349,18 +305,15 @@
             cursor: pointer;
             border: 2px solid transparent;
         }
-
         .category-card:hover {
             transform: translateY(-10px);
             box-shadow: var(--shadow-hover);
             border-color: var(--primary);
         }
-
         .category-card.active {
             border-color: var(--primary);
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05));
         }
-
         .category-icon {
             width: 70px;
             height: 70px;
@@ -373,37 +326,30 @@
             font-size: 1.8rem;
             color: var(--primary);
         }
-
         .category-name {
             font-size: 1.2rem;
             font-weight: 600;
             margin-bottom: 5px;
         }
-
         .category-count {
             font-size: 0.9rem;
             color: var(--gray);
         }
-
         /* Products */
         .products {
             padding: 60px 0 80px;
         }
-
         .products-section {
             display: none;
         }
-
         .products-section.active {
             display: block;
             animation: fadeIn 0.5s ease;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         .product-header {
             display: flex;
             justify-content: space-between;
@@ -412,7 +358,6 @@
             flex-wrap: wrap;
             gap: 20px;
         }
-
         .product-title {
             font-size: 2rem;
             font-weight: 700;
@@ -421,11 +366,9 @@
             align-items: center;
             gap: 15px;
         }
-
         .product-title i {
             color: var(--primary);
         }
-
         .product-explanation-btn {
             background: var(--gradient-accent);
             color: white;
@@ -439,17 +382,14 @@
             gap: 10px;
             transition: transform 0.3s;
         }
-
         .product-explanation-btn:hover {
             transform: translateY(-3px);
         }
-
         .product-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 25px;
         }
-
         .product-card {
             background: white;
             border-radius: 15px;
@@ -458,16 +398,13 @@
             transition: all 0.3s ease;
             position: relative;
         }
-
         .product-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
-
         .product-card.featured {
             border: 2px solid var(--primary);
         }
-
         .featured-badge {
             position: absolute;
             top: 15px;
@@ -480,7 +417,6 @@
             font-weight: 600;
             z-index: 2;
         }
-
         .product-header-card {
             background: var(--gradient);
             color: white;
@@ -489,7 +425,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .product-header-card:before {
             content: '';
             position: absolute;
@@ -500,18 +435,15 @@
             background: rgba(255, 255, 255, 0.1);
             transform: rotate(30deg);
         }
-
         .product-header-card h3 {
             font-size: 1.5rem;
             font-weight: 600;
             position: relative;
             z-index: 1;
         }
-
         .product-body {
             padding: 25px;
         }
-
         .product-item {
             display: flex;
             justify-content: space-between;
@@ -519,27 +451,22 @@
             padding: 15px 0;
             border-bottom: 1px solid #f1f3f5;
         }
-
         .product-item:last-child {
             border-bottom: none;
         }
-
         .product-details {
             flex: 1;
         }
-
         .product-name {
             font-weight: 600;
             margin-bottom: 5px;
             font-size: 1.1rem;
         }
-
         .product-desc {
             font-size: 0.85rem;
             color: var(--gray);
             line-height: 1.5;
         }
-
         .product-price {
             font-weight: 700;
             color: var(--primary);
@@ -547,7 +474,6 @@
             white-space: nowrap;
             margin-left: 15px;
         }
-
         .buy-btn {
             background: var(--gradient);
             color: white;
@@ -565,12 +491,10 @@
             justify-content: center;
             gap: 10px;
         }
-
         .buy-btn:hover:not(:disabled) {
             opacity: 0.95;
             transform: translateY(-3px);
         }
-
         .buy-btn.disabled,
         .buy-btn:disabled {
             opacity: 0.5;
@@ -581,25 +505,21 @@
         .buy-btn:disabled:hover {
             transform: none;
         }
-
         /* Diamond Grid untuk Free Fire */
         .diamond-section {
             margin-bottom: 40px;
         }
-
         .section-subtitle {
             font-size: 1.1rem;
             color: var(--gray);
             margin-bottom: 25px;
             text-align: center;
         }
-
         .diamond-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
             gap: 15px;
         }
-
         .diamond-card {
             background: white;
             border-radius: 12px;
@@ -614,33 +534,28 @@
             align-items: center;
             justify-content: center;
         }
-
         .diamond-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
             border-color: var(--primary);
         }
-
         .diamond-icon {
             font-size: 1.8rem;
             margin-bottom: 10px;
             color: #FF6B00;
         }
-
         .diamond-amount {
             font-size: 1.3rem;
             font-weight: 700;
             margin-bottom: 8px;
             color: var(--dark);
         }
-
         .diamond-price {
             font-size: 1.1rem;
             font-weight: 600;
             color: var(--primary);
             margin-bottom: 15px;
         }
-
         .diamond-buy-btn {
             background: var(--gradient);
             color: white;
@@ -653,24 +568,20 @@
             transition: all 0.3s;
             width: 100%;
         }
-
         .diamond-buy-btn:hover {
             opacity: 0.9;
             transform: translateY(-2px);
         }
-
         /* Payment Methods */
         .payment-methods {
             padding: 60px 0 40px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
         }
-
         .payment-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
             gap: 20px;
         }
-
         .payment-card {
             background: white;
             border-radius: 15px;
@@ -680,40 +591,33 @@
             transition: all 0.3s;
             border: 2px solid transparent;
         }
-
         .payment-card:hover {
             transform: translateY(-5px);
             box-shadow: var(--shadow-hover);
             border-color: var(--primary);
         }
-
         .payment-icon {
             font-size: 2.5rem;
             margin-bottom: 15px;
             display: block;
         }
-
         .payment-icon.qris { color: #00a86b; }
         .payment-icon.dana { color: #0088cc; }
         .payment-icon.gopay { color: #00aa13; }
-
         .payment-name {
             font-weight: 600;
             font-size: 1.1rem;
             margin-bottom: 5px;
         }
-
         .payment-desc {
             font-size: 0.9rem;
             color: var(--gray);
         }
-
-        /* ===== SECTION JASA REKBER (DI BAWAH METODE PEMBAYARAN) ===== */
+        /* Jasa Rekber */
         .midman-section {
             padding: 40px 0 60px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.02), rgba(114, 9, 183, 0.02));
         }
-
         .midman-card {
             background: white;
             border-radius: 20px;
@@ -724,12 +628,10 @@
             max-width: 550px;
             margin: 0 auto;
         }
-
         .midman-card:hover {
             transform: translateY(-8px);
             box-shadow: var(--shadow-hover);
         }
-
         .midman-header {
             background: linear-gradient(135deg, #17a2b8, #0f6674);
             color: white;
@@ -738,7 +640,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .midman-header:before {
             content: '';
             position: absolute;
@@ -749,29 +650,24 @@
             background: rgba(255, 255, 255, 0.1);
             transform: rotate(30deg);
         }
-
         .midman-header h3 {
             font-size: 1.8rem;
             font-weight: 700;
             position: relative;
             z-index: 1;
         }
-
         .midman-header i {
             margin-right: 10px;
         }
-
         .midman-body {
             padding: 30px;
             text-align: center;
         }
-
         .midman-description {
             color: var(--gray);
             margin-bottom: 25px;
             font-size: 1rem;
         }
-
         .midman-action-btn {
             background: #17a2b8;
             color: white;
@@ -788,24 +684,20 @@
             justify-content: center;
             gap: 10px;
         }
-
         .midman-action-btn:hover {
             background: #138496;
             transform: translateY(-3px);
         }
-
         /* How to Order */
         .how-to-order {
             padding: 80px 0;
         }
-
         .steps {
             display: flex;
             justify-content: space-between;
             margin-top: 50px;
             position: relative;
         }
-
         .steps:before {
             content: '';
             position: absolute;
@@ -816,14 +708,12 @@
             background: var(--gradient);
             z-index: 1;
         }
-
         .step {
             flex: 1;
             text-align: center;
             position: relative;
             z-index: 2;
         }
-
         .step-number {
             width: 80px;
             height: 80px;
@@ -839,30 +729,25 @@
             border: 5px solid #f5f7ff;
             box-shadow: var(--shadow);
         }
-
         .step-title {
             font-size: 1.3rem;
             font-weight: 600;
             margin-bottom: 10px;
         }
-
         .step-desc {
             color: var(--gray);
             max-width: 250px;
             margin: 0 auto;
         }
-
         /* FAQ */
         .faq {
             padding: 80px 0;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
         }
-
         .faq-container {
             max-width: 800px;
             margin: 0 auto;
         }
-
         .faq-item {
             background: white;
             border-radius: 15px;
@@ -870,7 +755,6 @@
             overflow: hidden;
             box-shadow: var(--shadow);
         }
-
         .faq-question {
             padding: 25px;
             font-weight: 600;
@@ -880,29 +764,24 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .faq-answer {
             padding: 0 25px;
             max-height: 0;
             overflow: hidden;
             transition: max-height 0.3s, padding 0.3s;
         }
-
         .faq-answer.active {
             padding: 0 25px 25px;
             max-height: 500px;
         }
-
         .faq-toggle {
             color: var(--primary);
             font-size: 1.5rem;
             transition: transform 0.3s;
         }
-
         .faq-toggle.active {
             transform: rotate(45deg);
         }
-
         /* Modals */
         .modal {
             display: none;
@@ -918,7 +797,6 @@
             padding: 20px;
             animation: fadeIn 0.3s ease;
         }
-
         .modal-content {
             background: white;
             border-radius: 20px;
@@ -929,12 +807,10 @@
             max-height: 90vh;
             overflow-y: auto;
         }
-
         @keyframes slideUp {
             from { transform: translateY(50px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
         .modal-header {
             background: var(--gradient);
             color: white;
@@ -943,12 +819,10 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .modal-header h3 {
             font-size: 1.5rem;
             font-weight: 600;
         }
-
         .close-modal {
             background: rgba(255, 255, 255, 0.2);
             border: none;
@@ -963,44 +837,35 @@
             font-size: 1.5rem;
             transition: background 0.3s;
         }
-
         .close-modal:hover {
             background: rgba(255, 255, 255, 0.3);
         }
-
         .modal-body {
             padding: 30px;
         }
-
         .explanation-modal .modal-content {
             max-width: 800px;
         }
-
         .explanation-content {
             padding: 20px 0;
         }
-
-        /* ===== MODAL JASA REKBER ===== */
+        /* Modal Jasa Rekber */
         .service-modal .modal-content {
             max-width: 450px;
         }
-
         .service-modal .modal-header {
             flex-direction: column;
             text-align: center;
             gap: 10px;
         }
-
         .service-modal .modal-header h2 {
             font-size: 1.8rem;
             margin-bottom: 5px;
         }
-
         .service-modal .modal-header p {
             color: rgba(255, 255, 255, 0.9);
             font-size: 0.95rem;
         }
-
         .service-question {
             font-size: 1.1rem;
             font-weight: 600;
@@ -1008,38 +873,32 @@
             text-align: center;
             color: var(--dark);
         }
-
         .price-info {
             background: #f8f9fa;
             border-radius: 10px;
             padding: 20px;
             margin-bottom: 25px;
         }
-
         .price-info h4 {
             margin-bottom: 15px;
             color: var(--dark);
             font-size: 1.1rem;
         }
-
         .price-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 15px;
         }
-
         .price-table th, .price-table td {
             border: 1px solid #ddd;
             padding: 10px;
             text-align: center;
         }
-
         .price-table th {
             background-color: #f1f3f5;
             font-weight: 600;
             color: var(--dark);
         }
-
         .max-warning {
             color: var(--danger);
             font-weight: 600;
@@ -1049,22 +908,18 @@
             margin-top: 10px;
             font-size: 0.9rem;
         }
-
         .transaction-input {
             margin-bottom: 25px;
         }
-
         .input-group {
             margin-bottom: 20px;
         }
-
         .input-group label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
             color: var(--dark);
         }
-
         .input-group input {
             width: 100%;
             padding: 15px;
@@ -1073,12 +928,10 @@
             font-size: 1rem;
             transition: border-color 0.3s;
         }
-
         .input-group input:focus {
             outline: none;
             border-color: var(--primary);
         }
-
         .fee-display {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -1086,41 +939,34 @@
             border-radius: 15px;
             text-align: center;
         }
-
         .fee-display h3 {
             font-size: 1rem;
             margin-bottom: 10px;
             opacity: 0.9;
         }
-
         .fee-amount {
             font-size: 2rem;
             font-weight: 700;
             margin-bottom: 5px;
         }
-
         #feeRange {
             font-size: 0.9rem;
             opacity: 0.9;
         }
-
         .payment-selection {
             margin-bottom: 25px;
         }
-
         .payment-title {
             font-size: 1.1rem;
             font-weight: 600;
             margin-bottom: 15px;
             color: var(--dark);
         }
-
         .payment-options {
             display: flex;
             gap: 10px;
             flex-wrap: wrap;
         }
-
         .payment-option {
             flex: 1;
             min-width: 120px;
@@ -1131,31 +977,25 @@
             cursor: pointer;
             transition: all 0.3s;
         }
-
         .payment-option:hover {
             border-color: var(--primary);
             background-color: rgba(67, 97, 238, 0.05);
         }
-
         .payment-option.active {
             border-color: var(--primary);
             background-color: rgba(67, 97, 238, 0.1);
         }
-
         .payment-icon {
             font-size: 1.8rem;
             margin-bottom: 8px;
         }
-
         .payment-name {
             font-weight: 600;
             font-size: 0.9rem;
         }
-
         .modal-footer {
             text-align: center;
         }
-
         .whatsapp-btn {
             background: #25D366;
             color: white;
@@ -1172,24 +1012,20 @@
             justify-content: center;
             gap: 10px;
         }
-
         .whatsapp-btn:hover:not(:disabled) {
             background: #128C7E;
             transform: translateY(-2px);
         }
-
         .whatsapp-btn:disabled {
             opacity: 0.5;
             cursor: not-allowed;
         }
-
         .modal-note {
             color: var(--gray);
             font-size: 0.85rem;
             margin-top: 15px;
             text-align: center;
         }
-
         /* Notifikasi */
         .transaction-notification {
             position: fixed;
@@ -1204,43 +1040,36 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
             animation: slideIn 0.3s ease;
         }
-        
         .notification-warning {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
             color: #856404;
         }
-        
         .notification-info {
             background: #d1ecf1;
             border: 1px solid #bee5eb;
             color: #0c5460;
         }
-
         @keyframes slideIn {
             from { transform: translateX(100%); opacity: 0; }
             to { transform: translateX(0%); opacity: 1; }
         }
-        
         @keyframes slideOut {
             from { transform: translateX(0%); opacity: 1; }
             to { transform: translateX(100%); opacity: 0; }
         }
-
         /* Footer */
         footer {
             background: var(--dark);
             color: white;
             padding: 70px 0 30px;
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 40px;
             margin-bottom: 50px;
         }
-
         .footer-logo {
             font-size: 1.8rem;
             font-weight: 800;
@@ -1249,7 +1078,6 @@
             align-items: center;
             gap: 10px;
         }
-
         .footer-logo-icon {
             width: 40px;
             height: 40px;
@@ -1261,18 +1089,15 @@
             color: white;
             font-weight: 700;
         }
-
         .footer-desc {
             color: #adb5bd;
             line-height: 1.7;
             margin-bottom: 20px;
         }
-
         .social-links {
             display: flex;
             gap: 15px;
         }
-
         .social-link {
             width: 40px;
             height: 40px;
@@ -1285,12 +1110,10 @@
             text-decoration: none;
             transition: background 0.3s, transform 0.3s;
         }
-
         .social-link:hover {
             background: var(--primary);
             transform: translateY(-3px);
         }
-
         .footer-section h4 {
             font-size: 1.3rem;
             margin-bottom: 25px;
@@ -1298,7 +1121,6 @@
             position: relative;
             padding-bottom: 10px;
         }
-
         .footer-section h4:after {
             content: '';
             position: absolute;
@@ -1309,41 +1131,33 @@
             background: var(--gradient);
             border-radius: 3px;
         }
-
         .footer-links {
             list-style: none;
         }
-
         .footer-links li {
             margin-bottom: 12px;
         }
-
         .footer-links a {
             color: #adb5bd;
             text-decoration: none;
             transition: color 0.3s;
         }
-
         .footer-links a:hover {
             color: white;
         }
-
         .contact-info-footer {
             list-style: none;
         }
-
         .contact-info-footer li {
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 12px;
         }
-
         .contact-info-footer i {
             color: var(--primary);
             font-size: 1.2rem;
         }
-
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -1351,7 +1165,7 @@
             color: #adb5bd;
             font-size: 0.9rem;
         }
-
+        /* Responsif */
         @media (max-width: 992px) {
             .hero-container {
                 flex-direction: column;
@@ -1376,7 +1190,6 @@
                 font-size: 1.5rem;
             }
         }
-
         @media (max-width: 768px) {
             nav {
                 display: none;
@@ -1403,7 +1216,6 @@
             .section-title { font-size: 2rem; }
             .payment-option { min-width: 100px; }
         }
-
         @media (max-width: 480px) {
             .hero-title { font-size: 2rem; }
             .hero-stats { flex-direction: column; gap: 20px; }
@@ -1412,7 +1224,6 @@
             .diamond-grid { grid-template-columns: repeat(2,1fr); }
             .payment-options { flex-direction: column; }
         }
-
         /* Stock warning */
         .stock-warning {
             background: #fff3cd;
@@ -1440,7 +1251,6 @@
                     <div class="logo-subtext">Digital & Game Top-up</div>
                 </div>
             </div>
-            
             <nav id="mainNav">
                 <ul>
                     <li><a href="#" class="nav-home active">Beranda</a></li>
@@ -1449,7 +1259,6 @@
                     <li><a href="#" class="nav-faq">FAQ</a></li>
                 </ul>
             </nav>
-            
             <div class="header-actions">
                 <a href="https://wa.me/6285374128738" target="_blank" class="contact-btn">
                     <i class="fab fa-whatsapp"></i>
@@ -1522,7 +1331,7 @@
         </div>
     </section>
 
-    <!-- ===== JASA REKBER (DI BAWAH METODE PEMBAYARAN) ===== -->
+    <!-- Jasa Rekber -->
     <section class="midman-section">
         <div class="container">
             <div class="section-header">
@@ -1577,7 +1386,7 @@
         </div>
     </section>
 
-    <!-- ===== MODAL CHECKOUT ===== -->
+    <!-- Modal Checkout -->
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1588,7 +1397,7 @@
         </div>
     </div>
 
-    <!-- ===== MODAL PENJELASAN ===== -->
+    <!-- Modal Penjelasan -->
     <div class="modal explanation-modal" id="explanationModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1599,7 +1408,7 @@
         </div>
     </div>
 
-    <!-- ===== MODAL JASA REKBER ===== -->
+    <!-- Modal Jasa Rekber -->
     <div class="modal service-modal" id="serviceModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1630,7 +1439,7 @@
                 <div class="transaction-input">
                     <div class="input-group">
                         <label for="transactionAmount">Masukkan Nilai Transaksi (Rp)</label>
-                        <input type="number" id="transactionAmount" placeholder="Contoh: 75000 (Maks: 200.000)" min="1000" max="200000">
+                        <input type="number" id="transactionAmount" placeholder="Contoh: 75000 (Maks: 200.000)" min="0">
                     </div>
                     <div class="fee-display" id="feeDisplay" style="display:none;">
                         <h3>Fee Rekber Anda:</h3>
@@ -2034,71 +1843,97 @@
         let calculatedFee = 0;
         let transactionAmount = 0;
 
-        // ========== FUNGSI VALIDASI & NOTIFIKASI ==========
-        function validateTransactionAmount() {
-            const input = document.getElementById('transactionAmount');
-            if (!input) return 0;
-            let val = parseInt(input.value) || 0;
-            if (val > 200000) { val = 200000; input.value = 200000; showNotification('Nilai transaksi maksimal Rp 200.000! Nilai telah disesuaikan.', 'warning'); }
-            if (val < 1000 && val !== 0) { val = 1000; input.value = 1000; }
-            return val;
-        }
+        // ========== FUNGSI NOTIFIKASI ==========
         function showNotification(msg, type = 'info') {
-            const old = document.querySelector('.transaction-notification'); if(old) old.remove();
-            const notif = document.createElement('div'); notif.className = `transaction-notification notification-${type}`;
-            notif.innerHTML = `<i class="fas fa-${type==='warning'?'exclamation-triangle':'info-circle'}"></i><span>${msg}</span>`;
+            const old = document.querySelector('.transaction-notification');
+            if (old) old.remove();
+            const notif = document.createElement('div');
+            notif.className = `transaction-notification notification-${type}`;
+            notif.innerHTML = `<i class="fas fa-${type === 'warning' ? 'exclamation-triangle' : 'info-circle'}"></i><span>${msg}</span>`;
             document.body.appendChild(notif);
-            setTimeout(() => { notif.style.animation = 'slideOut 0.3s ease'; setTimeout(() => notif.remove(), 300); }, 3000);
+            setTimeout(() => {
+                notif.style.animation = 'slideOut 0.3s ease';
+                setTimeout(() => notif.remove(), 300);
+            }, 3000);
         }
 
         // ========== FUNGSI REKBER ==========
         function calculateFee() {
-            const amount = validateTransactionAmount(); transactionAmount = amount;
+            const input = document.getElementById('transactionAmount');
+            const amount = parseInt(input.value) || 0;
+            transactionAmount = amount;
+
             let fee = 0;
-            if (amount >= 1000 && amount <= 20000) fee = 1000;
-            else if (amount <= 50000) fee = 2000;
-            else if (amount <= 100000) fee = 3000;
-            else if (amount <= 150000) fee = 4000;
-            else if (amount <= 200000) fee = 5000;
+            if (amount >= 1000 && amount <= 200000) {
+                if (amount <= 20000) fee = 1000;
+                else if (amount <= 50000) fee = 2000;
+                else if (amount <= 100000) fee = 3000;
+                else if (amount <= 150000) fee = 4000;
+                else if (amount <= 200000) fee = 5000;
+            }
             calculatedFee = fee;
+
             const feeDisplay = document.getElementById('feeDisplay');
             const feeAmount = document.getElementById('feeAmount');
             const feeRange = document.getElementById('feeRange');
             const waBtn = document.getElementById('whatsappBtn');
+
             if (amount >= 1000 && amount <= 200000) {
                 feeDisplay.style.display = 'block';
                 feeAmount.textContent = 'Rp ' + fee.toLocaleString('id-ID');
                 feeRange.textContent = `Untuk transaksi Rp ${amount.toLocaleString('id-ID')}`;
-            } else feeDisplay.style.display = 'none';
-            if (calculatedFee > 0 && selectedPaymentMethod) waBtn.disabled = false; else waBtn.disabled = true;
+            } else {
+                feeDisplay.style.display = 'none';
+            }
+
+            if (calculatedFee > 0 && selectedPaymentMethod) {
+                waBtn.disabled = false;
+            } else {
+                waBtn.disabled = true;
+            }
         }
+
         function selectPaymentMethod(el) {
             document.querySelectorAll('.payment-option').forEach(opt => opt.classList.remove('active'));
             el.classList.add('active');
             selectedPaymentMethod = el.dataset.method;
-            if (calculatedFee > 0) document.getElementById('whatsappBtn').disabled = false;
+            if (calculatedFee > 0) {
+                document.getElementById('whatsappBtn').disabled = false;
+            } else {
+                document.getElementById('whatsappBtn').disabled = true;
+            }
         }
+
         function openWhatsApp() {
-            if (transactionAmount > 200000) { showNotification('Nilai transaksi tidak boleh melebihi Rp 200.000', 'warning'); return; }
-            if (!transactionAmount || !calculatedFee || !selectedPaymentMethod) { showNotification('Silakan lengkapi semua data!', 'warning'); return; }
+            if (transactionAmount < 1000 || transactionAmount > 200000) {
+                showNotification('Nilai transaksi harus antara Rp 1.000 dan Rp 200.000', 'warning');
+                return;
+            }
+            if (!calculatedFee || !selectedPaymentMethod) {
+                showNotification('Silakan lengkapi semua data!', 'warning');
+                return;
+            }
             const msg = `Halo, saya ingin menggunakan *Jasa Rekber* dengan detail berikut:\n💰 Nilai Transaksi: Rp ${transactionAmount.toLocaleString('id-ID')}\n💸 Fee Rekber: Rp ${calculatedFee.toLocaleString('id-ID')}\n💳 Metode Pembayaran: ${selectedPaymentMethod}\n\nSilakan berikan instruksi lebih lanjut.`;
             window.open(`https://wa.me/6285374128738?text=${encodeURIComponent(msg)}`, '_blank');
             closeAllModals();
         }
+
         function openServiceModal() {
-            // Reset form
             const input = document.getElementById('transactionAmount');
             if (input) input.value = '';
             document.getElementById('feeDisplay').style.display = 'none';
             document.querySelectorAll('.payment-option').forEach(o => o.classList.remove('active'));
             document.getElementById('whatsappBtn').disabled = true;
-            selectedPaymentMethod = null; calculatedFee = 0; transactionAmount = 0;
+            selectedPaymentMethod = null;
+            calculatedFee = 0;
+            transactionAmount = 0;
             document.getElementById('serviceModal').style.display = 'flex';
         }
 
         // ========== RENDER KATEGORI ==========
         function renderCategories() {
-            const grid = document.getElementById('categoryGrid'); grid.innerHTML = '';
+            const grid = document.getElementById('categoryGrid');
+            grid.innerHTML = '';
             for (let key in products) {
                 let p = products[key];
                 let card = document.createElement('div');
@@ -2112,40 +1947,38 @@
 
         // ========== RENDER SEMUA PRODUK ==========
         function renderAllProducts() {
-            const container = document.getElementById('productsContainer'); container.innerHTML = '';
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
             for (let key in products) {
                 let p = products[key];
                 let section = document.createElement('div');
                 section.className = 'products-section';
                 section.id = `product-${key}`;
 
-                // Tombol penjelasan
                 let expBtn = '';
-                if (['netflix','spotify','youtube','alight','capcut','canva','freefire'].includes(key)) {
+                if (['netflix', 'spotify', 'youtube', 'alight', 'capcut', 'canva', 'freefire'].includes(key)) {
                     expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
                 }
 
-                // ========== KHUSUS SPOTIFY (STOK KOSONG) ==========
+                // Khusus Spotify (stok kosong)
                 if (key === 'spotify') {
                     let itemsHTML = '<div class="stock-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Pemberitahuan:</strong> Stok produk Spotify sedang kosong. Silakan hubungi admin via WhatsApp untuk informasi lebih lanjut.</div>';
                     p.items.forEach(item => {
-                        itemsHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn disabled" data-product="${key}" data-item="${item.name}" data-price="${item.price}" disabled ${item.needsEmail?'data-needs-email="true"':''}><i class="fas fa-shopping-cart"></i> Stok Kosong</button></div></div>`;
+                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn disabled" data-product="${key}" data-item="${item.name}" data-price="${item.price}" disabled ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> Stok Kosong</button></div></div>`;
                     });
                     section.innerHTML = `<div class="product-header"><div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
                 }
-                // ========== KHUSUS FREE FIRE ==========
+                // Khusus Free Fire
                 else if (key === 'freefire') {
-                    // Diamond grid
                     let diamondHTML = '<div class="diamond-grid">';
                     p.diamonds.forEach(d => {
-                        diamondHTML += `<div class="diamond-card ${d.featured?'featured':''}">${d.featured?'<div class="featured-badge" style="font-size:0.7rem;"><i class="fas fa-crown"></i></div>':''}<div class="diamond-icon">💎</div><div class="diamond-amount">${d.amount} DM</div><div class="diamond-price">Rp ${d.price.toLocaleString('id-ID')}</div><button class="diamond-buy-btn" data-product="${key}" data-item="${d.amount} Diamond" data-price="${d.price}">Beli</button></div>`;
+                        diamondHTML += `<div class="diamond-card ${d.featured ? 'featured' : ''}">${d.featured ? '<div class="featured-badge" style="font-size:0.7rem;"><i class="fas fa-crown"></i></div>' : ''}<div class="diamond-icon">💎</div><div class="diamond-amount">${d.amount} DM</div><div class="diamond-price">Rp ${d.price.toLocaleString('id-ID')}</div><button class="diamond-buy-btn" data-product="${key}" data-item="${d.amount} Diamond" data-price="${d.price}">Beli</button></div>`;
                     });
                     diamondHTML += '</div>';
 
-                    // Membership & Cards
                     let regularHTML = '';
                     p.items.forEach(item => {
-                        regularHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}"><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
+                        regularHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}"><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
                     });
 
                     section.innerHTML = `
@@ -2161,10 +1994,10 @@
                         <div class="product-grid">${regularHTML}</div>
                     `;
                 } else {
-                    // Kategori lain (normal)
+                    // Kategori lain
                     let itemsHTML = '';
                     p.items.forEach(item => {
-                        itemsHTML += `<div class="product-card ${item.featured?'featured':''}">${item.featured?'<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>':''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color,-30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${item.needsEmail?'data-needs-email="true"':''}><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
+                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
                     });
                     section.innerHTML = `<div class="product-header"><div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
                 }
@@ -2180,15 +2013,21 @@
             if (activeCat) activeCat.classList.add('active');
             document.querySelectorAll('.products-section').forEach(s => s.classList.remove('active'));
             let target = document.getElementById(`product-${cat}`);
-            if (target) { target.classList.add('active'); document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' }); }
+            if (target) {
+                target.classList.add('active');
+                document.getElementById('productsSection').scrollIntoView({ behavior: 'smooth' });
+            }
             document.getElementById('mainNav').classList.remove('active');
         }
+
         function showExplanation(key) {
-            let exp = explanations[key]; if (!exp) return;
+            let exp = explanations[key];
+            if (!exp) return;
             document.getElementById('explanationTitle').innerText = exp.title;
             document.getElementById('explanationContent').innerHTML = exp.content;
             document.getElementById('explanationModal').style.display = 'flex';
         }
+
         function openCheckoutModal(prod, item, price, needsEmail = false) {
             let priceNum = parseInt(price);
             currentOrder = { product: prod, item, price: priceNum, needsEmail };
@@ -2213,8 +2052,12 @@
             document.getElementById('checkoutContent').innerHTML = html;
             document.querySelectorAll('.payment-method-select').forEach(m => {
                 m.addEventListener('click', function() {
-                    document.querySelectorAll('.payment-method-select').forEach(x => { x.style.borderColor = '#ddd'; x.style.backgroundColor = 'white'; });
-                    this.style.borderColor = 'var(--primary)'; this.style.backgroundColor = 'rgba(67,97,238,0.05)';
+                    document.querySelectorAll('.payment-method-select').forEach(x => {
+                        x.style.borderColor = '#ddd';
+                        x.style.backgroundColor = 'white';
+                    });
+                    this.style.borderColor = 'var(--primary)';
+                    this.style.backgroundColor = 'rgba(67,97,238,0.05)';
                     document.getElementById('summaryMethod').innerText = this.dataset.method.toUpperCase();
                 });
             });
@@ -2222,21 +2065,35 @@
             document.getElementById('confirmOrder').addEventListener('click', confirmOrder);
             document.getElementById('checkoutModal').style.display = 'flex';
         }
+
         function confirmOrder() {
             if (!currentOrder) return;
             let gameId = document.getElementById('gameId') ? document.getElementById('gameId').value : '';
             let userEmail = document.getElementById('userEmail') ? document.getElementById('userEmail').value : '';
             let method = document.getElementById('summaryMethod')?.innerText || '';
-            if (currentOrder.product === 'freefire' && !gameId) { alert('Silakan masukkan ID Free Fire Anda!'); document.getElementById('gameId')?.focus(); return; }
-            if (currentOrder.needsEmail && !userEmail) { alert('Silakan masukkan email Anda!'); document.getElementById('userEmail')?.focus(); return; }
+            if (currentOrder.product === 'freefire' && !gameId) {
+                alert('Silakan masukkan ID Free Fire Anda!');
+                document.getElementById('gameId')?.focus();
+                return;
+            }
+            if (currentOrder.needsEmail && !userEmail) {
+                alert('Silakan masukkan email Anda!');
+                document.getElementById('userEmail')?.focus();
+                return;
+            }
             let msg = `Halo, saya ingin membeli:\n📦 Produk: ${products[currentOrder.product].name}\n🎯 Item: ${currentOrder.item}\n💰 Harga: Rp ${currentOrder.price.toLocaleString('id-ID')}\n`;
             if (gameId) msg += `🎮 ID Free Fire: ${gameId}\n`;
             if (userEmail) msg += `📧 Email: ${userEmail}\n`;
             msg += `💳 Metode Pembayaran: ${method}\n\nSilakan berikan instruksi pembayaran lebih lanjut.`;
-            if (confirm("Kirim pesanan via WhatsApp?\n\nKlik OK untuk WhatsApp, Cancel untuk Telegram")) window.open(`https://wa.me/6285374128738?text=${encodeURIComponent(msg)}`, '_blank');
-            else window.open(`https://t.me/NaufalTzye?text=${encodeURIComponent(msg)}`, '_blank');
-            closeAllModals(); alert('Pesanan Anda telah dikirim! Silakan selesaikan pembayaran.');
+            if (confirm("Kirim pesanan via WhatsApp?\n\nKlik OK untuk WhatsApp, Cancel untuk Telegram")) {
+                window.open(`https://wa.me/6285374128738?text=${encodeURIComponent(msg)}`, '_blank');
+            } else {
+                window.open(`https://t.me/NaufalTzye?text=${encodeURIComponent(msg)}`, '_blank');
+            }
+            closeAllModals();
+            alert('Pesanan Anda telah dikirim! Silakan selesaikan pembayaran.');
         }
+
         function closeAllModals() {
             document.getElementById('checkoutModal').style.display = 'none';
             document.getElementById('explanationModal').style.display = 'none';
@@ -2245,23 +2102,34 @@
         }
 
         // ========== HELPER ==========
-        function hexToRgba(hex, a) { let r=parseInt(hex.slice(1,3),16), g=parseInt(hex.slice(3,5),16), b=parseInt(hex.slice(5,7),16); return `rgba(${r},${g},${b},${a})`; }
-        function adjustColor(c, a) { return '#'+c.replace(/^#/,'').replace(/../g,cc=>('0'+Math.min(255,Math.max(0,parseInt(cc,16)+a)).toString(16)).substr(-2)); }
+        function hexToRgba(hex, a) {
+            let r = parseInt(hex.slice(1, 3), 16);
+            let g = parseInt(hex.slice(3, 5), 16);
+            let b = parseInt(hex.slice(5, 7), 16);
+            return `rgba(${r},${g},${b},${a})`;
+        }
+
+        function adjustColor(c, a) {
+            return '#' + c.replace(/^#/, '').replace(/../g, cc => ('0' + Math.min(255, Math.max(0, parseInt(cc, 16) + a)).toString(16)).substr(-2));
+        }
 
         // ========== EVENT LISTENERS ==========
         function setupEventListeners() {
             document.addEventListener('click', function(e) {
+                // Tombol beli
                 if (e.target.classList.contains('buy-btn') || e.target.closest('.buy-btn')) {
                     let btn = e.target.classList.contains('buy-btn') ? e.target : e.target.closest('.buy-btn');
                     if (btn.hasAttribute('onclick') && btn.getAttribute('onclick').includes('openServiceModal')) return;
-                    if (btn.disabled) return; // Jika disabled, jangan buka modal
+                    if (btn.disabled) return;
                     let needsEmail = btn.hasAttribute('data-needs-email') && btn.getAttribute('data-needs-email') === 'true';
                     openCheckoutModal(btn.dataset.product, btn.dataset.item, btn.dataset.price, needsEmail);
                 }
+                // Tombol diamond
                 if (e.target.classList.contains('diamond-buy-btn') || e.target.closest('.diamond-buy-btn')) {
                     let btn = e.target.classList.contains('diamond-buy-btn') ? e.target : e.target.closest('.diamond-buy-btn');
                     openCheckoutModal(btn.dataset.product, btn.dataset.item, btn.dataset.price);
                 }
+                // Tombol penjelasan
                 if (e.target.classList.contains('product-explanation-btn') || e.target.closest('.product-explanation-btn')) {
                     let btn = e.target.classList.contains('product-explanation-btn') ? e.target : e.target.closest('.product-explanation-btn');
                     showExplanation(btn.dataset.explanation);
@@ -2269,35 +2137,55 @@
             });
 
             document.querySelectorAll('.close-modal').forEach(btn => btn.addEventListener('click', closeAllModals));
-            document.getElementById('checkoutModal')?.addEventListener('click', e => { if(e.target === e.currentTarget) closeAllModals(); });
-            document.getElementById('explanationModal')?.addEventListener('click', e => { if(e.target === e.currentTarget) closeAllModals(); });
-            document.getElementById('serviceModal')?.addEventListener('click', e => { if(e.target === e.currentTarget) closeAllModals(); });
+            document.getElementById('checkoutModal')?.addEventListener('click', e => { if (e.target === e.currentTarget) closeAllModals(); });
+            document.getElementById('explanationModal')?.addEventListener('click', e => { if (e.target === e.currentTarget) closeAllModals(); });
+            document.getElementById('serviceModal')?.addEventListener('click', e => { if (e.target === e.currentTarget) closeAllModals(); });
 
             let amountInput = document.getElementById('transactionAmount');
             if (amountInput) {
-                amountInput.addEventListener('input', function() {
-                    if (this.value > 200000) { this.style.borderColor = 'var(--danger)'; this.style.boxShadow = '0 0 0 2px rgba(230,57,70,0.2)'; }
-                    else { this.style.borderColor = ''; this.style.boxShadow = ''; }
-                    calculateFee();
-                });
+                amountInput.addEventListener('input', calculateFee);
             }
+
             document.querySelectorAll('.payment-option').forEach(opt => opt.addEventListener('click', function() { selectPaymentMethod(this); }));
             document.getElementById('whatsappBtn')?.addEventListener('click', openWhatsApp);
 
             // Navigasi
-            document.querySelector('.nav-home')?.addEventListener('click', e => { e.preventDefault(); document.querySelector('.hero').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
-            document.querySelector('.nav-categories')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('categoriesSection').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
-            document.querySelector('.nav-payment')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('paymentSection').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
-            document.querySelector('.nav-faq')?.addEventListener('click', e => { e.preventDefault(); document.getElementById('faqSection').scrollIntoView({behavior:'smooth'}); document.getElementById('mainNav').classList.remove('active'); });
+            document.querySelector('.nav-home')?.addEventListener('click', e => {
+                e.preventDefault();
+                document.querySelector('.hero').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('mainNav').classList.remove('active');
+            });
+            document.querySelector('.nav-categories')?.addEventListener('click', e => {
+                e.preventDefault();
+                document.getElementById('categoriesSection').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('mainNav').classList.remove('active');
+            });
+            document.querySelector('.nav-payment')?.addEventListener('click', e => {
+                e.preventDefault();
+                document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('mainNav').classList.remove('active');
+            });
+            document.querySelector('.nav-faq')?.addEventListener('click', e => {
+                e.preventDefault();
+                document.getElementById('faqSection').scrollIntoView({ behavior: 'smooth' });
+                document.getElementById('mainNav').classList.remove('active');
+            });
 
             document.getElementById('mobileMenuBtn')?.addEventListener('click', () => document.getElementById('mainNav').classList.toggle('active'));
 
-            // Footer
+            // Footer links
             document.querySelectorAll('.footer-links a, .contact-info-footer a').forEach(link => {
                 link.addEventListener('click', function(e) {
-                    if (this.classList.contains('nav-categories')) { e.preventDefault(); document.getElementById('categoriesSection').scrollIntoView({behavior:'smooth'}); }
-                    else if (this.classList.contains('nav-faq')) { e.preventDefault(); document.getElementById('faqSection').scrollIntoView({behavior:'smooth'}); }
-                    else if (this.classList.contains('nav-payment')) { e.preventDefault(); document.getElementById('paymentSection').scrollIntoView({behavior:'smooth'}); }
+                    if (this.classList.contains('nav-categories')) {
+                        e.preventDefault();
+                        document.getElementById('categoriesSection').scrollIntoView({ behavior: 'smooth' });
+                    } else if (this.classList.contains('nav-faq')) {
+                        e.preventDefault();
+                        document.getElementById('faqSection').scrollIntoView({ behavior: 'smooth' });
+                    } else if (this.classList.contains('nav-payment')) {
+                        e.preventDefault();
+                        document.getElementById('paymentSection').scrollIntoView({ behavior: 'smooth' });
+                    }
                     document.getElementById('mainNav').classList.remove('active');
                 });
             });
