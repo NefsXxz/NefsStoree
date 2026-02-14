@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========== GAYA CSS (lengkap, termasuk testimonial) ========== */
+        /* ========== GAYA CSS (lengkap, dengan perbaikan testimonial) ========== */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -782,7 +782,7 @@
         .faq-toggle.active {
             transform: rotate(45deg);
         }
-        /* Testimonial Section */
+        /* Testimonial Section - DIPERBAIKI */
         .testimonials {
             padding: 80px 0;
             background: white;
@@ -796,11 +796,15 @@
         .testimonial-card {
             background: #f8f9fa;
             border-radius: 15px;
-            padding: 25px;
+            padding: 25px 20px;
             box-shadow: var(--shadow);
             transition: transform 0.3s, box-shadow 0.3s;
             text-align: center;
             border: 1px solid #e9ecef;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100%;
         }
         .testimonial-card:hover {
             transform: translateY(-5px);
@@ -825,11 +829,13 @@
             overflow: hidden;
             border: 3px solid var(--primary);
             box-shadow: var(--shadow);
+            flex-shrink: 0;
         }
         .testimonial-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
         .testimonial-text {
             font-size: 0.95rem;
@@ -837,7 +843,12 @@
             line-height: 1.6;
             font-style: italic;
             margin-top: 10px;
-            padding: 0 10px;
+            padding: 0 5px;
+            word-wrap: break-word;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
         .testimonial-text::before {
             content: '"';
@@ -845,6 +856,7 @@
             color: var(--primary);
             opacity: 0.3;
             margin-right: 5px;
+            line-height: 1;
         }
         .testimonial-text::after {
             content: '"';
@@ -852,8 +864,9 @@
             color: var(--primary);
             opacity: 0.3;
             margin-left: 5px;
+            line-height: 1;
         }
-        /* Modals (sama) */
+        /* Modals */
         .modal {
             display: none;
             position: fixed;
@@ -1703,31 +1716,31 @@
         const explanations = {
             netflix: {
                 title: "📢 PENJELASAN PAKET NETFLIX",
-                content: `...` // (isi penjelasan sama seperti sebelumnya, saya singkat agar tidak terlalu panjang)
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Netflix...</p></div>`
             },
             spotify: {
                 title: "🎵 PENJELASAN PAKET SPOTIFY",
-                content: `...`
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Spotify...</p></div>`
             },
             youtube: {
                 title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM",
-                content: `...`
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket YouTube...</p></div>`
             },
             alight: {
                 title: "🎬 PENJELASAN PAKET ALIGHT MOTION",
-                content: `...`
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Alight Motion...</p></div>`
             },
             capcut: {
                 title: "✂️ PENJELASAN PAKET CAPCUT PRO",
-                content: `...`
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket CapCut...</p></div>`
             },
             canva: {
                 title: "📌 PENJELASAN PAKET CANVA PRO",
-                content: `...`
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Canva...</p></div>`
             },
             freefire: {
                 title: "⚠️ INFO PENTING FREE FIRE",
-                content: `...`
+                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang Free Fire...</p></div>`
             }
         };
 
@@ -1920,9 +1933,9 @@
                 card.className = 'testimonial-card';
                 card.innerHTML = `
                     <div class="testimonial-number">#${t.number}</div>
-                    <a href="${t.image}" target="_blank" class="testimonial-image">
+                    <div class="testimonial-image">
                         <img src="${t.image}" alt="Testimonial ${t.number}" loading="lazy">
-                    </a>
+                    </div>
                     <div class="testimonial-text">${t.text}</div>
                 `;
                 grid.appendChild(card);
@@ -2127,7 +2140,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             renderCategories();
             renderAllProducts();
-            renderTestimonials(); // <-- render testimonial
+            renderTestimonials();
             setupEventListeners();
             showCategory('netflix');
         });
