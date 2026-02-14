@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
+        /* (style sama seperti sebelumnya, tidak ada perubahan) */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -1682,7 +1683,7 @@
     </footer>
 
     <script>
-        // ==================== DATA PRODUK ====================
+        // ==================== DATA PRODUK (DIPERBARUI) ====================
         const products = {
             netflix: {
                 name: "Netflix", icon: "fas fa-tv", color: "#E50914",
@@ -1730,23 +1731,23 @@
             capcut: {
                 name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF",
                 items: [
-                    { name: "Sharing 1 Bulan (Gar7d)", price: 5000, desc: "Akun dari seller, Support all device", featured: false },
-                    { name: "Private 7 Hari (Gar3d)", price: 5500, desc: "Akun dari seller, Maks 3 device", featured: false },
-                    { name: "Private 22 Hari Team (FullGar)", price: 6000, desc: "Akun berbasis Tim Private, Full garansi", featured: true },
-                    { name: "Private 1 Bulan Team (Gar7d)", price: 7000, desc: "Akun berbasis Tim Private, Garansi 7 hari", featured: false },
-                    { name: "Private 1 Bulan Team (FullGar)", price: 9000, desc: "Akun berbasis Tim Private, Full garansi", featured: false }
+                    { name: "Sharing 1 Bulan (Gar7d)", price: 5500, desc: "Akun dari seller, Support all device, Garansi 7 hari", featured: false },
+                    { name: "Private 7 Hari (Gar3d)", price: 6500, desc: "Akun dari seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
+                    { name: "Private 22 Hari Team (FullGar)", price: 7000, desc: "Akun berbasis Tim Private, Full garansi, Maks 2 device", featured: true },
+                    { name: "Private 42 Hari Team (Gar1b)", price: 10000, desc: "Akun berbasis Tim Private, Maks 3 device, Garansi 1 bulan", featured: false },
+                    { name: "Private 1 Bulan Team (Gar7d)", price: 7000, desc: "Akun berbasis Tim Private, Garansi 7 hari, Maks 2 device", featured: false },
+                    { name: "Private 1 Bulan Team (FullGar)", price: 9000, desc: "Akun berbasis Tim Private, Full garansi, Maks 2 device", featured: true }
                 ]
             },
             canva: {
                 name: "Canva Pro", icon: "fas fa-palette", color: "#00C4CC",
                 items: [
-                    { name: "Paket Member 1 Bulan", price: 4000, desc: "Support all device, Via link invite", featured: false },
-                    { name: "Paket Designer 1 Bulan", price: 4500, desc: "Support all device, Via link invite", featured: false },
-                    { name: "Paket Edu 1 Bulan", price: 3100, desc: "Support all device, Via link invite", featured: false },
-                    { name: "Paket Edu 1 Tahun", price: 4000, desc: "Support all device, Via link invite", featured: true },
-                    { name: "Paket Edu Lifetime", price: 6000, desc: "Support all device, Via link invite", featured: true },
-                    { name: "Paket Head Admin 1 Bulan", price: 6000, desc: "Akun dari seller, Support all device", featured: false },
-                    { name: "Paket Head Owner 1 Bulan", price: 8000, desc: "Akun dari seller, Support all device", featured: true }
+                    { name: "Paket Member 1 Bulan", price: 2000, desc: "Support all device, Via link invite, Full garansi BF", featured: false },
+                    { name: "Paket Designer 1 Bulan", price: 3000, desc: "Support all device, Via link invite, Full garansi BF", featured: false },
+                    { name: "Paket Edu 1 Tahun", price: 2500, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
+                    { name: "Paket Edu Lifetime", price: 6000, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
+                    { name: "Paket Head Admin 1 Bulan", price: 4500, desc: "Akun dari seller, Support all device, No garansi", featured: false },
+                    { name: "Paket Head Owner 1 Bulan", price: 6500, desc: "Akun dari seller, Support all device, No garansi", featured: true }
                 ]
             },
             freefire: {
@@ -1782,7 +1783,8 @@
             netflix: { title: "📢 PENJELASAN PAKET NETFLIX", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Netflix...</p></div>` },
             youtube: { title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket YouTube...</p></div>` },
             canva: { title: "📌 PENJELASAN PAKET CANVA PRO", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Canva...</p></div>` },
-            freefire: { title: "⚠️ INFO PENTING FREE FIRE", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang Free Fire...</p></div>` }
+            freefire: { title: "⚠️ INFO PENTING FREE FIRE", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang Free Fire...</p></div>` },
+            capcut: { title: "✂️ PENJELASAN PAKET CAPCUT PRO", content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket CapCut...</p></div>` }
         };
 
         // State
@@ -1878,7 +1880,7 @@
                 section.id = `product-${key}`;
 
                 let expBtn = '';
-                if (['netflix','youtube','canva','freefire'].includes(key)) expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
+                if (['netflix','youtube','canva','freefire','capcut'].includes(key)) expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
 
                 // ========== KHUSUS FREE FIRE (TANPA REKBER, LAYOUT GRID BIASA) ==========
                 if (key === 'freefire') {
