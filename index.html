@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========== GAYA CSS (lengkap, dengan perbaikan testimonial) ========== */
+        /* ========== GAYA CSS (lengkap) ========== */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -318,13 +318,21 @@
             width: 70px;
             height: 70px;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, rgba(67, 97, 238, 0.1), rgba(114, 9, 183, 0.1));
+            background: #fff;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 1.8rem;
             color: var(--primary);
+            overflow: hidden;
+        }
+        .category-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            background: white;
         }
         .category-name {
             font-size: 1.2rem;
@@ -366,8 +374,11 @@
             align-items: center;
             gap: 15px;
         }
-        .product-title i {
-            color: var(--primary);
+        .product-title img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            vertical-align: middle;
         }
         .product-explanation-btn {
             background: var(--gradient-accent);
@@ -782,7 +793,7 @@
         .faq-toggle.active {
             transform: rotate(45deg);
         }
-        /* Testimonial Section - DIPERBAIKI */
+        /* Testimonial Section */
         .testimonials {
             padding: 80px 0;
             background: white;
@@ -932,6 +943,9 @@
         }
         .explanation-content {
             padding: 20px 0;
+            white-space: pre-line;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
         }
         /* Modal Jasa Rekber */
         .service-modal .modal-content {
@@ -1624,33 +1638,32 @@
                     { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
                     { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
                     { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
-                    { name: "Sharing 1 Bulan [1P1U]", price: 25500, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true },
+                    { name: "Sharing 1 Bulan [1P1U] [KOSONG]", price: 25500, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
                     { name: "Sharing 1 Bulan [1P2U]", price: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: false },
-                    { name: "Semi Private 1 Bulan", price: 30500, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false },
+                    { name: "Semi Private 1 Bulan [KOSONG]", price: 30500, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
                     { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Plan Premium 4K, 5 profil, Kontrol penuh, No garansi", featured: true, needsEmail: true }
                 ]
             },
             spotify: {
                 name: "Spotify", icon: "fab fa-spotify", color: "#1DB954",
                 items: [
-                    { name: "Student 1 Bulan (Garansi 1x24 jam)", price: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false },
-                    { name: "Student 1 Bulan (Full Garansi)", price: 17000, desc: "Full garansi, Support all device", featured: true },
-                    { name: "Famplan 1 Bulan", price: 19000, desc: "Akun seller, Full garansi", featured: false },
-                    { name: "Indplan 3 Bulan (Full Garansi)", price: 21000, desc: "Akun seller, Full garansi", featured: false },
-                    { name: "Indplan 4 Bulan (Full Garansi)", price: 24000, desc: "Akun seller, Full garansi", featured: true },
-                    { name: "Indplan 3 Bulan (No Garansi)", price: 15000, desc: "Akun seller, No garansi", featured: false }
+                    { name: "Student 1 Bulan (Garansi 1x24 jam)", price: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false, stock: false },
+                    { name: "Student 1 Bulan (Full Garansi)", price: 16000, desc: "Full garansi, Support all device", featured: true, stock: false },
+                    { name: "Famplan 1 Bulan (Garansi 25 hari)", price: 16000, desc: "Akun seller, Garansi 25 hari", featured: true, stock: true },
+                    { name: "Indplan 3 Bulan (Full Garansi)", price: 21000, desc: "Akun seller, Full garansi", featured: false, stock: false },
+                    { name: "Indplan 4 Bulan (No Garansi)", price: 24000, desc: "Akun seller, No garansi", featured: false, stock: false }
                 ]
             },
             youtube: {
                 name: "YouTube Premium", icon: "fab fa-youtube", color: "#FF0000",
                 items: [
-                    { name: "Famplan 1 Bulan", price: 7500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
+                    { name: "Famplan 1 Bulan", price: 6500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
                     { name: "Famplan 2 Bulan", price: 9000, desc: "ACC buyer, Kirim email saja, Full garansi", featured: false },
                     { name: "Mixplan 3 Bulan", price: 13500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
-                    { name: "Famhead 1 Bulan", price: 11000, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
-                    { name: "Indiplan 1 Bulan", price: 12500, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
-                    { name: "Jaspay Famhead 1 Bulan", price: 10000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
-                    { name: "Jaspay Indiplan 1 Bulan", price: 11500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
+                    { name: "Famhead 1 Bulan", price: 10000, desc: "ACC seller, No garansi", featured: false },
+                    { name: "Indiplan 1 Bulan", price: 11500, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
+                    { name: "Jaspay Famhead 1 Bulan", price: 9000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
+                    { name: "Jaspay Indiplan 1 Bulan", price: 10500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
                     { name: "Jaspay Mixplan 3 Bulan", price: 12500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false }
                 ]
             },
@@ -1712,35 +1725,327 @@
             }
         };
 
+        // ==================== MAPPING GAMBAR KATEGORI ====================
+        const categoryImages = {
+            netflix: "https://i.ibb.co.com/MkZ7Gyh4/12d04587f205ba8accecb35de93f790b.jpg",
+            spotify: "https://i.ibb.co.com/VWG7mCF1/2e5b50f51f2dca3f37730ce507f20d9a.jpg",
+            youtube: "https://i.ibb.co.com/nsTnFV10/9ffc17d8234d69587aea04dff27e9abc.jpg",
+            alight: "https://i.ibb.co.com/yFR1wwqp/ad8b2cf5e7b44514ab71b9fd9666ec16.jpg",
+            capcut: "https://i.ibb.co.com/SDxB4LpX/c410c7c8c7bb31013500d214a7da8a8b.jpg",
+            canva: "https://i.ibb.co.com/5hgZhdJb/7805aae9baa43978009e8b0cfd3a18f7.jpg",
+            freefire: "https://i.ibb.co.com/Dfzsq0z7/26a8534fb2d7063e6157af9513b219d9.jpg"
+        };
+
         // ==================== PENJELASAN LENGKAP ====================
         const explanations = {
             netflix: {
-                title: "📢 PENJELASAN PAKET NETFLIX",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Netflix...</p></div>`
+                title: "📺 PENJELASAN PAKET NETFLIX",
+                content: `<div class="explanation-content">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
+┊1 Hari [1P2U] = Rp 5.500
+┊2 Hari [1P2U] = Rp 7.500
+┊3 Hari [1P2U] = Rp 9.500
+┊7 Hari [1P2U] = Rp 12.000
+
+┊1 Bulan [1P1U] = Rp 25.500 [KOSONG]❌
+┊1 Bulan [1P2U] = Rp 18.000
+> Akun dari seller 
+> Login via kode OTP
+> Maks login 1 device 
+> All device
+> Full garansi 
+
+▣ 𝗦𝗘𝗠𝗜 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 [KOSONG] ❌
+┊1 Bulan = Rp 30.500
+> Akun dari seller 
+> Login via kode OTP
+> Maks login 2 device
+> All device
+> Full garansi 
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊1 Bulan = Rp 102.000
+> Akun dari buyer (akun sendiri)
+> Plan Premium 4K
+> Dapet 5 profil 
+> All device
+> Maks login atur sendiri
+> Limit screen 4
+> No garansi
+> Kontrol penuh (tanggung jawab masing-masing)
+> Order = paham
+
+═════════════════════
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢
+- Plan Premium 
+- Resolusi max 4K (tergantung jaringan)
+- Sharing (1P1U/1P2U) & Semi Private *FULL GARANSI*
+- No komplain limit screen
+- Order sharing = paham sharing 
+- Proses ±5 menit (max 24 jam)
+- Non rush
+- No spam
+Tanya stok sebelum order!
+                </div>`
             },
             spotify: {
                 title: "🎵 PENJELASAN PAKET SPOTIFY",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Spotify...</p></div>`
+                content: `<div class="explanation-content">
+▣ 𝗦𝗧𝗨𝗗𝗘𝗡𝗧 
+┊1 Bulan (Garansi 1x24 jam) = 13.000
+> Garansi 1x24 jam
+> Bisa All Region
+> iOS disarankan via Web
+
+┊1 Bulan (Full Garansi) = 16.000
+> Full garansi 
+> Support all device 
+
+▣ 𝗙𝗔𝗠𝗣𝗟𝗔𝗡 [ADA STOCKNYA✅]
+┊1 Bulan = 16.000
+> garansi 25 hari
+
+▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 
+┊3 Bulan = 21.000
+> Full Garansi
+
+┊4 Bulan = 24.000
+> No garansi 
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Akun Seller
+- Garansi sesuai ketentuan
+- Garansi hanya berlaku 1x setiap 1 kali order
+- Proses bisa slow / rush
+- No rush
+- No spam
+Tanya stok sebelum order!
+                </div>`
             },
             youtube: {
                 title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket YouTube...</p></div>`
+                content: `<div class="explanation-content">
+▣ 𝗙𝗔𝗠𝗜𝗟𝗬
+┊ Famplan 1 Bulan = 6.500
+ACC buyer
+Cukup kirim email
+Full garansi
+
+┊ Famhead 1 Bulan = 10.000
+ACC seller
+No garansi
+
+┊ Indiplan 1 Bulan = 11.500
+ACC seller
+Garansi selama tidak ganti sandi
+
+▣ 𝗝𝗔𝗦𝗣𝗔𝗬 𝗬𝗧
+┊ Famhead 1 Bulan = 9.000
+┊ Indiplan 1 Bulan = 10.500
+ACC buyer
+Kirim email & password ke seller (tanpa verifikasi)
+Wajib email fresh / baru
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢
+Garansi sesuai ketentuan
+Tidak menerima refund setelah diproses
+Proses maksimal 1x24 jam (ikut antrian)
+No rush
+No spam
+Tanya stok sebelum order!
+
+━━━━━━━━━━━━━━━━━━━━━
+📢 PENJELASAN JENIS PAKET YOUTUBE PREMIUM
+
+━━━━━━━━━━━━━━━━━━━━━
+👪 FAMILY
+Family adalah sistem RESMI Google YouTube Keluarga Premium.
+
+Dengan sistem ini, beberapa akun Google bisa menikmati YouTube Premium dalam satu keluarga (maksimal 6 akun). 
+
+Family BUKAN:
+- BUKAN grup WhatsApp
+- BUKAN akun gabungan
+- BUKAN login barengan
+- BUKAN sharing 
+━━━━━━━━━━━━━━━━━━━━━
+👑 FAMHEAD (FAMILY HEAD) — AKUN SELLER
+Famhead adalah paket dimana kamu menjadi KEPALA FAMILY YouTube Keluarga Premium.
+
+- Akun milik seller
+- Kamu jadi KEPALA FAMILY
+- Bisa undang sampai 5 email
+- Bisa atur & hapus anggota
+- Premium aktif lewat sistem Family YouTube
+- Garansi berlaku selama tidak ganti sandi
+
+Cocok untuk:
+- Reseller / seller
+- Mau pegang kontrol family
+- Mau jual slot sendiri
+━━━━━━━━━━━━━━━━━━━━━
+🏡 FAMPLAN (FAMILY MEMBER)
+Famplan adalah paket dimana kamu menjadi ANGGOTA Family YouTube Keluarga Premium.
+
+Sistemnya pakai UNDANGAN EMAIL / LINK
+Tugas kamu hanya KLIK LINK lalu tekan TERIMA UNDANGAN. Setelah terima undangan, YouTube Premium aktif otomatis.
+
+- Pakai akun Google milik kamu sendiri
+- Admin kirim undangan Family YouTube
+- Kamu tinggal TERIMA UNDAN
+- Setelah itu YouTube Premium langsung aktif
+- FULL garansi selama ikut aturan
+
+Cocok untuk:
+- Mau akun sendiri
+- Mau sistem resmi Google
+- Tinggal terima undangan, tidak ribet
+
+⚠️ CATATAN PENTING:
+- 1 akun Google hanya bisa pindah / join Family maksimal 2 kali dalam 12 bulan  
+- Kalau sudah mencapai batas, akan muncul tulisan:
+  "Tidak dapat bergabung ke grup keluarga"
+- Jika ini terjadi, itu murni aturan dari Google (bukan kesalahan admin)
+- Solusinya pakai email lain / email fresh, atau tunggu sampai masa 12 bulan selesai
+━━━━━━━━━━━━━━━━━━━━━
+🧍 INDIPLAN (INDIVIDUAL PLAN)
+Indiplan adalah paket YouTube Premium untuk 1 akun saja (tanpa Family).
+
+- Premium hanya untuk 1 akun
+- Tidak masuk Family
+- Lebih private
+- Pakai akun kamu sendiri
+- Garansi sesuai ketentuan paket
+
+Cocok untuk:
+- Mau pakai sendiri
+- Tidak mau join family
+━━━━━━━━━━━━━━━━━━━━━
+🎴 JASPAY (JASA PAYMENT YOUTUBE)
+Jaspay adalah jasa pembayaran YouTube Premium.
+
+- Akun pakai milik kamu
+- Admin hanya bantu BAYARIN Premium
+- Premium aktif karena dibayarkan admin
+- BUKAN akun sharing
+- BUKAN akun seller
+
+Intinya:
+Akun kamu sendiri + premium dibayarin admin.
+━━━━━━━━━━━━━━━━━━━━━
+📌 CATATAN PENTING
+- Semua paket dapat YouTube Premium
+- Family = sistem resmi Google YouTube Keluarga Premium
+- Tidak ada login bersama
+- Kalau bingung, admin siap bantu
+- Order = dianggap paham sistem
+                </div>`
             },
             alight: {
                 title: "🎬 PENJELASAN PAKET ALIGHT MOTION",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Alight Motion...</p></div>`
+                content: `<div class="explanation-content">
+𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
+┊1 Tahun (Acc seller) = Rp 2.000
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊1 Tahun (Acc buyer) = Rp 1.500
+┊1 Tahun (Acc seller) = Rp 2.500
+═════════════════════
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Acc seller = akun dari seller via email generator 
+- Acc buyer = pake email sendiri, cukup kirim email saja
+- Support Android / iOS  
+- IPhone/IOS acc buyer only
+- Private maks login 10 device
+- Garansi 6 bulan  
+- Proses 3 menit (max 1x24 jam sesuai antrian)
+- No rush / no spam  
+                </div>`
             },
             capcut: {
                 title: "✂️ PENJELASAN PAKET CAPCUT PRO",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket CapCut...</p></div>`
+                content: `<div class="explanation-content">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
+┊1 Bulan (Gar7d) = Rp 5.500
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
+┊7 Hari (Gar3d) = Rp 6.500
+┊22 Hari Team (FullGar) = Rp 7.000
+┊42 Hari Team (Gar1b) = Rp 10.000
+
+┊1 Bulan Team (Gar7d) = Rp 7.000
+┊1 Bulan Team (FullGar) = Rp 9.000
+
+═════════════════════
+KETERANGAN
+• Team       : akun berbasis Tim Private  
+• 22 Hari    : aktif 22–17 hari  
+• 42 Hari    : aktif 42–30 hari  
+• 1 Bulan    : aktif 35–22 hari  
+• Gar3d      : garansi 3 hari  
+• Gar7d      : garansi 7 hari  
+• Gar1b      : garansi 1 bulan  
+• FullGar    : garansi full sesuai masa aktif  
+═════════════════════
+NOTE / INFO
+• Akun dari seller  
+• Support semua device  
+• Private maks 2 device login  
+• 42 Hari maks 3 device login  
+• Unlock semua fitur Pro  
+  (AI Perluas Video tidak termasuk, dibatasi sistem)  
+• Garansi jika BF / premium hilang  
+• Tidak bisa renew (habis beli ulang)  
+• Proses ±5 menit, maksimal 1x24 jam (tergantung antrian)  
+• No rush, no spam  
+Tanya stok sebelum order!
+                </div>`
             },
             canva: {
                 title: "📌 PENJELASAN PAKET CANVA PRO",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang paket Canva...</p></div>`
+                content: `<div class="explanation-content">
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥
+┊1 Bulan = Rp 2.000
+
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗗𝗘𝗦𝗜𝗚𝗡𝗘𝗥
+┊1 Bulan = Rp 3.000
+
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗘𝗗𝗨
+┊1 Tahun = Rp 2.500
+┊Lifetime = Rp 6.000
+
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗛𝗘𝗔𝗗
+┊1 Bulan Admin = Rp 4.500
+┊1 Bulan Owner = Rp 6.500
+═════════════════════
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Support all device 
+- Semua paket menggunakan via link invite, kecuali head owner.
+- Paket Head Owner menggunakan akun dari seller.
+- Paket Member & Designer full garansi BF
+- Garansi BF / fitur Pro hilang, diluar itu bukan tanggung jawab admin.
+- 1 Tahun & Lifetime→ garansi 6 Bulan 
+- Paket Head Owner no garansi
+- Proses max 1x24 jam (sesuai antrian)
+- Non rush & no spam.
+Tanya stok sebelum order!
+                </div>`
             },
             freefire: {
                 title: "⚠️ INFO PENTING FREE FIRE",
-                content: `<div class="explanation-content"><p>Penjelasan lengkap tentang Free Fire...</p></div>`
+                content: `<div class="explanation-content">
+⚠️ NOTE / INFO PENTING
+- Proses sesuai antrian
+- Estimasi 1–5 menit
+- Max proses 1×24 jam
+- Proses bisa lebih lama jika server padat
+- Top up via ID (tanpa login akun)
+- Setelah order, kirim ID ke seller
+- Pastikan ID sudah benar sebelum order
+- Salah input ID bukan tanggung jawab seller
+- Order TIDAK BISA DICANCEL atau REFUND ketika sudah/sedang diproses.
+                </div>`
             }
         };
 
@@ -1858,7 +2163,17 @@
                 let card = document.createElement('div');
                 card.className = 'category-card' + (key === currentCategory ? ' active' : '');
                 card.dataset.category = key;
-                card.innerHTML = `<div class="category-icon" style="color:${p.color};background:linear-gradient(135deg,${hexToRgba(p.color,0.1)},${hexToRgba(p.color,0.05)})"><i class="${p.icon}"></i></div><div class="category-name">${p.name}</div><div class="category-count">${p.items.length} Paket</div>`;
+                // Gunakan gambar jika ada, fallback ke ikon Font Awesome
+                let iconHtml = categoryImages[key] 
+                    ? `<img src="${categoryImages[key]}" alt="${p.name}">` 
+                    : `<i class="${p.icon}" style="color:${p.color};"></i>`;
+                card.innerHTML = `
+                    <div class="category-icon" style="background:${categoryImages[key] ? '#fff' : `linear-gradient(135deg,${hexToRgba(p.color,0.1)},${hexToRgba(p.color,0.05)})`}">
+                        ${iconHtml}
+                    </div>
+                    <div class="category-name">${p.name}</div>
+                    <div class="category-count">${p.items.length} Paket</div>
+                `;
                 card.addEventListener('click', () => showCategory(key));
                 grid.appendChild(card);
             }
@@ -1879,16 +2194,11 @@
                     expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
                 }
 
-                // Khusus Spotify (stok kosong)
-                if (key === 'spotify') {
-                    let itemsHTML = '<div class="stock-warning"><i class="fas fa-exclamation-triangle"></i> <strong>Pemberitahuan:</strong> Stok produk Spotify sedang kosong. Silakan hubungi admin via WhatsApp untuk informasi lebih lanjut.</div>';
-                    p.items.forEach(item => {
-                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn disabled" data-product="${key}" data-item="${item.name}" data-price="${item.price}" disabled ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> Stok Kosong</button></div></div>`;
-                    });
-                    section.innerHTML = `<div class="product-header"><div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
-                }
+                // Buat judul dengan gambar
+                let titleHtml = `<div class="product-title"><img src="${categoryImages[key]}" alt="${p.name}"> ${p.name}</div>`;
+
                 // Khusus Free Fire
-                else if (key === 'freefire') {
+                if (key === 'freefire') {
                     let diamondHTML = '<div class="diamond-grid">';
                     p.diamonds.forEach(d => {
                         diamondHTML += `<div class="diamond-card ${d.featured ? 'featured' : ''}">${d.featured ? '<div class="featured-badge" style="font-size:0.7rem;"><i class="fas fa-crown"></i></div>' : ''}<div class="diamond-icon">💎</div><div class="diamond-amount">${d.amount} DM</div><div class="diamond-price">Rp ${d.price.toLocaleString('id-ID')}</div><button class="diamond-buy-btn" data-product="${key}" data-item="${d.amount} Diamond" data-price="${d.price}">Beli</button></div>`;
@@ -1901,10 +2211,7 @@
                     });
 
                     section.innerHTML = `
-                        <div class="product-header">
-                            <div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>
-                            ${expBtn}
-                        </div>
+                        <div class="product-header">${titleHtml}${expBtn}</div>
                         <div class="diamond-section">
                             <h3 class="section-subtitle">💎 Diamond Free Fire</h3>
                             ${diamondHTML}
@@ -1916,9 +2223,13 @@
                     // Kategori lain
                     let itemsHTML = '';
                     p.items.forEach(item => {
-                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
+                        // Jika item memiliki properti stock: false, maka tombol disabled
+                        const isOutOfStock = item.stock === false;
+                        const buttonDisabled = isOutOfStock ? 'disabled' : '';
+                        const buttonText = isOutOfStock ? 'Stok Kosong' : 'Beli Sekarang';
+                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn ${isOutOfStock ? 'disabled' : ''}" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${buttonDisabled} ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> ${buttonText}</button></div></div>`;
                     });
-                    section.innerHTML = `<div class="product-header"><div class="product-title"><i class="${p.icon}" style="color:${p.color}"></i> ${p.name}</div>${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
+                    section.innerHTML = `<div class="product-header">${titleHtml}${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
                 }
                 container.appendChild(section);
             }
