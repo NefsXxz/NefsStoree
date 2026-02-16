@@ -614,7 +614,6 @@
         }
         .payment-icon.qris { color: #00a86b; }
         .payment-icon.dana { color: #0088cc; }
-        .payment-icon.gopay { color: #00aa13; }
         .payment-name {
             font-weight: 600;
             font-size: 1.1rem;
@@ -1678,11 +1677,11 @@
             capcut: {
                 name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF",
                 items: [
-                    { name: "Sharing 1 Bulan (Gar7d)", price: 5500, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false },
-                    { name: "Private 7 Hari (Gar3d)", price: 6500, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
-                    { name: "Private 22 Hari Team (FullGar)", price: 7000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true },
-                    { name: "Private 42 Hari Team (Gar1b)", price: 10000, desc: "Akun berbasis Tim Private, Maks 3 device, Garansi 1 bulan", featured: false },
-                    { name: "Private 1 Bulan Team (Gar7d)", price: 7000, desc: "Akun berbasis Tim Private, Maks 2 device, Garansi 7 hari", featured: false },
+                    { name: "Sharing 1 Bulan (Gar7d)", price: 4500, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false },
+                    { name: "Private 7 Hari (Gar3d)", price: 5500, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
+                    { name: "Private 22 Hari Team (FullGar)", price: 6000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true },
+                    { name: "Private 42 Hari Team (Gar1b)", price: 9000, desc: "Akun berbasis Tim Private, Maks 3 device, Garansi 1 bulan", featured: false },
+                    { name: "Private 1 Bulan Team (Gar7d)", price: 6000, desc: "Akun berbasis Tim Private, Maks 2 device, Garansi 7 hari", featured: false },
                     { name: "Private 1 Bulan Team (FullGar)", price: 9000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true }
                 ]
             },
@@ -1722,6 +1721,13 @@
                     { amount: "375", price: 50100 }, { amount: "405", price: 54100 }, { amount: "420", price: 60300 }, { amount: "425", price: 55100 },
                     { amount: "455", price: 62900 }, { amount: "475", price: 68000 }, { amount: "495", price: 65300 }, { amount: "510", price: 67400, featured: true }
                 ]
+            },
+            wink: {
+                name: "Wink", icon: "fas fa-star", color: "#FF69B4",
+                items: [
+                    { name: "Private 7 Hari (ACC buyer)", price: 5500, desc: "ACC buyer, Kirim email + password ke seller (no verifikasi), Email wajib fresh/masih baru, Garansi 5 hari, Only Android", featured: false, needsEmail: true },
+                    { name: "Private 7 Hari (ACC seller)", price: 8000, desc: "ACC seller, Garansi 5 hari, Only Android", featured: false }
+                ]
             }
         };
 
@@ -1733,7 +1739,8 @@
             alight: "https://i.ibb.co.com/yFR1wwqp/ad8b2cf5e7b44514ab71b9fd9666ec16.jpg",
             capcut: "https://i.ibb.co.com/SDxB4LpX/c410c7c8c7bb31013500d214a7da8a8b.jpg",
             canva: "https://i.ibb.co.com/5hgZhdJb/7805aae9baa43978009e8b0cfd3a18f7.jpg",
-            freefire: "https://i.ibb.co.com/Dfzsq0z7/26a8534fb2d7063e6157af9513b219d9.jpg"
+            freefire: "https://i.ibb.co.com/Dfzsq0z7/26a8534fb2d7063e6157af9513b219d9.jpg",
+            wink: "https://i.ibb.co.com/XrKVHtMt/e52547ffd8d39f876386429331e7da38.jpg"
         };
 
         // ==================== PENJELASAN LENGKAP ====================
@@ -1967,14 +1974,14 @@ Akun kamu sendiri + premium dibayarin admin.
                 title: "✂️ PENJELASAN PAKET CAPCUT PRO",
                 content: `<div class="explanation-content">
 ▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
-┊1 Bulan (Gar7d) = Rp 5.500
+┊1 Bulan (Gar7d) = Rp 4.500
 
 ▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
-┊7 Hari (Gar3d) = Rp 6.500
-┊22 Hari Team (FullGar) = Rp 7.000
-┊42 Hari Team (Gar1b) = Rp 10.000
+┊7 Hari (Gar3d) = Rp 5.500
+┊22 Hari Team (FullGar) = Rp 6.000
+┊42 Hari Team (Gar1b) = Rp 9.000
 
-┊1 Bulan Team (Gar7d) = Rp 7.000
+┊1 Bulan Team (Gar7d) = Rp 6.000
 ┊1 Bulan Team (FullGar) = Rp 9.000
 
 ═════════════════════
@@ -2045,6 +2052,30 @@ Tanya stok sebelum order!
 - Pastikan ID sudah benar sebelum order
 - Salah input ID bukan tanggung jawab seller
 - Order TIDAK BISA DICANCEL atau REFUND ketika sudah/sedang diproses.
+                </div>`
+            },
+            wink: {
+                title: "✨ PENJELASAN PAKET WINK",
+                content: `<div class="explanation-content">
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊7 Hari = 5.500
+> ACC buyer 
+> Kirim email + password ke seller (no verifikasi)
+> Email wajib fresh/masih baru
+
+┊7 Hari = 8.000
+> ACC seller 
+═════════════════════
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Only Android
+- 7 Hari → garansi 5 hari
+- ACC Buyer = akun dari customer (akun kamu)
+- ACC Seller = akun dari seller
+- Proses slow sesuai antrian
+- Proses maks 1×24jam
+- No rush
+- No spam
+Tanya stok sebelum order!
                 </div>`
             }
         };
@@ -2190,7 +2221,8 @@ Tanya stok sebelum order!
                 section.id = `product-${key}`;
 
                 let expBtn = '';
-                if (['netflix', 'spotify', 'youtube', 'alight', 'capcut', 'canva', 'freefire'].includes(key)) {
+                // Tampilkan tombol penjelasan untuk kategori yang memiliki penjelasan
+                if (['netflix', 'spotify', 'youtube', 'alight', 'capcut', 'canva', 'freefire', 'wink'].includes(key)) {
                     expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
                 }
 
