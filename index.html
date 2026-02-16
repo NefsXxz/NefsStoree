@@ -1155,6 +1155,23 @@
             from { transform: translateX(0%); opacity: 1; }
             to { transform: translateX(100%); opacity: 0; }
         }
+        /* Stock warning banner */
+        .stock-warning-banner {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+        .stock-warning-banner i {
+            font-size: 1.5rem;
+            color: #f0b400;
+        }
         /* Footer */
         footer {
             background: var(--dark);
@@ -1322,20 +1339,6 @@
             .diamond-grid { grid-template-columns: repeat(2,1fr); }
             .payment-options { flex-direction: column; }
             .testimonial-grid { grid-template-columns: 1fr; }
-        }
-        /* Stock warning */
-        .stock-warning {
-            background: #fff3cd;
-            border: 1px solid #ffeaa7;
-            color: #856404;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: 500;
-        }
-        .stock-warning i {
-            margin-right: 8px;
         }
     </style>
 </head>
@@ -1633,14 +1636,14 @@
             netflix: {
                 name: "Netflix", icon: "fas fa-tv", color: "#E50914",
                 items: [
-                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
-                    { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
-                    { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
-                    { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false },
+                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
+                    { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
+                    { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
+                    { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
                     { name: "Sharing 1 Bulan [1P1U]", price: 25500, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
                     { name: "Sharing 1 Bulan [1P2U]", price: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
                     { name: "Semi Private 1 Bulan", price: 30500, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
-                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Plan Premium 4K, 5 profil, Kontrol penuh, No garansi", featured: true, needsEmail: true }
+                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Plan Premium 4K, 5 profil, Kontrol penuh, No garansi", featured: true, needsEmail: true, stock: false }
                 ]
             },
             spotify: {
@@ -2252,16 +2255,25 @@ Tanya stok sebelum order!
                         <div class="product-grid">${regularHTML}</div>
                     `;
                 } else {
-                    // Kategori lain
+                    // Kategori lain (termasuk Netflix)
                     let itemsHTML = '';
+                    let allOutOfStock = true; // untuk cek apakah semua item stok false
                     p.items.forEach(item => {
+                        if (item.stock !== false) allOutOfStock = false; // jika ada yang stok true, set false
                         // Jika item memiliki properti stock: false, maka tombol disabled
                         const isOutOfStock = item.stock === false;
                         const buttonDisabled = isOutOfStock ? 'disabled' : '';
                         const buttonText = isOutOfStock ? 'Stok Kosong' : 'Beli Sekarang';
                         itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn ${isOutOfStock ? 'disabled' : ''}" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${buttonDisabled} ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> ${buttonText}</button></div></div>`;
                     });
-                    section.innerHTML = `<div class="product-header">${titleHtml}${expBtn}</div><div class="product-grid">${itemsHTML}</div>`;
+
+                    // Tambahkan banner peringatan jika semua item habis (khusus Netflix)
+                    let warningBanner = '';
+                    if (key === 'netflix' && allOutOfStock) {
+                        warningBanner = `<div class="stock-warning-banner"><i class="fas fa-exclamation-triangle"></i> <strong>Perhatian:</strong> Semua paket Netflix sedang kosong / sold out. Silakan cek kategori lain.</div>`;
+                    }
+
+                    section.innerHTML = `<div class="product-header">${titleHtml}${expBtn}</div>${warningBanner}<div class="product-grid">${itemsHTML}</div>`;
                 }
                 container.appendChild(section);
             }
