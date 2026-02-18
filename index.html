@@ -792,90 +792,6 @@
         .faq-toggle.active {
             transform: rotate(45deg);
         }
-        /* Testimonial Section */
-        .testimonials {
-            padding: 80px 0;
-            background: white;
-        }
-        .testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .testimonial-card {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 25px 20px;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s, box-shadow 0.3s;
-            text-align: center;
-            border: 1px solid #e9ecef;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            height: 100%;
-        }
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-hover);
-            border-color: var(--primary);
-        }
-        .testimonial-number {
-            display: inline-block;
-            background: var(--gradient);
-            color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 15px;
-        }
-        .testimonial-image {
-            width: 120px;
-            height: 120px;
-            margin: 0 auto 15px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid var(--primary);
-            box-shadow: var(--shadow);
-            flex-shrink: 0;
-        }
-        .testimonial-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-        .testimonial-text {
-            font-size: 0.95rem;
-            color: var(--dark);
-            line-height: 1.6;
-            font-style: italic;
-            margin-top: 10px;
-            padding: 0 5px;
-            word-wrap: break-word;
-            flex: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .testimonial-text::before {
-            content: '"';
-            font-size: 2rem;
-            color: var(--primary);
-            opacity: 0.3;
-            margin-right: 5px;
-            line-height: 1;
-        }
-        .testimonial-text::after {
-            content: '"';
-            font-size: 2rem;
-            color: var(--primary);
-            opacity: 0.3;
-            margin-left: 5px;
-            line-height: 1;
-        }
         /* Modals */
         .modal {
             display: none;
@@ -1329,7 +1245,6 @@
             .hero-title { font-size: 2.5rem; }
             .section-title { font-size: 2rem; }
             .payment-option { min-width: 100px; }
-            .testimonial-grid { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
         }
         @media (max-width: 480px) {
             .hero-title { font-size: 2rem; }
@@ -1338,7 +1253,6 @@
             .payment-grid { grid-template-columns: repeat(2,1fr); }
             .diamond-grid { grid-template-columns: repeat(2,1fr); }
             .payment-options { flex-direction: column; }
-            .testimonial-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -1488,17 +1402,6 @@
         </div>
     </section>
 
-    <!-- Testimonial Section -->
-    <section class="testimonials" id="testimonialsSection">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Testimonial Pelanggan</h2>
-                <p class="section-subtitle">testi lainnya ada di telegram</p>
-            </div>
-            <div class="testimonial-grid" id="testimonialGrid"></div>
-        </div>
-    </section>
-
     <!-- Modal Checkout -->
     <div class="modal" id="checkoutModal">
         <div class="modal-content">
@@ -1636,14 +1539,15 @@
             netflix: {
                 name: "Netflix", icon: "fas fa-tv", color: "#E50914",
                 items: [
-                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
-                    { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
-                    { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
-                    { name: "Sharing 7 Hari [1P2U]", price: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: false },
-                    { name: "Sharing 1 Bulan [1P1U]", price: 25500, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
+                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                    { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                    { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                    { name: "Sharing 7 Hari [1P2U]", price: 8500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                    { name: "Sharing 1 Bulan [1P1U]", price: 22000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
                     { name: "Sharing 1 Bulan [1P2U]", price: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
-                    { name: "Semi Private 1 Bulan", price: 30500, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
-                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Plan Premium 4K, 5 profil, Kontrol penuh, No garansi", featured: true, needsEmail: true, stock: false }
+                    { name: "Semi Private 7 Hari", price: 14000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
+                    { name: "Semi Private 1 Bulan", price: 29000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
+                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Cukup kirim email saja (email wajib fresh/masih baru), Plan Premium 4K, 5 profil, Kontrol penuh, No garansi, Sistem PO", featured: true, needsEmail: true, stock: true }
                 ]
             },
             spotify: {
@@ -1755,38 +1659,40 @@
 ┊1 Hari [1P2U] = Rp 5.500
 ┊2 Hari [1P2U] = Rp 7.500
 ┊3 Hari [1P2U] = Rp 9.500
-┊7 Hari [1P2U] = Rp 12.000
+┊7 Hari [1P2U] = Rp 8.500
 
-┊1 Bulan [1P1U] = Rp 25.500 [KOSONG]❌
-┊1 Bulan [1P2U] = Rp 18.000 [KOSONG]❌
+┊1 Bulan [1P1U] = Rp 22.000 ❌ [KOSONG]
+┊1 Bulan [1P2U] = Rp 18.000 ❌ [KOSONG]
 > Akun dari seller 
-> Login via kode OTP
+> Login via kode otp
 > Maks login 1 device 
 > All device
-> Full garansi 
+> Full garansi
 
-▣ 𝗦𝗘𝗠𝗜 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 [KOSONG] ❌
-┊1 Bulan = Rp 30.500
+▣ 𝗦𝗘𝗠𝗜 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 ❌ [KOSONG]
+┊7 Hari = Rp 14.000
+┊1 Bulan = Rp 29.000 
 > Akun dari seller 
-> Login via kode OTP
+> Login via kode otp
 > Maks login 2 device
 > All device
 > Full garansi 
 
 ▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
 ┊1 Bulan = Rp 102.000
-> Akun dari buyer (akun sendiri)
+> Akun dari buyer (pake akun sendiri)
+> Cukup kirim email saja ke seller (email wajib fresh/masih baru)
 > Plan Premium 4K
 > Dapet 5 profil 
 > All device
-> Maks login atur sendiri
+> Maksimal login atur sendiri
 > Limit screen 4
+> Cocok untuk reseller di jual sharing 
 > No garansi
-> Kontrol penuh (tanggung jawab masing-masing)
+> Kontrol penuh (akun tanggung jawab masing-masing).
+> Sistem PO (PRE-ORDER)
 > Order = paham
-
-═════════════════════
-
+════════════════════
 ⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢
 - Plan Premium 
 - Resolusi max 4K (tergantung jaringan)
@@ -2083,17 +1989,6 @@ Tanya stok sebelum order!
             }
         };
 
-        // ==================== DATA TESTIMONIAL ====================
-        const testimonials = [
-            { number: 29, image: "https://i.ibb.co.com/fYkRFbgw/Whats-App-Image-2026-02-14-at-16-23-46.jpg", text: "Testimonial #29 - chat gpt plus sharing" },
-            { number: 30, image: "https://i.ibb.co.com/tTH0pLbs/Whats-App-Image-2026-02-14-at-16-17-33.jpg", text: "Testimonial #30 - netflix shar 1p2u" },
-            { number: 31, image: "https://i.ibb.co.com/8nr3bpTx/Whats-App-Image-2026-02-14-at-16-17-33-1.jpg", text: "Testimonial #31 - netflix 1p2u" },
-            { number: 32, image: "https://i.ibb.co.com/WvVgQgJD/Whats-App-Image-2026-02-14-at-16-17-32.jpg", text: "Testimonial #32 - am priv acc buyer" },
-            { number: 33, image: "https://i.ibb.co.com/9HLs7bck/Whats-App-Image-2026-02-14-at-16-17-32-1.jpg", text: "Testimonial #33 - Am dan Dramabox" },
-            { number: 34, image: "https://i.ibb.co.com/cGRw7D5/20260214-143953.jpg", text: "Testimonial #34 - am dan canva eudcation" },
-            { number: 35, image: "https://i.ibb.co.com/RTmR3fjQ/20260214-160835.jpg", text: "Testimonial #35 - am acc buyer" }
-        ];
-
         // State
         let currentCategory = 'netflix';
         let currentOrder = null;
@@ -2255,7 +2150,7 @@ Tanya stok sebelum order!
                         <div class="product-grid">${regularHTML}</div>
                     `;
                 } else {
-                    // Kategori lain (termasuk Netflix)
+                    // Kategori lain
                     let itemsHTML = '';
                     let allOutOfStock = true; // untuk cek apakah semua item stok false
                     p.items.forEach(item => {
@@ -2277,24 +2172,6 @@ Tanya stok sebelum order!
                 }
                 container.appendChild(section);
             }
-        }
-
-        // ========== RENDER TESTIMONIAL ==========
-        function renderTestimonials() {
-            const grid = document.getElementById('testimonialGrid');
-            grid.innerHTML = '';
-            testimonials.forEach(t => {
-                const card = document.createElement('div');
-                card.className = 'testimonial-card';
-                card.innerHTML = `
-                    <div class="testimonial-number">#${t.number}</div>
-                    <div class="testimonial-image">
-                        <img src="${t.image}" alt="Testimonial ${t.number}" loading="lazy">
-                    </div>
-                    <div class="testimonial-text">${t.text}</div>
-                `;
-                grid.appendChild(card);
-            });
         }
 
         // ========== FUNGSI NAVIGASI ==========
@@ -2495,7 +2372,6 @@ Tanya stok sebelum order!
         document.addEventListener('DOMContentLoaded', function() {
             renderCategories();
             renderAllProducts();
-            renderTestimonials();
             setupEventListeners();
             showCategory('netflix');
         });
