@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nefs Digital Store - Top-up Digital Premium & Game</title>
+    <title>Nefs Digital Store - Promo Ramadhan</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -270,9 +270,35 @@
         .search-btn:hover {
             transform: translateY(-3px);
         }
+        /* Promo Banner */
+        .promo-banner {
+            background: linear-gradient(135deg, #f72585, #b5179e);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            margin: 30px auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            box-shadow: var(--shadow);
+            font-weight: 500;
+            text-align: center;
+            flex-wrap: wrap;
+        }
+        .promo-banner i {
+            font-size: 2rem;
+        }
+        .promo-banner span {
+            font-size: 1.1rem;
+        }
+        .promo-banner strong {
+            font-weight: 700;
+            text-decoration: underline;
+        }
         /* Categories */
         .categories {
-            padding: 80px 0 40px;
+            padding: 40px 0 40px;
         }
         .section-header {
             text-align: center;
@@ -484,6 +510,15 @@
             font-size: 1.3rem;
             white-space: nowrap;
             margin-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            font-weight: 400;
         }
         .buy-btn {
             background: var(--gradient);
@@ -1264,7 +1299,7 @@
                 <div class="logo-icon">ND</div>
                 <div>
                     <div class="logo-text">Nefs Digital Store</div>
-                    <div class="logo-subtext">Digital & Game Top-up</div>
+                    <div class="logo-subtext">Promo Ramadhan</div>
                 </div>
             </div>
             <nav id="mainNav">
@@ -1291,8 +1326,8 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Top-up Digital & Game Termurah</h1>
-                <p class="hero-subtitle">Beli Netflix, Spotify, YouTube Premium, Canva Pro, Alight Motion, Capcut, Free Fire dan layanan premium lainnya dengan harga terbaik. Proses cepat, aman, dan garansi terpercaya.</p>
+                <h1 class="hero-title">Promo Spesial Ramadhan ✨</h1>
+                <p class="hero-subtitle">Selamat menunaikan ibadah puasa! Dapatkan harga spesial untuk berbagai layanan premium. Promo berlaku 7 hari ke depan.</p>
                 <div class="hero-stats">
                     <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Pelanggan</div></div>
                     <div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Kepuasan</div></div>
@@ -1316,12 +1351,20 @@
         </div>
     </section>
 
+    <!-- Promo Banner -->
+    <div class="container">
+        <div class="promo-banner">
+            <i class="fas fa-tags"></i>
+            <span><strong>Promo Spesial Ramadhan!</strong> Diskon besar-besaran untuk berbagai layanan premium. Berlaku 7 hari ke depan. Tanya stok sebelum order!</span>
+        </div>
+    </div>
+
     <!-- Categories -->
     <section class="categories" id="categoriesSection">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">Pilih Kategori</h2>
-                <p class="section-subtitle">Temukan berbagai layanan digital dan game yang tersedia dengan harga terbaik</p>
+                <p class="section-subtitle">Temukan berbagai layanan digital dan game dengan harga promo Ramadhan</p>
             </div>
             <div class="category-grid" id="categoryGrid"></div>
         </div>
@@ -1534,106 +1577,140 @@
     </footer>
 
     <script>
-        // ==================== DATA PRODUK ====================
+        // ==================== DATA PRODUK (PROMO RAMADHAN) ====================
         const products = {
             netflix: {
                 name: "Netflix", icon: "fas fa-tv", color: "#E50914",
                 items: [
-                    { name: "Sharing 1 Hari [1P2U]", price: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
-                    { name: "Sharing 2 Hari [1P2U]", price: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
-                    { name: "Sharing 3 Hari [1P2U]", price: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
-                    { name: "Sharing 7 Hari [1P2U]", price: 8500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
-                    { name: "Sharing 1 Bulan [1P1U]", price: 22000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
-                    { name: "Sharing 1 Bulan [1P2U]", price: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
-                    { name: "Semi Private 7 Hari", price: 14000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
-                    { name: "Semi Private 1 Bulan", price: 29000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
-                    { name: "Private 1 Bulan", price: 102000, desc: "Akun buyer sendiri, Cukup kirim email saja (email wajib fresh/masih baru), Plan Premium 4K, 5 profil, Kontrol penuh, No garansi, Sistem PO", featured: true, needsEmail: true, stock: true }
+                    { name: "Sharing 1 Hari [1P2U]", price: 5500, originalPrice: 5500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                    { name: "Sharing 2 Hari [1P2U]", price: 7500, originalPrice: 7500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                    { name: "Sharing 3 Hari [1P2U]", price: 6000, originalPrice: 9500, desc: "Promo Ramadhan! Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: true, stock: true },
+                    { name: "Sharing 7 Hari [1P2U]", price: 8000, originalPrice: 12000, desc: "Promo Ramadhan! Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: true, stock: true },
+                    { name: "Sharing 1 Bulan [1P1U]", price: 22000, originalPrice: 22000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
+                    { name: "Sharing 1 Bulan [1P2U]", price: 18000, originalPrice: 18000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: false },
+                    { name: "Semi Private 7 Hari", price: 14000, originalPrice: 14000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
+                    { name: "Semi Private 1 Bulan", price: 29000, originalPrice: 29000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: false },
+                    { name: "Private 1 Bulan", price: 102000, originalPrice: 102000, desc: "Akun buyer sendiri, Cukup kirim email saja (email wajib fresh/masih baru), Plan Premium 4K, 5 profil, Kontrol penuh, No garansi, Sistem PO", featured: true, needsEmail: true, stock: true }
                 ]
             },
             spotify: {
                 name: "Spotify", icon: "fab fa-spotify", color: "#1DB954",
                 items: [
-                    { name: "Student 1 Bulan (Garansi 1x24 jam)", price: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false, stock: false },
-                    { name: "Student 1 Bulan (Full Garansi)", price: 16000, desc: "Full garansi, Support all device", featured: true, stock: false },
-                    { name: "Famplan 1 Bulan (Garansi 25 hari)", price: 20000, desc: "Akun seller, Garansi 25 hari", featured: true, stock: true },
-                    { name: "Indplan 3 Bulan (Full Garansi)", price: 21000, desc: "Akun seller, Full garansi", featured: false, stock: false },
-                    { name: "Indplan 4 Bulan (No Garansi)", price: 24000, desc: "Akun seller, No garansi", featured: false, stock: false }
+                    { name: "Student 1 Bulan (Garansi 1x24 jam)", price: 13000, originalPrice: 13000, desc: "Garansi 1x24 jam, Bisa All Region, iOS via Web", featured: false, stock: false },
+                    { name: "Student 1 Bulan (Full Garansi)", price: 16000, originalPrice: 16000, desc: "Full garansi, Support all device", featured: true, stock: false },
+                    { name: "Famplan 1 Bulan (Garansi 25 hari)", price: 20000, originalPrice: 20000, desc: "Akun seller, Garansi 25 hari", featured: true, stock: true },
+                    { name: "Indplan 3 Bulan (Full Garansi)", price: 21000, originalPrice: 21000, desc: "Akun seller, Full garansi", featured: false, stock: false },
+                    { name: "Indplan 4 Bulan (No Garansi)", price: 24000, originalPrice: 24000, desc: "Akun seller, No garansi", featured: false, stock: false }
                 ]
             },
             youtube: {
                 name: "YouTube Premium", icon: "fab fa-youtube", color: "#FF0000",
                 items: [
-                    { name: "Famplan 1 Bulan", price: 6500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
-                    { name: "Famplan 2 Bulan", price: 9000, desc: "ACC buyer, Kirim email saja, Full garansi", featured: false },
-                    { name: "Mixplan 3 Bulan", price: 13500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
-                    { name: "Famhead 1 Bulan", price: 10000, desc: "ACC seller, No garansi", featured: false },
-                    { name: "Indiplan 1 Bulan", price: 11500, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
-                    { name: "Jaspay Famhead 1 Bulan", price: 9000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
-                    { name: "Jaspay Indiplan 1 Bulan", price: 10500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
-                    { name: "Jaspay Mixplan 3 Bulan", price: 12500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false }
+                    { name: "Famplan 1 Bulan", price: 6500, originalPrice: 6500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
+                    { name: "Famplan 2 Bulan", price: 9000, originalPrice: 9000, desc: "ACC buyer, Kirim email saja, Full garansi", featured: false },
+                    { name: "Mixplan 3 Bulan", price: 13500, originalPrice: 13500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true },
+                    { name: "Famhead 1 Bulan", price: 10000, originalPrice: 10000, desc: "ACC seller, No garansi", featured: false },
+                    { name: "Indiplan 1 Bulan", price: 11500, originalPrice: 11500, desc: "ACC seller, Garansi tidak ganti sandi", featured: false },
+                    { name: "Jaspay Famhead 1 Bulan", price: 9000, originalPrice: 9000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
+                    { name: "Jaspay Indiplan 1 Bulan", price: 10500, originalPrice: 10500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false },
+                    { name: "Jaspay Mixplan 3 Bulan", price: 12500, originalPrice: 12500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: false }
                 ]
             },
             alight: {
                 name: "Alight Motion", icon: "fas fa-video", color: "#8A2BE2",
                 items: [
-                    { name: "Sharing 1 Tahun (Acc Seller)", price: 2000, desc: "Akun dari seller, Support Android/iOS, Garansi 6 bulan", featured: false },
-                    { name: "Private 1 Tahun (Acc Buyer)", price: 1500, desc: "Pakai email sendiri, Maks 10 device, Garansi 6 bulan", featured: true, needsEmail: true },
-                    { name: "Private 1 Tahun (Acc Seller)", price: 2500, desc: "Akun dari seller, Maks 10 device, Garansi 6 bulan", featured: false }
+                    { name: "Sharing 1 Tahun (Acc Seller)", price: 2000, originalPrice: 2000, desc: "Akun dari seller, Support Android/iOS, Garansi 6 bulan", featured: false },
+                    { name: "Private 1 Tahun (Acc Buyer) PROMO", price: 500, originalPrice: 1500, desc: "Promo Ramadhan! Pakai email sendiri, Maks 10 device, Garansi 6 bulan", featured: true, needsEmail: true, stock: true },
+                    { name: "Private 1 Tahun (Acc Seller) PROMO", price: 1000, originalPrice: 2500, desc: "Promo Ramadhan! Akun dari seller, Maks 10 device, Garansi 6 bulan", featured: true, stock: true }
                 ]
             },
             capcut: {
                 name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF",
                 items: [
-                    { name: "Sharing 1 Bulan (Gar7d)", price: 4500, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false },
-                    { name: "Private 7 Hari (Gar3d)", price: 5500, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
-                    { name: "Private 22 Hari Team (FullGar)", price: 6000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true },
-                    { name: "Private 42 Hari Team (Gar1b)", price: 9000, desc: "Akun berbasis Tim Private, Maks 3 device, Garansi 1 bulan", featured: false },
-                    { name: "Private 1 Bulan Team (Gar7d)", price: 6000, desc: "Akun berbasis Tim Private, Maks 2 device, Garansi 7 hari", featured: false },
-                    { name: "Private 1 Bulan Team (FullGar)", price: 9000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true }
+                    { name: "Sharing 1 Bulan (Gar7d)", price: 4500, originalPrice: 4500, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false },
+                    { name: "Private 7 Hari (Gar3d)", price: 5500, originalPrice: 5500, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false },
+                    { name: "Private 22 Hari Team (FullGar)", price: 6000, originalPrice: 6000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true },
+                    { name: "Private 42 Hari Team (Gar1b) PROMO", price: 6000, originalPrice: 9000, desc: "Promo Ramadhan! Akun berbasis Tim Private, Maks 3 device, Garansi 1 bulan", featured: true, stock: true },
+                    { name: "Private 1 Bulan Team (Gar7d)", price: 6000, originalPrice: 6000, desc: "Akun berbasis Tim Private, Maks 2 device, Garansi 7 hari", featured: false },
+                    { name: "Private 1 Bulan Team (FullGar) PROMO", price: 5000, originalPrice: 9000, desc: "Promo Ramadhan! Akun berbasis Tim Private, Maks 2 device, Full garansi", featured: true, stock: true }
                 ]
             },
             canva: {
                 name: "Canva Pro", icon: "fas fa-palette", color: "#00C4CC",
                 items: [
-                    { name: "Paket Member 1 Bulan", price: 2000, desc: "Support all device, Via link invite, Full garansi BF", featured: false },
-                    { name: "Paket Designer 1 Bulan", price: 3000, desc: "Support all device, Via link invite, Full garansi BF", featured: false },
-                    { name: "Paket Edu 1 Tahun", price: 2500, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
-                    { name: "Paket Edu Lifetime", price: 6000, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
-                    { name: "Paket Head Admin 1 Bulan", price: 4500, desc: "Akun seller, Support all device, No garansi", featured: false },
-                    { name: "Paket Head Owner 1 Bulan", price: 6500, desc: "Akun seller, Support all device, No garansi", featured: true }
+                    { name: "Paket Member 1 Bulan PROMO", price: 500, originalPrice: 2000, desc: "Promo Ramadhan! Support all device, Via link invite, Full garansi BF", featured: true, stock: true },
+                    { name: "Paket Designer 1 Bulan PROMO", price: 700, originalPrice: 3000, desc: "Promo Ramadhan! Support all device, Via link invite, Full garansi BF", featured: true, stock: true },
+                    { name: "Paket Edu 1 Tahun PROMO", price: 1000, originalPrice: 2500, desc: "Promo Ramadhan! Support all device, Via link invite, Garansi 6 bulan", featured: true, stock: true },
+                    { name: "Paket Edu Lifetime", price: 6000, originalPrice: 6000, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true },
+                    { name: "Paket Head Admin 1 Bulan PROMO", price: 2500, originalPrice: 4500, desc: "Promo Ramadhan! Akun seller, Support all device, No garansi", featured: true, stock: true },
+                    { name: "Paket Head Owner 1 Bulan PROMO", price: 5000, originalPrice: 6500, desc: "Promo Ramadhan! Akun seller, Support all device, No garansi", featured: true, stock: true }
                 ]
             },
             freefire: {
                 name: "Free Fire", icon: "fas fa-fire", color: "#FF6B00",
                 items: [
-                    { name: "Membership Mingguan", price: 32699, desc: "Top up via ID, Proses 1-5 menit", featured: true },
-                    { name: "Membership Bulanan", price: 88734, desc: "Top up via ID, Proses 1-5 menit", featured: false },
-                    { name: "Membership Mingguan (×2)", price: 59386, desc: "Top up via ID, Proses 1-5 menit", featured: false },
-                    { name: "Membership Bulanan (×2)", price: 169105, desc: "Top up via ID, Proses 1-5 menit", featured: false },
-                    { name: "BP Card", price: 48531, desc: "Top up via ID, Proses 1-5 menit", featured: true },
-                    { name: "Level Up Pass – Level 6", price: 10456, desc: "Top up via ID, Proses 1-5 menit", featured: false },
-                    { name: "Level Up Pass – Level 10", price: 12956, desc: "Top up via ID, Proses 1-5 menit", featured: false },
-                    { name: "Level Up Pass – Level 15", price: 15760, desc: "Top up via ID, Proses 1-5 menit", featured: false },
-                    { name: "Level Up Pass – Level 30", price: 19717, desc: "Top up via ID, Proses 1-5 menit", featured: false }
+                    { name: "Membership Mingguan", price: 32699, originalPrice: 32699, desc: "Top up via ID, Proses 1-5 menit", featured: true },
+                    { name: "Membership Bulanan", price: 88734, originalPrice: 88734, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Membership Mingguan (×2)", price: 59386, originalPrice: 59386, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Membership Bulanan (×2)", price: 169105, originalPrice: 169105, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "BP Card", price: 48531, originalPrice: 48531, desc: "Top up via ID, Proses 1-5 menit", featured: true },
+                    { name: "Level Up Pass – Level 6", price: 10456, originalPrice: 10456, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Level Up Pass – Level 10", price: 12956, originalPrice: 12956, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Level Up Pass – Level 15", price: 15760, originalPrice: 15760, desc: "Top up via ID, Proses 1-5 menit", featured: false },
+                    { name: "Level Up Pass – Level 30", price: 19717, originalPrice: 19717, desc: "Top up via ID, Proses 1-5 menit", featured: false }
                 ],
                 diamonds: [
-                    { amount: "5", price: 6300 }, { amount: "10", price: 7100 }, { amount: "12", price: 7200 }, { amount: "15", price: 8900 },
-                    { amount: "20", price: 9700 }, { amount: "25", price: 10500 }, { amount: "30", price: 11300 }, { amount: "40", price: 12200 },
-                    { amount: "50", price: 13800 }, { amount: "55", price: 13700 }, { amount: "60", price: 14300 }, { amount: "75", price: 16000 },
-                    { amount: "80", price: 16200 }, { amount: "90", price: 18300 }, { amount: "95", price: 18600 }, { amount: "100", price: 19000, featured: true },
-                    { amount: "120", price: 21000 }, { amount: "125", price: 22300 }, { amount: "130", price: 22400 }, { amount: "140", price: 23700 },
-                    { amount: "145", price: 24500 }, { amount: "150", price: 26500 }, { amount: "160", price: 28200 }, { amount: "170", price: 28800 },
-                    { amount: "190", price: 31100 }, { amount: "200", price: 33000 }, { amount: "230", price: 36800 }, { amount: "250", price: 39200 },
-                    { amount: "260", price: 39900 }, { amount: "280", price: 42200 }, { amount: "355", price: 48200 }, { amount: "360", price: 51800 },
-                    { amount: "375", price: 50100 }, { amount: "405", price: 54100 }, { amount: "420", price: 60300 }, { amount: "425", price: 55100 },
-                    { amount: "455", price: 62900 }, { amount: "475", price: 68000 }, { amount: "495", price: 65300 }, { amount: "510", price: 67400, featured: true }
+                    { amount: "5", price: 6300, originalPrice: 6300 }, { amount: "10", price: 7100, originalPrice: 7100 }, { amount: "12", price: 7200, originalPrice: 7200 }, { amount: "15", price: 8900, originalPrice: 8900 },
+                    { amount: "20", price: 9700, originalPrice: 9700 }, { amount: "25", price: 10500, originalPrice: 10500 }, { amount: "30", price: 11300, originalPrice: 11300 }, { amount: "40", price: 12200, originalPrice: 12200 },
+                    { amount: "50", price: 13800, originalPrice: 13800 }, { amount: "55", price: 13700, originalPrice: 13700 }, { amount: "60", price: 14300, originalPrice: 14300 }, { amount: "75", price: 16000, originalPrice: 16000 },
+                    { amount: "80", price: 16200, originalPrice: 16200 }, { amount: "90", price: 18300, originalPrice: 18300 }, { amount: "95", price: 18600, originalPrice: 18600 }, { amount: "100", price: 19000, originalPrice: 19000, featured: true },
+                    { amount: "120", price: 21000, originalPrice: 21000 }, { amount: "125", price: 22300, originalPrice: 22300 }, { amount: "130", price: 22400, originalPrice: 22400 }, { amount: "140", price: 23700, originalPrice: 23700 },
+                    { amount: "145", price: 24500, originalPrice: 24500 }, { amount: "150", price: 26500, originalPrice: 26500 }, { amount: "160", price: 28200, originalPrice: 28200 }, { amount: "170", price: 28800, originalPrice: 28800 },
+                    { amount: "190", price: 31100, originalPrice: 31100 }, { amount: "200", price: 33000, originalPrice: 33000 }, { amount: "230", price: 36800, originalPrice: 36800 }, { amount: "250", price: 39200, originalPrice: 39200 },
+                    { amount: "260", price: 39900, originalPrice: 39900 }, { amount: "280", price: 42200, originalPrice: 42200 }, { amount: "355", price: 48200, originalPrice: 48200 }, { amount: "360", price: 51800, originalPrice: 51800 },
+                    { amount: "375", price: 50100, originalPrice: 50100 }, { amount: "405", price: 54100, originalPrice: 54100 }, { amount: "420", price: 60300, originalPrice: 60300 }, { amount: "425", price: 55100, originalPrice: 55100 },
+                    { amount: "455", price: 62900, originalPrice: 62900 }, { amount: "475", price: 68000, originalPrice: 68000 }, { amount: "495", price: 65300, originalPrice: 65300 }, { amount: "510", price: 67400, originalPrice: 67400, featured: true }
                 ]
             },
             wink: {
                 name: "Wink", icon: "fas fa-star", color: "#FF69B4",
                 items: [
-                    { name: "Private 7 Hari (ACC buyer)", price: 5500, desc: "ACC buyer, Kirim email + password ke seller (no verifikasi), Email wajib fresh/masih baru, Garansi 5 hari, Only Android", featured: false, needsEmail: true },
-                    { name: "Private 7 Hari (ACC seller)", price: 8000, desc: "ACC seller, Garansi 5 hari, Only Android", featured: false }
+                    { name: "Private 7 Hari (ACC buyer) PROMO", price: 4000, originalPrice: 5500, desc: "Promo Ramadhan! ACC buyer, Kirim email + password ke seller (no verifikasi), Email wajib fresh/masih baru, Garansi 5 hari, Only Android", featured: true, needsEmail: true, stock: true },
+                    { name: "Private 7 Hari (ACC seller)", price: 8000, originalPrice: 8000, desc: "ACC seller, Garansi 5 hari, Only Android", featured: false, stock: true }
+                ]
+            },
+            bstation: {
+                name: "Bstation", icon: "fas fa-play-circle", color: "#00A1D6",
+                items: [
+                    { name: "Sharing 1 Bulan PROMO", price: 7500, originalPrice: 9000, desc: "Promo Ramadhan! Akun sharing, Garansi sesuai ketentuan", featured: true, stock: true },
+                    { name: "Sharing 1 Tahun", price: 14500, originalPrice: 14500, desc: "Akun sharing, Garansi sesuai ketentuan", featured: false, stock: true },
+                    { name: "Private 1 Bulan (ACC buyer)", price: 29000, originalPrice: 29000, desc: "ACC buyer, Kirim email + password (no verif) ke seller, Email wajib fresh/masih baru", featured: true, needsEmail: true, stock: true },
+                    { name: "Private 1 Bulan", price: 34000, originalPrice: 34000, desc: "Akun dari seller, Private maks login 2 device", featured: false, stock: true }
+                ]
+            },
+            loklok: {
+                name: "Loklok", icon: "fas fa-film", color: "#FF4500",
+                items: [
+                    { name: "Sharing 1 Bulan Basic PROMO", price: 15000, originalPrice: 21000, desc: "Promo Ramadhan! Paket basic sharing, Garansi BF / premium hilang", featured: true, stock: true },
+                    { name: "Sharing 1 Bulan Standar PROMO", price: 17000, originalPrice: 22000, desc: "Promo Ramadhan! Paket standar sharing, Garansi BF / premium hilang", featured: true, stock: true },
+                    { name: "Private 1 Bulan Basic", price: 49000, originalPrice: 49000, desc: "Private basic, Akun dari seller, Garansi BF / premium hilang", featured: true, stock: true }
+                ]
+            },
+            picsart: {
+                name: "Picsart", icon: "fas fa-paint-brush", color: "#FF69B4",
+                items: [
+                    { name: "Sharing 1 Bulan PROMO", price: 5000, originalPrice: 7000, desc: "Promo Ramadhan! Akun sharing, Support iOS/Android, No komplain limit", featured: true, stock: true },
+                    { name: "Private 1 Bulan PROMO", price: 7000, originalPrice: 11500, desc: "Promo Ramadhan! Private, Maks login 10 device, Include fitur AI", featured: true, stock: true },
+                    { name: "Private 1 Bulan Bulk (10 Akun)", price: 23500, originalPrice: 23500, desc: "Paket 10 akun private, Include fitur AI", featured: true, stock: true }
+                ]
+            },
+            wetv: {
+                name: "WeTV", icon: "fas fa-tv", color: "#1E90FF",
+                items: [
+                    { name: "Sharing 1 Bulan (6U) PROMO", price: 8000, originalPrice: 10000, desc: "Promo Ramadhan! Sharing 6 user, Sebut device setelah order, Garansi BF", featured: true, stock: true },
+                    { name: "Sharing 1 Bulan (5U)", price: 12000, originalPrice: 12000, desc: "Sharing 5 user, Sebut device setelah order, Garansi BF", featured: false, stock: true },
+                    { name: "Sharing 1 Bulan (3U)", price: 14500, originalPrice: 14500, desc: "Sharing 3 user, Sebut device setelah order, Garansi BF", featured: false, stock: true },
+                    { name: "Private 1 Bulan PROMO", price: 22000, originalPrice: 32000, desc: "Promo Ramadhan! Private, Sebut device setelah order, Garansi BF", featured: true, stock: true }
                 ]
             }
         };
@@ -1647,19 +1724,24 @@
             capcut: "https://i.ibb.co.com/SDxB4LpX/c410c7c8c7bb31013500d214a7da8a8b.jpg",
             canva: "https://i.ibb.co.com/5hgZhdJb/7805aae9baa43978009e8b0cfd3a18f7.jpg",
             freefire: "https://i.ibb.co.com/Dfzsq0z7/26a8534fb2d7063e6157af9513b219d9.jpg",
-            wink: "https://i.ibb.co.com/XrKVHtMt/e52547ffd8d39f876386429331e7da38.jpg"
+            wink: "https://i.ibb.co.com/XrKVHtMt/e52547ffd8d39f876386429331e7da38.jpg",
+            // Kategori baru dengan gambar
+            bstation: "https://i.ibb.co.com/V1cQmm3/4c1f43acb75cc789254b7ad8327e663a.jpg",
+            loklok: "https://i.ibb.co.com/23QS3sMd/1771483780666.png",
+            picsart: "https://i.ibb.co.com/9mg0mjwx/6fae7e754d591d398dbb724632becee4.jpg",
+            wetv: "https://i.ibb.co.com/nV8T8Lb/83437dbd27e2c4a6bd2157814c92be3c.jpg"
         };
 
         // ==================== PENJELASAN LENGKAP ====================
         const explanations = {
             netflix: {
-                title: "📺 PENJELASAN PAKET NETFLIX",
+                title: "📺 PENJELASAN PAKET NETFLIX (PROMO RAMADHAN)",
                 content: `<div class="explanation-content">
 ▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
 ┊1 Hari [1P2U] = Rp 5.500
 ┊2 Hari [1P2U] = Rp 7.500
-┊3 Hari [1P2U] = Rp 9.500
-┊7 Hari [1P2U] = Rp 8.500
+┊3 Hari [1P2U] = Rp 6.000 (Promo, harga asli 9.500)
+┊7 Hari [1P2U] = Rp 8.000 (Promo, harga asli 12.000)
 
 ┊1 Bulan [1P1U] = Rp 22.000 ❌ [KOSONG]
 ┊1 Bulan [1P2U] = Rp 18.000 ❌ [KOSONG]
@@ -1859,14 +1941,14 @@ Akun kamu sendiri + premium dibayarin admin.
                 </div>`
             },
             alight: {
-                title: "🎬 PENJELASAN PAKET ALIGHT MOTION",
+                title: "🎬 PENJELASAN PAKET ALIGHT MOTION (PROMO)",
                 content: `<div class="explanation-content">
 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
 ┊1 Tahun (Acc seller) = Rp 2.000
 
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊1 Tahun (Acc buyer) = Rp 1.500
-┊1 Tahun (Acc seller) = Rp 2.500
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 (Promo Ramadhan)
+┊1 Tahun (Acc buyer) = Rp 500 (harga asli 1.500)
+┊1 Tahun (Acc seller) = Rp 1.000 (harga asli 2.500)
 ═════════════════════
 ⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
 - Acc seller = akun dari seller via email generator 
@@ -1880,18 +1962,17 @@ Akun kamu sendiri + premium dibayarin admin.
                 </div>`
             },
             capcut: {
-                title: "✂️ PENJELASAN PAKET CAPCUT PRO",
+                title: "✂️ PENJELASAN PAKET CAPCUT PRO (PROMO)",
                 content: `<div class="explanation-content">
 ▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
 ┊1 Bulan (Gar7d) = Rp 4.500
 
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 (Promo)
 ┊7 Hari (Gar3d) = Rp 5.500
 ┊22 Hari Team (FullGar) = Rp 6.000
-┊42 Hari Team (Gar1b) = Rp 9.000
-
+┊42 Hari Team (Gar1b) = Rp 6.000 (Promo, harga asli 9.000)
 ┊1 Bulan Team (Gar7d) = Rp 6.000
-┊1 Bulan Team (FullGar) = Rp 9.000
+┊1 Bulan Team (FullGar) = Rp 5.000 (Promo, harga asli 9.000)
 
 ═════════════════════
 KETERANGAN
@@ -1919,21 +2000,21 @@ Tanya stok sebelum order!
                 </div>`
             },
             canva: {
-                title: "📌 PENJELASAN PAKET CANVA PRO",
+                title: "📌 PENJELASAN PAKET CANVA PRO (PROMO RAMADHAN)",
                 content: `<div class="explanation-content">
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥
-┊1 Bulan = Rp 2.000
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥 (Promo)
+┊1 Bulan = Rp 500 (harga asli 2.000)
 
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗗𝗘𝗦𝗜𝗚𝗡𝗘𝗥
-┊1 Bulan = Rp 3.000
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗗𝗘𝗦𝗜𝗚𝗡𝗘𝗥 (Promo)
+┊1 Bulan = Rp 700 (harga asli 3.000)
 
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗘𝗗𝗨
-┊1 Tahun = Rp 2.500
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗘𝗗𝗨 (Promo)
+┊1 Tahun = Rp 1.000 (harga asli 2.500)
 ┊Lifetime = Rp 6.000
 
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗛𝗘𝗔𝗗
-┊1 Bulan Admin = Rp 4.500
-┊1 Bulan Owner = Rp 6.500
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗛𝗘𝗔𝗗 (Promo)
+┊1 Bulan Admin = Rp 2.500 (harga asli 4.500)
+┊1 Bulan Owner = Rp 5.000 (harga asli 6.500)
 ═════════════════════
 ⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
 - Support all device 
@@ -1964,15 +2045,15 @@ Tanya stok sebelum order!
                 </div>`
             },
             wink: {
-                title: "✨ PENJELASAN PAKET WINK",
+                title: "✨ PENJELASAN PAKET WINK (PROMO)",
                 content: `<div class="explanation-content">
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊7 Hari = 5.500
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 (Promo)
+┊7 Hari (ACC buyer) = Rp 4.000 (harga asli 5.500)
 > ACC buyer 
 > Kirim email + password ke seller (no verifikasi)
 > Email wajib fresh/masih baru
 
-┊7 Hari = 8.000
+┊7 Hari (ACC seller) = Rp 8.000
 > ACC seller 
 ═════════════════════
 ⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
@@ -1982,6 +2063,102 @@ Tanya stok sebelum order!
 - ACC Seller = akun dari seller
 - Proses slow sesuai antrian
 - Proses maks 1×24jam
+- No rush
+- No spam
+Tanya stok sebelum order!
+                </div>`
+            },
+            bstation: {
+                title: "📺 PENJELASAN PAKET BSTATION (PROMO)",
+                content: `<div class="explanation-content">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
+┊1 Bulan = 7.500 (Promo, harga asli 9.000)
+┊1 Tahun = 14.500
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊1 Bulan (acc buyer) = 29.000
+> Kirim email + password (no verif) ke seller
+> Email wajib fresh / masih baru
+
+┊1 Bulan = 34.000
+> Akun dari seller
+> Private maks login 2 device
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Akun dari seller
+- Pengguna sharing no komplain limit screen
+- No rush
+- No spam
+Tanya stok sebelum order!
+                </div>`
+            },
+            loklok: {
+                title: "🎬 PENJELASAN PAKET LOKLOK (PROMO)",
+                content: `<div class="explanation-content">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
+┊1 Bulan Basic   = 15.000 (Promo, harga asli 21.000)
+┊1 Bulan Standar = 17.000 (Promo, harga asli 22.000)
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊1 Bulan Basic   = 49.000
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Akun dari seller
+- Akun ke-ban bukan tanggung jawab seller
+- Pengguna sharing no komplain limit screen
+- Garansi hanya BF / premium hilang
+- Tidak menerima garansi akun suspend / akun hilang
+- Proses maks 1x24 jam
+- No rush
+- No spam
+Tanya stok sebelum order!
+                </div>`
+            },
+            picsart: {
+                title: "🎨 PENJELASAN PAKET PICSART (PROMO)",
+                content: `<div class="explanation-content">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
+┊1 Bulan = 5.000 (Promo, harga asli 7.000)
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
+┊1 Bulan = 7.000 (Promo, harga asli 11.500)
+┊1 Bulan Bulk (10 Akun) = 23.500
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Akun dari seller 
+- Support iOS / Android
+- Private maks login 10 device 
+- Include fitur AI
+- Pengguna sharing no komplain limit
+- No rush
+- No spam
+Tanya stok sebelum order!
+                </div>`
+            },
+            wetv: {
+                title: "📺 PENJELASAN PAKET WETV (PROMO)",
+                content: `<div class="explanation-content">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
+┊1 Bulan (6U) = 8.000 (Promo, harga asli 10.000)
+┊1 Bulan (5U) = 12.000
+┊1 Bulan (3U) = 14.500
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
+┊1 Bulan = 22.000 (Promo, harga asli 32.000)
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Akun dari seller
+- Sebut merek device ke seller setelah order
+  (contoh: HP OPPO A58 NFC)
+- 6U = sharing 6 user
+- 5U = sharing 5 user
+- 3U = sharing 3 user
+- Sharing dilarang login via TV
+- Sharing max login 1 device
+- Sharing no komplain limit screen
+- Wajib sebut nama device untuk login
+- Garansi hanya BF / premium hilang
+- Tidak menerima garansi akun suspend / akun hilang
 - No rush
 - No spam
 Tanya stok sebelum order!
@@ -2119,13 +2296,13 @@ Tanya stok sebelum order!
                 section.id = `product-${key}`;
 
                 let expBtn = '';
-                // Tampilkan tombol penjelasan untuk kategori yang memiliki penjelasan
-                if (['netflix', 'spotify', 'youtube', 'alight', 'capcut', 'canva', 'freefire', 'wink'].includes(key)) {
+                // Tampilkan tombol penjelasan untuk semua kategori (karena kita sudah buat penjelasan untuk semua)
+                if (explanations[key]) {
                     expBtn = `<button class="product-explanation-btn" data-explanation="${key}"><i class="fas fa-info-circle"></i> Penjelasan Paket</button>`;
                 }
 
                 // Buat judul dengan gambar
-                let titleHtml = `<div class="product-title"><img src="${categoryImages[key]}" alt="${p.name}"> ${p.name}</div>`;
+                let titleHtml = `<div class="product-title">${categoryImages[key] ? `<img src="${categoryImages[key]}" alt="${p.name}">` : `<i class="${p.icon}" style="color:${p.color}; font-size:2rem;"></i>`} ${p.name}</div>`;
 
                 // Khusus Free Fire
                 if (key === 'freefire') {
@@ -2137,7 +2314,7 @@ Tanya stok sebelum order!
 
                     let regularHTML = '';
                     p.items.forEach(item => {
-                        regularHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}"><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
+                        regularHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price"><span class="original-price">Rp ${item.originalPrice.toLocaleString('id-ID')}</span> Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn" data-product="${key}" data-item="${item.name}" data-price="${item.price}"><i class="fas fa-shopping-cart"></i> Beli Sekarang</button></div></div>`;
                     });
 
                     section.innerHTML = `
@@ -2159,7 +2336,11 @@ Tanya stok sebelum order!
                         const isOutOfStock = item.stock === false;
                         const buttonDisabled = isOutOfStock ? 'disabled' : '';
                         const buttonText = isOutOfStock ? 'Stok Kosong' : 'Beli Sekarang';
-                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">Rp ${item.price.toLocaleString('id-ID')}</div></div><button class="buy-btn ${isOutOfStock ? 'disabled' : ''}" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${buttonDisabled} ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> ${buttonText}</button></div></div>`;
+                        // Tampilkan coret hanya jika originalPrice berbeda dari price
+                        const priceDisplay = item.originalPrice !== item.price 
+                            ? `<span class="original-price">Rp ${item.originalPrice.toLocaleString('id-ID')}</span> Rp ${item.price.toLocaleString('id-ID')}`
+                            : `Rp ${item.price.toLocaleString('id-ID')}`;
+                        itemsHTML += `<div class="product-card ${item.featured ? 'featured' : ''}">${item.featured ? '<div class="featured-badge"><i class="fas fa-crown"></i> Featured</div>' : ''}<div class="product-header-card" style="background:linear-gradient(135deg,${p.color},${adjustColor(p.color, -30)})"><h3>${p.name}</h3></div><div class="product-body"><div class="product-item"><div class="product-details"><div class="product-name">${item.name}</div><div class="product-desc">${item.desc}</div></div><div class="product-price">${priceDisplay}</div></div><button class="buy-btn ${isOutOfStock ? 'disabled' : ''}" data-product="${key}" data-item="${item.name}" data-price="${item.price}" ${buttonDisabled} ${item.needsEmail ? 'data-needs-email="true"' : ''}><i class="fas fa-shopping-cart"></i> ${buttonText}</button></div></div>`;
                     });
 
                     // Tambahkan banner peringatan jika semua item habis (khusus Netflix)
