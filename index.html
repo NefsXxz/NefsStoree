@@ -146,23 +146,6 @@
             color: var(--dark);
             cursor: pointer;
         }
-        /* Banner tutup toko */
-        .store-closed-banner {
-            background-color: #dc3545;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-            margin-bottom: 20px;
-            border-radius: 0;
-            position: relative;
-            z-index: 100;
-        }
-        .store-closed-banner i {
-            margin-right: 10px;
-        }
         /* Hero Section */
         .hero {
             padding: 80px 0;
@@ -1140,71 +1123,6 @@
             font-size: 1.5rem;
             color: #f0b400;
         }
-        /* Pop-up Info Tutup Toko */
-        .popup-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-            z-index: 9999;
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-        .popup-content {
-            background: white;
-            max-width: 450px;
-            width: 90%;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
-            animation: slideUp 0.4s ease;
-        }
-        .popup-header {
-            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
-            padding: 30px 20px 20px;
-            text-align: center;
-            border-bottom: 1px solid #dee2e6;
-        }
-        .popup-header h2 {
-            color: #dc3545;
-            font-weight: 700;
-            margin: 10px 0 0;
-        }
-        .popup-body {
-            padding: 30px 25px;
-            text-align: center;
-            font-size: 1rem;
-            color: #495057;
-            line-height: 1.7;
-        }
-        .popup-body p {
-            margin-bottom: 15px;
-        }
-        .popup-footer {
-            padding: 20px;
-            text-align: center;
-            border-top: 1px solid #dee2e6;
-        }
-        .popup-btn {
-            background: #dc3545;
-            color: white;
-            border: none;
-            padding: 12px 35px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: background 0.3s, transform 0.2s;
-            box-shadow: 0 5px 15px rgba(220,53,69,0.3);
-        }
-        .popup-btn:hover {
-            background: #c82333;
-            transform: scale(1.05);
-        }
         /* Footer */
         footer {
             background: var(--dark);
@@ -1404,11 +1322,6 @@
         </div>
     </header>
 
-    <!-- Banner Tutup Sementara -->
-    <div class="store-closed-banner" id="storeClosedBanner">
-        <i class="fas fa-store-slash"></i> TOKO SEDANG TUTUP UNTUK LIBUR LEBARAN. AKAN BUKA KEMBALI DALAM 5 HARI.
-    </div>
-
     <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-container">
@@ -1607,25 +1520,6 @@
                     <i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp
                 </button>
                 <p class="modal-note">Isi nominal & pilih metode pembayaran</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Pop-up Info Tutup Toko -->
-    <div class="popup-modal" id="infoPopup">
-        <div class="popup-content">
-            <div class="popup-header">
-                <i class="fas fa-store-slash" style="font-size: 3rem; color: #dc3545; margin-bottom: 10px;"></i>
-                <h2>Toko Sedang Tutup Sementara</h2>
-            </div>
-            <div class="popup-body">
-                <p>Halo! 👋</p>
-                <p><strong>Nefs Digital Store</strong> sedang tutup untuk libur Lebaran. Kami akan kembali melayani pesanan dalam <strong>5 hari ke depan</strong>.</p>
-                <p>Mohon maaf atas ketidaknyamanannya. Jika ada pertanyaan mendesak, silakan hubungi kami via WhatsApp/Telegram yang tertera di footer.</p>
-                <p>Terima kasih atas pengertiannya! 🙏</p>
-            </div>
-            <div class="popup-footer">
-                <button class="popup-btn" id="closePopup">Mengerti</button>
             </div>
         </div>
     </div>
@@ -2644,63 +2538,6 @@ Tanya stok sebelum order!
             return '#' + c.replace(/^#/, '').replace(/../g, cc => ('0' + Math.min(255, Math.max(0, parseInt(cc, 16) + a)).toString(16)).substr(-2));
         }
 
-        // ========== MENONAKTIFKAN TOKO UNTUK LIBUR 5 HARI ==========
-        function disableStore() {
-            // Banner sudah ditampilkan di HTML, pastikan terlihat
-            const banner = document.getElementById('storeClosedBanner');
-            if (banner) banner.style.display = 'block';
-
-            // Nonaktifkan semua tombol beli
-            document.querySelectorAll('.buy-btn, .diamond-buy-btn, .midman-action-btn').forEach(btn => {
-                btn.disabled = true;
-                btn.classList.add('disabled');
-                // Ubah teks
-                if (btn.classList.contains('buy-btn')) {
-                    btn.innerHTML = '<i class="fas fa-store-slash"></i> Tutup Sementara';
-                } else if (btn.classList.contains('diamond-buy-btn')) {
-                    btn.textContent = 'Tutup';
-                } else if (btn.classList.contains('midman-action-btn')) {
-                    btn.innerHTML = '<i class="fas fa-store-slash"></i> Tutup Sementara';
-                    btn.onclick = null; // hapus event onclick
-                }
-            });
-
-            // Nonaktifkan pencarian
-            const searchInput = document.querySelector('.search-box input');
-            const searchBtn = document.querySelector('.search-btn');
-            if (searchInput) {
-                searchInput.disabled = true;
-                searchInput.placeholder = 'Toko sedang tutup...';
-            }
-            if (searchBtn) {
-                searchBtn.disabled = true;
-                searchBtn.innerHTML = '<i class="fas fa-store-slash"></i> Tutup';
-            }
-        }
-
-        // ========== TAMPILKAN POP-UP INFO ==========
-        function showInfoPopup() {
-            const popup = document.getElementById('infoPopup');
-            const closeBtn = document.getElementById('closePopup');
-            if (popup) {
-                // Tampilkan setelah delay singkat
-                setTimeout(() => {
-                    popup.style.display = 'flex';
-                }, 500);
-
-                closeBtn.addEventListener('click', () => {
-                    popup.style.display = 'none';
-                });
-
-                // Klik di luar pop-up untuk menutup
-                popup.addEventListener('click', (e) => {
-                    if (e.target === popup) {
-                        popup.style.display = 'none';
-                    }
-                });
-            }
-        }
-
         // ========== EVENT LISTENERS ==========
         function setupEventListeners() {
             document.addEventListener('click', function(e) {
@@ -2713,7 +2550,6 @@ Tanya stok sebelum order!
                 }
                 if (e.target.classList.contains('diamond-buy-btn') || e.target.closest('.diamond-buy-btn')) {
                     let btn = e.target.classList.contains('diamond-buy-btn') ? e.target : e.target.closest('.diamond-buy-btn');
-                    if (btn.disabled) return;
                     openCheckoutModal(btn.dataset.product, btn.dataset.item, btn.dataset.price);
                 }
                 if (e.target.classList.contains('product-explanation-btn') || e.target.closest('.product-explanation-btn')) {
@@ -2788,8 +2624,6 @@ Tanya stok sebelum order!
             renderAllProducts();
             setupEventListeners();
             showCategory('netflix');
-            disableStore(); // Menonaktifkan toko
-            showInfoPopup(); // Tampilkan pop-up informasi
         });
     </script>
 </body>
