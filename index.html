@@ -1230,8 +1230,8 @@
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Selamat Hari Raya Idul Fitri 1447H ✨</h1>
-                <p class="hero-subtitle">Mohon maaf lahir dan batin. Nikmati layanan digital premium dengan harga terbaik dan proses cepat.</p>
+                <h1 class="hero-title">Nefs Digital Store</h1>
+                <p class="hero-subtitle">Layanan top-up digital premium dengan harga terbaik, proses cepat, dan dukungan 24/7.</p>
                 <div class="hero-stats">
                     <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Pelanggan</div></div>
                     <div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Kepuasan</div></div>
@@ -1380,13 +1380,13 @@
                 <div class="price-info">
                     <h4>Aturan Fee Rekber:</h4>
                     <table class="price-table">
-                        <thead><tr><th>Rentang Transaksi</th><th>Fee</th> </thead>
+                        <thead><tr><th>Rentang Transaksi</th><th>Fee</th></tr></thead>
                         <tbody>
-                            <tr><td>Rp 1.000 - Rp 20.000</td><td><strong>Rp 1.000</strong></td> </tr>
-                            <tr><td>Rp 21.000 - Rp 50.000</td><td><strong>Rp 2.000</strong></td> </tr>
-                            <tr><td>Rp 51.000 - Rp 100.000</td><td><strong>Rp 3.000</strong></td> </tr>
-                            <tr><td>Rp 101.000 - Rp 150.000</td><td><strong>Rp 4.000</strong></td> </tr>
-                            <tr><td>Rp 151.000 - Rp 200.000</td><td><strong>Rp 5.000</strong></td> </tr>
+                            <tr><td>Rp 1.000 - Rp 20.000</td><td><strong>Rp 1.000</strong></td></tr>
+                            <tr><td>Rp 21.000 - Rp 50.000</td><td><strong>Rp 2.000</strong></td></tr>
+                            <tr><td>Rp 51.000 - Rp 100.000</td><td><strong>Rp 3.000</strong></td></tr>
+                            <tr><td>Rp 101.000 - Rp 150.000</td><td><strong>Rp 4.000</strong></td></tr>
+                            <tr><td>Rp 151.000 - Rp 200.000</td><td><strong>Rp 5.000</strong></td></tr>
                         </tbody>
                     </table>
                     <p class="max-warning"><i class="fas fa-exclamation-circle"></i> MAX TRANSAKSI: Rp 200.000</p>
@@ -1416,22 +1416,6 @@
                     <i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp
                 </button>
                 <p class="modal-note">Isi nominal & pilih metode pembayaran</p>
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal Idul Fitri -->
-    <div class="modal" id="lebaranModal" style="display: flex;">
-        <div class="modal-content" style="max-width: 400px; text-align: center;">
-            <div class="modal-header" style="background: linear-gradient(135deg, #00b4db, #0083b0);">
-                <h3>✨ Selamat Hari Raya Idul Fitri 1447 H ✨</h3>
-                <button class="close-modal" onclick="closeLebaranModal()">&times;</button>
-            </div>
-            <div class="modal-body">
-                <i class="fas fa-mosque" style="font-size: 3rem; color: #00b4db; margin-bottom: 15px; display: inline-block;"></i>
-                <p style="font-size: 1.1rem; margin-bottom: 20px;">Mohon maaf lahir dan batin. Semoga hari kemenangan membawa berkah dan kebahagiaan untuk kita semua.</p>
-                <p style="color: var(--gray);">Terima kasih telah mempercayakan kebutuhan digital Anda kepada Nefs Digital Store.</p>
-                <button class="whatsapp-btn" onclick="closeLebaranModal()" style="background: var(--gradient); margin-top: 20px;">Tutup</button>
             </div>
         </div>
     </div>
@@ -1479,6 +1463,8 @@
                         <li><i class="fab fa-telegram"></i><span>@NaufalTzye</span></li>
                         <li><i class="fas fa-envelope"></i><span>cuman ada telegram sama whatsapp</span></li>
                         <li><i class="fas fa-clock"></i><span>Setiap Hari: 06.00 - 22.00 WIB</span></li>
+                        <li><i class="fab fa-whatsapp"></i><span><a href="https://whatsapp.com/channel/0029Vb7J4We23n3l1UAuuS2J" target="_blank" style="color:#adb5bd; text-decoration:none;">Saluran WhatsApp</a></span></li>
+                        <li><i class="fab fa-telegram"></i><span><a href="https://t.me/NefsStore" target="_blank" style="color:#adb5bd; text-decoration:none;">Telegram Channel</a></span></li>
                     </ul>
                 </div>
             </div>
@@ -2132,10 +2118,6 @@ Tanya stok sebelum order!
             calculatedFee = 0;
             transactionAmount = 0;
             document.getElementById('serviceModal').style.display = 'flex';
-        }
-
-        function closeLebaranModal() {
-            document.getElementById('lebaranModal').style.display = 'none';
         }
 
         // ========== RENDER KATEGORI ==========
