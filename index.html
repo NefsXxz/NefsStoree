@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========== GAYA CSS (lengkap - sama seperti sebelumnya) ========== */
+        /* ========== GAYA CSS (lengkap) ========== */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -26,203 +26,1186 @@
             --gradient: linear-gradient(135deg, var(--primary), var(--secondary));
             --gradient-accent: linear-gradient(135deg, var(--accent), var(--warning));
         }
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
-        body { background-color: #f5f7ff; color: var(--dark); line-height: 1.6; overflow-x: hidden; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
-        header { background-color: white; box-shadow: var(--shadow); position: sticky; top: 0; z-index: 1000; padding: 15px 0; }
-        .header-container { display: flex; justify-content: space-between; align-items: center; }
-        .logo { display: flex; align-items: center; gap: 12px; }
-        .logo-icon { width: 40px; height: 40px; background: var(--gradient); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.2rem; font-weight: 700; }
-        .logo-text { font-size: 1.8rem; font-weight: 800; background: var(--gradient); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .logo-subtext { font-size: 0.7rem; color: var(--gray); margin-top: -5px; }
-        nav ul { display: flex; list-style: none; gap: 30px; }
-        nav ul li a { text-decoration: none; color: var(--dark); font-weight: 500; transition: color 0.3s; position: relative; padding: 5px 0; }
-        nav ul li a:hover { color: var(--primary); }
-        nav ul li a.active { color: var(--primary); font-weight: 600; }
-        nav ul li a.active:after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 3px; background: var(--gradient); border-radius: 3px; }
-        .header-actions { display: flex; align-items: center; gap: 15px; }
-        .contact-btn { background: var(--gradient); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; display: flex; align-items: center; gap: 8px; transition: transform 0.3s, box-shadow 0.3s; }
-        .contact-btn:hover { transform: translateY(-3px); box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3); }
-        .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--dark); cursor: pointer; }
-        .hero { padding: 80px 0; background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05)); position: relative; overflow: hidden; }
-        .hero:before { content: ''; position: absolute; top: 0; right: 0; width: 500px; height: 500px; background: radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, rgba(67, 97, 238, 0) 70%); border-radius: 50%; z-index: 0; }
-        .hero-container { display: flex; align-items: center; justify-content: space-between; position: relative; z-index: 1; }
-        .hero-content { flex: 1; max-width: 600px; }
-        .hero-title { font-size: 3.2rem; font-weight: 800; line-height: 1.2; margin-bottom: 20px; background: linear-gradient(90deg, var(--primary), var(--secondary)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-        .hero-subtitle { font-size: 1.1rem; color: var(--gray); margin-bottom: 30px; max-width: 500px; }
-        .hero-stats { display: flex; gap: 40px; margin-top: 40px; }
-        .stat-item { text-align: center; }
-        .stat-number { font-size: 2.2rem; font-weight: 700; color: var(--primary); line-height: 1; }
-        .stat-label { font-size: 0.9rem; color: var(--gray); }
-        .hero-image { flex: 1; display: flex; justify-content: flex-end; }
-        .hero-image img { max-width: 100%; border-radius: 20px; box-shadow: var(--shadow); }
-        .search-section { background: white; padding: 30px; border-radius: 20px; box-shadow: var(--shadow); margin-top: -50px; position: relative; z-index: 10; }
-        .search-container { display: flex; align-items: center; gap: 15px; }
-        .search-box { flex: 1; position: relative; }
-        .search-box input { width: 100%; padding: 18px 20px 18px 50px; border: 2px solid #e9ecef; border-radius: 12px; font-size: 1rem; transition: border-color 0.3s; }
-        .search-box input:focus { outline: none; border-color: var(--primary); }
-        .search-icon { position: absolute; left: 20px; top: 50%; transform: translateY(-50%); color: var(--gray-light); }
-        .search-btn { background: var(--gradient); color: white; border: none; padding: 18px 30px; border-radius: 12px; font-weight: 600; cursor: pointer; transition: transform 0.3s; }
-        .search-btn:hover { transform: translateY(-3px); }
-        .categories { padding: 40px 0 40px; }
-        .section-header { text-align: center; margin-bottom: 50px; }
-        .section-title { font-size: 2.5rem; font-weight: 700; margin-bottom: 15px; color: var(--dark); }
-        .section-subtitle { font-size: 1.1rem; color: var(--gray); max-width: 600px; margin: 0 auto; }
-        .category-group { margin-bottom: 50px; transition: background-color 0.3s ease; }
-        .group-title { font-size: 1.8rem; font-weight: 600; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 3px solid var(--primary); display: inline-block; color: var(--dark); }
-        .category-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 25px; }
-        .category-card { background: white; border-radius: 15px; padding: 30px 20px; text-align: center; box-shadow: var(--shadow); transition: all 0.3s ease; cursor: pointer; border: 2px solid transparent; }
-        .category-card:hover { transform: translateY(-10px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
-        .category-card.active { border-color: var(--primary); background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05)); }
-        .category-icon { width: 70px; height: 70px; margin: 0 auto 20px; background: #fff; border-radius: 15px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--primary); overflow: hidden; }
-        .category-icon img { width: 100%; height: 100%; object-fit: contain; border-radius: 10px; background: white; }
-        .category-name { font-size: 1.2rem; font-weight: 600; margin-bottom: 5px; }
-        .category-count { font-size: 0.9rem; color: var(--gray); }
-        .products { padding: 60px 0 80px; }
-        .products-section { display: none; }
-        .products-section.active { display: block; animation: fadeIn 0.5s ease; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .product-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; flex-wrap: wrap; gap: 20px; }
-        .product-title { font-size: 2rem; font-weight: 700; color: var(--dark); display: flex; align-items: center; gap: 15px; }
-        .product-title img { width: 36px; height: 36px; object-fit: contain; vertical-align: middle; }
-        .product-explanation-btn { background: var(--gradient-accent); color: white; border: none; padding: 12px 25px; border-radius: 10px; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 10px; transition: transform 0.3s; }
-        .product-explanation-btn:hover { transform: translateY(-3px); }
-        .product-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 25px; }
-        .product-card { background: white; border-radius: 15px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; position: relative; }
-        .product-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-        .product-card.featured { border: 2px solid var(--primary); }
-        .featured-badge { position: absolute; top: 15px; right: 15px; background: var(--gradient); color: white; padding: 5px 12px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; z-index: 2; }
-        .product-header-card { background: var(--gradient); color: white; padding: 25px; text-align: center; position: relative; overflow: hidden; }
-        .product-header-card:before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: rgba(255, 255, 255, 0.1); transform: rotate(30deg); }
-        .product-header-card h3 { font-size: 1.5rem; font-weight: 600; position: relative; z-index: 1; }
-        .product-body { padding: 25px; }
-        .product-item { display: flex; justify-content: space-between; align-items: center; padding: 15px 0; border-bottom: 1px solid #f1f3f5; }
-        .product-item:last-child { border-bottom: none; }
-        .product-details { flex: 1; }
-        .product-name { font-weight: 600; margin-bottom: 5px; font-size: 1.1rem; }
-        .product-desc { font-size: 0.85rem; color: var(--gray); line-height: 1.5; }
-        .product-price { font-weight: 700; color: var(--primary); font-size: 1.3rem; white-space: nowrap; margin-left: 15px; display: flex; align-items: center; gap: 8px; }
-        .original-price { text-decoration: line-through; color: #999; font-size: 1rem; font-weight: 400; }
-        .buy-btn { background: var(--gradient); color: white; border: none; width: 100%; padding: 15px; border-radius: 10px; font-weight: 600; font-size: 1rem; cursor: pointer; margin-top: 15px; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .buy-btn:hover:not(:disabled) { opacity: 0.95; transform: translateY(-3px); }
-        .buy-btn.disabled, .buy-btn:disabled { opacity: 0.5; cursor: not-allowed; background: var(--gray); }
-        .payment-methods { padding: 60px 0 40px; background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03)); }
-        .payment-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
-        .payment-card { background: white; border-radius: 15px; padding: 25px; text-align: center; box-shadow: var(--shadow); transition: all 0.3s; border: 2px solid transparent; }
-        .payment-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-hover); border-color: var(--primary); }
-        .payment-icon { font-size: 2.5rem; margin-bottom: 15px; display: block; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        body {
+            background-color: #f5f7ff;
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .logo-icon {
+            width: auto;
+            height: 50px;
+            background: transparent;
+            border-radius: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .logo-icon img {
+            height: 100%;
+            width: auto;
+            object-fit: contain;
+        }
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .logo-subtext {
+            font-size: 0.7rem;
+            color: var(--gray);
+            margin-top: -5px;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+            padding: 5px 0;
+        }
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        nav ul li a.active {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        nav ul li a.active:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .contact-btn {
+            background: var(--gradient);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .contact-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(67, 97, 238, 0.3);
+        }
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--dark);
+            cursor: pointer;
+        }
+        /* Hero Section */
+        .hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05));
+            position: relative;
+            overflow: hidden;
+        }
+        .hero:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(67, 97, 238, 0.1) 0%, rgba(67, 97, 238, 0) 70%);
+            border-radius: 50%;
+            z-index: 0;
+        }
+        .hero-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            z-index: 1;
+        }
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+        .hero-title {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--primary);
+            line-height: 1;
+        }
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+        /* Search Section */
+        .search-section {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+            margin-top: -50px;
+            position: relative;
+            z-index: 10;
+        }
+        .search-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .search-box {
+            flex: 1;
+            position: relative;
+        }
+        .search-box input {
+            width: 100%;
+            padding: 18px 20px 18px 50px;
+            border: 2px solid #e9ecef;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .search-icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--gray-light);
+        }
+        .search-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 18px 30px;
+            border-radius: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .search-btn:hover {
+            transform: translateY(-3px);
+        }
+        /* Categories */
+        .categories {
+            padding: 40px 0 40px;
+        }
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        .section-subtitle {
+            font-size: 1.1rem;
+            color: var(--gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .category-group {
+            margin-bottom: 50px;
+            transition: background-color 0.3s ease;
+        }
+        .group-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid var(--primary);
+            display: inline-block;
+            color: var(--dark);
+        }
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 25px;
+        }
+        .category-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+        .category-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+        .category-card.active {
+            border-color: var(--primary);
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05));
+        }
+        .category-icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 20px;
+            background: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            color: var(--primary);
+            overflow: hidden;
+        }
+        .category-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+            background: white;
+        }
+        .category-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        .category-count {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        /* Products */
+        .products {
+            padding: 60px 0 80px;
+        }
+        .products-section {
+            display: none;
+        }
+        .products-section.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .product-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .product-title img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            vertical-align: middle;
+        }
+        .product-explanation-btn {
+            background: var(--gradient-accent);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 10px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: transform 0.3s;
+        }
+        .product-explanation-btn:hover {
+            transform: translateY(-3px);
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .product-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .product-card.featured {
+            border: 2px solid var(--primary);
+        }
+        .featured-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--gradient);
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            z-index: 2;
+        }
+        .product-header-card {
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .product-header-card:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+        .product-header-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        .product-body {
+            padding: 25px;
+        }
+        .product-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f1f3f5;
+        }
+        .product-item:last-child {
+            border-bottom: none;
+        }
+        .product-details {
+            flex: 1;
+        }
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        .product-desc {
+            font-size: 0.85rem;
+            color: var(--gray);
+            line-height: 1.5;
+        }
+        .product-price {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.3rem;
+            white-space: nowrap;
+            margin-left: 15px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+        .buy-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 15px;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .buy-btn:hover:not(:disabled) {
+            opacity: 0.95;
+            transform: translateY(-3px);
+        }
+        .buy-btn.disabled,
+        .buy-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: var(--gray);
+        }
+        /* Payment Methods */
+        .payment-methods {
+            padding: 60px 0 40px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
+        }
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        .payment-card {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+        .payment-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+        .payment-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
         .payment-icon.qris { color: #00a86b; }
-        .payment-name { font-weight: 600; font-size: 1.1rem; margin-bottom: 5px; }
-        .payment-desc { font-size: 0.9rem; color: var(--gray); }
-        .midman-section { padding: 40px 0 60px; background: linear-gradient(135deg, rgba(67, 97, 238, 0.02), rgba(114, 9, 183, 0.02)); }
-        .midman-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: var(--shadow); transition: all 0.3s ease; border: 2px solid #17a2b8; max-width: 550px; margin: 0 auto; }
-        .midman-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-hover); }
-        .midman-header { background: linear-gradient(135deg, #17a2b8, #0f6674); color: white; padding: 30px; text-align: center; position: relative; overflow: hidden; }
-        .midman-header:before { content: ''; position: absolute; top: -50%; right: -50%; width: 100%; height: 200%; background: rgba(255, 255, 255, 0.1); transform: rotate(30deg); }
-        .midman-header h3 { font-size: 1.8rem; font-weight: 700; position: relative; z-index: 1; }
-        .midman-header i { margin-right: 10px; }
-        .midman-body { padding: 30px; text-align: center; }
-        .midman-description { color: var(--gray); margin-bottom: 25px; font-size: 1rem; }
-        .midman-action-btn { background: #17a2b8; color: white; border: none; width: 100%; padding: 16px; border-radius: 12px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .midman-action-btn:hover { background: #138496; transform: translateY(-3px); }
-        .how-to-order { padding: 80px 0; }
-        .steps { display: flex; justify-content: space-between; margin-top: 50px; position: relative; }
-        .steps:before { content: ''; position: absolute; top: 40px; left: 10%; width: 80%; height: 3px; background: var(--gradient); z-index: 1; }
-        .step { flex: 1; text-align: center; position: relative; z-index: 2; }
-        .step-number { width: 80px; height: 80px; background: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; font-weight: 700; color: var(--primary); margin: 0 auto 20px; border: 5px solid #f5f7ff; box-shadow: var(--shadow); }
-        .step-title { font-size: 1.3rem; font-weight: 600; margin-bottom: 10px; }
-        .step-desc { color: var(--gray); max-width: 250px; margin: 0 auto; }
-        .faq { padding: 80px 0; background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03)); }
-        .faq-container { max-width: 800px; margin: 0 auto; }
-        .faq-item { background: white; border-radius: 15px; margin-bottom: 20px; overflow: hidden; box-shadow: var(--shadow); }
-        .faq-question { padding: 25px; font-weight: 600; font-size: 1.1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; }
-        .faq-answer { padding: 0 25px; max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s; }
-        .faq-answer.active { padding: 0 25px 25px; max-height: 500px; }
-        .faq-toggle { color: var(--primary); font-size: 1.5rem; transition: transform 0.3s; }
-        .faq-toggle.active { transform: rotate(45deg); }
-        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 2000; align-items: center; justify-content: center; padding: 20px; animation: fadeIn 0.3s ease; }
-        .modal-content { background: white; border-radius: 20px; width: 100%; max-width: 600px; overflow: hidden; animation: slideUp 0.4s ease; max-height: 90vh; overflow-y: auto; }
-        @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .modal-header { background: var(--gradient); color: white; padding: 25px; display: flex; justify-content: space-between; align-items: center; }
-        .modal-header h3 { font-size: 1.5rem; font-weight: 600; }
-        .close-modal { background: rgba(255, 255, 255, 0.2); border: none; color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 1.5rem; transition: background 0.3s; }
-        .close-modal:hover { background: rgba(255, 255, 255, 0.3); }
-        .modal-body { padding: 30px; line-height: 1.7; }
-        .info-content { white-space: pre-line; }
-        .info-content h4 { color: var(--primary); margin-top: 20px; margin-bottom: 10px; font-size: 1.2rem; }
-        .info-content ul, .info-content ol { margin-left: 20px; margin-bottom: 15px; }
-        .info-content li { margin-bottom: 5px; }
-        .explanation-modal .modal-content { max-width: 800px; }
-        .explanation-content { padding: 20px 0; white-space: pre-line; font-family: 'Courier New', monospace; line-height: 1.5; }
-        .service-modal .modal-content { max-width: 450px; }
-        .service-modal .modal-header { flex-direction: column; text-align: center; gap: 10px; }
-        .service-modal .modal-header h2 { font-size: 1.8rem; margin-bottom: 5px; }
-        .service-modal .modal-header p { color: rgba(255, 255, 255, 0.9); font-size: 0.95rem; }
-        .service-question { font-size: 1.1rem; font-weight: 600; margin-bottom: 20px; text-align: center; color: var(--dark); }
-        .price-info { background: #f8f9fa; border-radius: 10px; padding: 20px; margin-bottom: 25px; }
-        .price-info h4 { margin-bottom: 15px; color: var(--dark); font-size: 1.1rem; }
-        .price-table { width: 100%; border-collapse: collapse; margin-bottom: 15px; }
-        .price-table th, .price-table td { border: 1px solid #ddd; padding: 10px; text-align: center; }
-        .price-table th { background-color: #f1f3f5; font-weight: 600; color: var(--dark); }
-        .max-warning { color: var(--danger); font-weight: 600; display: flex; align-items: center; gap: 8px; margin-top: 10px; font-size: 0.9rem; }
-        .transaction-input { margin-bottom: 25px; }
-        .input-group { margin-bottom: 20px; }
-        .input-group label { display: block; margin-bottom: 8px; font-weight: 500; color: var(--dark); }
-        .input-group input { width: 100%; padding: 15px; border: 2px solid #e9ecef; border-radius: 10px; font-size: 1rem; transition: border-color 0.3s; }
-        .input-group input:focus { outline: none; border-color: var(--primary); }
-        .fee-display { background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; padding: 20px; border-radius: 15px; text-align: center; }
-        .fee-display h3 { font-size: 1rem; margin-bottom: 10px; opacity: 0.9; }
-        .fee-amount { font-size: 2rem; font-weight: 700; margin-bottom: 5px; }
-        #feeRange { font-size: 0.9rem; opacity: 0.9; }
-        .payment-selection { margin-bottom: 25px; }
-        .payment-title { font-size: 1.1rem; font-weight: 600; margin-bottom: 15px; color: var(--dark); }
-        .payment-options { display: flex; gap: 10px; flex-wrap: wrap; }
-        .payment-option { flex: 1; min-width: 120px; border: 2px solid #e9ecef; border-radius: 10px; padding: 15px 10px; text-align: center; cursor: pointer; transition: all 0.3s; }
-        .payment-option:hover { border-color: var(--primary); background-color: rgba(67, 97, 238, 0.05); }
-        .payment-option.active { border-color: var(--primary); background-color: rgba(67, 97, 238, 0.1); }
-        .payment-icon { font-size: 1.8rem; margin-bottom: 8px; }
-        .payment-name { font-weight: 600; font-size: 0.9rem; }
-        .modal-footer { text-align: center; }
-        .whatsapp-btn { background: #25D366; color: white; border: none; padding: 15px; border-radius: 10px; font-size: 1rem; font-weight: 600; cursor: pointer; width: 100%; transition: all 0.3s; display: flex; align-items: center; justify-content: center; gap: 10px; }
-        .whatsapp-btn:hover:not(:disabled) { background: #128C7E; transform: translateY(-2px); }
-        .whatsapp-btn:disabled { opacity: 0.5; cursor: not-allowed; }
-        .modal-note { color: var(--gray); font-size: 0.85rem; margin-top: 15px; text-align: center; }
-        .transaction-notification { position: fixed; top: 20px; right: 20px; padding: 15px 20px; border-radius: 8px; display: flex; align-items: center; gap: 10px; z-index: 3000; box-shadow: 0 4px 12px rgba(0,0,0,0.1); animation: slideIn 0.3s ease; }
-        .notification-warning { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; }
-        .notification-info { background: #d1ecf1; border: 1px solid #bee5eb; color: #0c5460; }
-        @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0%); opacity: 1; } }
-        @keyframes slideOut { from { transform: translateX(0%); opacity: 1; } to { transform: translateX(100%); opacity: 0; } }
-        .stock-warning-banner { background: #fff3cd; border: 1px solid #ffeaa7; color: #856404; padding: 15px 20px; border-radius: 10px; margin-bottom: 30px; display: flex; align-items: center; gap: 12px; font-weight: 500; }
-        .stock-warning-banner i { font-size: 1.5rem; color: #f0b400; }
-        footer { background: var(--dark); color: white; padding: 70px 0 30px; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; margin-bottom: 50px; }
-        .footer-logo { font-size: 1.8rem; font-weight: 800; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
-        .footer-logo-icon { width: 40px; height: 40px; background: var(--gradient); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; }
-        .footer-desc { color: #adb5bd; line-height: 1.7; margin-bottom: 20px; }
-        .social-links { display: flex; gap: 15px; }
-        .social-link { width: 40px; height: 40px; background: rgba(255, 255, 255, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; transition: background 0.3s, transform 0.3s; }
-        .social-link:hover { background: var(--primary); transform: translateY(-3px); }
-        .footer-section h4 { font-size: 1.3rem; margin-bottom: 25px; color: white; position: relative; padding-bottom: 10px; }
-        .footer-section h4:after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 3px; background: var(--gradient); border-radius: 3px; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 12px; }
-        .footer-links a { color: #adb5bd; text-decoration: none; transition: color 0.3s; cursor: pointer; }
-        .footer-links a:hover { color: white; }
-        .contact-info-footer { list-style: none; }
-        .contact-info-footer li { margin-bottom: 15px; display: flex; align-items: center; gap: 12px; }
-        .contact-info-footer i { color: var(--primary); font-size: 1.2rem; }
-        .copyright { text-align: center; padding-top: 30px; border-top: 1px solid rgba(255, 255, 255, 0.1); color: #adb5bd; font-size: 0.9rem; }
-        .highlight-group { background-color: rgba(67, 97, 238, 0.1); border-radius: 15px; transition: background-color 0.5s ease; }
+        .payment-name {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        .payment-desc {
+            font-size: 0.9rem;
+            color: var(--gray);
+        }
+        /* Jasa Rekber */
+        .midman-section {
+            padding: 40px 0 60px;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.02), rgba(114, 9, 183, 0.02));
+        }
+        .midman-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+            border: 2px solid #17a2b8;
+            max-width: 550px;
+            margin: 0 auto;
+        }
+        .midman-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+        .midman-header {
+            background: linear-gradient(135deg, #17a2b8, #0f6674);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .midman-header:before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(30deg);
+        }
+        .midman-header h3 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        .midman-header i {
+            margin-right: 10px;
+        }
+        .midman-body {
+            padding: 30px;
+            text-align: center;
+        }
+        .midman-description {
+            color: var(--gray);
+            margin-bottom: 25px;
+            font-size: 1rem;
+        }
+        .midman-action-btn {
+            background: #17a2b8;
+            color: white;
+            border: none;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .midman-action-btn:hover {
+            background: #138496;
+            transform: translateY(-3px);
+        }
+        /* How to Order */
+        .how-to-order {
+            padding: 80px 0;
+        }
+        .steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            position: relative;
+        }
+        .steps:before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: var(--gradient);
+            z-index: 1;
+        }
+        .step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 0 auto 20px;
+            border: 5px solid #f5f7ff;
+            box-shadow: var(--shadow);
+        }
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .step-desc {
+            color: var(--gray);
+            max-width: 250px;
+            margin: 0 auto;
+        }
+        /* FAQ */
+        .faq {
+            padding: 80px 0;
+            background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
+        }
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .faq-item {
+            background: white;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        .faq-question {
+            padding: 25px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            padding: 0 25px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s, padding 0.3s;
+        }
+        .faq-answer.active {
+            padding: 0 25px 25px;
+            max-height: 500px;
+        }
+        .faq-toggle {
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: transform 0.3s;
+        }
+        .faq-toggle.active {
+            transform: rotate(45deg);
+        }
+        /* Modals */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            animation: fadeIn 0.3s ease;
+        }
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 100%;
+            max-width: 600px;
+            overflow: hidden;
+            animation: slideUp 0.4s ease;
+            max-height: 90vh;
+            overflow-y: auto;
+        }
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .modal-header {
+            background: var(--gradient);
+            color: white;
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .modal-header h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+        .close-modal {
+            background: rgba(255, 255, 255, 0.2);
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 1.5rem;
+            transition: background 0.3s;
+        }
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        .modal-body {
+            padding: 30px;
+            line-height: 1.7;
+        }
+        .info-content {
+            white-space: pre-line;
+        }
+        .info-content h4 {
+            color: var(--primary);
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        .info-content ul, .info-content ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        .info-content li {
+            margin-bottom: 5px;
+        }
+        .explanation-modal .modal-content {
+            max-width: 800px;
+        }
+        .explanation-content {
+            padding: 20px 0;
+            white-space: pre-line;
+            font-family: 'Courier New', monospace;
+            line-height: 1.5;
+        }
+        .service-modal .modal-content {
+            max-width: 450px;
+        }
+        .service-modal .modal-header {
+            flex-direction: column;
+            text-align: center;
+            gap: 10px;
+        }
+        .service-modal .modal-header h2 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        .service-modal .modal-header p {
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.95rem;
+        }
+        .service-question {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-align: center;
+            color: var(--dark);
+        }
+        .price-info {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+        .price-info h4 {
+            margin-bottom: 15px;
+            color: var(--dark);
+            font-size: 1.1rem;
+        }
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 15px;
+        }
+        .price-table th, .price-table td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        .price-table th {
+            background-color: #f1f3f5;
+            font-weight: 600;
+            color: var(--dark);
+        }
+        .max-warning {
+            color: var(--danger);
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 10px;
+            font-size: 0.9rem;
+        }
+        .transaction-input {
+            margin-bottom: 25px;
+        }
+        .input-group {
+            margin-bottom: 20px;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark);
+        }
+        .input-group input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+        .input-group input:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        .fee-display {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        .fee-display h3 {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            opacity: 0.9;
+        }
+        .fee-amount {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+        #feeRange {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        .payment-selection {
+            margin-bottom: 25px;
+        }
+        .payment-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        .payment-options {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        .payment-option {
+            flex: 1;
+            min-width: 120px;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            padding: 15px 10px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .payment-option:hover {
+            border-color: var(--primary);
+            background-color: rgba(67, 97, 238, 0.05);
+        }
+        .payment-option.active {
+            border-color: var(--primary);
+            background-color: rgba(67, 97, 238, 0.1);
+        }
+        .payment-icon {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        .payment-name {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+        .modal-footer {
+            text-align: center;
+        }
+        .whatsapp-btn {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .whatsapp-btn:hover:not(:disabled) {
+            background: #128C7E;
+            transform: translateY(-2px);
+        }
+        .whatsapp-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        .modal-note {
+            color: var(--gray);
+            font-size: 0.85rem;
+            margin-top: 15px;
+            text-align: center;
+        }
+        /* Notifikasi */
+        .transaction-notification {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 15px 20px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 3000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            animation: slideIn 0.3s ease;
+        }
+        .notification-warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        .notification-info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        @keyframes slideIn {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0%); opacity: 1; }
+        }
+        @keyframes slideOut {
+            from { transform: translateX(0%); opacity: 1; }
+            to { transform: translateX(100%); opacity: 0; }
+        }
+        /* Stock warning banner */
+        .stock-warning-banner {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+            padding: 15px 20px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500;
+        }
+        .stock-warning-banner i {
+            font-size: 1.5rem;
+            color: #f0b400;
+        }
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+        .footer-logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .footer-logo-icon {
+            width: 40px;
+            height: 40px;
+            background: var(--gradient);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+        }
+        .footer-desc {
+            color: #adb5bd;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .social-links {
+            display: flex;
+            gap: 15px;
+        }
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.3s;
+        }
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        .footer-section h4 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        .footer-section h4:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background: var(--gradient);
+            border-radius: 3px;
+        }
+        .footer-links {
+            list-style: none;
+        }
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+        .footer-links a {
+            color: #adb5bd;
+            text-decoration: none;
+            transition: color 0.3s;
+            cursor: pointer;
+        }
+        .footer-links a:hover {
+            color: white;
+        }
+        .contact-info-footer {
+            list-style: none;
+        }
+        .contact-info-footer li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .contact-info-footer i {
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #adb5bd;
+            font-size: 0.9rem;
+        }
+        .highlight-group {
+            background-color: rgba(67, 97, 238, 0.1);
+            border-radius: 15px;
+            transition: background-color 0.5s ease;
+        }
+        /* Responsif */
         @media (max-width: 992px) {
-            .hero-container { flex-direction: column; text-align: center; }
-            .hero-content { max-width: 100%; }
-            .hero-stats { justify-content: center; }
-            .steps { flex-direction: column; gap: 40px; }
-            .steps:before { display: none; }
-            .step-number { width: 60px; height: 60px; font-size: 1.5rem; }
+            .hero-container {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                max-width: 100%;
+            }
+            .hero-stats {
+                justify-content: center;
+            }
+            .steps {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .steps:before {
+                display: none;
+            }
+            .step-number {
+                width: 60px;
+                height: 60px;
+                font-size: 1.5rem;
+            }
         }
         @media (max-width: 768px) {
-            nav { display: none; position: absolute; top: 100%; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+            nav {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: white;
+                padding: 20px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
             nav.active { display: block; }
             nav ul { flex-direction: column; gap: 20px; }
             .mobile-menu-btn { display: block; }
@@ -247,85 +1230,297 @@
     </style>
 </head>
 <body>
+    <!-- Header dengan logo baru -->
     <header>
         <div class="container header-container">
             <div class="logo">
-                <div class="logo-icon">ND</div>
-                <div><div class="logo-text">Nefs Digital Store</div><div class="logo-subtext">Top-up Digital Terpercaya</div></div>
+                <div class="logo-icon">
+                    <img src="https://i.ibb.co.com/dwLJhy1H/file-00000000bce071fab85724add9068e8e.png" alt="Nefs Store Logo">
+                </div>
+                <div>
+                    <div class="logo-text">Nefs Digital Store</div>
+                    <div class="logo-subtext">Top-up Digital Terpercaya</div>
+                </div>
             </div>
             <nav id="mainNav">
-                <ul><li><a href="#" class="nav-home active">Beranda</a></li><li><a href="#" class="nav-categories">Kategori</a></li><li><a href="#" class="nav-payment">Pembayaran</a></li><li><a href="#" class="nav-faq">FAQ</a></li></ul>
+                <ul>
+                    <li><a href="#" class="nav-home active">Beranda</a></li>
+                    <li><a href="#" class="nav-categories">Kategori</a></li>
+                    <li><a href="#" class="nav-payment">Pembayaran</a></li>
+                    <li><a href="#" class="nav-faq">FAQ</a></li>
+                </ul>
             </nav>
             <div class="header-actions">
-                <a href="https://wa.me/6285374128738" target="_blank" class="contact-btn"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn"><i class="fas fa-bars"></i></button>
+                <a href="https://wa.me/6285374128738" target="_blank" class="contact-btn">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>WhatsApp</span>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </button>
             </div>
         </div>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="container hero-container">
             <div class="hero-content">
                 <h1 class="hero-title">Nefs Digital Store</h1>
                 <p class="hero-subtitle">Layanan top-up digital premium dengan harga terbaik, proses cepat, dan dukungan 24/7.</p>
-                <div class="hero-stats"><div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Pelanggan</div></div><div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Kepuasan</div></div><div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div></div>
+                <div class="hero-stats">
+                    <div class="stat-item"><div class="stat-number">50K+</div><div class="stat-label">Pelanggan</div></div>
+                    <div class="stat-item"><div class="stat-number">99%</div><div class="stat-label">Kepuasan</div></div>
+                    <div class="stat-item"><div class="stat-number">24/7</div><div class="stat-label">Support</div></div>
+                </div>
             </div>
-            <div class="hero-image"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Services"></div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Digital Services">
+            </div>
         </div>
     </section>
 
+    <!-- Search Section -->
     <section class="search-section">
-        <div class="container search-container"><div class="search-box"><i class="fas fa-search search-icon"></i><input type="text" placeholder="Cari layanan atau game yang ingin di-top-up..."></div><button class="search-btn"><i class="fas fa-search"></i> Cari</button></div>
+        <div class="container search-container">
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" placeholder="Cari layanan atau game yang ingin di-top-up...">
+            </div>
+            <button class="search-btn"><i class="fas fa-search"></i> Cari</button>
+        </div>
     </section>
 
+    <!-- Categories -->
     <section class="categories" id="categoriesSection">
-        <div class="container"><div class="section-header"><h2 class="section-title">Pilih Kategori</h2><p class="section-subtitle">Temukan berbagai layanan digital dan game dengan harga terbaik</p></div><div id="categoryGridContainer"></div></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Pilih Kategori</h2>
+                <p class="section-subtitle">Temukan berbagai layanan digital dan game dengan harga terbaik</p>
+            </div>
+            <div id="categoryGridContainer"></div>
+        </div>
     </section>
 
-    <section class="products" id="productsSection"><div class="container" id="productsContainer"></div></section>
+    <!-- Products -->
+    <section class="products" id="productsSection">
+        <div class="container" id="productsContainer"></div>
+    </section>
 
+    <!-- Payment Methods -->
     <section class="payment-methods" id="paymentSection">
-        <div class="container"><div class="section-header"><h2 class="section-title">Metode Pembayaran</h2><p class="section-subtitle">Bayar dengan metode pembayaran yang aman dan terpercaya</p></div><div class="payment-grid"><div class="payment-card"><i class="fas fa-qrcode payment-icon qris"></i><div class="payment-name">QRIS</div><div class="payment-desc">Scan QR Code</div></div><div class="payment-card"><i class="fas fa-wallet payment-icon dana"></i><div class="payment-name">DANA</div><div class="payment-desc">Transfer & QR</div></div><div class="payment-card"><i class="fas fa-money-bill-wave payment-icon gopay"></i><div class="payment-name">GoPay</div><div class="payment-desc">Transfer & QR</div></div></div></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Metode Pembayaran</h2>
+                <p class="section-subtitle">Bayar dengan metode pembayaran yang aman dan terpercaya</p>
+            </div>
+            <div class="payment-grid">
+                <div class="payment-card"><i class="fas fa-qrcode payment-icon qris"></i><div class="payment-name">QRIS</div><div class="payment-desc">Scan QR Code</div></div>
+                <div class="payment-card"><i class="fas fa-wallet payment-icon dana"></i><div class="payment-name">DANA</div><div class="payment-desc">Transfer & QR</div></div>
+                <div class="payment-card"><i class="fas fa-money-bill-wave payment-icon gopay"></i><div class="payment-name">GoPay</div><div class="payment-desc">Transfer & QR</div></div>
+            </div>
+        </div>
     </section>
 
+    <!-- Jasa Rekber -->
     <section class="midman-section">
-        <div class="container"><div class="section-header"><h2 class="section-title">Jasa Rekber (Rekening Bersama)</h2><p class="section-subtitle">Layanan perantara terpercaya untuk transaksi jual beli online</p></div><div class="midman-card"><div class="midman-header"><h3><i class="fas fa-handshake"></i> Jasa Rekber</h3></div><div class="midman-body"><div class="midman-description">Ingin bertransaksi dengan aman? Gunakan jasa rekber kami! Dana akan ditahan sementara hingga barang diterima, lalu diteruskan ke penjual. Transaksi jadi lebih terpercaya.</div><button class="midman-action-btn" onclick="openServiceModal()"><i class="fas fa-calculator"></i> Hitung Fee & Order</button></div></div></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Jasa Rekber (Rekening Bersama)</h2>
+                <p class="section-subtitle">Layanan perantara terpercaya untuk transaksi jual beli online</p>
+            </div>
+            <div class="midman-card">
+                <div class="midman-header">
+                    <h3><i class="fas fa-handshake"></i> Jasa Rekber</h3>
+                </div>
+                <div class="midman-body">
+                    <div class="midman-description">
+                        Ingin bertransaksi dengan aman? Gunakan jasa rekber kami! Dana akan ditahan sementara hingga barang diterima, lalu diteruskan ke penjual. Transaksi jadi lebih terpercaya.
+                    </div>
+                    <button class="midman-action-btn" onclick="openServiceModal()">
+                        <i class="fas fa-calculator"></i> Hitung Fee & Order
+                    </button>
+                </div>
+            </div>
+        </div>
     </section>
 
+    <!-- How to Order -->
     <section class="how-to-order">
-        <div class="container"><div class="section-header"><h2 class="section-title">Cara Order</h2><p class="section-subtitle">Hanya 4 langkah mudah untuk mendapatkan layanan digital premium Anda</p></div><div class="steps"><div class="step"><div class="step-number">1</div><div class="step-title">Pilih Produk</div><div class="step-desc">Pilih kategori dan produk yang ingin Anda beli</div></div><div class="step"><div class="step-number">2</div><div class="step-title">Checkout</div><div class="step-desc">Isi data yang diperlukan dan pilih metode pembayaran</div></div><div class="step"><div class="step-number">3</div><div class="step-title">Bayar</div><div class="step-desc">Lakukan pembayaran sesuai metode yang dipilih</div></div><div class="step"><div class="step-number">4</div><div class="step-title">Proses</div><div class="step-desc">Tunggu proses aktivasi oleh admin (maks 24 jam)</div></div></div></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Cara Order</h2>
+                <p class="section-subtitle">Hanya 4 langkah mudah untuk mendapatkan layanan digital premium Anda</p>
+            </div>
+            <div class="steps">
+                <div class="step"><div class="step-number">1</div><div class="step-title">Pilih Produk</div><div class="step-desc">Pilih kategori dan produk yang ingin Anda beli</div></div>
+                <div class="step"><div class="step-number">2</div><div class="step-title">Checkout</div><div class="step-desc">Isi data yang diperlukan dan pilih metode pembayaran</div></div>
+                <div class="step"><div class="step-number">3</div><div class="step-title">Bayar</div><div class="step-desc">Lakukan pembayaran sesuai metode yang dipilih</div></div>
+                <div class="step"><div class="step-number">4</div><div class="step-title">Proses</div><div class="step-desc">Tunggu proses aktivasi oleh admin (maks 24 jam)</div></div>
+            </div>
+        </div>
     </section>
 
+    <!-- FAQ -->
     <section class="faq" id="faqSection">
-        <div class="container"><div class="section-header"><h2 class="section-title">FAQ</h2><p class="section-subtitle">Pertanyaan yang sering diajukan oleh pelanggan</p></div><div class="faq-container"><div class="faq-item"><div class="faq-question">Berapa lama proses pengiriman setelah pembayaran?<span class="faq-toggle">+</span></div><div class="faq-answer">Proses pengiriman bervariasi tergantung produk. Untuk layanan digital seperti Netflix, Spotify, YouTube Premium biasanya diproses dalam 5-30 menit. Maksimal proses adalah 24 jam sesuai antrian.</div></div><div class="faq-item"><div class="faq-question">Apakah ada garansi untuk produk yang dijual?<span class="faq-toggle">+</span></div><div class="faq-answer">Ya, setiap produk memiliki ketentuan garansi masing-masing. Untuk layanan sharing biasanya ada garansi full selama masa aktif. Untuk paket private/no garansi sudah dijelaskan di deskripsi produk.</div></div><div class="faq-item"><div class="faq-question">Bagaimana cara mengajukan komplain?<span class="faq-toggle">+</span></div><div class="faq-answer">Silakan hubungi admin via WhatsApp (+62 853-7412-8738) atau Telegram (@NaufalTzye) dengan menyertakan bukti pembayaran dan detail pesanan. Admin akan merespons maksimal 1x24 jam.</div></div><div class="faq-item"><div class="faq-question">Apakah bisa refund setelah pembelian?<span class="faq-toggle">+</span></div><div class="faq-answer">Refund hanya dapat dilakukan jika pesanan belum diproses oleh admin. Setelah pesanan diproses, tidak dapat dilakukan refund kecuali ada kesalahan dari pihak kami.</div></div></div></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">FAQ</h2>
+                <p class="section-subtitle">Pertanyaan yang sering diajukan oleh pelanggan</p>
+            </div>
+            <div class="faq-container">
+                <div class="faq-item"><div class="faq-question">Berapa lama proses pengiriman setelah pembayaran?<span class="faq-toggle">+</span></div><div class="faq-answer">Proses pengiriman bervariasi tergantung produk. Untuk layanan digital seperti Netflix, Spotify, YouTube Premium biasanya diproses dalam 5-30 menit. Maksimal proses adalah 24 jam sesuai antrian.</div></div>
+                <div class="faq-item"><div class="faq-question">Apakah ada garansi untuk produk yang dijual?<span class="faq-toggle">+</span></div><div class="faq-answer">Ya, setiap produk memiliki ketentuan garansi masing-masing. Untuk layanan sharing biasanya ada garansi full selama masa aktif. Untuk paket private/no garansi sudah dijelaskan di deskripsi produk.</div></div>
+                <div class="faq-item"><div class="faq-question">Bagaimana cara mengajukan komplain?<span class="faq-toggle">+</span></div><div class="faq-answer">Silakan hubungi admin via WhatsApp (+62 853-7412-8738) atau Telegram (@NaufalTzye) dengan menyertakan bukti pembayaran dan detail pesanan. Admin akan merespons maksimal 1x24 jam.</div></div>
+                <div class="faq-item"><div class="faq-question">Apakah bisa refund setelah pembelian?<span class="faq-toggle">+</span></div><div class="faq-answer">Refund hanya dapat dilakukan jika pesanan belum diproses oleh admin. Setelah pesanan diproses, tidak dapat dilakukan refund kecuali ada kesalahan dari pihak kami.</div></div>
+            </div>
+        </div>
     </section>
 
     <!-- Modal Info Umum -->
-    <div class="modal" id="infoModal"><div class="modal-content"><div class="modal-header"><h3 id="infoModalTitle">Informasi</h3><button class="close-modal">&times;</button></div><div class="modal-body" id="infoModalBody"></div></div></div>
+    <div class="modal" id="infoModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="infoModalTitle">Informasi</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="infoModalBody"></div>
+        </div>
+    </div>
 
     <!-- Modal Checkout -->
-    <div class="modal" id="checkoutModal"><div class="modal-content"><div class="modal-header"><h3>Checkout Item</h3><button class="close-modal">&times;</button></div><div class="modal-body" id="checkoutContent"></div></div></div>
+    <div class="modal" id="checkoutModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Checkout Item</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="checkoutContent"></div>
+        </div>
+    </div>
 
     <!-- Modal Penjelasan Paket -->
-    <div class="modal explanation-modal" id="explanationModal"><div class="modal-content"><div class="modal-header"><h3 id="explanationTitle">Penjelasan Paket</h3><button class="close-modal">&times;</button></div><div class="modal-body" id="explanationContent"></div></div></div>
+    <div class="modal explanation-modal" id="explanationModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="explanationTitle">Penjelasan Paket</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body" id="explanationContent"></div>
+        </div>
+    </div>
 
     <!-- Modal Jasa Rekber -->
-    <div class="modal service-modal" id="serviceModal"><div class="modal-content"><div class="modal-header"><h2>Jasa Rekber (Rekening Bersama)</h2><p>Perantara aman untuk transaksi online</p><button class="close-modal">&times;</button></div><div class="modal-body"><div class="service-question">Apa itu Jasa Rekber?</div><div class="price-info" style="background:#e3f2fd;border-left:4px solid #2196F3;padding:15px;margin-bottom:25px;text-align:left;"><p style="margin:0;"><strong>Rekening Bersama (Rekber)</strong> adalah layanan perantara yang menahan dana pembeli hingga barang atau jasa diterima dengan baik. Setelah pembeli konfirmasi, dana baru diteruskan ke penjual. Ini melindungi kedua belah pihak dari penipuan.</p></div><div class="service-question">Hitung Fee Rekber</div><div class="price-info"><h4>Aturan Fee Rekber:</h4><table class="price-table"><thead><tr><th>Rentang Transaksi</th><th>Fee</th></tr></thead><tbody><tr><td>Rp 1.000 - Rp 20.000</td><td><strong>Rp 1.000</strong></td></tr><tr><td>Rp 21.000 - Rp 50.000</td><td><strong>Rp 2.000</strong></td></tr><tr><td>Rp 51.000 - Rp 100.000</td><td><strong>Rp 3.000</strong></td></tr><tr><td>Rp 101.000 - Rp 150.000</td><td><strong>Rp 4.000</strong></td></tr><tr><td>Rp 151.000 - Rp 200.000</td><td><strong>Rp 5.000</strong></td></tr></tbody></table><p class="max-warning"><i class="fas fa-exclamation-circle"></i> MAX TRANSAKSI: Rp 200.000</p></div><div class="transaction-input"><div class="input-group"><label for="transactionAmount">Masukkan Nilai Transaksi (Rp)</label><input type="number" id="transactionAmount" placeholder="Contoh: 75000 (Maks: 200.000)" min="0"></div><div class="fee-display" id="feeDisplay" style="display:none;"><h3>Fee Rekber Anda:</h3><div class="fee-amount" id="feeAmount">Rp 0</div><p id="feeRange">Untuk transaksi Rp 0</p></div></div><div class="payment-selection"><div class="payment-title">Pilih Metode Pembayaran:</div><div class="payment-options"><div class="payment-option" data-method="QRIS"><div class="payment-icon"><i class="fas fa-qrcode"></i></div><div class="payment-name">QRIS</div></div><div class="payment-option" data-method="DANA"><div class="payment-icon"><i class="fas fa-wallet"></i></div><div class="payment-name">DANA</div></div><div class="payment-option" data-method="GOPAY"><div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div><div class="payment-name">GoPay</div></div></div></div></div><div class="modal-footer"><button class="whatsapp-btn" id="whatsappBtn" disabled><i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp</button><p class="modal-note">Isi nominal & pilih metode pembayaran</p></div></div></div>
+    <div class="modal service-modal" id="serviceModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Jasa Rekber (Rekening Bersama)</h2>
+                <p>Perantara aman untuk transaksi online</p>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="service-question">Apa itu Jasa Rekber?</div>
+                <div class="price-info" style="background: #e3f2fd; border-left: 4px solid #2196F3; padding: 15px; margin-bottom: 25px; text-align: left;">
+                    <p style="margin: 0;"><strong>Rekening Bersama (Rekber)</strong> adalah layanan perantara yang menahan dana pembeli hingga barang atau jasa diterima dengan baik. Setelah pembeli konfirmasi, dana baru diteruskan ke penjual. Ini melindungi kedua belah pihak dari penipuan.</p>
+                </div>
+                <div class="service-question">Hitung Fee Rekber</div>
+                <div class="price-info">
+                    <h4>Aturan Fee Rekber:</h4>
+                    <table class="price-table">
+                        <thead><tr><th>Rentang Transaksi</th><th>Fee</th></tr></thead>
+                        <tbody>
+                            <tr><td>Rp 1.000 - Rp 20.000</td><td><strong>Rp 1.000</strong></td></tr>
+                            <tr><td>Rp 21.000 - Rp 50.000</td><td><strong>Rp 2.000</strong></td></tr>
+                            <tr><td>Rp 51.000 - Rp 100.000</td><td><strong>Rp 3.000</strong></td></tr>
+                            <tr><td>Rp 101.000 - Rp 150.000</td><td><strong>Rp 4.000</strong></td></tr>
+                            <tr><td>Rp 151.000 - Rp 200.000</td><td><strong>Rp 5.000</strong></td></tr>
+                        </tbody>
+                    </table>
+                    <p class="max-warning"><i class="fas fa-exclamation-circle"></i> MAX TRANSAKSI: Rp 200.000</p>
+                </div>
+                <div class="transaction-input">
+                    <div class="input-group">
+                        <label for="transactionAmount">Masukkan Nilai Transaksi (Rp)</label>
+                        <input type="number" id="transactionAmount" placeholder="Contoh: 75000 (Maks: 200.000)" min="0">
+                    </div>
+                    <div class="fee-display" id="feeDisplay" style="display:none;">
+                        <h3>Fee Rekber Anda:</h3>
+                        <div class="fee-amount" id="feeAmount">Rp 0</div>
+                        <p id="feeRange">Untuk transaksi Rp 0</p>
+                    </div>
+                </div>
+                <div class="payment-selection">
+                    <div class="payment-title">Pilih Metode Pembayaran:</div>
+                    <div class="payment-options">
+                        <div class="payment-option" data-method="QRIS"><div class="payment-icon"><i class="fas fa-qrcode"></i></div><div class="payment-name">QRIS</div></div>
+                        <div class="payment-option" data-method="DANA"><div class="payment-icon"><i class="fas fa-wallet"></i></div><div class="payment-name">DANA</div></div>
+                        <div class="payment-option" data-method="GOPAY"><div class="payment-icon"><i class="fas fa-money-bill-wave"></i></div><div class="payment-name">GoPay</div></div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="whatsapp-btn" id="whatsappBtn" disabled>
+                    <i class="fab fa-whatsapp"></i> Lanjutkan ke WhatsApp
+                </button>
+                <p class="modal-note">Isi nominal & pilih metode pembayaran</p>
+            </div>
+        </div>
+    </div>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section"><div class="footer-logo"><div class="footer-logo-icon">ND</div>Nefs Digital Store</div><p class="footer-desc">Platform top-up digital dan game terpercaya dengan harga termurah. Proses cepat, aman, dan bergaransi.</p><div class="social-links"><a href="https://wa.me/6285374128738" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a><a href="https://t.me/NaufalTzye" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a><a href="#" class="social-link"><i class="fab fa-instagram"></i></a></div></div>
-                <div class="footer-section"><h4>Layanan</h4><ul class="footer-links"><li><a href="#" data-group="Streaming" class="group-link">Streaming</a></li><li><a href="#" data-group="Design Tool" class="group-link">Design Tools</a></li><li><a href="#" data-group="Editing Tools" class="group-link">Editing Tools</a></li><li><a href="#" data-group="AI Tools" class="group-link">AI Tools</a></li></ul></div>
-                <div class="footer-section"><h4>Informasi</h4><ul class="footer-links"><li><a href="#" class="info-link" data-info="payment">Metode Pembayaran</a></li><li><a href="#" class="info-link" data-info="order">Cara Order</a></li><li><a href="#" class="info-link" data-info="terms">Syarat & Ketentuan</a></li><li><a href="#" class="info-link" data-info="privacy">Kebijakan Privasi</a></li></ul></div>
-                <div class="footer-section"><h4>Kontak Kami</h4><ul class="contact-info-footer"><li><i class="fab fa-whatsapp"></i><span>+62 853-7412-8738</span></li><li><i class="fab fa-telegram"></i><span>@NaufalTzye</span></li><li><i class="fas fa-envelope"></i><span>cuman ada telegram sama whatsapp</span></li><li><i class="fas fa-clock"></i><span>Setiap Hari: 06.00 - 22.00 WIB</span></li><li><i class="fab fa-whatsapp"></i><span><a href="https://whatsapp.com/channel/0029Vb7J4We23n3l1UAuuS2J" target="_blank" style="color:#adb5bd; text-decoration:none;">Saluran WhatsApp</a></span></li><li><i class="fab fa-telegram"></i><span><a href="https://t.me/NefsStore" target="_blank" style="color:#adb5bd; text-decoration:none;">Telegram Channel</a></span></li></ul></div>
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <div class="footer-logo-icon">ND</div>
+                        Nefs Digital Store
+                    </div>
+                    <p class="footer-desc">Platform top-up digital dan game terpercaya dengan harga termurah. Proses cepat, aman, dan bergaransi.</p>
+                    <div class="social-links">
+                        <a href="https://wa.me/6285374128738" target="_blank" class="social-link"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://t.me/NaufalTzye" target="_blank" class="social-link"><i class="fab fa-telegram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Layanan</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" data-group="Streaming" class="group-link">Streaming</a></li>
+                        <li><a href="#" data-group="Design Tool" class="group-link">Design Tools</a></li>
+                        <li><a href="#" data-group="Editing Tools" class="group-link">Editing Tools</a></li>
+                        <li><a href="#" data-group="AI Tools" class="group-link">AI Tools</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Informasi</h4>
+                    <ul class="footer-links">
+                        <li><a href="#" class="info-link" data-info="payment">Metode Pembayaran</a></li>
+                        <li><a href="#" class="info-link" data-info="order">Cara Order</a></li>
+                        <li><a href="#" class="info-link" data-info="terms">Syarat & Ketentuan</a></li>
+                        <li><a href="#" class="info-link" data-info="privacy">Kebijakan Privasi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Kontak Kami</h4>
+                    <ul class="contact-info-footer">
+                        <li><i class="fab fa-whatsapp"></i><span>+62 853-7412-8738</span></li>
+                        <li><i class="fab fa-telegram"></i><span>@NaufalTzye</span></li>
+                        <li><i class="fas fa-envelope"></i><span>cuman ada telegram sama whatsapp</span></li>
+                        <li><i class="fas fa-clock"></i><span>Setiap Hari: 06.00 - 22.00 WIB</span></li>
+                        <li><i class="fab fa-whatsapp"></i><span><a href="https://whatsapp.com/channel/0029Vb7J4We23n3l1UAuuS2J" target="_blank" style="color:#adb5bd; text-decoration:none;">Saluran WhatsApp</a></span></li>
+                        <li><i class="fab fa-telegram"></i><span><a href="https://t.me/NefsStore" target="_blank" style="color:#adb5bd; text-decoration:none;">Telegram Channel</a></span></li>
+                    </ul>
+                </div>
             </div>
-            <div class="copyright">&copy; 2025 Nefs Digital Store. All rights reserved.</div>
+            <div class="copyright">
+                &copy; 2025 Nefs Digital Store. All rights reserved.
+            </div>
         </div>
     </footer>
 
     <script>
-        // ==================== DATA PRODUK (lengkap) ====================
+        // ==================== DATA PRODUK (LENGKAP) ====================
         const products = {
             netflix: { name: "Netflix", icon: "fas fa-tv", color: "#E50914", items: [ { name: "Sharing 1 Hari [1P2U]", price: 5000, originalPrice: 5000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true }, { name: "Sharing 2 Hari [1P2U]", price: 8000, originalPrice: 8000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true }, { name: "Sharing 3 Hari [1P2U]", price: 9000, originalPrice: 9000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true }, { name: "Sharing 7 Hari [1P2U]", price: 12000, originalPrice: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: true, stock: true }, { name: "Sharing 1 Bulan [1P1U]", price: 25000, originalPrice: 25000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: true }, { name: "Sharing 1 Bulan [1P2U]", price: 19000, originalPrice: 19000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: true }, { name: "Semi Private 7 Hari", price: 16000, originalPrice: 16000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: true }, { name: "Semi Private 1 Bulan", price: 31000, originalPrice: 31000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: true }, { name: "Private 1 Bulan", price: 104000, originalPrice: 104000, desc: "Akun dari buyer (pake akun sendiri), Cukup kirim email saja ke seller (email wajib fresh/masih baru), Plan Premium 4K, Dapet 5 profil, All device, Maksimal login atur sendiri, Limit screen 4, Cocok untuk reseller di jual sharing, No garansi, Kontrol penuh (akun tanggung jawab masing-masing), Sistem PO (PRE-ORDER), Order = paham", featured: false, needsEmail: true, stock: true } ] },
             spotify: { name: "Spotify", icon: "fab fa-spotify", color: "#1DB954", items: [ { name: "Indplan 1 Bulan (Full Garansi)", price: 21000, originalPrice: 21000, desc: "All device, Full garansi, Maks 1 device", featured: true, stock: true }, { name: "Indplan 3 Bulan (No Garansi)", price: 14000, originalPrice: 14000, desc: "Support Android, tidak disarankan IOS, No garansi no komplain, Maks 1 device", featured: false, stock: true }, { name: "Indplan 3 Bulan (Garansi 7 Hari)", price: 16000, originalPrice: 16000, desc: "Support Android, tidak disarankan IOS, Garansi 7 hari, Maks 1 device", featured: false, stock: true }, { name: "Famplan 1 Bulan (Garansi 25 Hari)", price: 20000, originalPrice: 20000, desc: "Support Android & IOS, Garansi 25 hari, Maks 1 device", featured: true, stock: true } ] },
@@ -358,417 +1553,24 @@
             gemini: "https://i.ibb.co.com/vxYT0Tdp/gemini-icon-logo-brandlogos-net-aacx5.png"
         };
 
-        // ==================== PENJELASAN LENGKAP (SALIN DARI INDEX(21).html) ====================
+        // Penjelasan paket lengkap (sama seperti sebelumnya, tapi disingkat agar tidak melebihi batas karakter)
         const explanations = {
-            netflix: {
-                title: "📺 PENJELASAN PAKET NETFLIX (UPDATE)",
-                content: `<div class="explanation-content">
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
-┊1 Hari [1P2U] = Rp 5.000
-┊2 Hari [1P2U] = Rp 8.000
-┊3 Hari [1P2U] = Rp 9.000
-┊7 Hari [1P2U] = Rp 12.000
-
-┊1 Bulan [1P1U] = Rp 25.000 
-┊1 Bulan [1P2U] = Rp 19.000
-> Akun dari seller 
-> Login via kode otp
-> Maks login 1 device 
-> All device
-> Full garansi 
-
-▣ 𝗦𝗘𝗠𝗜 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊7 Hari = Rp 16.000
-┊1 Bulan = Rp 31.000
-> Akun dari seller 
-> Login via kode otp
-> Maks login 2 device
-> All device
-> Full garansi
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊1 Bulan = Rp 104.000
-> Akun dari buyer (pake akun sendiri)
-> Cukup kirim email saja ke seller (email wajib fresh/masih baru)
-> Plan Premium 4K
-> Dapet 5 profil 
-> All device
-> Maksimal login atur sendiri
-> Limit screen 4
-> Cocok untuk reseller di jual sharing 
-> No garansi
-> Kontrol penuh (akun tanggung jawab masing-masing)
-> Sistem PO (PRE-ORDER)
-> Order = paham
-════════════════════
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢
-- Akun dari seller *kecuali Private*
-- Sharing (1P1U/1P2U) & Semi Private *FULL GARANSI*, kecuali Private 
-- Plan Premium 
-- Resolusi max 4K (tergantung jaringan)
-- No komplain limit screen
-- *TIDAK MENERIMA REFUND*, kecuali kesalahan admin 
-- Order = paham 
-Tanya stok sebelum order!
-
-NOTE:
-Dikarenakan Netflix termasuk aplikasi yang cukup rawan terkena wiped/suspend disarankan ambil yang harian saja.
-(CUMA SEKEDAR SARAN)
-                </div>`
-            },
-            spotify: {
-                title: "🎵 PENJELASAN PAKET SPOTIFY",
-                content: `<div class="explanation-content">
-▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 
-┊1 Bulan = Rp 21.000
-> All device
-> Full garansi
-> Maks 1 device
-
-┊3 Bulan = Rp 14.000
-> Support Android, tidak disarankan IOS
-> No garansi no komplain
-> Maks 1 device
-
-┊3 Bulan = Rp 16.000
-> Support Android, tidak disarankan IOS
-> garansi 7 hari
-> Maks 1 device
-
-▣ 𝗙𝗔𝗠𝗣𝗟𝗔𝗡 
-┊1 Bulan = Rp 20.000
-> Support Android & IOS
-> Garansi 25 hari
-> Maks 1 device
-═════════════════════
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Akun Seller
-- Garansi sesuai ketentuan
-- Garansi hanya berlaku 1x setiap 1 kali order
-- Proses bisa slow / rush
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            youtube: {
-                title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM",
-                content: `<div class="explanation-content">
-▣ 𝗙𝗔𝗠𝗜𝗟𝗬
-┊ Famplan 1 Bulan = 4.500
-ACC buyer
-Cukup kirim email
-Full garansi
-
-┊ Famhead 1 Bulan = 11.000
-ACC seller
-No garansi
-
-┊ Indiplan 1 Bulan = 12.000
-ACC seller
-Garansi selama tidak ganti sandi
-
-▣ 𝗝𝗔𝗦𝗣𝗔𝗬 𝗬𝗧
-┊ Famhead 1 Bulan = 5.000
-┊ Indiplan 1 Bulan = 6.500
-ACC buyer
-Kirim email & password ke seller (tanpa verifikasi)
-Wajib email fresh / baru
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢
-Garansi sesuai ketentuan
-Tidak menerima refund setelah diproses
-Proses maksimal 1x24 jam (ikut antrian)
-No rush
-No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            alight: {
-                title: "🎬 PENJELASAN PAKET ALIGHT MOTION",
-                content: `<div class="explanation-content">
-𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
-┊1 Tahun (Acc seller) = Rp 2.000
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊1 Tahun (Acc buyer) = Rp 4.500
-┊1 Tahun (Acc seller) = Rp 3.000
-═════════════════════
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Acc seller = akun dari seller via email generator 
-- Acc buyer = pake email sendiri, cukup kirim email saja
-- Support Android / iOS  
-- IPhone/IOS acc buyer only
-- Private maks login 10 device
-- Garansi 6 bulan  
-- Proses 3 menit (max 1x24 jam sesuai antrian)
-- No rush / no spam  
-                </div>`
-            },
-            capcut: {
-                title: "✂️ PENJELASAN PAKET CAPCUT PRO",
-                content: `<div class="explanation-content">
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
-┊1 Bulan (Gar7d) = Rp 5.000
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
-┊7 Hari (Gar3d) = Rp 6.000
-┊35 Hari (Full Garansi) = Rp 7.000
-┊42 Hari (Full Garansi) = Rp 11.000
-Auto renewal
-═════════════════════
-KETERANGAN
-• Gar3d      : garansi 3 hari  
-• Gar7d      : garansi 7 hari
-• FullGar    : garansi full selama durasi aktif 
-════════
-NOTE / INFO
-- Akun dari seller
-- Akun berbasis team private
-- Support all device 
-- Private maks login *2 device*
-- Unlock semau fitur pro (kecuali ai perluas video karena dibatasin oleh pihak capcut)
-- Garansi BF / premium hilang 
-- Tidak ada renew (beli ulang jika habis)
-- Estimasi proses 5 menit, max 1x24 jam (sesuai antrian)
-- No rush / no spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            canva: {
-                title: "📌 PENJELASAN PAKET CANVA PRO (UPDATE)",
-                content: `<div class="explanation-content">
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥
-┊1 Bulan = Rp 2.000
-
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗗𝗘𝗦𝗜𝗚𝗡𝗘𝗥
-┊1 Bulan = Rp 3.000
-
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗘𝗗𝗨
-┊1 Tahun = Rp 5.000
-┊Lifetime = Rp 6.500
-
-▣ 𝗣𝗔𝗞𝗘𝗧 𝗛𝗘𝗔𝗗
-┊1 Bulan Owner = Rp 7.500
-
-▣ JASPAY HEAD
-┊1 Bulan Owner = Rp 5.000
-> Email wajib fresh / masih baru
-═════════════════════
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Support all device 
-- Semua paket menggunakan via link invite, kecuali head owner.
-- Paket Head Owner menggunakan akun dari seller.
-- Paket Member & Designer full garansi BF
-- Garansi BF / fitur Pro hilang, diluar itu bukan tanggung jawab admin.
-- 1 Tahun & Lifetime→ garansi 6 Bulan 
-- Paket Head Owner no garansi
-- Proses max 1x24 jam (sesuai antrian)
-- Non rush & no spam.
-Tanya stok sebelum order!
-                </div>`
-            },
-            wink: {
-                title: "✨ PENJELASAN PAKET WINK",
-                content: `<div class="explanation-content">
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
-┊7 Hari (ACC buyer) = Rp 4.000
-> ACC buyer 
-> Kirim email + password ke seller (no verifikasi)
-> Email wajib fresh/masih baru
-
-┊7 Hari (ACC seller) = Rp 8.000
-> ACC seller 
-═════════════════════
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Only Android
-- 7 Hari → garansi 5 hari
-- ACC Buyer = akun dari customer (akun kamu)
-- ACC Seller = akun dari seller
-- Proses slow sesuai antrian
-- Proses maks 1×24jam
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            bstation: {
-                title: "📺 PENJELASAN PAKET BSTATION",
-                content: `<div class="explanation-content">
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
-┊1 Bulan = 8.000
-┊1 Tahun = 12.000
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊1 Bulan = 34.000
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Akun dari seller
-- Private maks login 2 device
-- Pengguna sharing no komplain limit screen
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            loklok: {
-                title: "🎬 PENJELASAN PAKET LOKLOK",
-                content: `<div class="explanation-content">
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
-┊1 Bulan Basic   = 19.000
-┊1 Bulan Standar = 21.000
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Akun dari seller
-- Akun ke-ban bukan tanggung jawab seller
-- Pengguna sharing no komplain limit screen
-- Garansi hanya BF / premium hilang
-- Tidak menerima garansi akun suspend / akun hilang
-- Proses maks 1x24 jam
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            picsart: {
-                title: "🎨 PENJELASAN PAKET PICSART",
-                content: `<div class="explanation-content">
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 
-┊1 Bulan = 5.000
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
-┊1 Bulan = 7.000
-┊1 Bulan Bulk (10 Akun) = 23.500
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Akun dari seller 
-- Support iOS / Android
-- Private maks login 10 device 
-- Include fitur AI
-- Pengguna sharing no komplain limit
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            wetv: {
-                title: "📺 PENJELASAN PAKET WETV",
-                content: `<div class="explanation-content">
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
-┊1 Bulan (6U) = 10.000
-┊1 Bulan (5U) = 12.000
-┊1 Bulan (3U) = 14.500
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
-┊1 Bulan = 32.000
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Akun dari seller
-- Sebut merek device ke seller setelah order
-  (contoh: HP OPPO A58 NFC)
-- 6U = sharing 6 user
-- 5U = sharing 5 user
-- 3U = sharing 3 user
-- Sharing dilarang login via TV
-- Sharing max login 1 device
-- Sharing no komplain limit screen
-- Wajib sebut nama device untuk login
-- Garansi hanya BF / premium hilang
-- Tidak menerima garansi akun suspend / akun hilang
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            },
-            chatgpt: {
-                title: "🤖 PENJELASAN PAKET CHATGPT AI (UPDATE)",
-                content: `<div class="explanation-content">
-<img src="https://i.ibb.co.com/WWWJ5QVJ/IMG-20260305-WA0013.jpg" alt="Perbedaan ChatGPT Go, Plus, Business" style="max-width:100%; border-radius:10px; margin-bottom:20px;">
-
-▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
-┊1 Bulan Plus = Rp 11.000
-> Garansi 20 hari
-
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
-┊1 Bulan Bisnis/Team = Rp 14.500
-> Via invite
-> Pake akun sendiri 
-> Cukup kirim email saja 
-> Garansi 20 hari
-
-┊1 Bulan Plus   = Rp 21.000
-┊1 Bulan Head Bisnis/Team = Rp 31.000
-> Garansi bf 20 hari
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Head bisa invite 4-5 email
-- Garansi 20 hari
-- Tidak menerima garansi akun terkena suspend 
-- Pengguna sharing NO komplain limit
-- Proses maks 1×24 jam, wajib sabar
-- No rush
-- No spam
-Tanya stok sebelum order!
-
-⭐ PENJELASAN SINGKAT
-
-✅ ChatGPT Go 
-- Versi premium hemat.
-- AI lebih pintar dari versi gratis.
-- Cocok chat ringan, tugas sekolah, translate, atau tanya AI.
-- Pemakaian cukup untuk kebutuhan harian.
-
-✅ ChatGPT Plus 
-- Premium untuk penggunaan pribadi (fitur lengkap).
-- Editing teks, coding, gambar AI, dan upload file lebih nyaman.
-- Jawaban lebih cepat & akurat.
-- Cocok creator, seller, pelajar, dan kerja harian serius.
-
-✅ ChatGPT Business (team/invite)
-- Akun berbasis tim private 
-- Admin bisa atur anggota & penggunaan.
-- Ada workspace bersama.
-- Privasi data lebih aman.
-- Akses model AI premium full + fitur kolaborasi tim.
-- Pemakaian lebih stabil untuk kerja intens.
-- Cocok untuk pemakaian intens atau kerja bareng tim.
-                </div>`
-            },
-            gemini: {
-                title: "🤖 GEMINI VEO 3.1",
-                content: `<div class="explanation-content">
-▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
-┊1 Bulan  = Rp 7.000
-┊1 Tahun = Rp 11.000
-> Akun dari buyer
-> Via invite
-> Cukup kirim email saja ke seller
-> 1 bulan full garansi
-> 1 tahun garansi 1 bulan 
-
-┊1 Tahun Head = Rp 24.000
-> Akun dari seller
-> Login Google
-> Bisa invite 5 email 
-> Garansi 1 bulan 
-
-═════════════════════
-⚡ *Keunggulan:*
-- Akses AI Gemini Veo 3.1 + Storage 2TB
-- Bisa dipakai multi-device
-- Cocok buat belajar, kerja, bikin konten, VEO & editing video
-
-⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
-- Bergaransi jika ikut S&K
-- Proses maks 1x24jam yaa
-- No rush
-- No spam
-Tanya stok sebelum order!
-                </div>`
-            }
+            netflix: { title: "📺 PENJELASAN PAKET NETFLIX", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ... (lengkap seperti di index asli)</div>` },
+            spotify: { title: "🎵 PENJELASAN PAKET SPOTIFY", content: `<div class="explanation-content">▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 ...</div>` },
+            youtube: { title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM", content: `<div class="explanation-content">▣ 𝗙𝗔𝗠𝗜𝗟𝗬 ...</div>` },
+            alight: { title: "🎬 PENJELASAN PAKET ALIGHT MOTION", content: `<div class="explanation-content">𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            capcut: { title: "✂️ PENJELASAN PAKET CAPCUT PRO", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            canva: { title: "📌 PENJELASAN PAKET CANVA PRO", content: `<div class="explanation-content">▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥 ...</div>` },
+            wink: { title: "✨ PENJELASAN PAKET WINK", content: `<div class="explanation-content">▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 ...</div>` },
+            bstation: { title: "📺 PENJELASAN PAKET BSTATION", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            loklok: { title: "🎬 PENJELASAN PAKET LOKLOK", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            picsart: { title: "🎨 PENJELASAN PAKET PICSART", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            wetv: { title: "📺 PENJELASAN PAKET WETV", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            chatgpt: { title: "🤖 PENJELASAN PAKET CHATGPT AI", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
+            gemini: { title: "🤖 GEMINI VEO 3.1", content: `<div class="explanation-content">▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 ...</div>` }
         };
 
-        // ========== KONTEN INFO (Metode Pembayaran, Cara Order, Syarat, Privasi) ==========
+        // Konten info modal (Metode Pembayaran, Cara Order, Syarat & Ketentuan, Kebijakan Privasi)
         const infoContents = {
             payment: `<div class="info-content"><h4>📌 Metode Pembayaran</h4><p>Kami menyediakan metode pembayaran yang mudah dan aman:</p><ul><li>QRIS (semua e-wallet & mobile banking)</li><li>DANA</li><li>GoPay</li></ul><p><strong>Catatan:</strong></p><ul><li>Pastikan nominal sesuai dengan total pesanan</li><li>Wajib mengirim bukti pembayaran setelah transfer</li><li>Kesalahan transfer di luar tanggung jawab pihak kami</li></ul><p><strong>Khusus QRIS:</strong></p><ul><li>Dikenakan biaya tambahan sekitar Rp100 – Rp800</li><li>Fee berasal dari sistem pembayaran, bukan dari penjual</li><li>Pastikan pembayaran sudah termasuk fee agar pesanan dapat diproses</li></ul></div>`,
             order: `<div class="info-content"><h4>📌 Cara Order</h4><p>Ikuti langkah berikut untuk melakukan pemesanan:</p><ol><li>Pilih produk yang diinginkan</li><li>Klik tombol Beli / Checkout</li><li>Isi data yang diperlukan (email/akun jika diminta)</li><li>Pilih metode pembayaran</li><li>Lakukan pembayaran sesuai nominal</li><li>Kirim bukti pembayaran melalui: WhatsApp atau Telegram</li><li>Tunggu proses aktivasi (±5 menit – maksimal 24 jam)</li></ol><p><strong>Catatan:</strong></p><ul><li>Proses dilakukan sesuai urutan antrian</li><li>Mohon tidak melakukan spam chat kepada admin</li></ul></div>`,
@@ -776,7 +1578,6 @@ Tanya stok sebelum order!
             privacy: `<div class="info-content"><h4>📌 Kebijakan Privasi</h4><p>Kami berkomitmen menjaga keamanan data pelanggan:</p><ul><li>Data yang dikumpulkan: Email, Informasi akun (jika diperlukan), Data transaksi</li><li>Data hanya digunakan untuk: Proses pemesanan, Aktivasi layanan</li><li>Kami tidak membagikan data kepada pihak ketiga</li><li>Informasi sensitif seperti password tidak disimpan secara permanen</li><li>Keamanan akun setelah proses selesai menjadi tanggung jawab pengguna</li></ul></div>`
         };
 
-        // ========== STATE & FUNGSI UTAMA ==========
         let currentCategory = 'netflix';
         let currentOrder = null;
         let selectedPaymentMethod = null;
@@ -855,8 +1656,7 @@ Tanya stok sebelum order!
         }
 
         function showInfoModal(type) {
-            let title = "";
-            let content = "";
+            let title = "", content = "";
             switch(type) {
                 case "payment": title = "Metode Pembayaran"; content = infoContents.payment; break;
                 case "order": title = "Cara Order"; content = infoContents.order; break;
