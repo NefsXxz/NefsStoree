@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nefs Digital Store</title>
+    <title>Nefs Digital Store - Update Produk Terbaru</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ========== GAYA CSS (lengkap) ========== */
+        /* ========== GAYA CSS (lengkap - sama seperti sebelumnya) ========== */
         :root {
             --primary: #4361ee;
             --primary-dark: #3a56d4;
@@ -43,7 +43,6 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        /* Header */
         header {
             background-color: white;
             box-shadow: var(--shadow);
@@ -149,7 +148,6 @@
             color: var(--dark);
             cursor: pointer;
         }
-        /* Hero Section */
         .hero {
             padding: 80px 0;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.05), rgba(114, 9, 183, 0.05));
@@ -222,7 +220,6 @@
             border-radius: 20px;
             box-shadow: var(--shadow);
         }
-        /* Search Section */
         .search-section {
             background: white;
             padding: 30px;
@@ -273,7 +270,6 @@
         .search-btn:hover {
             transform: translateY(-3px);
         }
-        /* Categories */
         .categories {
             padding: 40px 0 40px;
         }
@@ -359,7 +355,6 @@
             font-size: 0.9rem;
             color: var(--gray);
         }
-        /* Products */
         .products {
             padding: 60px 0 80px;
         }
@@ -537,7 +532,6 @@
             cursor: not-allowed;
             background: var(--gray);
         }
-        /* Payment Methods */
         .payment-methods {
             padding: 60px 0 40px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
@@ -576,7 +570,6 @@
             font-size: 0.9rem;
             color: var(--gray);
         }
-        /* Jasa Rekber */
         .midman-section {
             padding: 40px 0 60px;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.02), rgba(114, 9, 183, 0.02));
@@ -651,7 +644,6 @@
             background: #138496;
             transform: translateY(-3px);
         }
-        /* How to Order */
         .how-to-order {
             padding: 80px 0;
         }
@@ -702,7 +694,6 @@
             max-width: 250px;
             margin: 0 auto;
         }
-        /* FAQ */
         .faq {
             padding: 80px 0;
             background: linear-gradient(135deg, rgba(67, 97, 238, 0.03), rgba(114, 9, 183, 0.03));
@@ -745,7 +736,6 @@
         .faq-toggle.active {
             transform: rotate(45deg);
         }
-        /* Modals */
         .modal {
             display: none;
             position: fixed;
@@ -1008,7 +998,6 @@
             margin-top: 15px;
             text-align: center;
         }
-        /* Notifikasi */
         .transaction-notification {
             position: fixed;
             top: 20px;
@@ -1040,7 +1029,6 @@
             from { transform: translateX(0%); opacity: 1; }
             to { transform: translateX(100%); opacity: 0; }
         }
-        /* Stock warning banner */
         .stock-warning-banner {
             background: #fff3cd;
             border: 1px solid #ffeaa7;
@@ -1057,7 +1045,6 @@
             font-size: 1.5rem;
             color: #f0b400;
         }
-        /* Footer */
         footer {
             background: var(--dark);
             color: white;
@@ -1170,7 +1157,6 @@
             border-radius: 15px;
             transition: background-color 0.5s ease;
         }
-        /* Responsif */
         @media (max-width: 992px) {
             .hero-container {
                 flex-direction: column;
@@ -1230,7 +1216,7 @@
     </style>
 </head>
 <body>
-    <!-- Header dengan logo baru -->
+    <!-- Header (sama seperti asli) -->
     <header>
         <div class="container header-container">
             <div class="logo">
@@ -1520,21 +1506,86 @@
     </footer>
 
     <script>
-        // ==================== DATA PRODUK (LENGKAP) ====================
+        // ==================== DATA PRODUK TERBARU ====================
         const products = {
-            netflix: { name: "Netflix", icon: "fas fa-tv", color: "#E50914", items: [ { name: "Sharing 1 Hari [1P2U]", price: 5000, originalPrice: 5000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true }, { name: "Sharing 2 Hari [1P2U]", price: 8000, originalPrice: 8000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true }, { name: "Sharing 3 Hari [1P2U]", price: 9000, originalPrice: 9000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true }, { name: "Sharing 7 Hari [1P2U]", price: 12000, originalPrice: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: true, stock: true }, { name: "Sharing 1 Bulan [1P1U]", price: 25000, originalPrice: 25000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: true }, { name: "Sharing 1 Bulan [1P2U]", price: 19000, originalPrice: 19000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: true }, { name: "Semi Private 7 Hari", price: 16000, originalPrice: 16000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: true }, { name: "Semi Private 1 Bulan", price: 31000, originalPrice: 31000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: true }, { name: "Private 1 Bulan", price: 104000, originalPrice: 104000, desc: "Akun dari buyer (pake akun sendiri), Cukup kirim email saja ke seller (email wajib fresh/masih baru), Plan Premium 4K, Dapet 5 profil, All device, Maksimal login atur sendiri, Limit screen 4, Cocok untuk reseller di jual sharing, No garansi, Kontrol penuh (akun tanggung jawab masing-masing), Sistem PO (PRE-ORDER), Order = paham", featured: false, needsEmail: true, stock: true } ] },
-            spotify: { name: "Spotify", icon: "fab fa-spotify", color: "#1DB954", items: [ { name: "Indplan 1 Bulan (Full Garansi)", price: 21000, originalPrice: 21000, desc: "All device, Full garansi, Maks 1 device", featured: true, stock: true }, { name: "Indplan 3 Bulan (No Garansi)", price: 14000, originalPrice: 14000, desc: "Support Android, tidak disarankan IOS, No garansi no komplain, Maks 1 device", featured: false, stock: true }, { name: "Indplan 3 Bulan (Garansi 7 Hari)", price: 16000, originalPrice: 16000, desc: "Support Android, tidak disarankan IOS, Garansi 7 hari, Maks 1 device", featured: false, stock: true }, { name: "Famplan 1 Bulan (Garansi 25 Hari)", price: 20000, originalPrice: 20000, desc: "Support Android & IOS, Garansi 25 hari, Maks 1 device", featured: true, stock: true } ] },
-            youtube: { name: "YouTube Premium", icon: "fab fa-youtube", color: "#FF0000", items: [ { name: "Famplan 1 Bulan", price: 4500, originalPrice: 4500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true, needsEmail: true, stock: true }, { name: "Famhead 1 Bulan (ACC seller)", price: 11000, originalPrice: 11000, desc: "ACC seller, No garansi", featured: false, stock: true }, { name: "Indiplan 1 Bulan (ACC seller)", price: 12000, originalPrice: 12000, desc: "ACC seller, Garansi selama tidak ganti sandi", featured: false, stock: true }, { name: "Jaspay Famhead 1 Bulan", price: 5000, originalPrice: 5000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: true, needsEmail: true, stock: true }, { name: "Jaspay Indiplan 1 Bulan", price: 6500, originalPrice: 6500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: true, needsEmail: true, stock: true } ] },
-            alight: { name: "Alight Motion", icon: "fas fa-video", color: "#8A2BE2", items: [ { name: "Sharing 1 Tahun (Acc Seller)", price: 2000, originalPrice: 2000, desc: "Akun dari seller, Support Android/iOS, Garansi 6 bulan", featured: false, stock: true }, { name: "Private 1 Tahun (Acc Buyer)", price: 4500, originalPrice: 4500, desc: "Pakai email sendiri, Maks 10 device, Garansi 6 bulan", featured: true, needsEmail: true, stock: true }, { name: "Private 1 Tahun (Acc Seller)", price: 3000, originalPrice: 3000, desc: "Akun dari seller, Maks 10 device, Garansi 6 bulan", featured: true, stock: true } ] },
-            capcut: { name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF", items: [ { name: "Sharing 1 Bulan (Gar7d)", price: 5000, originalPrice: 5000, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false, stock: true }, { name: "Private 7 Hari (Gar3d)", price: 6000, originalPrice: 6000, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false, stock: true }, { name: "Private 35 Hari (Full Garansi)", price: 7000, originalPrice: 7000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi, Auto renewal", featured: true, stock: true }, { name: "Private 42 Hari (Full Garansi)", price: 11000, originalPrice: 11000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi, Auto renewal", featured: true, stock: true } ] },
-            canva: { name: "Canva Pro", icon: "fas fa-palette", color: "#00C4CC", items: [ { name: "Paket Member 1 Bulan", price: 2000, originalPrice: 2000, desc: "Support all device, Via link invite, Full garansi BF", featured: true, stock: true }, { name: "Paket Designer 1 Bulan", price: 3000, originalPrice: 3000, desc: "Support all device, Via link invite, Full garansi BF", featured: true, stock: true }, { name: "Paket Edu 1 Tahun", price: 5000, originalPrice: 5000, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true, stock: true }, { name: "Paket Edu Lifetime", price: 6500, originalPrice: 6500, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true, stock: true }, { name: "Paket Head Owner 1 Bulan", price: 7500, originalPrice: 7500, desc: "Akun seller, Support all device, No garansi", featured: true, stock: true }, { name: "Jaspay Head 1 Bulan", price: 5000, originalPrice: 5000, desc: "Email wajib fresh/masih baru, Support all device", featured: false, needsEmail: true, stock: true } ] },
-            wink: { name: "Wink", icon: "fas fa-star", color: "#FF69B4", items: [ { name: "Private 7 Hari (ACC buyer)", price: 4000, originalPrice: 4000, desc: "ACC buyer, Kirim email + password ke seller (no verifikasi), Email wajib fresh/masih baru, Garansi 5 hari, Only Android", featured: true, needsEmail: true, stock: true }, { name: "Private 7 Hari (ACC seller)", price: 8000, originalPrice: 8000, desc: "ACC seller, Garansi 5 hari, Only Android", featured: false, stock: true } ] },
-            bstation: { name: "Bstation", icon: "fas fa-play-circle", color: "#00A1D6", items: [ { name: "Sharing 1 Bulan", price: 8000, originalPrice: 9000, desc: "Akun sharing, Garansi sesuai ketentuan", featured: true, stock: true }, { name: "Sharing 1 Tahun", price: 12000, originalPrice: 12000, desc: "Akun sharing, Garansi sesuai ketentuan", featured: false, stock: true }, { name: "Private 1 Bulan", price: 34000, originalPrice: 34000, desc: "Akun dari seller, Private maks login 2 device", featured: false, stock: true } ] },
-            loklok: { name: "Loklok", icon: "fas fa-film", color: "#FF4500", items: [ { name: "Sharing 1 Bulan Basic", price: 19000, originalPrice: 19000, desc: "Paket basic sharing, Garansi BF / premium hilang", featured: true, stock: true }, { name: "Sharing 1 Bulan Standar", price: 21000, originalPrice: 21000, desc: "Paket standar sharing, Garansi BF / premium hilang", featured: true, stock: true } ] },
-            picsart: { name: "Picsart", icon: "fas fa-paint-brush", color: "#FF69B4", items: [ { name: "Sharing 1 Bulan", price: 5000, originalPrice: 7000, desc: "Akun sharing, Support iOS/Android, No komplain limit", featured: true, stock: true }, { name: "Private 1 Bulan", price: 7000, originalPrice: 11500, desc: "Private, Maks login 10 device, Include fitur AI", featured: true, stock: true }, { name: "Private 1 Bulan Bulk (10 Akun)", price: 23500, originalPrice: 23500, desc: "Paket 10 akun private, Include fitur AI", featured: true, stock: true } ] },
-            wetv: { name: "WeTV", icon: "fas fa-tv", color: "#1E90FF", items: [ { name: "Sharing 1 Bulan (6U)", price: 10000, originalPrice: 10000, desc: "Sharing 6 user, Sebut device setelah order, Garansi BF", featured: true, stock: true }, { name: "Sharing 1 Bulan (5U)", price: 12000, originalPrice: 12000, desc: "Sharing 5 user, Sebut device setelah order, Garansi BF", featured: false, stock: true }, { name: "Sharing 1 Bulan (3U)", price: 14500, originalPrice: 14500, desc: "Sharing 3 user, Sebut device setelah order, Garansi BF", featured: false, stock: true }, { name: "Private 1 Bulan", price: 32000, originalPrice: 32000, desc: "Private, Sebut device setelah order, Garansi BF", featured: true, stock: true } ] },
-            chatgpt: { name: "ChatGPT AI", icon: "fas fa-robot", color: "#10a37f", items: [ { name: "Sharing 1 Bulan Plus", price: 11000, originalPrice: 11000, desc: "Akun sharing, Garansi 20 hari, no komplain limit", featured: false, stock: true }, { name: "Private 1 Bulan Bisnis/Team (Via Invite)", price: 14500, originalPrice: 14500, desc: "Via invite, pake akun sendiri, cukup kirim email saja, Garansi 20 hari", featured: true, needsEmail: true, stock: true }, { name: "Private 1 Bulan Plus (Akun Seller)", price: 21000, originalPrice: 21000, desc: "Akun dari seller, Garansi 20 hari", featured: false, stock: true }, { name: "Private 1 Bulan Head Bisnis/Team", price: 31000, originalPrice: 31000, desc: "Akun dari seller, Head bisa invite 4-5 email, Garansi BF 20 hari", featured: false, stock: true } ] },
-            gemini: { name: "Gemini Veo 3.1", icon: "fas fa-robot", color: "#8A2BE2", items: [ { name: "Private 1 Bulan", price: 7000, originalPrice: 7000, desc: "Akun dari buyer, Via invite, Cukup kirim email saja, 1 bulan full garansi", featured: true, needsEmail: true, stock: true }, { name: "Private 1 Tahun", price: 11000, originalPrice: 11000, desc: "Akun dari buyer, Via invite, Cukup kirim email saja, Garansi 1 bulan", featured: true, needsEmail: true, stock: true }, { name: "Private 1 Tahun Head", price: 24000, originalPrice: 24000, desc: "Akun dari seller, Login Google, Bisa invite 5 email, Garansi 1 bulan", featured: false, stock: true } ] }
+            netflix: { name: "Netflix", icon: "fas fa-tv", color: "#E50914", items: [
+                { name: "Sharing 1 Hari [1P2U]", price: 5000, originalPrice: 5000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                { name: "Sharing 2 Hari [1P2U]", price: 8500, originalPrice: 8500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                { name: "Sharing 3 Hari [1P2U]", price: 9500, originalPrice: 9500, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: false, stock: true },
+                { name: "Sharing 7 Hari [1P2U]", price: 12000, originalPrice: 12000, desc: "Akun dari seller, Login via OTP, Maks 1 device, Full garansi", featured: true, stock: true },
+                { name: "Sharing 1 Bulan [1P1U]", price: 31000, originalPrice: 31000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: true },
+                { name: "Sharing 1 Bulan [1P2U]", price: 19000, originalPrice: 19000, desc: "Akun dari seller, Login via OTP, Maks 1 device, All device, Full garansi", featured: true, stock: true },
+                { name: "Semi Private 7 Hari", price: 16000, originalPrice: 16000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: true },
+                { name: "Semi Private 1 Bulan", price: 33000, originalPrice: 33000, desc: "Akun dari seller, Login via OTP, Maks 2 device, All device, Full garansi", featured: false, stock: true },
+                { name: "Private 1 Bulan", price: 104000, originalPrice: 104000, desc: "Akun dari buyer (pake akun sendiri), Cukup kirim email saja ke seller (email wajib fresh/masih baru), Plan Premium 4K, Dapet 5 profil, All device, Maksimal login atur sendiri, Limit screen 4, Cocok untuk reseller di jual sharing, No garansi, Kontrol penuh (akun tanggung jawab masing-masing), Sistem PO (PRE-ORDER), Order = paham", featured: false, needsEmail: true, stock: true }
+            ] },
+            spotify: { name: "Spotify", icon: "fab fa-spotify", color: "#1DB954", items: [
+                { name: "Indplan 1 Bulan (Full Garansi)", price: 21000, originalPrice: 21000, desc: "All device, Full garansi, Maks 1 device", featured: true, stock: true },
+                { name: "Indplan 3 Bulan (No Garansi)", price: 14000, originalPrice: 14000, desc: "Support Android, tidak disarankan IOS, No garansi no komplain, Maks 1 device", featured: false, stock: true },
+                { name: "Indplan 3 Bulan (Garansi 7 Hari)", price: 16000, originalPrice: 16000, desc: "Support Android, tidak disarankan IOS, Garansi 7 hari, Maks 1 device", featured: false, stock: true },
+                { name: "Famplan 1 Bulan (Garansi 25 Hari)", price: 20000, originalPrice: 20000, desc: "Support Android & IOS, Garansi 25 hari, Maks 1 device", featured: true, stock: true }
+            ] },
+            youtube: { name: "YouTube Premium", icon: "fab fa-youtube", color: "#FF0000", items: [
+                { name: "Famplan 1 Bulan", price: 4500, originalPrice: 4500, desc: "ACC buyer, Kirim email saja, Full garansi", featured: true, needsEmail: true, stock: true },
+                { name: "Famhead 1 Bulan (ACC seller)", price: 11000, originalPrice: 11000, desc: "ACC seller, No garansi", featured: false, stock: true },
+                { name: "Indiplan 1 Bulan (ACC seller)", price: 12000, originalPrice: 12000, desc: "ACC seller, Garansi selama tidak ganti sandi", featured: false, stock: true },
+                { name: "Jaspay Famhead 1 Bulan", price: 5000, originalPrice: 5000, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: true, needsEmail: true, stock: true },
+                { name: "Jaspay Indiplan 1 Bulan", price: 6500, originalPrice: 6500, desc: "ACC buyer, Kirim email & password, Wajib email fresh", featured: true, needsEmail: true, stock: true }
+            ] },
+            alight: { name: "Alight Motion", icon: "fas fa-video", color: "#8A2BE2", items: [
+                { name: "Sharing 1 Tahun (Acc Seller)", price: 2000, originalPrice: 2000, desc: "Akun dari seller, Support Android/iOS, Garansi 6 bulan", featured: false, stock: true },
+                { name: "Private 1 Tahun (Acc Buyer)", price: 4500, originalPrice: 4500, desc: "Pakai email sendiri, Maks 10 device, Garansi 6 bulan", featured: true, needsEmail: true, stock: true },
+                { name: "Private 1 Tahun (Acc Seller)", price: 3000, originalPrice: 3000, desc: "Akun dari seller, Maks 10 device, Garansi 6 bulan", featured: true, stock: true }
+            ] },
+            capcut: { name: "CapCut Pro", icon: "fas fa-cut", color: "#00A8FF", items: [
+                { name: "Sharing 1 Bulan (Gar7d)", price: 5000, originalPrice: 5000, desc: "Akun seller, Support all device, Garansi 7 hari", featured: false, stock: true },
+                { name: "Private 7 Hari (Gar3d)", price: 3000, originalPrice: 6000, desc: "Akun seller, Private, Maks 2 device, Garansi 3 hari", featured: false, stock: true },
+                { name: "Private 35 Hari (Full Garansi)", price: 7500, originalPrice: 7000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi, Auto renewal", featured: true, stock: true },
+                { name: "Private 42 Hari (Full Garansi)", price: 9000, originalPrice: 11000, desc: "Akun berbasis Tim Private, Maks 2 device, Full garansi, Auto renewal", featured: true, stock: true }
+            ] },
+            canva: { name: "Canva Pro", icon: "fas fa-palette", color: "#00C4CC", items: [
+                { name: "Paket Member 1 Bulan", price: 2000, originalPrice: 2000, desc: "Support all device, Via link invite, Full garansi BF", featured: true, stock: true },
+                { name: "Paket Designer 1 Bulan", price: 3000, originalPrice: 3000, desc: "Support all device, Via link invite, Full garansi BF", featured: true, stock: true },
+                { name: "Paket Edu 1 Tahun", price: 5000, originalPrice: 5000, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true, stock: true },
+                { name: "Paket Edu Lifetime", price: 7000, originalPrice: 6500, desc: "Support all device, Via link invite, Garansi 6 bulan", featured: true, stock: true },
+                { name: "Paket Head Owner 1 Bulan", price: 7500, originalPrice: 7500, desc: "Akun seller, Support all device, No garansi", featured: true, stock: true },
+                { name: "Jaspay Head 1 Bulan", price: 5000, originalPrice: 5000, desc: "Email wajib fresh/masih baru, Support all device", featured: false, needsEmail: true, stock: true }
+            ] },
+            wink: { name: "Wink", icon: "fas fa-star", color: "#FF69B4", items: [
+                { name: "Private 7 Hari (ACC buyer)", price: 6500, originalPrice: 6500, desc: "ACC buyer, Kirim email + password ke seller (no verifikasi), Email wajib fresh/masih baru, Garansi 5 hari, Only Android", featured: true, needsEmail: true, stock: true },
+                { name: "Private 7 Hari (ACC seller)", price: 9000, originalPrice: 9000, desc: "ACC seller, Garansi 5 hari, Only Android", featured: false, stock: true }
+            ] },
+            bstation: { name: "Bstation", icon: "fas fa-play-circle", color: "#00A1D6", items: [
+                { name: "Sharing 1 Bulan", price: 8000, originalPrice: 9000, desc: "Akun sharing, Garansi sesuai ketentuan", featured: true, stock: true },
+                { name: "Sharing 1 Tahun", price: 12000, originalPrice: 12000, desc: "Akun sharing, Garansi sesuai ketentuan", featured: false, stock: true },
+                { name: "Private 1 Bulan", price: 34000, originalPrice: 34000, desc: "Akun dari seller, Private maks login 2 device", featured: false, stock: true }
+            ] },
+            loklok: { name: "Loklok", icon: "fas fa-film", color: "#FF4500", items: [
+                { name: "Sharing 1 Bulan Basic", price: 20000, originalPrice: 19000, desc: "Paket basic sharing, Garansi BF / premium hilang", featured: true, stock: true },
+                { name: "Sharing 1 Bulan Standar", price: 21500, originalPrice: 21000, desc: "Paket standar sharing, Garansi BF / premium hilang", featured: true, stock: true }
+            ] },
+            picsart: { name: "Picsart", icon: "fas fa-paint-brush", color: "#FF69B4", items: [
+                { name: "Sharing 1 Bulan", price: 5000, originalPrice: 7000, desc: "Akun sharing, Support iOS/Android, No komplain limit", featured: true, stock: true },
+                { name: "Private 1 Bulan", price: 7000, originalPrice: 11500, desc: "Private, Maks login 10 device, Include fitur AI", featured: true, stock: true },
+                { name: "Private 1 Bulan Bulk (10 Akun)", price: 23500, originalPrice: 23500, desc: "Paket 10 akun private, Include fitur AI", featured: true, stock: true }
+            ] },
+            wetv: { name: "WeTV", icon: "fas fa-tv", color: "#1E90FF", items: [
+                { name: "Sharing 1 Bulan (6U)", price: 10000, originalPrice: 10000, desc: "Sharing 6 user, Sebut device setelah order, Garansi BF", featured: true, stock: true },
+                { name: "Sharing 1 Bulan (5U)", price: 12000, originalPrice: 12000, desc: "Sharing 5 user, Sebut device setelah order, Garansi BF", featured: false, stock: true },
+                { name: "Sharing 1 Bulan (3U)", price: 14500, originalPrice: 14500, desc: "Sharing 3 user, Sebut device setelah order, Garansi BF", featured: false, stock: true },
+                { name: "Private 1 Bulan", price: 32000, originalPrice: 32000, desc: "Private, Sebut device setelah order, Garansi BF", featured: true, stock: true }
+            ] },
+            chatgpt: { name: "ChatGPT AI", icon: "fas fa-robot", color: "#10a37f", items: [
+                { name: "Sharing 1 Bulan Plus", price: 6500, originalPrice: 6500, desc: "Akun sharing, Garansi 22 hari, no komplain limit", featured: false, stock: true },
+                { name: "Private 1 Bulan Plus (No Garansi)", price: 9000, originalPrice: 9000, desc: "Akun dari seller, No garansi", featured: false, stock: true },
+                { name: "Private 1 Bulan Bisnis/Team (Via Invite)", price: 14500, originalPrice: 14500, desc: "Via invite, pake akun sendiri, cukup kirim email saja, Garansi 20 hari", featured: true, needsEmail: true, stock: true },
+                { name: "Private 1 Bulan Plus (Full Garansi)", price: 13000, originalPrice: 13000, desc: "Akun dari seller, Full garansi", featured: true, stock: true },
+                { name: "Private 1 Bulan Head Bisnis/Team", price: 31000, originalPrice: 31000, desc: "Akun dari seller, Head bisa invite 4-5 email, Garansi 20 hari", featured: false, stock: true }
+            ] },
+            gemini: { name: "Gemini Veo 3.1", icon: "fas fa-robot", color: "#8A2BE2", items: [
+                { name: "Private 1 Bulan (ACC buyer)", price: 3000, originalPrice: 3000, desc: "Akun dari buyer, Via invite, Cukup kirim email saja, Garansi 25 hari, Akses AI Gemini Veo 3.1 + Storage 5TB, multi-device", featured: true, needsEmail: true, stock: true },
+                { name: "Jaspay 1 Bulan Head", price: 11000, originalPrice: 11000, desc: "Kirim email+password ke seller, Email wajib fresh/masih baru, Garansi 25 hari, Bisa multi-device", featured: false, needsEmail: true, stock: true }
+            ] }
         };
 
         const categoryImages = {
@@ -1553,24 +1604,193 @@
             gemini: "https://i.ibb.co.com/vxYT0Tdp/gemini-icon-logo-brandlogos-net-aacx5.png"
         };
 
-        // Penjelasan paket lengkap (sama seperti sebelumnya, tapi disingkat agar tidak melebihi batas karakter)
+        // ==================== PENJELASAN PAKET (LENGKAP DENGAN FORMAT TEKS) ====================
         const explanations = {
-            netflix: { title: "📺 PENJELASAN PAKET NETFLIX", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ... (lengkap seperti di index asli)</div>` },
-            spotify: { title: "🎵 PENJELASAN PAKET SPOTIFY", content: `<div class="explanation-content">▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 ...</div>` },
-            youtube: { title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM", content: `<div class="explanation-content">▣ 𝗙𝗔𝗠𝗜𝗟𝗬 ...</div>` },
-            alight: { title: "🎬 PENJELASAN PAKET ALIGHT MOTION", content: `<div class="explanation-content">𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            capcut: { title: "✂️ PENJELASAN PAKET CAPCUT PRO", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            canva: { title: "📌 PENJELASAN PAKET CANVA PRO", content: `<div class="explanation-content">▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥 ...</div>` },
-            wink: { title: "✨ PENJELASAN PAKET WINK", content: `<div class="explanation-content">▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 ...</div>` },
-            bstation: { title: "📺 PENJELASAN PAKET BSTATION", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            loklok: { title: "🎬 PENJELASAN PAKET LOKLOK", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            picsart: { title: "🎨 PENJELASAN PAKET PICSART", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            wetv: { title: "📺 PENJELASAN PAKET WETV", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            chatgpt: { title: "🤖 PENJELASAN PAKET CHATGPT AI", content: `<div class="explanation-content">▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 ...</div>` },
-            gemini: { title: "🤖 GEMINI VEO 3.1", content: `<div class="explanation-content">▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 ...</div>` }
+            netflix: { title: "📺 PENJELASAN PAKET NETFLIX", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
+┊1 Hari [1P2U] = Rp 5.000
+┊2 Hari [1P2U] = Rp 8.500
+┊3 Hari [1P2U] = Rp 9.500
+┊7 Hari [1P2U] = Rp 12.000
+> Akun dari seller 
+> Login via kode otp
+> Maks login 1 device 
+> All device
+> Full garansi 
+
+┊1 Bulan [1P1U] = Rp 31.000 
+┊1 Bulan [1P2U] = Rp 19.000
+> Bisa diperpanjang (kalo mau)
+> Akun strong
+> Akun dari seller 
+> Login via kode otp
+> Maks login 1 device 
+> All device
+> Full garansi 
+
+▣ 𝗦𝗘𝗠𝗜 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊7 Hari = Rp 16.000
+┊1 Bulan = Rp 33.000
+> Bisa di perpanjang (kalo mau)
+> Akun dari seller 
+> Login via kode otp
+> Maks login 2 device
+> All device
+> Full garansi
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊1 Bulan = Rp 104.000
+> Akun dari buyer (pake akun sendiri)
+> Cukup kirim email saja ke seller (email wajib fresh/masih baru)
+> Plan Premium 4K
+> Dapet 5 profil 
+> All device
+> Maksimal login atur sendiri
+> Limit screen 4
+> Cocok untuk reseller di jual sharing 
+> No garansi
+> Kontrol penuh (akun tanggung jawab masing-masing).
+> Sistem PO (PRE-ORDER)
+> Order = paham
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢
+- Akun dari seller *kecuali Private*
+- Sharing (1P1U/1P2U) & Semi Private *FULL GARANSI*, kecuali Private 
+- Plan Premium 
+- Resolusi max 4K (tergantung jaringan)
+- No komplain limit screen
+- *TIDAK MENERIMA REFUND*, kecuali kesalahan admin 
+- Order = paham 
+Tanya stok sebelum order!
+
+NOTE: Dikarenakan Netflix termasuk aplikasi yang cukup rawan terkena wiped/suspend disarankan ambil yang harian saja. (CUMA SEKEDAR SARAN)
+            </div>` },
+            chatgpt: { title: "🤖 PENJELASAN PAKET CHATGPT AI", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚
+┊1 Bulan Plus = 6.500
+> Garansi 22 hari
+
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘
+┊1 bulan plus = 9.000 (No garansi)
+
+┊1 Bulan Bisnis/Team = Rp 14.500
+> Via invite
+> Pake akun sendiri 
+> Cukup kirim email saja 
+> Garansi 20 hari
+
+┊1 Bulan Plus   = Rp 13.000 (Full garansi)
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Head bisa invite 4-5 email
+- Garansi 20 hari
+- Tidak menerima garansi akun terkana suspend 
+- Pengguna sharing NO komplain limit
+- Proses maks 1×24 jam, wajib sabar
+- No rush
+- No spam
+Tanya stok sebelum order!
+            </div>` },
+            wink: { title: "✨ PENJELASAN PAKET WINK", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊7 Hari = 6.500
+> ACC buyer 
+> Kirim email + password ke seller (no verifikasi)
+> Email wajib fresh/masih baru
+
+┊7 Hari = 9.000
+> ACC seller 
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Only Android
+- 7 Hari → garansi 5 hari
+- ACC Buyer = akun dari customer (akun kamu)
+- ACC Seller = akun dari seller
+- Proses slow sesuai antrian
+- Proses maks 1×24jam
+- No rush
+- No spam
+Tanya stok sebelum order!
+            </div>` },
+            gemini: { title: "🤖 GEMINI VEO 3.1", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 
+┊1 Bulan  = Rp3.000
+> Akun dari buyer
+> Via invite
+> Garansi 25 hari
+
+▣ JASPAY
+┊1 Bulan Head = Rp 11.000
+> Kirim email+password ke seller
+> Email wajib fresh / masih baru 
+
+═════════════════════
+⚡ Keunggulan:
+- Akses AI Gemini Veo 3.1 + Storage 5TB
+- Bisa dipakai multi-device
+- Cocok buat belajar, kerja, bikin konten, VEO & editing video terbatas 
+
+⚠ 𝗡𝗢𝗧𝗘 / 𝗜𝗡𝗙𝗢   
+- Bergaransi jika ikut S&K
+- Proses maks 1x24jam yaa
+- No rush
+- No spam
+Tanya stok sebelum order!
+═════════════════════
+            </div>` },
+            spotify: { title: "🎵 PENJELASAN PAKET SPOTIFY", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 1 Bulan Full Garansi = 21k
+▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 3 Bulan No Garansi = 14k
+▣ 𝗜𝗡𝗗𝗣𝗟𝗔𝗡 3 Bulan Garansi 7 Hari = 16k
+▣ 𝗙𝗔𝗠𝗣𝗟𝗔𝗡 1 Bulan Garansi 25 Hari = 20k
+            </div>` },
+            youtube: { title: "📢 PENJELASAN PAKET YOUTUBE PREMIUM", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗙𝗔𝗠𝗣𝗟𝗔𝗡 1 Bulan (ACC buyer) = 4.5k (full garansi)
+▣ 𝗙𝗔𝗠𝗛𝗘𝗔𝗗 1 Bulan (ACC seller) = 11k (no garansi)
+▣ 𝗜𝗡𝗗𝗜𝗣𝗟𝗔𝗡 1 Bulan (ACC seller) = 12k (garansi selama tidak ganti sandi)
+▣ 𝗝𝗔𝗦𝗣𝗔𝗬 Famhead = 5k, Indiplan = 6.5k (wajib email fresh)
+            </div>` },
+            alight: { title: "🎬 PENJELASAN PAKET ALIGHT MOTION", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Tahun = 2k (garansi 6 bulan)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 1 Tahun (ACC buyer) = 4.5k (garansi 6 bulan)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 1 Tahun (ACC seller) = 3k (garansi 6 bulan)
+            </div>` },
+            capcut: { title: "✂️ PENJELASAN PAKET CAPCUT PRO", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan = 5k (garansi 7 hari)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 7 Hari = 6k (garansi 3 hari)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 35 Hari = 7k (full garansi, auto renewal)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 42 Hari = 11k (full garansi, auto renewal)
+            </div>` },
+            canva: { title: "📌 PENJELASAN PAKET CANVA PRO", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗠𝗘𝗠𝗕𝗘𝗥 1 Bulan = 2k
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗗𝗘𝗦𝗜𝗚𝗡𝗘𝗥 1 Bulan = 3k
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗘𝗗𝗨 1 Tahun = 5k, Lifetime = 6.5k
+▣ 𝗣𝗔𝗞𝗘𝗧 𝗛𝗘𝗔𝗗 𝗢𝗪𝗡𝗘𝗥 1 Bulan = 7.5k (no garansi)
+▣ 𝗝𝗔𝗦𝗣𝗔𝗬 Head = 5k (email fresh)
+            </div>` },
+            bstation: { title: "📺 PENJELASAN PAKET BSTATION", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan = 8k
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Tahun = 12k
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 1 Bulan = 34k (maks login 2 device)
+            </div>` },
+            loklok: { title: "🎬 PENJELASAN PAKET LOKLOK", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan Basic = 19k
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan Standar = 21k
+Garansi BF / premium hilang.
+            </div>` },
+            picsart: { title: "🎨 PENJELASAN PAKET PICSART", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan = 5k (no komplain limit)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 1 Bulan = 7k (maks 10 device, include AI)
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 1 Bulan Bulk (10 akun) = 23.5k
+            </div>` },
+            wetv: { title: "📺 PENJELASAN PAKET WETV", content: `<div class="explanation-content" style="white-space: pre-line;">
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan 6U = 10k
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan 5U = 12k
+▣ 𝗦𝗛𝗔𝗥𝗜𝗡𝗚 1 Bulan 3U = 14.5k
+▣ 𝗣𝗥𝗜𝗩𝗔𝗧𝗘 1 Bulan = 32k
+            </div>` }
         };
 
-        // Konten info modal (Metode Pembayaran, Cara Order, Syarat & Ketentuan, Kebijakan Privasi)
         const infoContents = {
             payment: `<div class="info-content"><h4>📌 Metode Pembayaran</h4><p>Kami menyediakan metode pembayaran yang mudah dan aman:</p><ul><li>QRIS (semua e-wallet & mobile banking)</li><li>DANA</li><li>GoPay</li></ul><p><strong>Catatan:</strong></p><ul><li>Pastikan nominal sesuai dengan total pesanan</li><li>Wajib mengirim bukti pembayaran setelah transfer</li><li>Kesalahan transfer di luar tanggung jawab pihak kami</li></ul><p><strong>Khusus QRIS:</strong></p><ul><li>Dikenakan biaya tambahan sekitar Rp100 – Rp800</li><li>Fee berasal dari sistem pembayaran, bukan dari penjual</li><li>Pastikan pembayaran sudah termasuk fee agar pesanan dapat diproses</li></ul></div>`,
             order: `<div class="info-content"><h4>📌 Cara Order</h4><p>Ikuti langkah berikut untuk melakukan pemesanan:</p><ol><li>Pilih produk yang diinginkan</li><li>Klik tombol Beli / Checkout</li><li>Isi data yang diperlukan (email/akun jika diminta)</li><li>Pilih metode pembayaran</li><li>Lakukan pembayaran sesuai nominal</li><li>Kirim bukti pembayaran melalui: WhatsApp atau Telegram</li><li>Tunggu proses aktivasi (±5 menit – maksimal 24 jam)</li></ol><p><strong>Catatan:</strong></p><ul><li>Proses dilakukan sesuai urutan antrian</li><li>Mohon tidak melakukan spam chat kepada admin</li></ul></div>`,
@@ -1718,7 +1938,6 @@
         function adjustColor(c, a) { return '#' + c.replace(/^#/, '').replace(/../g, cc => ('0' + Math.min(255, Math.max(0, parseInt(cc,16)+a)).toString(16)).substr(-2)); }
         function showExplanation(key) { let exp = explanations[key]; if(!exp) return; document.getElementById('explanationTitle').innerText = exp.title; document.getElementById('explanationContent').innerHTML = exp.content; document.getElementById('explanationModal').style.display = 'flex'; }
         
-        // Fungsi rekber
         function calculateFee() {
             const input = document.getElementById('transactionAmount');
             const amount = parseInt(input.value) || 0;
